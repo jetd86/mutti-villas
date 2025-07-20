@@ -9,10 +9,11 @@
 #!/upload/resize_cache/.htaccess
 
 # Файлы кеша и компиляции
-/cache/
+/bitrix/cache/
 /tmp/
-/local/cache/
-/local/managed_cache/
+/local/cache/*
+/local/managed_cache/*
+/bitrix/managed_cache/*
 #/local/php_interface/dbconn.php
 
 # Конфиденциальные файлы и настройки
