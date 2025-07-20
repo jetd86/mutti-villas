@@ -1,0 +1,5 @@
+<?
+
+$sSectionName = "Наши виллы";
+$arDirProperties = [];
+?>

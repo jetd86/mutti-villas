@@ -1,0 +1,97 @@
+@use 'sass:meta';
+@use "sass:math";
+
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/colors' as *;
+@use '../../abstracts/mixins' as *;
+
+#construction {
+    color: $mutti_darken-2;
+    font: 300 13px/100% $font-stack;
+
+    @include minMedia($lg) {
+        font: 300 16px/20px $font-stack;
+    }
+
+    * {
+        color: inherit;
+        font: inherit;
+    }
+
+    .section-row {}
+    .section-grid {
+        &__slider {
+            overflow: hidden;
+        }
+    }
+
+    .section-title {
+        font: 400 24px/100% $font-header;
+        margin-bottom: 10px;
+
+        @include minMedia($lg) {
+            font-size: 48px;
+            margin-bottom: 17px;
+        }
+    }
+
+    .section-subtitle {
+        margin-bottom: 26px;
+        @include minMedia($lg) {
+            margin-bottom: 40px;
+        }
+    }
+
+    .section-slider {
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+
+        .slider-slide {
+            @include minMedia($lg) {
+                border-top-left-radius: 0;
+                transition: border-radius .3s ease, box-shadow .3s ease;
+            }
+
+            &.swiper-slide-active {
+                @include minMedia($lg) {
+                    border-top-left-radius: 80px;
+                    overflow: hidden;
+                }
+            }
+        }
+        .slider-wrapper {
+            max-height: 100%;
+            display: flex;
+        }
+
+        .slider-link {
+            overflow: hidden;
+            height: 208px;
+            width: 100%;
+
+            @include minMedia($lg) {
+                height: 286px;
+            }
+
+            picture,
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .slider-heading {
+        margin-top: 10px;
+        font: 500 13px/100% $font-stack;
+
+        @include minMedia($lg) {
+            font-size: 17px;
+        }
+    }
+}

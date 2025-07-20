@@ -1,0 +1,19 @@
+@use "sass:math";
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/colors' as *;
+@use '../../abstracts/mixins' as *;
+
+#map {
+    position: relative;
+    margin-top: 65px;
+    margin-bottom: 42px;
+
+    @include minMedia($lg) {
+        margin-top: 45px;
+        margin-bottom: 65px;
+    }
+
+    h2 {
+        margin-bottom: 24px;
+    }
+}

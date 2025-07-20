@@ -1,0 +1,44 @@
+/// Подключение шрифта через mixin
+/// @param {String} $family - Название семейства шрифта
+/// @param {String} $filename - Имя файла (без расширения)
+/// @param {Number} $weight - Вес (100-900)
+/// @param {String} $style - Стиль (normal/italic)
+/// @param {String} $folder - Папка внутри fonts/, по умолчанию — текущая
+
+@mixin font-face($family, $filename, $weight: 400, $style: normal, $folder: '') {
+  $path: if($folder != '', './fonts/#{$folder}/#{$filename}', './fonts/#{$filename}');
+
+  @font-face {
+    font-family: $family;
+    src: url('#{$path}.woff2') format('woff2'),
+    url('#{$path}.woff') format('woff');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+
+@mixin minMedia($minWidth) {
+  @media (min-width: $minWidth) {
+    @content
+  }
+}
+
+@mixin bootstrap-icon($icon: '') {
+    @if $icon != '' {
+        content: $icon;
+        display: inline-block;
+    }
+
+    font-family: bootstrap-icons, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.125em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+

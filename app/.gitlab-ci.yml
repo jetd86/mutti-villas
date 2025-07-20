@@ -1,0 +1,33 @@
+stages:
+    - deploy
+
+deploy-sandbox:
+    stage: deploy
+    
+    before_script:
+        - "apt-get update -y && apt-get install -y openssh-client"
+        - "mkdir -p ~/.ssh"
+        - "chmod 700 ~/.ssh"
+        - "eval $(ssh-agent -s)"
+        - "echo '✅ DEPLOY_KEY_FILE path:' $DEPLOY_KEY_FILE"
+        - "head -n 5 \"$DEPLOY_KEY_FILE\" || echo '❌ Key not readable'"
+        - "ssh-add \"$DEPLOY_KEY_FILE\""
+        - "ssh-keyscan -H \"$SANDBOX_HOST\" >> ~/.ssh/known_hosts"
+
+    script:
+        - "echo '== Синхронизация исходников на $SANDBOX_HOST ==' "
+        - "rsync -az --delete ./frontend/ $SANDBOX_USER@$SANDBOX_HOST:$SANDBOX_PATH/frontend/"
+        - "echo '== Сборка проекта на $SANDBOX_HOST ==' "
+        - >
+            ssh $SANDBOX_USER@$SANDBOX_HOST "
+              cd $SANDBOX_PATH/frontend &&
+              npm ci &&
+              npm run build
+            "
+
+    only:
+        - develop
+
+    environment:
+        name: sandbox
+        url: "https://$SANDBOX_HOST"

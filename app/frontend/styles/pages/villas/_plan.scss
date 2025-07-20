@@ -1,0 +1,140 @@
+@use 'sass:meta';
+@use "sass:math";
+
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/colors' as *;
+@use '../../abstracts/mixins' as *;
+
+$legend: (
+    'azure': #36B4D9,
+    'breeze': #5D307A,
+    'coral': #F855BA,
+    'рearl': #FAAE33,
+);
+
+#master-plan {
+    .section-title {
+    }
+
+    .section-wrapper {
+        position: relative;
+    }
+
+    .section-image {
+        background-size: cover;
+        background-color: transparent;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &.section-plan {
+            height: 320px;
+            position: relative;
+            background-image: image-set(
+                    var(--bg-plan-1x) 1x,
+                    var(--bg-plan-2x) 2x
+            );
+
+            @include minMedia($md) {
+                height: 525px;
+            }
+
+            @include minMedia($lg) {
+                height: 977px;
+            }
+        }
+
+        &.section-plan-banner {
+            height: 120px;
+            width: 53px;
+            background-image: image-set(
+                    var(--bg-plan-banner-1x) 1x,
+                    var(--bg-plan-banner-2x) 2x
+            );
+
+            @include minMedia($lg) {
+                height: 309px;
+                width: 137px;
+            }
+        }
+
+        &.section-plan-banner {
+            position: absolute;
+            top: 0;
+            right: 59px;
+
+            @include minMedia($lg) {
+                right: 20%;
+            }
+        }
+
+        &.section-plan-cert {
+            height: 66px;
+            width: 66px;
+            background-image: image-set(
+                    var(--bg-plan-cert-1x) 1x,
+                    var(--bg-plan-cert-2x) 2x
+            );
+
+            @include minMedia($lg) {
+                height: 115px;
+                width: 115px;
+            }
+        }
+
+        &.section-plan-cert {
+            position: absolute;
+            bottom: -33px;
+            right: 52px;
+
+            @include minMedia($lg) {
+                left: 25px;
+                bottom: 16px;
+            }
+        }
+    }
+
+    .section-legend {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 45px;
+        margin-top: 18px;
+
+        display: flex;
+        row-gap: 18px;
+        flex-direction: column;
+
+        @include minMedia($lg) {
+            position: absolute;
+            top: 68px;
+            right: 54px;
+        }
+
+        .legend-item {
+            gap: 12px;
+            display: flex;
+            align-items: center;
+
+            &:before, &::before {
+                content: '';
+            }
+
+            &:before, &::before {
+                width: 13px;
+                height: 13px;
+            }
+
+            &:before, &::before {
+                border-radius: 50px;
+                background-color: transparent;
+            }
+        }
+
+        @each $index, $value in $legend {
+            .legend-#{$index} {
+                &:before, &::before {
+                    background-color: $value;
+                }
+            }
+        }
+    }
+}

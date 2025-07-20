@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+.page-location {
+    .section-location-info {
+        font-family: $font-stack;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 19px;
+        margin-bottom: 45px;
+        color: $mutti_darken-2;
+    }
+
+    .section-location-map {
+        .field-image {
+            max-width: 100%;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+    }
+
+    .section-location-distance {
+        padding-top: 42px - 14;
+        padding-bottom: 44px - 10;
+    }
+
+    .table-wrapper {
+        @media (min-width: $lg) {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+}

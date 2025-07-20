@@ -1,0 +1,57 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+.section-about-content {
+  .field-header {
+  }
+
+  .field-title {
+    font-family: $font-header;
+    font-size: 20px;
+    font-weight: 400;
+    color: $mutti_darken-2;
+  }
+
+  .field-content {
+    color: rgba($mutti_darken-1, .8);
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 16px;
+    font-family: $font-stack;
+
+    h3 {
+      font-family: $font-header;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 18px;
+      color: rgba($mutti_darken-1, .8);
+
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      &:first-child {
+        font-family: $font-header;
+        font-weight: 400;
+        line-height: 18px;
+      }
+    }
+
+    li {
+      font-family: $font-stack;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 16px;
+
+      color: rgba($mutti_darken-2, .8);
+    }
+  }
+
+  .field-background {
+    min-height: 212px;
+    border-top-left-radius: 24px;
+    position: relative;
+  }
+}

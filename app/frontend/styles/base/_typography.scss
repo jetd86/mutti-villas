@@ -1,0 +1,19 @@
+@use "sass:math";
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+body {
+    font-family: $font-stack;
+    color: $mutti_darken-2;
+    background-color: $mutti_lighten-1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-header;
+    color: $mutti_darken-2;
+}
+
+p {
+    color: inherit;
+}

@@ -1,0 +1,91 @@
+@use "sass:math";
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/colors' as *;
+@use '../../abstracts/mixins' as *;
+
+.section-slider {
+    position: relative;
+    margin-bottom: 17px;
+    @include minMedia($lg) {
+        margin-bottom: 28px;
+    }
+
+    .section-slide {
+        height: 200px;
+        overflow: hidden;
+
+        @include minMedia($lg) {
+            height: 400px;
+        }
+
+        > img {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            object-fit: fill;
+        }
+    }
+
+    .section-button {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+
+    .section-button {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .section-button {
+        display: flex;
+        align-items: center;
+    }
+
+    .section-button {
+        font-size: 30px;
+        color: $shades_white;
+    }
+
+    .section-button__prev {
+        left: 0;
+    }
+
+    .section-button__next {
+        right: 0;
+    }
+
+    .section-pagination {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .section-pagination {
+        display: flex;
+        justify-content: center;
+    }
+
+    .section-pagination {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .section-pagination {
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background-color: $shades_black;
+            opacity: 0.3;
+            margin: 0 4px;
+            border-radius: 100%;
+            transition: opacity 0.3s;
+            cursor: pointer;
+
+            &-active {
+                opacity: 1;
+            }
+        }
+    }
+}

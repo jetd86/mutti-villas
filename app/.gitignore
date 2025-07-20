@@ -1,0 +1,63 @@
+# Системные папки Bitrix, генерируемые данные
+#/bitrix/
+#/upload/*
+#!/upload/.htaccess
+/upload/tmp/
+/upload/cache/
+#/upload/resize_cache/
+#/upload/resize_cache/*
+#!/upload/resize_cache/.htaccess
+
+# Файлы кеша и компиляции
+/cache/
+/tmp/
+/local/cache/
+/local/managed_cache/
+#/local/php_interface/dbconn.php
+
+# Конфиденциальные файлы и настройки
+#/dbconn.php
+#/license_key.php
+#/.settings.php
+#/.settings_extra.php
+
+# Настройки окружения
+#.env
+#*.env
+#.env.*
+
+# Журналы и отладка
+#*.log
+/logs/
+#/bitrix/php_interface/after_connect_d7.php
+
+# Файлы IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Системные файлы Mac/Linux/Windows
+.DS_Store
+Thumbs.db
+
+# Кэш composer/npm/yarn
+/vendor/
+/frontend/node_modules/
+/package-lock.json
+/yarn.lock
+
+# Результаты сборки
+/public/assets/js/
+/public/assets/css/
+/local/templates/**/assets/css/
+/local/templates/**/assets/js/
+
+# Бэкапы и архивы
+*.zip
+*.tar.gz
+*.bak
+*.tmp
+
+# Вспомогательное
+.dev/

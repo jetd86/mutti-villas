@@ -1,0 +1,45 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+#breadcrumb {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    @include minMedia($lg) {
+        margin-top: 48px;
+        margin-bottom: 24px;
+    }
+}
+
+.breadcrumb {
+    font-family: $font-stack;
+    line-height: 100%;
+
+    --bs-breadcrumb-margin-bottom: '';
+    --bs-breadcrumb-font-size: 12px;
+    --bs-breadcrumb-divider-color: $mutti_darken-2;
+    --bs-breadcrumb-divider: '\F285';
+    --bs-breadcrumb-item-active-color: #{rgba($mutti_darken-2, .5)};
+
+    @include minMedia($lg) {
+        --bs-breadcrumb-font-size: 14px;
+    }
+
+    &-item {
+        display: flex;
+        align-items: center;
+
+        + .breadcrumb-item {
+            &:before {
+                font-size: 9px;
+                @include bootstrap-icon()
+            }
+        }
+    }
+
+    &-link {
+        color: inherit;
+        text-decoration: none;
+    }
+}

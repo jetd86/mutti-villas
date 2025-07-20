@@ -1,0 +1,5 @@
+<?
+
+$sSectionName = "Расположение";
+$arDirProperties = [];
+?>

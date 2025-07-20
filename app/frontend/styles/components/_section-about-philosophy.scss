@@ -1,0 +1,48 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+.section-about-philosophy {
+  background-color: $mutti_base;
+  color: $shades_white;
+  margin-bottom: 140px;
+
+  .container {
+    padding-top: 32px;
+    padding-bottom: 140px;
+    position: relative;
+  }
+
+  .field-title {
+    font-size: 20px;
+    font-weight: 400;
+    font-family: $font-header;
+    margin-bottom: 22px;
+  }
+
+  .field-content {
+    font-size: 13px;
+    font-weight: 400;
+    font-family: $font-stack;
+    color: rgba($shades_white, .7);
+  }
+
+  .field-content {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      &:first-child {
+        color: $shades_white;
+      }
+    }
+  }
+
+  .field-picture {
+    display: block;
+    position: absolute;
+    bottom: -100px;
+    left: calc(var(--bs-gutter-x) * .5);
+    right: calc(var(--bs-gutter-x) * .5);
+  }
+}

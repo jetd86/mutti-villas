@@ -1,0 +1,68 @@
+@use 'sass:meta';
+@use "sass:math";
+
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/colors' as *;
+@use '../../abstracts/mixins' as *;
+
+#mainModal {
+    .equipment-list {
+        padding-left: 0;
+        list-style: none;
+        margin-bottom: auto;
+    }
+
+    .equipment-list {
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+
+        @include minMedia($lg) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        + h3 {
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+    }
+
+    .equipment-item {
+        gap: 10px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        @include minMedia($lg) {
+            border: 1px solid $mutti_lighten-4;
+        }
+
+        .item-icon {
+            display: block;
+            width: 35px;
+            height: 35px;
+        }
+    }
+
+    .equipment-item {
+        border-radius: 40px;
+        border-width: 1px;
+
+        @include minMedia($lg) {
+            padding: 7px 8px;
+        }
+
+        .item-icon {
+            border-radius: 50px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .item-title {
+            font: 400 13px/22px $font-stack;
+        }
+    }
+}

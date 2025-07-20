@@ -1,0 +1,41 @@
+{
+    "name": "mutti/site",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "andreyryabin/sprint.migration": "^4.18",
+        "wikimedia/composer-merge-plugin": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "local/php_interface/mutti/",
+            "Mutti\\": "local/modules/mutti.core/lib/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "wikimedia/composer-merge-plugin": true
+        }
+    },
+    "extra": {
+        "installer-paths": {
+            "bitrix/modules/{$name}/": [
+                "type:bitrix-module"
+            ],
+            "local/modules/{$name}/": [
+                "type:bitrix-module"
+            ]
+        },
+        "merge-plugin": {
+            "require": [
+                "bitrix/composer-bx.json"
+            ]
+        }
+    },
+    "require-dev": {
+        "kint-php/kint": "^6.0",
+        "roave/security-advisories": "dev-latest"
+    }
+}

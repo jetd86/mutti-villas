@@ -1,0 +1,32 @@
+@use 'sass:meta';
+@use "sass:math";
+
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/colors' as *;
+@use '../../abstracts/mixins' as *;
+
+#image {
+    margin-top: -550px;
+    position: relative;
+    z-index: 1;
+
+    @include minMedia($lg) {
+        margin-top: -400px;
+    }
+
+    .section-container {
+        background-image: image-set(
+                var(--bg-image-1x) 1x,
+                var(--bg-image-2x) 2x
+        );
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-color: transparent;
+
+        height: 725px;
+        @include minMedia($lg) {
+            height: 488px;
+        }
+    }
+}

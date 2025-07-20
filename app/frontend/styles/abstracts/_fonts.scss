@@ -1,0 +1,29 @@
+@use 'mixins' as *;
+
+// ──────── Montserrat ────────
+@include font-face('Montserrat', 'Montserrat-Thin', 100);
+@include font-face('Montserrat', 'Montserrat-ThinItalic', 100, italic);
+@include font-face('Montserrat', 'Montserrat-ExtraLight', 200);
+@include font-face('Montserrat', 'Montserrat-ExtraLightItalic', 200, italic);
+@include font-face('Montserrat', 'Montserrat-Light', 300);
+@include font-face('Montserrat', 'Montserrat-LightItalic', 300, italic);
+@include font-face('Montserrat', 'Montserrat-Regular', 400);
+@include font-face('Montserrat', 'Montserrat-Italic', 400, italic);
+@include font-face('Montserrat', 'Montserrat-Medium', 500);
+@include font-face('Montserrat', 'Montserrat-MediumItalic', 500, italic);
+@include font-face('Montserrat', 'Montserrat-SemiBold', 600);
+@include font-face('Montserrat', 'Montserrat-SemiBoldItalic', 600, italic);
+@include font-face('Montserrat', 'Montserrat-Bold', 700);
+@include font-face('Montserrat', 'Montserrat-BoldItalic', 700, italic);
+@include font-face('Montserrat', 'Montserrat-ExtraBold', 800);
+@include font-face('Montserrat', 'Montserrat-ExtraBoldItalic', 800, italic);
+@include font-face('Montserrat', 'Montserrat-Black', 900);
+@include font-face('Montserrat', 'Montserrat-BlackItalic', 900, italic);
+
+// ──────── Unbounded ────────
+@include font-face('Unbounded', 'Unbounded-Light', 100);
+@include font-face('Unbounded', 'Unbounded-Blond', 250);
+@include font-face('Unbounded', 'Unbounded-Regular', 400);
+@include font-face('Unbounded', 'Unbounded-Medium', 500);
+@include font-face('Unbounded', 'Unbounded-Bold', 700);
+@include font-face('Unbounded', 'Unbounded-Black', 900);

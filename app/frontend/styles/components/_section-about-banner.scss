@@ -1,0 +1,86 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+.section-about-banner {
+  .field-col {
+    &:first-child {
+      order: 2;
+      @include minMedia($lg) {
+        order: initial;
+      }
+    }
+
+    &:last-child {
+      order: 1;
+      @include minMedia($lg) {
+        order: initial;
+      }
+    }
+  }
+
+  .field-content {
+    p {
+      font-family: $font-stack;
+      font-size: 13px;
+      font-weight: 300;
+    }
+
+    p:first-child {
+      font-weight: 600;
+    }
+  }
+
+  .field-banner {
+    min-height: 420px;
+    position: relative;
+    padding-bottom: 50px;
+
+    @include minMedia($lg) {
+      padding-bottom: initial;
+    }
+  }
+
+  .field-background {
+    min-height: 420px;
+    border-top-left-radius: 24px;
+    position: relative;
+  }
+
+  .field-text {
+    color: $shades_white;
+    padding: 28px 23px;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .field-action {
+    color: $shades_white;
+    background-color: $mutti_base;
+    width: 60px;
+    height: 60px;
+    display: inline-flex;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: -25px;
+    right: 23px;
+
+    i {
+      font-size: 40px;
+    }
+  }
+
+  .field-button {
+    width: 100%;
+    text-transform: uppercase;
+    border: 1px solid;
+    color: $mutti_darken-2;
+    text-align: center;
+    padding: 8px 24px;
+    border-radius: 50px;
+  }
+}

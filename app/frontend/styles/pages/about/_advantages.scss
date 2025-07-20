@@ -1,0 +1,106 @@
+@use "sass:math";
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/colors' as *;
+@use '../../abstracts/mixins' as *;
+
+$actionButton_height: 62px;
+
+.advantages {
+    color: $mutti_darken-2;
+    position: relative;
+    margin-bottom: 30px;
+
+    .section-title {
+        color: inherit;
+        font-family: $font-header;
+        font-weight: 400;
+        font-size: 20px;
+        margin-bottom: 18px;
+
+        @include minMedia($lg) {
+            font-size: 40px;
+        }
+    }
+
+    .section-list {
+        &__row {
+            align-items: baseline;
+        }
+
+        &__item {
+            margin-bottom: 16px;
+
+            & + .section-list__item {
+                padding-top: 20px;
+                border-top: 1px solid $mutti_lighten-2;
+            }
+
+            &-header {
+                margin-bottom: 14px;
+                color: $mutti_darken-2;
+                font-family: $font-header;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 18px;
+
+                @include minMedia($lg) {
+                    font-size: 16px;
+                    margin-bottom: 13px;
+                }
+
+                &--name {
+                    margin-left: 10px;
+                    @include minMedia($lg) {
+                        margin-left: auto;
+                    }
+
+                    &:before {
+                        content: attr(data-count);
+                        color: $mutti_base;
+                        font-family: $font-stack;
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 18px;
+                        margin-right: 20px;
+
+                        @include minMedia($lg) {
+                            content: none;
+                        }
+                    }
+                }
+            }
+
+            &-count {
+                display: none;
+                color: $mutti_base;
+                font-family: $font-stack;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 18px;
+
+                @include minMedia($lg) {
+                    display: inline-block;
+                }
+
+                &::after {
+                    content: "—";
+                    margin-left: 6px;
+                }
+            }
+
+            &-description {
+                color: rgba($mutti_darken-1, 0.8);
+                font-family: $font-stack;
+                font-weight: 300;
+                font-size: 13px;
+
+                p {
+                    color: inherit;
+                    font-family: inherit;
+                    font-size: inherit;
+                    font-weight: inherit;
+                }
+            }
+        }
+    }
+}

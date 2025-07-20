@@ -1,0 +1,140 @@
+@use 'sass:meta';
+@use "sass:math";
+
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/colors' as *;
+@use '../../abstracts/mixins' as *;
+
+#contacts {
+    padding-top: 38px;
+    padding-bottom: 30px;
+
+    @include minMedia($lg) {
+        padding-top: 90px;
+        padding-bottom: 68px;
+    }
+
+    .section-title {
+        color: inherit;
+        font-family: $font-header;
+        font-weight: 400;
+        font-size: 24px;
+        margin-bottom: 10px;
+
+        @include minMedia($lg) {
+            font-size: 48px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .section-row {
+        &.grid {
+            gap: 18px;
+            display: grid;
+            grid-template-columns: 1fr;
+
+            @include minMedia($lg) {
+                grid-template-columns: 1fr 15rem 15rem 1fr;
+            }
+        }
+    }
+
+    .section-grid {
+        &__address {
+            color: $mutti_darken-2;
+            font-family: $font-stack;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 18px;
+
+            @include minMedia($lg) {
+                font-size: 16px;
+                line-height: 26px;
+            }
+
+            p {
+                color: inherit;
+                font: inherit;
+                margin-bottom: auto;
+            }
+        }
+
+        &__phone {
+            color: $mutti_darken-2;
+            font-family: $font-stack;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 26px;
+
+            @include minMedia($lg) {
+                font-size: 16px;
+                line-height: 26px;
+            }
+
+            ul {
+                padding-left: 0;
+                list-style: none;
+                margin-bottom: auto;
+            }
+
+            li {
+                color: inherit;
+                font: inherit;
+            }
+
+            a {
+                color: inherit;
+                font: inherit;
+
+                text-decoration: underline;
+                text-decoration-style: solid;
+            }
+        }
+
+        &__email {
+            font-family: $font-stack;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 26px;
+
+            @include minMedia($lg) {
+                font-size: 16px;
+            }
+
+            p {
+                color: inherit;
+                font: inherit;
+                margin-bottom: auto;
+            }
+
+            a {
+                color: inherit;
+                font: inherit;
+
+                text-decoration: underline;
+                text-decoration-style: solid;
+            }
+        }
+    }
+
+    .content-social {
+        padding-left: 0;
+        margin-bottom: auto;
+        list-style: none;
+
+        display: flex;
+        gap: 22px;
+
+        @include minMedia($lg) {
+            justify-content: end;
+        }
+
+        .social-item {
+            font-size: 22px;
+        }
+
+        .social-link {
+            cursor: pointer;
+        }
+    }
+}

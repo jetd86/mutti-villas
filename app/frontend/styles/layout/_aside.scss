@@ -1,0 +1,51 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+.aside {
+    margin-bottom: 20px;
+
+    @include minMedia($md) {
+        margin-bottom: 0;
+    }
+
+    &-menu {
+        width: 100%;
+        overflow-x: auto;
+
+        @include minMedia($lg) {
+            position: sticky;
+            top: 100px;
+            align-self: flex-start;
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+    }
+
+    &-nav {
+        display: inline-flex;
+        flex-wrap: nowrap;
+
+        @include minMedia($lg) {
+            flex-direction: column;
+            padding-bottom: .5rem;
+        }
+    }
+
+    &-item {
+        flex-shrink: 0;
+        font-size: 14px;
+        font-family: $font-stack;
+        font-weight: 500;
+        color: $mutti_darken-2;
+
+        @include minMedia($lg) {
+            font-size: 20px;
+        }
+    }
+
+    &-link {
+        color: inherit;
+        text-decoration: none;
+    }
+}

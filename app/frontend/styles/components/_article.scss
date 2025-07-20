@@ -1,0 +1,66 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+.article-item {
+    position: relative;
+    padding-bottom: 49px;
+
+
+
+    & + & {
+        border-top: 1px solid rgba($shades_black, 0.1);
+        padding-top: 35px;
+    }
+}
+
+.article-image {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.article-title {
+    font-family: $font-header;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: $mutti_darken-2;
+    margin-bottom: 16px;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+.article-meta {
+    color: rgba($mutti_darken-2, .7);
+    font-family: $font-stack;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 16px;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+
+        + .article-date {
+            &:before, &::before {
+                @include bootstrap-icon('\F309');
+                color: $mutti_lighten-2;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.article-preview {
+
+}
+
+.article-pagination {
+
+}

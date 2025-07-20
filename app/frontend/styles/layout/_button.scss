@@ -1,0 +1,41 @@
+@use "sass:math";
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+.whatsapp-float {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: $shades_white;
+    color: $mutti_base-2;
+    font-size: 20px;
+
+    box-shadow: 0 4px 8px rgba($shades_black, 0.25);
+    pointer-events: auto;
+
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    @include minMedia($lg) {
+        right: 32px;
+        bottom: 32px;
+        width: 64px;
+        height: 64px;
+        font-size: 24px;
+    }
+}

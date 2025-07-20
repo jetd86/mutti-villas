@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+// Локальные шрифты
+@use 'styles/abstracts/fonts';
+
+// переменные, миксины
+@use 'styles/abstracts/mixins';
+@use 'styles/abstracts/variables' as *;
+@use 'styles/abstracts/colors' as *;
+@use 'styles/abstracts/functions';
+
+// normalize, typography
+@use 'styles/base/typography';
+
+// сетка, header/footer
+@use 'styles/layout/header';
+@use 'styles/layout/aside';
+@use 'styles/layout/footer';
+@use 'styles/layout/button';
+
+// Компоненты
+@use 'styles/components/breadcrumb';
+@use 'styles/components/title';
+@use 'styles/components/alert';
+@use 'styles/components/swiper';
+@use 'styles/components/modal';
+

@@ -1,0 +1,271 @@
+@use 'sass:meta';
+@use "sass:math";
+
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/colors' as *;
+@use '../../abstracts/mixins' as *;
+
+$actionButton_height: 62px;
+$bannerHeightSm: 420px;
+$bannerHeightMd: 516px;
+
+#about {
+    color: $shades_white;
+    background-color: $mutti_base-2;
+
+    position: relative;
+    padding-top: 32px;
+    padding-bottom: 116px;
+
+    @include minMedia($lg) {
+        padding-top: 58px;
+        padding-bottom: 230px;
+    }
+
+    .section-row {
+        &.grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr;
+
+            &:not(.description) {
+                grid-template-areas:
+                    "title"
+                    "description"
+                    "button"
+                    "tags"
+                    "advantages";
+
+                @include minMedia($lg) {
+                    align-items: center;
+                    grid-template-areas:
+                        "title button"
+                        "description description"
+                        "tags tags"
+                        "advantages advantages";
+                    gap: 44px;
+                }
+            }
+
+            &.description {
+                @include minMedia($lg) {
+                    grid-template-columns: 1fr 1fr;
+                    gap: 100px;
+                }
+            }
+        }
+    }
+
+    .section-grid {
+        &__title {
+            grid-area: title;
+        }
+
+        &__description {
+            grid-area: description;
+
+            &--left {
+                .section-description {
+                    p {
+                        color: $shades_white;
+                        font-weight: 400;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            &--right {
+                .section-description {
+                    p {
+                        color: rgba($shades_white, .7);
+                        font-weight: 400;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        &__button {
+            grid-area: button;
+        }
+
+        &__tags {
+            grid-area: tags;
+        }
+
+        &__advantages {
+            grid-area: advantages;
+        }
+    }
+
+    .section-title {
+        color: inherit;
+        margin-bottom: auto;
+        font-family: $font-header;
+        font-weight: 400;
+        font-size: 24px;
+
+        @include minMedia($lg) {
+            font-size: 48px;
+        }
+    }
+
+    .section-description {
+        color: inherit;
+        font-family: $font-stack;
+        font-weight: 400;
+        font-size: 14px;
+
+        p {
+            color: inherit;
+            font-family: inherit;
+            font-weight: inherit;
+            font-size: inherit;
+            margin-bottom: auto;
+        }
+    }
+
+    .section-button {
+        .btn {
+            --bs-btn-color: #{$shades_white};
+            --bs-btn-border-color: #{$shades_white};
+            --bs-btn-active-color: #{$shades_white};
+            --bs-btn-active-border-color: #{$shades_white};
+            --bs-btn-hover-color: #{$shades_white};
+            --bs-btn-hover-border-color: #{$shades_white};
+            --bs-btn-font-size: 14px;
+            --bs-btn-font-family: #{$font-stack};
+            --bs-btn-line-height: 18px;
+            --bs-btn-border-radius: 50px;
+            --bs-btn-padding-x: 24px;
+            --bs-btn-padding-y: 8px;
+
+            text-decoration: none;
+            text-transform: uppercase;
+            width: 100%;
+
+            @include minMedia($lg) {
+                width: auto;
+            }
+        }
+    }
+
+    .section-tags {
+        &__list {
+            margin-top: 12px;
+
+            @include minMedia($lg) {
+                margin-top: auto;
+                padding-left: initial;
+                list-style: none;
+
+                display: flex;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+        }
+
+        &__item {
+            @include minMedia($lg) {
+                border: 1px solid $shades_white;
+                border-radius: 40px;
+                font-family: $font-stack;
+                font-weight: 500;
+                font-size: 16px;
+                padding: 8px 16px;
+                text-wrap: nowrap;
+            }
+
+            & + .section-advantages__item {
+                margin-top: 14px;
+
+                @include minMedia($lg) {
+                    margin-top: auto;
+                }
+            }
+        }
+    }
+
+    .section-advantages {
+        position: relative;
+        z-index: 2;
+
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+
+            border-top-left-radius: 24px;
+            background-color: $shades_white;
+
+            list-style: none;
+            padding-left: initial;
+            margin-bottom: auto;
+
+            @include minMedia($lg) {
+                border-top-left-radius: 80px;
+                padding: 30px 50px 40px 45px;
+            }
+        }
+
+        &__item {
+            position: relative;
+            width: 100%;
+
+            flex: 0 0 50%;
+            max-width: 50%;
+
+            @include minMedia($lg) {
+                flex: 0 0 25%;
+                max-width: 25%;
+
+                border-right: 1px solid rgba(193, 193, 193, .4);
+                border-bottom: 1px solid rgba(193, 193, 193, .4);
+            }
+
+            &:nth-child(4),
+            &:nth-child(8) {
+                @include minMedia($lg) {
+                    border-right: none;
+                }
+            }
+
+            &:nth-child(5),
+            &:nth-child(6),
+            &:nth-child(7),
+            &:nth-child(8) {
+                @include minMedia($lg) {
+                    border-bottom: none;
+                }
+            }
+
+            &--wrapper {
+                padding: 23px;
+                position: relative;
+                text-align: center;
+
+                @include minMedia($lg) {
+                    //outline: 1px solid rgba(#C1C1C1, .4);
+                }
+            }
+
+            &--icon {
+                width: 100%;
+
+                img {
+                    max-width: 48px;
+                }
+            }
+
+            &--name {
+                width: 100%;
+                margin-top: 1rem;
+
+                color: $mutti_darken-2;
+                font-family: $font-stack;
+                font-weight: 500;
+                font-size: 11px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

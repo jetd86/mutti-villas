@@ -1,0 +1,79 @@
+@use "sass:math";
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/colors' as *;
+@use '../../abstracts/mixins' as *;
+
+#content-page {
+    margin-top: 20px;
+    @include minMedia($lg) {
+        margin-top: 0;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    .section-title {
+        font-family: $font-header;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+        margin-bottom: 23px;
+
+        @media (min-width: $lg) {
+            font-size: 28px;
+        }
+    }
+
+    .section-image {
+        margin-bottom: 12px;
+
+        @media (min-width: $lg) {
+            font-size: 35px;
+        }
+    }
+
+    .section-list {
+        margin-bottom: 20px;
+
+        @include minMedia($lg) {
+            margin-bottom: 50px;
+        }
+    }
+
+    .section-item {
+        padding-top: 18px;
+        padding-bottom: 12px;
+
+        & + & {
+            border-top: 1px solid $mutti_lighten-2;
+        }
+
+        &__title {
+            font-family: $font-header;
+            font-weight: 400;
+            font-size: 16px;
+            margin-bottom: 13px;
+            display: flex;
+
+            &:before, &::before {
+                content: '—';
+                margin-right: 20px;
+                font-family: $font-stack;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 18px;
+                color: $mutti_base-2;
+            }
+        }
+
+        &__description {
+            font-family: $font-stack;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 19px;
+            color: rgba($mutti_darken-1, .8);
+            padding-left: 35px;
+        }
+    }
+}

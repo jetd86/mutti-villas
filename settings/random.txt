@@ -1,0 +1,5 @@
+scp -r root@188.120.251.140:/var/www/nikos-instrгment.ru/public_html/ ./
+
+8DcOoZcxALlH
+
+Выполните запрос alter table b_iblock_element_property modify ID bigint not null auto_increment; для увеличения максимального числа записей в таблице b_iblock_element_property

@@ -1,0 +1,81 @@
+services:
+  php:
+    build:
+      context: ./php
+    image: php8.4.8-fpm
+    container_name: bitrix_php8.4.8-fpm
+    restart: always
+    expose:
+      - "9000"                # Открываем порт PHP-FPM для внутренней сети
+    volumes:
+      - ./app:/var/www/html
+      - ./php/php.ini:/usr/local/etc/php/php.ini
+    networks:
+      - docker-network
+    env_file:
+      - .env
+
+  apache:
+    build:
+      context: ./apache2
+    container_name: bitrix_apache2
+    restart: always
+    volumes:
+      - ./app:/var/www/html
+      - ./apache2/bitrix.conf:/etc/apache2/sites-available/bitrix.conf
+    networks:
+      - docker-network
+    env_file:
+      - .env
+
+  nginx:
+    image: nginx:1.27.5
+    container_name: bitrix_nginx
+    restart: always
+    ports:
+      - "8086:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./app:/var/www/html
+    depends_on:
+      - apache
+      - php
+    networks:
+      - docker-network
+
+  db:
+    image: mysql:8.4.5
+    container_name: bitrix_mysql8.4
+    restart: always
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data_bitrix:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    networks:
+      - docker-network
+    env_file:
+      - .env
+
+  # Новый контейнер Redis
+  redis:
+    image: redis:8.2-m01-alpine3.22
+    container_name: bitrix_redis8.2
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+      - redis_data:/data
+      - ./app:/var/www/html
+    command: redis-server /usr/local/etc/redis/redis.conf
+    networks:
+      - docker-network
+
+networks:
+  docker-network:
+    external: true
+
+volumes:
+  db_data_bitrix:
+  redis_data:

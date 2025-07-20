@@ -1,0 +1,194 @@
+@use "sass:math";
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/colors' as *;
+@use '../../abstracts/mixins' as *;
+
+.distance {
+    //margin-top: 42px;
+    margin-bottom: 45px;
+
+    @include minMedia($lg) {
+        //margin-top: 45px;
+        margin-bottom: 65px;
+    }
+}
+
+.section {
+    &-header {
+        font-family: $font-header;
+        font-weight: 400;
+        font-size: 20px;
+
+        margin-bottom: 24px;
+        @include minMedia($lg) {
+            font-size: 40px;
+
+            margin-top: 75px;
+            margin-bottom: 35px - 15;
+        }
+    }
+
+    &-table {
+        width: 100%;
+
+        &__title {
+            font-family: $font-stack;
+            font-weight: 400;
+            font-size: 12px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+            & {
+                display: none;
+                @include minMedia($lg) {
+                    display: table-cell;
+                }
+            }
+        }
+
+        &__wrapper {
+            font-family: $font-stack;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 20px;
+            vertical-align: middle;
+            margin-bottom: 28px - 10 - 10;
+
+            & {
+                display: grid;
+                grid-template-areas:
+                    "object object"
+                    "distance distance"
+                    "duration-car duration-afoot";
+                @include minMedia($lg) {
+                    display: table-row;
+                    margin-bottom: 0;
+                }
+            }
+
+            &.header {
+                @include minMedia($lg) {
+                    border-top: 1px solid rgba($shades_black, .15);
+                }
+            }
+        }
+
+        &__column {
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            @include minMedia($lg) {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-family: $font-stack;
+                color: $mutti_darken-2;
+                min-width: 200px;
+            }
+
+            & {
+                display: block;
+                @include minMedia($lg) {
+                    display: table-cell;
+                }
+            }
+        }
+
+        &__object {
+            grid-area: object;
+
+            &:not(.header) {
+                @media (min-width: $lg) {
+                    padding-left: 38px + 35;
+                }
+            }
+
+            &-wrapper {
+                @include minMedia($lg) {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+            &-icon {
+                height: 35px;
+                width: 35px;
+                margin-right: 38px;
+                border-radius: 17.5px;
+                gap: 10px;
+                padding: 7px;
+                background-color: rgba($shades_white, .7);
+                display: none;
+                @include minMedia($lg) {
+                    display: block;
+                }
+
+                &:not(.header) {
+                    @media (min-width: $lg) {
+                        display: none;
+                    }
+                }
+            }
+
+            &-name {
+                font-family: $font-header;
+                font-weight: 400;
+                font-size: 13px;
+
+                @include minMedia($lg) {
+                    font-size: 14px;
+                    line-height: 22px;
+
+                }
+            }
+        }
+
+        &__distance {
+            grid-area: distance;
+
+            font-family: $font-stack;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 20px;
+            padding-bottom: 14px;
+
+            border-bottom: 1px solid rgba($shades_black, .15);
+
+            @include minMedia($lg) {
+                border-bottom: none;
+                font-size: 20px;
+            }
+        }
+
+        &__duration {
+            font-family: $font-stack;
+            font-weight: 600;
+            font-size: 13px;
+            @include minMedia($lg) {
+                font-size: 16px;
+            }
+
+            &:before, &::before {
+                content: attr(data-label);
+                display: block;
+
+                font-family: $font-stack;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 1;
+                margin-bottom: 5px;
+
+                @include minMedia($lg) {
+                    content: none;
+                }
+            }
+
+            &-car {
+                grid-area: duration-car;
+            }
+
+            &afoot {
+                grid-area: duration-afoot;
+            }
+        }
+    }
+}

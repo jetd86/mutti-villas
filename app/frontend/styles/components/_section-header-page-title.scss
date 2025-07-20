@@ -1,0 +1,54 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+.section-header-page-title {
+    margin-top: 11px;
+    margin-bottom: 24px;
+
+    @media (min-width: $lg) {
+        margin-top: 24px;
+        margin-bottom: 45px;
+    }
+
+    .header-page-title {
+        font-family: $font-header;
+        font-weight: 400;
+        font-size: 24px;
+
+        @media (min-width: $lg) {
+            font-size: 48px;
+        }
+
+        + .header-page-button {
+            display: flex;
+            justify-content: space-between;
+
+            text-align: left;
+            text-transform: uppercase;
+            text-decoration: none;
+
+            --bs-btn-font-weight: 400;
+            --bs-btn-color: #{$mutti_darken-2};
+            --bs-btn-border-color: #{$mutti_darken-2};
+            --bs-btn-active-color: #{$mutti_darken-2};
+            --bs-btn-active-border-color: #{$mutti_darken-2};
+            --bs-btn-hover-color: #{$mutti_darken-2};
+            --bs-btn-hover-border-color: #{$mutti_darken-2};
+            --bs-btn-font-size: 14px;
+            --bs-btn-font-family: #{$font-stack};
+            --bs-btn-line-height: 18px;
+            --bs-btn-border-radius: 50px;
+            --bs-btn-padding-x: 24px;
+            --bs-btn-padding-y: 8px;
+        }
+    }
+
+    .section-header {
+        &-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}

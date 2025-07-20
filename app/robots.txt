@@ -1,0 +1,41 @@
+User-Agent: *
+Allow: /
+# ================= SYSTEM BLOCK =================
+Disallow: /bitrix/
+Allow: /bitrix/js/
+Allow: /bitrix/templates/
+Allow: /bitrix/components/*/templates/
+Disallow: /bitrix/admin/
+Disallow: /bitrix/tools/
+Disallow: /search/
+Disallow: /auth/
+Disallow: /personal/
+Disallow: /*.php$
+# ============== PARAMETERS BLOCK ================
+Disallow: /*?
+Disallow: /*&
+Disallow: /*utm_
+Disallow: /*sessid=
+Disallow: /*backurl
+Disallow: /*bxajaxid=
+Disallow: /*PAGEN_
+Disallow: /*ORDER_BY
+# ============== STATIC RESOURCES ================
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.avif$
+Allow: /*.woff2$
+Allow: /*.woff$
+Allow: /upload/resize_cache/
+# ================== SITEMAP =====================
+Sitemap: https://muttivillas.ru/sitemap.xml
+# ================ YANDEX RULES ==================
+
+User-Agent: Yandex
+Clean-param: utm_source&utm_medium&utm_campaign&bxajaxid&PAGEN_&ORDER_BY /

@@ -1,0 +1,11 @@
+@use '../abstracts/colors' as *;
+
+body {
+  background-color: $mutti_lighten-1;
+}
+
+.page {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}

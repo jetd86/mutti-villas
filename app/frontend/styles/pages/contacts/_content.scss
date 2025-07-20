@@ -1,0 +1,93 @@
+@use "sass:math";
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/colors' as *;
+@use '../../abstracts/mixins' as *;
+
+$addressPaddingBottom: 18px;
+$phonePaddingBottom: 12px;
+$emailPaddingBottom: 26px;
+
+#content-page {
+    color: $mutti_darken-2;
+    font: 500 14px/26px $font-stack;
+
+    margin-top: 16px;
+    margin-bottom: 30px;
+
+    @include minMedia($lg) {
+        font-size: 16px;
+
+        margin-top: 45px;
+        margin-bottom: 67px;
+    }
+
+    * {
+        color: inherit;
+        font: inherit;
+    }
+
+    .content-container {
+        display: grid;
+        gap: 18px;
+
+        @include minMedia($lg) {
+            grid-template-columns: 365px 1fr 1fr 1fr;
+            gap: 70px;
+        }
+    }
+
+    .content-address {
+        font: 400 13px/18px $font-stack;
+
+        @include minMedia($lg) {
+            font-size: 16px;
+        }
+
+        p {
+            margin-bottom: auto;
+        }
+    }
+
+    .content-phone {
+        padding-left: 0;
+        margin-bottom: auto;
+        list-style: none;
+
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+
+        @include minMedia($lg) {
+            gap: 20px;
+        }
+
+        .phone-item {}
+        .phone-link {}
+    }
+
+    .content-email {
+        padding-left: 0;
+        margin-bottom: auto;
+        list-style: none;
+
+        .email-item {}
+        .email-link {}
+    }
+
+    .content-social {
+        padding-left: 0;
+        margin-bottom: auto;
+        list-style: none;
+
+        display: flex;
+        gap: 22px;
+
+        .social-item {
+            font-size: 22px;
+        }
+
+        .social-link {
+            cursor: pointer;
+        }
+    }
+}

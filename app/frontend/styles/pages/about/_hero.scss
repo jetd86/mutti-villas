@@ -1,0 +1,86 @@
+@use "sass:math";
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/colors' as *;
+@use '../../abstracts/mixins' as *;
+
+$actionButton_height: 62px;
+
+.hero {
+    position: relative;
+
+    .section-image {
+        // Пока пусто — можно добавить при необходимости
+    }
+
+    .section-stats {
+        list-style: none;
+        padding-left: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        background-color: $shades_white;
+        position: relative;
+        margin: -40px 38px 0;
+
+        @include minMedia($lg) {
+            grid-template-columns: auto auto auto;
+            flex-flow: row;
+            justify-content: space-between;
+            margin-left: 204px;
+            margin-right: 103px;
+            margin-top: -100px;
+        }
+
+        &__item {
+            padding: 10px 35px 10px 55px;
+
+            @include minMedia($lg) {
+                padding: 38px 65px 60px;
+            }
+
+            &:first-child {
+                padding-top: 28px;
+
+                @include minMedia($lg) {
+                    padding-top: 38px;
+                    padding-bottom: 60px;
+                }
+            }
+
+            &:last-child {
+                padding-bottom: 34px;
+
+                @include minMedia($lg) {
+                    padding-top: 38px;
+                    padding-bottom: 60px;
+                }
+            }
+        }
+
+        &__block {
+            display: block;
+        }
+
+        &__name {
+            color: rgba($mutti_darken-1, 0.7);
+            font-family: $font-stack;
+            font-weight: 300;
+            font-size: 13px;
+
+            @include minMedia($lg) {
+                font-size: 14px;
+            }
+        }
+
+        &__value {
+            color: $mutti_darken-1;
+            font-family: $font-header;
+            font-weight: 300;
+            font-size: 36px;
+            margin-bottom: 7px;
+
+            @include minMedia($lg) {
+                font-size: 48px;
+            }
+        }
+    }
+}

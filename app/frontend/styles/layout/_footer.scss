@@ -1,0 +1,230 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+.footer {
+    color: $shades_white;
+    background-color: $mutti_base;
+    font: 500 14px/18px $font-stack;
+
+    * {
+        color: inherit;
+        font: inherit;
+    }
+
+    .footer-brand > img {
+        max-width: 200px;
+    }
+
+    .footer-container {
+        position: relative;
+
+        &:first-child {
+            padding-top: 42px;
+            padding-bottom: 28px;
+
+            @include minMedia($lg) {
+                padding-top: 62px;
+                padding-bottom: 50px;
+            }
+
+            .footer-row {
+                //@include minMedia($md) {
+                //    gap: 100px;
+                //}
+
+                @include minMedia($lg) {
+                    gap: 150px;
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                @include minMedia($xl) {
+                    gap: 200px;
+                }
+            }
+        }
+
+        &:last-child {
+            padding-top: 28px;
+            padding-bottom: 28px;
+
+            &:before, &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background-color: rgba($shades_white, .2);
+            }
+        }
+    }
+
+    .footer-row {
+        display: grid;
+    }
+
+    .footer-block {
+
+    }
+
+    // Row 1 / Column 1 (Logo)
+    .footer-logo {
+        display: grid;
+        gap: 42px;
+        align-content: space-between;
+        margin-bottom: 30px;
+
+        @include minMedia($lg) {
+            height: 100%;
+            margin-bottom: auto;
+        }
+    }
+
+    .footer-brand {
+        display: block;
+
+        @include minMedia($lg) {
+        }
+    }
+
+    .footer-action {
+        display: block;
+        background-color: transparent;
+        border-radius: 50px;
+        border: 1px solid;
+        width: 100%;
+
+        text-transform: uppercase;
+        text-align: center;
+        padding: 8px;
+
+        @include minMedia($lg) {
+            width: auto;
+        }
+    }
+
+    // Row 1 / Column 2 (Menu)
+    .footer-menu {
+        margin-bottom: 42px;
+
+        @include minMedia($lg) {
+            margin-bottom: auto;
+        }
+    }
+
+    .footer-nav {
+        padding-left: 0;
+        margin-bottom: auto;
+        list-style: none;
+
+        .nav-item {
+            + .nav-item {
+                margin-top: 20px;
+            }
+        }
+
+        .nav-link {
+        }
+    }
+
+    // Row 1 / Column 3 (Contacts)
+    .footer-contacts {
+        display: grid;
+        gap: 28px;
+        align-content: space-between;
+
+        @include minMedia($lg) {
+            height: 100%;
+        }
+
+        .footer-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+
+    .footer-address {
+        font-weight: 400;
+        line-height: 26px;
+
+        p {
+            margin-bottom: auto;
+        }
+    }
+
+    .footer-phone {
+        padding-left: 0;
+        margin-bottom: auto;
+        list-style: none;
+
+        display: flex;
+        justify-content: space-between;
+
+        .phone-item {
+            font-size: 13px;
+            line-height: 26px;
+            text-decoration: underline;
+            text-decoration-style: solid;
+
+            @include minMedia($lg) {
+                font-size: 14px;
+            }
+        }
+
+        .phone-link {
+        }
+    }
+
+    .footer-email {
+        padding-left: 0;
+        margin-bottom: auto;
+        list-style: none;
+
+        .email-item {
+            font-size: 13px;
+            line-height: 26px;
+            text-decoration: underline;
+            text-decoration-style: solid;
+
+            @include minMedia($lg) {
+                font-size: 14px;
+            }
+        }
+
+        .email-link {
+        }
+    }
+
+    .footer-social {
+        padding-left: 0;
+        margin-bottom: auto;
+        list-style: none;
+
+        display: flex;
+        gap: 24px;
+
+        .social-item {
+            font-size: 22px;
+
+            @include minMedia($lg) {
+                font-size: 26px;
+            }
+        }
+
+        .social-link {
+            cursor: pointer;
+        }
+    }
+
+    // Row 2 / Column 1 (Copyright)
+    .footer-copyright {
+        color: rgba($shades_white, .5);
+        text-align: center;
+
+        p {
+            margin-bottom: auto;
+        }
+    }
+}

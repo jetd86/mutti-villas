@@ -1,0 +1,47 @@
+@use 'sass:meta';
+@use "sass:math";
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+#mainModal {
+    color: $mutti_darken-2;
+    font: 400 13px/22px $font-stack;
+
+    * {
+        color: inherit;
+        font: inherit;
+    }
+
+    .modal-header {
+        font: 16px/100% $font-header;
+        border-bottom: none;
+
+        @include minMedia($lg) {
+            font-size: 24px;
+        }
+    }
+
+    .modal-body {
+        h3 {
+            font: 13px/100% $font-header;
+            margin-bottom: 16px;
+
+            @include minMedia($lg) {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+        }
+
+        p {
+            font: 300 13px/100% $font-stack;
+            margin-bottom: 20px;
+
+            @include minMedia($lg) {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+}

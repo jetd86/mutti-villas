@@ -1,0 +1,24 @@
+@use 'sass:meta';
+@use "sass:math";
+
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/colors' as *;
+@use '../../abstracts/mixins' as *;
+
+#content {
+    .container {
+        &:first-child {
+            display: grid;
+            grid-template-columns: 1fr;
+
+            @include minMedia($lg) {
+                grid-template-columns: 16.66666667% 1fr;
+                gap: calc(var(--bs-gutter-x) * .5);
+            }
+        }
+    }
+
+    .content-block {}
+    .content-aside {}
+    .content-page {}
+}

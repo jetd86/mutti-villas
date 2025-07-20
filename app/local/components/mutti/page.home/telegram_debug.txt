@@ -1,0 +1,6 @@
+2025-07-08 05:28:25 | Name: Тест | Phone: +7 901 312 32 13 | Message: 📝 <strong>Новая заявка с сайта dev.muttivillas.com</strong>
+👤 Имя: <strong>Тест</strong>
+📞 Телефон: <strong>+7 901 312 32 13</strong>
+2025-07-08 05:29:07 | Name: Test 2 | Phone: +7 901 367 01 05 | Message: 📝 <strong>Новая заявка с сайта dev.muttivillas.com</strong>
+👤 Имя: <strong>Test 2</strong>
+📞 Телефон: <strong>+7 901 367 01 05</strong>

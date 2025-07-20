@@ -1,0 +1,36 @@
+//@charset "UTF-8";
+//
+//// Локальные шрифты
+//@use 'abstracts/fonts';
+//
+//// переменные, миксины
+//@use 'abstracts/mixins';
+//@use 'abstracts/variables' as *;
+//@use 'abstracts/colors' as *;
+//@use 'abstracts/functions';
+//
+//// normalize, typography
+//@use 'base/typography';
+//
+//// сетка, header/footer
+//@use 'layout/body';
+//@use 'layout/header';
+//@use 'layout/aside';
+//@use 'layout/content';
+//@use 'layout/footer';
+//
+//// кнопки, формы, компоненты bitrix
+//@use "components/section-header-page-title";
+//@use "components/section-header-page";
+//
+//@use 'components/section-about-banner';
+//@use 'components/section-about-advantages';
+//@use 'components/section-about-philosophy';
+//@use 'components/section-about-content';
+//
+//@use 'components/section-contacts-location';
+//
+//// стили отдельных страниц
+//@use 'pages/about';
+//@use 'pages/location';
+//@use 'pages/mutti-guide';

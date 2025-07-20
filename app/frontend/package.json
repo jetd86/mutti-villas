@@ -1,0 +1,31 @@
+{
+  "name": "mutti-frontend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "watch": "vite build --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "bootstrap-icons": "^1.11.3",
+    "chokidar-cli": "^3.0.0",
+    "postcss": "^8.5.3",
+    "postcss-csso": "^6.0.1",
+    "sass": "^1.72.0",
+    "vite": "^6.3.2",
+    "vite-imagetools": "^7.1.0",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-imagemin": "^0.4.0",
+    "vite-plugin-static-copy": "^2.3.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.5",
+    "glightbox": "^3.3.1",
+    "leaflet": "^1.9.4",
+    "libphonenumber-js": "^1.12.8",
+    "modern-normalize": "^3.0.1",
+    "swiper": "^11.2.6"
+  }
+}

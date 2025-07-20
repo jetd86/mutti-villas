@@ -1,0 +1,5 @@
+<?
+
+$sSectionName = "Mutti гид";
+$arDirProperties = [];
+?>

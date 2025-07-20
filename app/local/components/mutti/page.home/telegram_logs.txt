@@ -1,0 +1,9 @@
+2025-07-08 05:31:01 | Name: sdqdadad | Phone: +375 29 312 33 12 | Message: 📝 <strong>Новая заявка с сайта dev.muttivillas.com</strong>
+👤 Имя: <strong>sdqdadad</strong>
+📞 Телефон: <strong>+375 29 312 33 12</strong>
+2025-07-08 07:08:16 | Name: Дмитрий | Phone: +7 999 999 99 99 | Message: 📝 <strong>Новая заявка с сайта dev.muttivillas.com</strong>
+👤 Имя: <strong>Дмитрий</strong>
+📞 Телефон: <strong>+7 999 999 99 99</strong>
+2025-07-10 02:08:45 | Name: Алексей | Phone: +7 927 176 32 22 | Message: 📝 <strong>Новая заявка с сайта dev.muttivillas.com</strong>
+👤 Имя: <strong>Алексей</strong>
+📞 Телефон: <strong>+7 927 176 32 22</strong>
