@@ -1,10 +1,4 @@
 <?php
-
-echo '<pre>';
-print_r($_SERVER);
-echo '</pre>';
-
-
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 
 $APPLICATION->SetTitle("Клубный комплекс вилл на Пхукете");

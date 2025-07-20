@@ -1,7 +1,7 @@
 <?
 if($INCLUDE_FROM_CACHE!='Y')return false;
-$datecreate = '001752921510';
-$dateexpire = '001752925110';
+$datecreate = '001753000077';
+$dateexpire = '001753003677';
 $ser_content = 'a:2:{s:7:"CONTENT";s:0:"";s:4:"VARS";a:4:{s:11:"azure-villa";a:14:{s:2:"ID";s:2:"16";s:4:"SORT";s:3:"100";s:4:"NAME";s:11:"Azure Villa";s:4:"CODE";s:11:"azure-villa";s:7:"PICTURE";a:16:{s:2:"ID";s:2:"79";s:11:"TIMESTAMP_X";s:19:"10.06.2025 09:59:03";s:9:"MODULE_ID";s:6:"iblock";s:6:"HEIGHT";s:3:"875";s:5:"WIDTH";s:4:"1555";s:9:"FILE_SIZE";s:6:"898468";s:12:"CONTENT_TYPE";s:9:"image/png";s:6:"SUBDIR";s:10:"iblock/7a1";s:9:"FILE_NAME";s:36:"ed8a5b8xk8fxkmg7xe0345hfq64re7xi.png";s:13:"ORIGINAL_NAME";s:22:"Static_Villa_Azure.png";s:11:"DESCRIPTION";s:0:"";s:10:"HANDLER_ID";N;s:11:"EXTERNAL_ID";s:32:"850d4db2a544fc81fb7170d0905fd8a0";s:19:"VERSION_ORIGINAL_ID";N;s:4:"META";s:0:"";s:3:"SRC";s:55:"/upload/iblock/7a1/ed8a5b8xk8fxkmg7xe0345hfq64re7xi.png";}s:11:"DESCRIPTION";s:1165:"<p>
 	Погрузитесь в элитный отдых в трехуровневой Azure Villa — одной из лучших вилл на Пхукете. Просторные террасы, приватный бассейн с системой очистки воды и зона барбекю создают идеальные условия для жизни и приема гостей. Отдельный гостевой дом с санузлом и кухней подойдет для друзей или персонала, а из хозяйской спальни открываются панорамные виды на море и тропические холмы. Современный дизайн с smart-технологиями, премиальная отделка и уединенная локация в окружении природы — ваш ключ к роскошной жизни.
 </p>

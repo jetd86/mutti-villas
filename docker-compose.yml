@@ -50,6 +50,7 @@ services:
     ports:
       - "3307:3306"
     volumes:
+      - ./mutti.sql:/docker-entrypoint-initdb.d/mutti.sql
       - db_data_bitrix:/var/lib/mysql
       - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     networks:

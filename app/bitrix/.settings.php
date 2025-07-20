@@ -67,7 +67,7 @@ return array (
       array (
         'className' => '\\Bitrix\\Main\\DB\\MysqliConnection',
         'host' => 'db',
-        'database' => 'kordaseq_docker_db',
+        'database' => 'bitrix_docker_db',
         'login' => 'root',
         'password' => 'aFf2421246TGaU#3sdf555%12@348',
         'options' => 2,
