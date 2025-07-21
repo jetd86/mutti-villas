@@ -58,6 +58,7 @@ Asset::getInstance()->addCss('https://cdn.jsdelivr.net/npm/glightbox/dist/css/gl
     $APPLICATION->ShowHead(); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
 </head>
 <body class="page"><?
 if ($request->get('debug') === 'Y') { ?>
