@@ -1,7 +1,7 @@
 <?
 if($INCLUDE_FROM_CACHE!='Y')return false;
-$datecreate = '001753049622';
-$dateexpire = '001753053222';
+$datecreate = '001753107028';
+$dateexpire = '001753110628';
 $ser_content = 'a:2:{s:7:"CONTENT";s:0:"";s:4:"VARS";a:1:{s:1:"-";a:110:{s:29:"about_info_description_button";s:30:"Связаться с нами";s:39:"about_info_description_button_messenger";s:8:"whatsapp";s:44:"about_info_description_button_messenger_text";s:26:"Здравствуйте, ";s:21:"about_stat_property_1";s:64:"Лет в строительстве и девелопменте";s:27:"about_stat_property_1_value";s:3:"15+";s:21:"about_stat_property_2";s:59:"Сотрудников работает в компании";s:27:"about_stat_property_2_value";s:4:"200+";s:21:"about_stat_property_3";s:82:"Проектов реализовано на территории Тайланда";s:27:"about_stat_property_3_value";s:3:"20+";s:16:"contact_channels";s:57:"a:3:{i:0;s:5:"email";i:1;s:5:"phone";i:2;s:8:"whatsapp";}";s:13:"contact_email";s:0:"";s:5:"email";s:20:"salesmutti@gmail.com";s:7:"enabled";s:1:"N";s:14:"global_address";s:71:"Soi Sai Namyen, Chalong, Mueang Phuket District, Phuket 83130, Thailand";s:12:"global_email";s:21:"salesmutti@gmail.com ";s:20:"global_field_site_cn";s:0:"";s:20:"global_field_site_en";s:23:"https://muttivillas.com";s:20:"global_field_site_ru";s:22:"https://muttivillas.ru";s:29:"global_field_telegram_chat_id";s:14:"-1002487677323";s:35:"global_field_telegram_chat_id_admin";s:11:"-4660058755";s:29:"global_field_telegram_message";s:138:"📝 <strong>Новая заявка с сайта %s</strong>
 👤 Имя: <strong>%s</strong>
 📞 Телефон: <strong>%s</strong>";s:35:"global_field_telegram_message_admin";s:110:"<strong>Административное сообщение с сайта %s</strong>

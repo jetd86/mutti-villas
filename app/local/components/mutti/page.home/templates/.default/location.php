@@ -46,7 +46,7 @@ $arSectionResult = $arResult['ITEMS'][$component->getTemplatePage()];
                     } ?>
                 </div>
             </div>
-            <div class="section-col col-12 col-lg-6">
+            <div class="section-col col-12 col-lg-6 section-map-col">
                 <div class="section-block section-map"><?
                     foreach (array_values($arSectionResult['ITEMS']) as $key => $item) { ?>
                         <a class="section-map__link" href="javascript:void(0)" data-item="<?=$key?>">
