@@ -13,7 +13,11 @@
 ### Для запуска npm node должна быть установлена локально
 
 ### Запуск генерации картинок  в /local/assets/assets/images/generated/
-- docker exec bitrix_php8.4.8-fpm php /var/www/html/local/tools/sync_images.php  
+   - **docker exec bitrix_php8.4.8-fpm php /var/www/html/local/tools/sync_images.php**
+
+### Node.js
+  - Ставится отдельным контейнером и запускаются команды npm install и npm run watch
+  - Пример запуска команд **docker exec bitrix_node22 npm install**
 
 ### Пересоздать пароль и пользователя и заново обновить базу данных
   - docker compose down -v

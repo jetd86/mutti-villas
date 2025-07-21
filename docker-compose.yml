@@ -6,7 +6,7 @@ services:
     container_name: bitrix_php8.4.8-fpm
     restart: always
     expose:
-      - "9000"                # Открываем порт PHP-FPM для внутренней сети
+      - "9000"
     volumes:
       - ./app:/var/www/html
       - ./php/php.ini:/usr/local/etc/php/php.ini
@@ -58,7 +58,6 @@ services:
     env_file:
       - .env
 
-  # Новый контейнер Redis
   redis:
     image: redis:8.2-m01-alpine3.22
     container_name: bitrix_redis8.2
@@ -72,6 +71,24 @@ services:
     command: redis-server /usr/local/etc/redis/redis.conf
     networks:
       - docker-network
+
+  node:
+    image: node:22-slim
+    container_name: bitrix_node22
+    restart: always
+    working_dir: /var/www/html/frontend/
+    volumes:
+      - ./app:/var/www/html/
+    ports:
+      - "3000:3000"
+    command: ["sh", "-c", "npm install && npm run watch"]
+    networks:
+      - docker-network
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - redis
 
 networks:
   docker-network:

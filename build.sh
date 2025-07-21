@@ -32,7 +32,7 @@ docker compose up -d
 chown -R www-data:www-data ./app
 
 #если не стоит композер, то ставим
-command -v composer >/dev/null 2>&1 || (curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer)
+#command -v composer >/dev/null 2>&1 || (curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer)
 
 #если нет vendor, обновляем composer
 [ -d ./app/vendor ] || composer update -d ./app/
