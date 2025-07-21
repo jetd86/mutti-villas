@@ -8,21 +8,13 @@ import './main.scss'
 import bgHome1xLq from '@images/bg-home.png?w=10&blur=50&as=src';
 import bgHome1xHq from '@images/bg-home.png?w=768&format=webp&as=src';
 import bgHome2xHq from '@images/bg-home.png?w=1536&format=webp&as=src';
-import bgHome3xHq from '@images/bg-home.png?w=2304&format=webp&as=src';
-import bgHome4xHq from '@images/bg-home.png?w=3072&format=webp&as=src';
 import bgImage1x from '@images/bg-homepage-image.png?w=768&format=webp&as=src';
 import bgImage2x from '@images/bg-homepage-image.png?w=1536&format=webp&as=src';
-import bgImage3x from '@images/bg-homepage-image.png?w=2304&format=webp&as=src';
-import bgImage4x from '@images/bg-homepage-image.png?w=3072&format=webp&as=src';
 import bgLocation1x from '@images/bg-homepage-location.png?w=768&format=webp&as=src';
 import bgLocation2x from '@images/bg-homepage-location.png?w=1536&format=webp&as=src';
-import bgLocation3x from '@images/bg-homepage-location.png?w=2304&format=webp&as=src';
-import bgLocation4x from '@images/bg-homepage-location.png?w=3072&format=webp&as=src';
 import bgLocationMarker from '@images/bg-homepage-location-marker.svg?w=768&format=webp&as=src';
 import bgLocationMd1x from '@images/bg-homepage-location-md.png?w=768&format=webp&as=src';
 import bgLocationMd2x from '@images/bg-homepage-location-md.png?w=1536&format=webp&as=src';
-import bgLocationMd3x from '@images/bg-homepage-location-md.png?w=2304&format=webp&as=src';
-import bgLocationMd4x from '@images/bg-homepage-location-md.png?w=3072&format=webp&as=src';
 import bgMap from '@images/contract-section-map.svg?as=src';
 
 console.log('DEBUG 1')
@@ -30,51 +22,39 @@ console.log('DEBUG 1')
 document.documentElement.style.setProperty('--bg-hero', `url(${bgHome1xLq})`);
 document.documentElement.style.setProperty('--bg-image-1x', `url(${bgImage1x})`);
 document.documentElement.style.setProperty('--bg-image-2x', `url(${bgImage2x})`);
-document.documentElement.style.setProperty('--bg-image-3x', `url(${bgImage3x})`);
-document.documentElement.style.setProperty('--bg-image-4x', `url(${bgImage4x})`);
 document.documentElement.style.setProperty('--bg-location-marker', `url(${bgLocationMarker})`);
 document.documentElement.style.setProperty('--bg-location-1x', `url(${bgLocation1x})`);
 document.documentElement.style.setProperty('--bg-location-2x', `url(${bgLocation2x})`);
-document.documentElement.style.setProperty('--bg-location-3x', `url(${bgLocation3x})`);
-document.documentElement.style.setProperty('--bg-location-4x', `url(${bgLocation4x})`);
 document.documentElement.style.setProperty('--bg-location-md-1x', `url(${bgLocationMd1x})`);
 document.documentElement.style.setProperty('--bg-location-md-2x', `url(${bgLocationMd2x})`);
-document.documentElement.style.setProperty('--bg-location-md-3x', `url(${bgLocationMd3x})`);
-document.documentElement.style.setProperty('--bg-location-md-4x', `url(${bgLocationMd4x})`);
 
+// инициализация — можно глобально, или лучше: внутри DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
     headerScrollComponent('navbarMain');
     headerScrollLogoComponent();
 
+    // Блок: hero
     const heroEl = document.querySelector('.hero');
     if (heroEl) {
-        const dpr = window.devicePixelRatio;
-        let src;
-        if (dpr <= 1) {
-            src = bgHome1xHq;
-        } else if (dpr <= 2) {
-            src = bgHome2xHq;
-        } else if (dpr <= 3) {
-            src = bgHome3xHq;
-        } else {
-            src = bgHome4xHq;
-        }
         const img = new Image();
-        img.src = src;
+        img.src = window.devicePixelRatio > 1 ? bgHome2xHq : bgHome1xHq;
         img.onload = () => {
             document.documentElement.style.setProperty('--bg-hero', `url(${img.src})`);
             heroEl.classList.add('hero-loaded');
         };
     }
 
+    // Блок: о нас
     initSectionBannerVideo();
 
+    // Блок: Локация, иконки
     const listItems = document.querySelectorAll('.section-list__item');
     const mapLinks = document.querySelectorAll('.section-map__link');
     document.querySelectorAll('[data-icon]').forEach(el => {
         const url = el.dataset.icon
         if (url) el.style.backgroundImage = `url(${url})`
     })
+    // Наведение на список — активирует карту
     listItems.forEach(item => {
         const index = item.getAttribute('data-item');
 
@@ -89,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Наведение на карту — активирует список
     mapLinks.forEach(link => {
         const index = link.getAttribute('data-item');
 
@@ -103,11 +84,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // const phoneInput = document.querySelector('#floatingInputPhone');
+    // if (phoneInput) {
+    //     Inputmask({
+    //         mask: '+9{1,3} 999 999-9999',
+    //         placeholder: '',
+    //         showMaskOnHover: false,
+    //         showMaskOnFocus: true
+    //     }).mask(phoneInput);
+    // }
     initPhoneValidation();
     initHomeFeedbackForm();
     sliderHomeVillasInit();
     sliderHomeConstructionInit();
 
+    // Maps
     const mapBlock = document.getElementById('map');
     if (mapBlock) {
         const img = document.createElement('img')
