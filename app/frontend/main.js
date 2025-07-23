@@ -41,45 +41,12 @@ import bgImageLarge2x from '@images/bg-homepage-image.png?w=3840&format=webp&as=
 import bgImageLarge3x from '@images/bg-homepage-image.png?w=5760&format=webp&as=src';
 import bgImageLarge4x from '@images/bg-homepage-image.png?w=7680&format=webp&as=src';
 
-import bgLocationMobile1x from '@images/bg-homepage-location.png?w=375&format=webp&as=src';
-import bgLocationMobile2x from '@images/bg-homepage-location.png?w=750&format=webp&as=src';
-import bgLocationMobile3x from '@images/bg-homepage-location.png?w=1125&format=webp&as=src';
-import bgLocationMobile4x from '@images/bg-homepage-location.png?w=1500&format=webp&as=src';
-import bgLocationTablet1x from '@images/bg-homepage-location.png?w=768&format=webp&as=src';
-import bgLocationTablet2x from '@images/bg-homepage-location.png?w=1536&format=webp&as=src';
-import bgLocationTablet3x from '@images/bg-homepage-location.png?w=2304&format=webp&as=src';
-import bgLocationTablet4x from '@images/bg-homepage-location.png?w=3072&format=webp&as=src';
-import bgLocationDesktop1x from '@images/bg-homepage-location.png?w=1024&format=webp&as=src';
-import bgLocationDesktop2x from '@images/bg-homepage-location.png?w=2048&format=webp&as=src';
-import bgLocationDesktop3x from '@images/bg-homepage-location.png?w=3072&format=webp&as=src';
-import bgLocationDesktop4x from '@images/bg-homepage-location.png?w=4096&format=webp&as=src';
-import bgLocationLarge1x from '@images/bg-homepage-location.png?w=1920&format=webp&as=src';
-import bgLocationLarge2x from '@images/bg-homepage-location.png?w=3840&format=webp&as=src';
-import bgLocationLarge3x from '@images/bg-homepage-location.png?w=5760&format=webp&as=src';
-import bgLocationLarge4x from '@images/bg-homepage-location.png?w=7680&format=webp&as=src';
-
+import bgLocation1x from '@images/bg-homepage-location.png?w=768&format=webp&as=src';
+import bgLocation2x from '@images/bg-homepage-location.png?w=1536&format=webp&as=src';
 import bgLocationMarker from '@images/bg-homepage-location-marker.svg?w=768&format=webp&as=src';
-
-import bgLocationMdMobile1x from '@images/bg-homepage-location-md.png?w=375&format=webp&as=src';
-import bgLocationMdMobile2x from '@images/bg-homepage-location-md.png?w=750&format=webp&as=src';
-import bgLocationMdMobile3x from '@images/bg-homepage-location-md.png?w=1125&format=webp&as=src';
-import bgLocationMdMobile4x from '@images/bg-homepage-location-md.png?w=1500&format=webp&as=src';
-import bgLocationMdTablet1x from '@images/bg-homepage-location-md.png?w=768&format=webp&as=src';
-import bgLocationMdTablet2x from '@images/bg-homepage-location-md.png?w=1536&format=webp&as=src';
-import bgLocationMdTablet3x from '@images/bg-homepage-location-md.png?w=2304&format=webp&as=src';
-import bgLocationMdTablet4x from '@images/bg-homepage-location-md.png?w=3072&format=webp&as=src';
-import bgLocationMdDesktop1x from '@images/bg-homepage-location-md.png?w=1024&format=webp&as=src';
-import bgLocationMdDesktop2x from '@images/bg-homepage-location-md.png?w=2048&format=webp&as=src';
-import bgLocationMdDesktop3x from '@images/bg-homepage-location-md.png?w=3072&format=webp&as=src';
-import bgLocationMdDesktop4x from '@images/bg-homepage-location-md.png?w=4096&format=webp&as=src';
-import bgLocationMdLarge1x from '@images/bg-homepage-location-md.png?w=1920&format=webp&as=src';
-import bgLocationMdLarge2x from '@images/bg-homepage-location-md.png?w=3840&format=webp&as=src';
-import bgLocationMdLarge3x from '@images/bg-homepage-location-md.png?w=5760&format=webp&as=src';
-import bgLocationMdLarge4x from '@images/bg-homepage-location-md.png?w=7680&format=webp&as=src';
-
+import bgLocationMd1x from '@images/bg-homepage-location-md.png?w=768&format=webp&as=src';
+import bgLocationMd2x from '@images/bg-homepage-location-md.png?w=1536&format=webp&as=src';
 import bgMap from '@images/contract-section-map.svg?as=src';
-
-console.log('DEBUG 1')
 
 document.documentElement.style.setProperty('--bg-hero', `url(${bgHome1xLq})`);
 document.documentElement.style.setProperty('--bg-image-mobile-1x', `url(${bgImageMobile1x})`);
@@ -99,38 +66,10 @@ document.documentElement.style.setProperty('--bg-image-large-2x', `url(${bgImage
 document.documentElement.style.setProperty('--bg-image-large-3x', `url(${bgImageLarge3x})`);
 document.documentElement.style.setProperty('--bg-image-large-4x', `url(${bgImageLarge4x})`);
 document.documentElement.style.setProperty('--bg-location-marker', `url(${bgLocationMarker})`);
-document.documentElement.style.setProperty('--bg-location-mobile-1x', `url(${bgLocationMobile1x})`);
-document.documentElement.style.setProperty('--bg-location-mobile-2x', `url(${bgLocationMobile2x})`);
-document.documentElement.style.setProperty('--bg-location-mobile-3x', `url(${bgLocationMobile3x})`);
-document.documentElement.style.setProperty('--bg-location-mobile-4x', `url(${bgLocationMobile4x})`);
-document.documentElement.style.setProperty('--bg-location-tablet-1x', `url(${bgLocationTablet1x})`);
-document.documentElement.style.setProperty('--bg-location-tablet-2x', `url(${bgLocationTablet2x})`);
-document.documentElement.style.setProperty('--bg-location-tablet-3x', `url(${bgLocationTablet3x})`);
-document.documentElement.style.setProperty('--bg-location-tablet-4x', `url(${bgLocationTablet4x})`);
-document.documentElement.style.setProperty('--bg-location-desktop-1x', `url(${bgLocationDesktop1x})`);
-document.documentElement.style.setProperty('--bg-location-desktop-2x', `url(${bgLocationDesktop2x})`);
-document.documentElement.style.setProperty('--bg-location-desktop-3x', `url(${bgLocationDesktop3x})`);
-document.documentElement.style.setProperty('--bg-location-desktop-4x', `url(${bgLocationDesktop4x})`);
-document.documentElement.style.setProperty('--bg-location-large-1x', `url(${bgLocationLarge1x})`);
-document.documentElement.style.setProperty('--bg-location-large-2x', `url(${bgLocationLarge2x})`);
-document.documentElement.style.setProperty('--bg-location-large-3x', `url(${bgLocationLarge3x})`);
-document.documentElement.style.setProperty('--bg-location-large-4x', `url(${bgLocationLarge4x})`);
-document.documentElement.style.setProperty('--bg-location-md-mobile-1x', `url(${bgLocationMdMobile1x})`);
-document.documentElement.style.setProperty('--bg-location-md-mobile-2x', `url(${bgLocationMdMobile2x})`);
-document.documentElement.style.setProperty('--bg-location-md-mobile-3x', `url(${bgLocationMdMobile3x})`);
-document.documentElement.style.setProperty('--bg-location-md-mobile-4x', `url(${bgLocationMdMobile4x})`);
-document.documentElement.style.setProperty('--bg-location-md-tablet-1x', `url(${bgLocationMdTablet1x})`);
-document.documentElement.style.setProperty('--bg-location-md-tablet-2x', `url(${bgLocationMdTablet2x})`);
-document.documentElement.style.setProperty('--bg-location-md-tablet-3x', `url(${bgLocationMdTablet3x})`);
-document.documentElement.style.setProperty('--bg-location-md-tablet-4x', `url(${bgLocationMdTablet4x})`);
-document.documentElement.style.setProperty('--bg-location-md-desktop-1x', `url(${bgLocationMdDesktop1x})`);
-document.documentElement.style.setProperty('--bg-location-md-desktop-2x', `url(${bgLocationMdDesktop2x})`);
-document.documentElement.style.setProperty('--bg-location-md-desktop-3x', `url(${bgLocationMdDesktop3x})`);
-document.documentElement.style.setProperty('--bg-location-md-desktop-4x', `url(${bgLocationMdDesktop4x})`);
-document.documentElement.style.setProperty('--bg-location-md-large-1x', `url(${bgLocationMdLarge1x})`);
-document.documentElement.style.setProperty('--bg-location-md-large-2x', `url(${bgLocationMdLarge2x})`);
-document.documentElement.style.setProperty('--bg-location-md-large-3x', `url(${bgLocationMdLarge3x})`);
-document.documentElement.style.setProperty('--bg-location-md-large-4x', `url(${bgLocationMdLarge4x})`);
+document.documentElement.style.setProperty('--bg-location-1x', `url(${bgLocation1x})`);
+document.documentElement.style.setProperty('--bg-location-2x', `url(${bgLocation2x})`);
+document.documentElement.style.setProperty('--bg-location-md-1x', `url(${bgLocationMd1x})`);
+document.documentElement.style.setProperty('--bg-location-md-2x', `url(${bgLocationMd2x})`);
 
 document.addEventListener('DOMContentLoaded', () => {
     headerScrollComponent('navbarMain');

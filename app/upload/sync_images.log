@@ -132,3 +132,45 @@
 [2025-07-20 08:42:51] Created WebP: /var/www/html/local/assets/assets/images/generated/home/x035z398078gbkjofmr319bbb0xxu7u4.webp
 [2025-07-20 08:42:51] Iblock 'home' (ID 6): 6 images processed.
 [2025-07-20 08:42:51] ===== Sync finished =====
+[2025-07-23 16:39:15] ===== Sync started for iblock type 'content' =====
+[2025-07-23 16:39:15] Iblock 'infrastructure' (ID 1): 0 images processed.
+[2025-07-23 16:39:15] Iblock 'location' (ID 2): 0 images processed.
+[2025-07-23 16:39:15] Iblock 'villas' (ID 3): 0 images processed.
+[2025-07-23 16:39:15] Copied: /upload/iblock/3c4/odb3w6plw5powzxy6j4ghjkicgf6gzey.jpg → /var/www/html/local/assets/assets/images/generated/muttiGuide/odb3w6plw5powzxy6j4ghjkicgf6gzey.jpg
+[2025-07-23 16:39:16] Created WebP: /var/www/html/local/assets/assets/images/generated/muttiGuide/odb3w6plw5powzxy6j4ghjkicgf6gzey.webp
+[2025-07-23 16:39:16] Copied: /upload/iblock/390/so0rzk744agdt9dij3nqcmyldccm3fj2.jpg → /var/www/html/local/assets/assets/images/generated/muttiGuide/so0rzk744agdt9dij3nqcmyldccm3fj2.jpg
+[2025-07-23 16:39:16] Created WebP: /var/www/html/local/assets/assets/images/generated/muttiGuide/so0rzk744agdt9dij3nqcmyldccm3fj2.webp
+[2025-07-23 16:39:16] Copied: /upload/iblock/35c/u4j3135zij76qj1qbee46tovdga7ig2z.jpg → /var/www/html/local/assets/assets/images/generated/muttiGuide/u4j3135zij76qj1qbee46tovdga7ig2z.jpg
+[2025-07-23 16:39:16] Created WebP: /var/www/html/local/assets/assets/images/generated/muttiGuide/u4j3135zij76qj1qbee46tovdga7ig2z.webp
+[2025-07-23 16:39:16] Copied: /upload/iblock/e12/1lphso30w0o0wkt2s86lyhuhf9rklq1l.jpg → /var/www/html/local/assets/assets/images/generated/muttiGuide/1lphso30w0o0wkt2s86lyhuhf9rklq1l.jpg
+[2025-07-23 16:39:18] Created WebP: /var/www/html/local/assets/assets/images/generated/muttiGuide/1lphso30w0o0wkt2s86lyhuhf9rklq1l.webp
+[2025-07-23 16:39:18] Copied: /upload/iblock/bec/bpkasp5fp15uwuat52w4mhx0szx48mdv.jpg → /var/www/html/local/assets/assets/images/generated/muttiGuide/bpkasp5fp15uwuat52w4mhx0szx48mdv.jpg
+[2025-07-23 16:39:18] Created WebP: /var/www/html/local/assets/assets/images/generated/muttiGuide/bpkasp5fp15uwuat52w4mhx0szx48mdv.webp
+[2025-07-23 16:39:18] Copied: /upload/iblock/b88/w11z0z78wi3ipk9edgnhktu13ivtewwv.jpg → /var/www/html/local/assets/assets/images/generated/muttiGuide/w11z0z78wi3ipk9edgnhktu13ivtewwv.jpg
+[2025-07-23 16:39:18] Created WebP: /var/www/html/local/assets/assets/images/generated/muttiGuide/w11z0z78wi3ipk9edgnhktu13ivtewwv.webp
+[2025-07-23 16:39:18] Copied: /upload/iblock/1bc/3f0y4y620i499rbktc3i97iqg61dsfxe.jpg → /var/www/html/local/assets/assets/images/generated/muttiGuide/3f0y4y620i499rbktc3i97iqg61dsfxe.jpg
+[2025-07-23 16:39:19] Created WebP: /var/www/html/local/assets/assets/images/generated/muttiGuide/3f0y4y620i499rbktc3i97iqg61dsfxe.webp
+[2025-07-23 16:39:19] Copied: /upload/iblock/d8c/5anp5l5lvgfosbcnypz9fk4qgfyen3ye.jpg → /var/www/html/local/assets/assets/images/generated/muttiGuide/5anp5l5lvgfosbcnypz9fk4qgfyen3ye.jpg
+[2025-07-23 16:39:19] Created WebP: /var/www/html/local/assets/assets/images/generated/muttiGuide/5anp5l5lvgfosbcnypz9fk4qgfyen3ye.webp
+[2025-07-23 16:39:19] Copied: /upload/iblock/96f/mfbzhm86pvd70j3m0a70cm089hppv0kx.jpg → /var/www/html/local/assets/assets/images/generated/muttiGuide/mfbzhm86pvd70j3m0a70cm089hppv0kx.jpg
+[2025-07-23 16:39:19] Created WebP: /var/www/html/local/assets/assets/images/generated/muttiGuide/mfbzhm86pvd70j3m0a70cm089hppv0kx.webp
+[2025-07-23 16:39:19] Copied: /upload/iblock/0d0/kc4ar83qvmqsnkitfx3c6nujtad0mbru.jpg → /var/www/html/local/assets/assets/images/generated/muttiGuide/kc4ar83qvmqsnkitfx3c6nujtad0mbru.jpg
+[2025-07-23 16:39:19] Created WebP: /var/www/html/local/assets/assets/images/generated/muttiGuide/kc4ar83qvmqsnkitfx3c6nujtad0mbru.webp
+[2025-07-23 16:39:19] Copied: /upload/iblock/6d9/vl3t0m241u3eepc5wbciofggl0qstuvw.jpg → /var/www/html/local/assets/assets/images/generated/muttiGuide/vl3t0m241u3eepc5wbciofggl0qstuvw.jpg
+[2025-07-23 16:39:20] Created WebP: /var/www/html/local/assets/assets/images/generated/muttiGuide/vl3t0m241u3eepc5wbciofggl0qstuvw.webp
+[2025-07-23 16:39:20] Iblock 'muttiGuide' (ID 4): 12 images processed.
+[2025-07-23 16:39:20] Iblock 'about' (ID 5): 0 images processed.
+[2025-07-23 16:39:20] Copied: /upload/iblock/260/vov5ga5x47p5tm47zghhlbjjyjmz9n89.png → /var/www/html/local/assets/assets/images/generated/home/vov5ga5x47p5tm47zghhlbjjyjmz9n89.png
+[2025-07-23 16:39:20] Created WebP: /var/www/html/local/assets/assets/images/generated/home/vov5ga5x47p5tm47zghhlbjjyjmz9n89.webp
+[2025-07-23 16:39:20] Copied: /upload/iblock/cc3/es0fgh5222xz500uicv1ms9wwg13e5py.png → /var/www/html/local/assets/assets/images/generated/home/es0fgh5222xz500uicv1ms9wwg13e5py.png
+[2025-07-23 16:39:20] Created WebP: /var/www/html/local/assets/assets/images/generated/home/es0fgh5222xz500uicv1ms9wwg13e5py.webp
+[2025-07-23 16:39:20] Copied: /upload/iblock/84c/mg9xjfr8q7pvqjnmb8lezy9iqbau5ty6.png → /var/www/html/local/assets/assets/images/generated/home/mg9xjfr8q7pvqjnmb8lezy9iqbau5ty6.png
+[2025-07-23 16:39:20] Created WebP: /var/www/html/local/assets/assets/images/generated/home/mg9xjfr8q7pvqjnmb8lezy9iqbau5ty6.webp
+[2025-07-23 16:39:20] Copied: /upload/iblock/d3f/rqx2fo429fmrhbye3ufwksli8dlvrjx7.png → /var/www/html/local/assets/assets/images/generated/home/rqx2fo429fmrhbye3ufwksli8dlvrjx7.png
+[2025-07-23 16:39:20] Created WebP: /var/www/html/local/assets/assets/images/generated/home/rqx2fo429fmrhbye3ufwksli8dlvrjx7.webp
+[2025-07-23 16:39:20] Copied: /upload/iblock/c06/6p2knf3nte9dxzjk1pkz0bkmhzgkkl7b.png → /var/www/html/local/assets/assets/images/generated/home/6p2knf3nte9dxzjk1pkz0bkmhzgkkl7b.png
+[2025-07-23 16:39:20] Created WebP: /var/www/html/local/assets/assets/images/generated/home/6p2knf3nte9dxzjk1pkz0bkmhzgkkl7b.webp
+[2025-07-23 16:39:20] Copied: /upload/iblock/74e/x035z398078gbkjofmr319bbb0xxu7u4.png → /var/www/html/local/assets/assets/images/generated/home/x035z398078gbkjofmr319bbb0xxu7u4.png
+[2025-07-23 16:39:20] Created WebP: /var/www/html/local/assets/assets/images/generated/home/x035z398078gbkjofmr319bbb0xxu7u4.webp
+[2025-07-23 16:39:20] Iblock 'home' (ID 6): 6 images processed.
+[2025-07-23 16:39:20] ===== Sync finished =====
