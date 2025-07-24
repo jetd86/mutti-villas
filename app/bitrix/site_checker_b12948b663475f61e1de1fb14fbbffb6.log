@@ -1,181 +1,226 @@
-2025-Jul-19 10:19:47 Наличие необходимых модулей php (check_php_modules): Ok
+2025-Jul-23 23:18:04 Наличие необходимых модулей php (check_php_modules): Ok
 Все необходимые модули установлены
-2025-Jul-19 10:19:47 Обязательные параметры PHP (check_php_settings): Ok
+2025-Jul-23 23:18:04 Обязательные параметры PHP (check_php_settings): Ok
 Настройки правильные
-2025-Jul-19 10:19:47 Модули веб-сервера (check_security): Ok
+2025-Jul-23 23:18:05 Модули веб-сервера (check_security): Ok
 Конфликтов не выявлено
-2025-Jul-19 10:19:47 Значения переменных сервера (check_server_vars): Ok
+2025-Jul-23 23:18:05 Значения переменных сервера (check_server_vars): Ok
 Корректные
-2025-Jul-19 10:19:47 Сохранение сессии (check_session): Ok
+2025-Jul-23 23:18:05 Сохранение сессии (check_session): Ok
 50% done
-2025-Jul-19 10:19:47 Сохранение сессии (check_session): Ok
+2025-Jul-23 23:18:05 Сохранение сессии (check_session): Ok
 Успешно
-2025-Jul-19 10:19:47 Параметры настройки UTF (mbstring и константа BX_UTF) (check_mbstring): Ok
+2025-Jul-23 23:18:05 Параметры настройки UTF (mbstring и константа BX_UTF) (check_mbstring): Ok
 Правильные. Сайт работает в UTF кодировке
-2025-Jul-19 10:19:47 Служебные скрипты в корне сайта (check_install_scripts): Ok
+2025-Jul-23 23:18:05 Служебные скрипты в корне сайта (check_install_scripts): Ok
 Отсутствуют
-2025-Jul-19 10:19:47 Работа с сокетами (check_socket): Fail
-Connection to localhost:8086	Fail
-Socket error [111]: Connection refused
+2025-Jul-23 23:18:05 Работа с сокетами (check_socket): Ok
+Connection to dev.muttivillas.com:80	Success
 
-Ошибка! Не работает
-2025-Jul-19 10:19:47 Выполнение агентов на cron (check_bx_crontab): Fail
+Успешно
+2025-Jul-23 23:18:05 Выполнение агентов на cron (check_bx_crontab): Fail
 Ошибка! Не настроен запуск cron_events.php на cron, последний агент отработал больше суток назад.
-2025-Jul-19 10:19:47 Лишний вывод в файлах конфигурации (check_dbconn): Warning
-Замечание. Не удалось проверить из-за ошибки в работе с сокетами
-2025-Jul-19 10:19:47 Сохранение сессии без UserAgent (check_session_ua): Warning
-Замечание. Не удалось проверить из-за ошибки в работе с сокетами
-2025-Jul-19 10:19:47 Настройки сайтов (check_sites): Ok
+2025-Jul-23 23:18:05 Лишний вывод в файлах конфигурации (check_dbconn): Ok
+Connection to dev.muttivillas.com:80	Success
+
+Успешно
+2025-Jul-23 23:18:05 Сохранение сессии без UserAgent (check_session_ua): Ok
+50% done
+Connection to dev.muttivillas.com:80	Success
+
+2025-Jul-23 23:18:05 Сохранение сессии без UserAgent (check_session_ua): Ok
+Connection to dev.muttivillas.com:80	Success
+
+Успешно
+2025-Jul-23 23:18:05 Настройки сайтов (check_sites): Ok
 Правильные
-2025-Jul-19 10:19:47 Размер стека и pcre.recursion_limit (check_pcre_recursion): Warning
-Замечание. Не удалось проверить из-за ошибки в работе с сокетами
-2025-Jul-19 10:19:47 Загрузка файла (check_upload): Warning
-Замечание. Не удалось проверить из-за ошибки в работе с сокетами
-2025-Jul-19 10:19:47 Загрузка файла больше 4Мб (check_upload_big): Warning
-Замечание. Не удалось проверить из-за ошибки в работе с сокетами
-2025-Jul-19 10:19:47 Загрузка файла через php://input (check_upload_raw): Warning
-Замечание. Не удалось проверить из-за ошибки в работе с сокетами
-2025-Jul-19 10:19:47 Передача POST запроса с большим числом параметров (check_post): Warning
-Замечание. Не удалось проверить из-за ошибки в работе с сокетами
-2025-Jul-19 10:19:47 Отправка почты (check_mail): Fail
-Ошибка! Не работает
-2025-Jul-19 10:19:47 Отправка почтового сообщения больше 64Кб (check_mail_big): Fail
-Ошибка! Не работает
-2025-Jul-19 10:19:47 Проверка на наличие неотправленных сообщений (check_mail_b_event): Ok
+2025-Jul-23 23:18:06 Размер стека и pcre.recursion_limit (check_pcre_recursion): Ok
+Connection to dev.muttivillas.com:80	Success
+
 Успешно
-2025-Jul-19 10:19:47 Внутреннее перенаправление (функция LocalRedirect) (check_localredirect): Warning
-Замечание. Не удалось проверить из-за ошибки в работе с сокетами
-2025-Jul-19 10:19:47 Фактическое ограничение памяти (check_memory_limit): Warning
-Замечание. Не удалось проверить из-за ошибки в работе с сокетами
-2025-Jul-19 10:19:47 Работа с файлами кеша (check_cache): Ok
+2025-Jul-23 23:18:06 Загрузка файла (check_upload): Ok
+Connection to dev.muttivillas.com:80	Success
+
 Успешно
-2025-Jul-19 10:19:48 Доступ к серверу обновлений (check_update): Fail
+2025-Jul-23 23:18:06 Загрузка файла больше 4Мб (check_upload_big): Ok
+Connection to dev.muttivillas.com:80	Success
+
+Успешно
+2025-Jul-23 23:18:06 Загрузка файла через php://input (check_upload_raw): Ok
+Connection to dev.muttivillas.com:80	Success
+
+Успешно
+2025-Jul-23 23:18:06 Передача POST запроса с большим числом параметров (check_post): Ok
+Connection to dev.muttivillas.com:80	Success
+
+Успешно
+2025-Jul-23 23:18:06 Отправка почты (check_mail): Fail
+Ошибка! Не работает
+2025-Jul-23 23:18:06 Отправка почтового сообщения больше 64Кб (check_mail_big): Fail
+Ошибка! Не работает
+2025-Jul-23 23:18:06 Проверка на наличие неотправленных сообщений (check_mail_b_event): Ok
+Успешно
+2025-Jul-23 23:18:06 Внутреннее перенаправление (функция LocalRedirect) (check_localredirect): Ok
+50% done
+Connection to dev.muttivillas.com:80	Success
+
+2025-Jul-23 23:18:06 Внутреннее перенаправление (функция LocalRedirect) (check_localredirect): Ok
+Connection to dev.muttivillas.com:80	Success
+
+Успешно
+2025-Jul-23 23:18:06 Фактическое ограничение памяти (check_memory_limit): Ok
+20% done
+Connection to dev.muttivillas.com:80	Success
+
+2025-Jul-23 23:18:06 Фактическое ограничение памяти (check_memory_limit): Ok
+40% done
+Connection to dev.muttivillas.com:80	Success
+
+2025-Jul-23 23:18:07 Фактическое ограничение памяти (check_memory_limit): Ok
+60% done
+Connection to dev.muttivillas.com:80	Success
+
+2025-Jul-23 23:18:07 Фактическое ограничение памяти (check_memory_limit): Ok
+80% done
+Connection to dev.muttivillas.com:80	Success
+
+2025-Jul-23 23:18:07 Фактическое ограничение памяти (check_memory_limit): Ok
+Connection to dev.muttivillas.com:80	Success
+
+Не менее 256 М
+2025-Jul-23 23:18:07 Работа с файлами кеша (check_cache): Ok
+Успешно
+2025-Jul-23 23:18:07 Доступ к серверу обновлений (check_update): Fail
 Ошибка! Нет соединения с сервером обновлений (php_network_getaddresses: getaddrinfo for please.dont-touch-this.ml failed: Name or service not known)
-2025-Jul-19 10:19:48 HTTP авторизация (check_http_auth): Warning
-Замечание. Не удалось проверить из-за ошибки в работе с сокетами
-2025-Jul-19 10:19:48 Создание и запуск файла (check_exec): Warning
-Замечание. Не удалось проверить из-за ошибки в работе с сокетами
-2025-Jul-19 10:19:48 Функция getimagesize для swf (check_getimagesize): Ok
+2025-Jul-23 23:18:07 HTTP авторизация (check_http_auth): Ok
+Connection to dev.muttivillas.com:80	Success
+
 Успешно
-2025-Jul-19 10:19:48 Версия MySQL-сервера (check_mysql_bug_version): Ok
+2025-Jul-23 23:18:07 Создание и запуск файла (check_exec): Ok
+Connection to dev.muttivillas.com:80	Success
+
 Успешно
-2025-Jul-19 10:19:49 Время на БД и веб-сервере (check_mysql_time): Ok
+2025-Jul-23 23:18:07 Функция getimagesize для swf (check_getimagesize): Ok
 Успешно
-2025-Jul-19 10:19:49 Режим работы MySQL (check_mysql_mode): Ok
+2025-Jul-23 23:18:08 Версия MySQL-сервера (check_mysql_bug_version): Ok
 Успешно
-2025-Jul-19 10:19:49 Кодировка соединения (check_mysql_connection_charset): Ok
+2025-Jul-23 23:18:09 Время на БД и веб-сервере (check_mysql_time): Ok
+Успешно
+2025-Jul-23 23:18:09 Режим работы MySQL (check_mysql_mode): Ok
+Успешно
+2025-Jul-23 23:18:09 Кодировка соединения (check_mysql_connection_charset): Ok
 character_set_connection=utf8mb4, collation_connection=utf8mb4_0900_ai_ci, character_set_results=utf8mb4
 Успешно
-2025-Jul-19 10:19:49 Кодировка базы данных (check_mysql_db_charset): Fail
+2025-Jul-23 23:18:09 Кодировка базы данных (check_mysql_db_charset): Fail
 CHARSET=utf8mb4, COLLATION=utf8mb4_unicode_ci
 Ошибка! Сравнение для базы (utf8mb4_unicode_ci) отличается от сравнения для соединения (utf8mb4_0900_ai_ci). Исправить
-2025-Jul-19 10:19:49 Формат хранения таблиц в БД (check_mysql_table_format): Ok
+2025-Jul-23 23:18:09 Формат хранения таблиц в БД (check_mysql_table_format): Ok
 Успешно
-2025-Jul-19 10:19:49 Кодировки таблиц в БД (check_mysql_table_charset): Warning
+2025-Jul-23 23:18:09 Кодировки таблиц в БД (check_mysql_table_charset): Warning
 Замечание. Не проверено из-за ошибки кодировки базы
-2025-Jul-19 10:19:49 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:09 Структура базы данных (check_mysql_table_structure): Ok
 0% done
-2025-Jul-19 10:19:57 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:10 Структура базы данных (check_mysql_table_structure): Ok
 1% done
-2025-Jul-19 10:19:57 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:10 Структура базы данных (check_mysql_table_structure): Ok
 3% done
-2025-Jul-19 10:19:57 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:11 Структура базы данных (check_mysql_table_structure): Ok
 5% done
-2025-Jul-19 10:20:01 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:11 Структура базы данных (check_mysql_table_structure): Ok
 7% done
-2025-Jul-19 10:20:01 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:12 Структура базы данных (check_mysql_table_structure): Ok
 9% done
-2025-Jul-19 10:20:01 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:12 Структура базы данных (check_mysql_table_structure): Ok
 11% done
-2025-Jul-19 10:20:03 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:13 Структура базы данных (check_mysql_table_structure): Ok
 13% done
-2025-Jul-19 10:20:03 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:13 Структура базы данных (check_mysql_table_structure): Ok
 15% done
-2025-Jul-19 10:20:04 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:18 Структура базы данных (check_mysql_table_structure): Ok
 17% done
-2025-Jul-19 10:20:04 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:19 Структура базы данных (check_mysql_table_structure): Ok
 19% done
-2025-Jul-19 10:20:04 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:19 Структура базы данных (check_mysql_table_structure): Ok
 21% done
-2025-Jul-19 10:20:05 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:19 Структура базы данных (check_mysql_table_structure): Ok
 23% done
-2025-Jul-19 10:20:05 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:19 Структура базы данных (check_mysql_table_structure): Ok
 25% done
-2025-Jul-19 10:20:05 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:22 Структура базы данных (check_mysql_table_structure): Ok
 26% done
-2025-Jul-19 10:20:08 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:22 Структура базы данных (check_mysql_table_structure): Ok
 28% done
-2025-Jul-19 10:20:08 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:22 Структура базы данных (check_mysql_table_structure): Ok
 30% done
-2025-Jul-19 10:20:08 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:22 Структура базы данных (check_mysql_table_structure): Ok
 32% done
-2025-Jul-19 10:20:13 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:22 Структура базы данных (check_mysql_table_structure): Ok
 34% done
-2025-Jul-19 10:20:14 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:23 Структура базы данных (check_mysql_table_structure): Ok
 36% done
-2025-Jul-19 10:20:17 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:23 Структура базы данных (check_mysql_table_structure): Ok
 38% done
-2025-Jul-19 10:20:17 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:23 Структура базы данных (check_mysql_table_structure): Ok
 40% done
-2025-Jul-19 10:20:17 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:23 Структура базы данных (check_mysql_table_structure): Ok
 42% done
-2025-Jul-19 10:20:18 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:23 Структура базы данных (check_mysql_table_structure): Ok
 44% done
-2025-Jul-19 10:20:19 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:24 Структура базы данных (check_mysql_table_structure): Ok
 46% done
-2025-Jul-19 10:20:19 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:25 Структура базы данных (check_mysql_table_structure): Ok
 48% done
-2025-Jul-19 10:20:20 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:25 Структура базы данных (check_mysql_table_structure): Ok
 50% done
-2025-Jul-19 10:20:21 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:25 Структура базы данных (check_mysql_table_structure): Ok
 51% done
-2025-Jul-19 10:20:23 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:25 Структура базы данных (check_mysql_table_structure): Ok
 53% done
-2025-Jul-19 10:20:23 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:27 Структура базы данных (check_mysql_table_structure): Ok
 55% done
-2025-Jul-19 10:20:23 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:27 Структура базы данных (check_mysql_table_structure): Ok
 57% done
-2025-Jul-19 10:20:23 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:27 Структура базы данных (check_mysql_table_structure): Ok
 59% done
-2025-Jul-19 10:20:23 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:29 Структура базы данных (check_mysql_table_structure): Ok
 61% done
-2025-Jul-19 10:20:23 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:29 Структура базы данных (check_mysql_table_structure): Ok
 63% done
-2025-Jul-19 10:20:23 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:29 Структура базы данных (check_mysql_table_structure): Ok
 65% done
-2025-Jul-19 10:20:23 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:29 Структура базы данных (check_mysql_table_structure): Ok
 67% done
-2025-Jul-19 10:20:23 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:30 Структура базы данных (check_mysql_table_structure): Ok
 69% done
-2025-Jul-19 10:20:24 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:30 Структура базы данных (check_mysql_table_structure): Ok
 71% done
-2025-Jul-19 10:20:25 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:31 Структура базы данных (check_mysql_table_structure): Ok
 73% done
-2025-Jul-19 10:20:25 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:31 Структура базы данных (check_mysql_table_structure): Ok
 75% done
-2025-Jul-19 10:20:25 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:32 Структура базы данных (check_mysql_table_structure): Ok
 76% done
-2025-Jul-19 10:20:25 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:32 Структура базы данных (check_mysql_table_structure): Ok
 78% done
-2025-Jul-19 10:20:25 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:32 Структура базы данных (check_mysql_table_structure): Ok
 80% done
-2025-Jul-19 10:20:26 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:32 Структура базы данных (check_mysql_table_structure): Ok
 82% done
-2025-Jul-19 10:20:26 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:32 Структура базы данных (check_mysql_table_structure): Ok
 84% done
-2025-Jul-19 10:20:26 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:32 Структура базы данных (check_mysql_table_structure): Ok
 86% done
-2025-Jul-19 10:20:26 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:33 Структура базы данных (check_mysql_table_structure): Ok
 88% done
-2025-Jul-19 10:20:26 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:33 Структура базы данных (check_mysql_table_structure): Ok
 90% done
-2025-Jul-19 10:20:27 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:33 Структура базы данных (check_mysql_table_structure): Ok
 92% done
-2025-Jul-19 10:20:28 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:33 Структура базы данных (check_mysql_table_structure): Ok
 94% done
-2025-Jul-19 10:20:28 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:33 Структура базы данных (check_mysql_table_structure): Ok
 96% done
-2025-Jul-19 10:20:28 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:34 Структура базы данных (check_mysql_table_structure): Ok
 98% done
-2025-Jul-19 10:20:28 Структура базы данных (check_mysql_table_structure): Ok
+2025-Jul-23 23:18:34 Структура базы данных (check_mysql_table_structure): Ok
 Успешно

@@ -3,87 +3,74 @@ services:
     build:
       context: ./php
     image: php8.4.8-fpm
-    container_name: bitrix_php8.4.8-fpm
+    container_name: ${PROJECT_NAME}_php8.4.8-fpm
     restart: always
     expose:
-      - "9000"
+      - "9000"  # Порт для PHP-FPM, теперь напрямую используется Nginx
     volumes:
       - ./app:/var/www/html
       - ./php/php.ini:/usr/local/etc/php/php.ini
     networks:
-      - docker-network
-    env_file:
-      - .env
-
-  apache:
-    build:
-      context: ./apache2
-    container_name: bitrix_apache2
-    restart: always
-    volumes:
-      - ./app:/var/www/html
-      - ./apache2/bitrix.conf:/etc/apache2/sites-available/bitrix.conf
-    networks:
-      - docker-network
+      - ${DOCKER_NETWORK}
     env_file:
       - .env
 
   nginx:
     image: nginx:1.27.5
-    container_name: bitrix_nginx
+    container_name: ${PROJECT_NAME}_nginx
     restart: always
     ports:
-      - "8086:80"
+      - "${LOCALHOST_PORT}:80"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./app:/var/www/html
+      - ./app:/var/www/html  # Прямая монтировка кода Bitrix
     depends_on:
-      - apache
-      - php
+      - php  # Теперь зависит только от PHP-FPM
     networks:
-      - docker-network
+      - ${DOCKER_NETWORK}
 
   db:
     image: mysql:8.4.5
-    container_name: bitrix_mysql8.4
+    container_name: ${PROJECT_NAME}_mysql8.4
     restart: always
     ports:
-      - "3307:3306"
+      - "${DB_PORT}:3306"
     volumes:
       - ./mutti.sql:/docker-entrypoint-initdb.d/mutti.sql
-      - db_data_bitrix:/var/lib/mysql
+      - ${VOLUME_DB_DATA}:/var/lib/mysql
       - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
-      - docker-network
+      - ${DOCKER_NETWORK}
     env_file:
       - .env
 
   redis:
     image: redis:8.2-m01-alpine3.22
-    container_name: bitrix_redis8.2
+    container_name: ${PROJECT_NAME}_redis8.2
     restart: always
     ports:
-      - "6379:6379"
+      - "${REDIS_PORT}:6379"
     volumes:
       - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
-      - redis_data:/data
+      - ${VOLUME_REDIS_DATA}:/data
       - ./app:/var/www/html
     command: redis-server /usr/local/etc/redis/redis.conf
     networks:
-      - docker-network
-
+      - ${DOCKER_NETWORK}
+    
   node:
     image: node:22-slim
     container_name: bitrix_node22
     restart: always
+    user: www-data
     working_dir: /var/www/html/frontend/
     volumes:
       - ./app:/var/www/html/
     ports:
       - "3000:3000"
-    command: ["sh", "-c", "npm install && npm run watch"]
+    command: [ "sh", "-c", "npm install && npm run build" ]
     networks:
-      - docker-network
+      - ${DOCKER_NETWORK}
     env_file:
       - .env
     depends_on:
@@ -95,5 +82,5 @@ networks:
     external: true
 
 volumes:
-  db_data_bitrix:
-  redis_data:
+  db_bitrix:
+  db_redis:

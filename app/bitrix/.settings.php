@@ -69,7 +69,7 @@ return array (
         'host' => 'db',
         'database' => 'bitrix_docker_db',
         'login' => 'root',
-        'password' => 'aFf2421246TGaU#3sdf555%12@348',
+        'password' => 'aFf2421246TGaU#3sdf55512348',
         'options' => 2,
       ),
     ),

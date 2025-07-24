@@ -1,21 +1,32 @@
 #!/bin/bash
+# Подгружаем переменные из .env
+if [ -f .env ]; then
+    source .env
+    echo "Loaded variables from .env"
+else
+    echo "Error: .env file not found!"
+    exit 1
+fi
 
 # Остановка и удаление контейнеров
 echo "Stopping and removing containers..."
-docker ps -a --filter "name=bitrix_php8.4" -q | xargs -r docker stop
-docker ps -a --filter "name=bitrix_php8.4" -q | xargs -r docker rm -f
+docker ps -a --filter "name=${PROJECT_NAME}_php8.4" -q | xargs -r docker stop
+docker ps -a --filter "name=${PROJECT_NAME}_php8.4" -q | xargs -r docker rm -f
 
-docker ps -a --filter "name=bitrix_apache2" -q | xargs -r docker stop
-docker ps -a --filter "name=bitrix_apache2" -q | xargs -r docker rm -f
+docker ps -a --filter "name=${PROJECT_NAME}_apache2" -q | xargs -r docker stop
+docker ps -a --filter "name=${PROJECT_NAME}_apache2" -q | xargs -r docker rm -f
 
-docker ps -a --filter "name=bitrix_nginx" -q | xargs -r docker stop
-docker ps -a --filter "name=bitrix_nginx" -q | xargs -r docker rm -
+docker ps -a --filter "name=${PROJECT_NAME}_nginx" -q | xargs -r docker stop
+docker ps -a --filter "name=${PROJECT_NAME}_nginx" -q | xargs -r docker rm -
 
-docker ps -a --filter "name=bitrix_mysql" -q | xargs -r docker stop
-docker ps -a --filter "name=bitrix_mysql" -q | xargs -r docker rm -f
+docker ps -a --filter "name=${PROJECT_NAME}_mysql" -q | xargs -r docker stop
+docker ps -a --filter "name=${PROJECT_NAME}_mysql" -q | xargs -r docker rm -f
 
-docker ps -a --filter "name=bitrix_redis" -q | xargs -r docker stop
-docker ps -a --filter "name=bitrix_redis" -q | xargs -r docker rm -f
+docker ps -a --filter "name=${PROJECT_NAME}_redis" -q | xargs -r docker stop
+docker ps -a --filter "name=${PROJECT_NAME}_redis" -q | xargs -r docker rm -f
+
+docker ps -a --filter "name=${PROJECT_NAME}_node" -q | xargs -r docker stop
+docker ps -a --filter "name=${PROJECT_NAME}_node" -q | xargs -r docker rm -f
 
 # Пересоздание сети
 echo "Recreating network..."
@@ -31,11 +42,9 @@ docker compose up -d
 #чтобы прошла проверка битрикса на права, так как пользователь www-data используется
 chown -R www-data:www-data ./app
 
-#если не стоит композер, то ставим
-#command -v composer >/dev/null 2>&1 || (curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer)
 
 #если нет vendor, обновляем composer
-[ -d ./app/vendor ] || composer update -d ./app/
+#[ -d ./app/vendor ] || composer update -d ./app/
 
 
 # Ждем немного, чтобы контейнеры запустились

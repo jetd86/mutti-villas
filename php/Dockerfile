@@ -24,7 +24,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Установка Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN composer update -d ./app/
 
 # Сборка imagick из исходников (совместимо с PHP 8.4)
 RUN git clone https://github.com/Imagick/imagick.git --depth 1 /tmp/imagick \
