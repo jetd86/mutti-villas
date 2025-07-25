@@ -15,6 +15,42 @@
     "file": "assets/bg-about-banner.BzM_19oc.webp",
     "src": "_bg-about-banner.BzM_19oc.webp"
   },
+  "_bg-home-night.4WQe_uhQ.webp": {
+    "file": "assets/bg-home-night.4WQe_uhQ.webp",
+    "src": "_bg-home-night.4WQe_uhQ.webp"
+  },
+  "_bg-home-night.CIGOlCds.webp": {
+    "file": "assets/bg-home-night.CIGOlCds.webp",
+    "src": "_bg-home-night.CIGOlCds.webp"
+  },
+  "_bg-home-night.CRr5Zs_C.webp": {
+    "file": "assets/bg-home-night.CRr5Zs_C.webp",
+    "src": "_bg-home-night.CRr5Zs_C.webp"
+  },
+  "_bg-home-night.D0xg5Veq.webp": {
+    "file": "assets/bg-home-night.D0xg5Veq.webp",
+    "src": "_bg-home-night.D0xg5Veq.webp"
+  },
+  "_bg-home-night.D40DIgdn.webp": {
+    "file": "assets/bg-home-night.D40DIgdn.webp",
+    "src": "_bg-home-night.D40DIgdn.webp"
+  },
+  "_bg-home-night.Do-san6a.webp": {
+    "file": "assets/bg-home-night.Do-san6a.webp",
+    "src": "_bg-home-night.Do-san6a.webp"
+  },
+  "_bg-home-night.Drioxn3w.webp": {
+    "file": "assets/bg-home-night.Drioxn3w.webp",
+    "src": "_bg-home-night.Drioxn3w.webp"
+  },
+  "_bg-home-night.DxErCYsB.png": {
+    "file": "assets/bg-home-night.DxErCYsB.png",
+    "src": "_bg-home-night.DxErCYsB.png"
+  },
+  "_bg-home-night.aO5nuqWD.webp": {
+    "file": "assets/bg-home-night.aO5nuqWD.webp",
+    "src": "_bg-home-night.aO5nuqWD.webp"
+  },
   "_bg-home.BGdmCKbT.webp": {
     "file": "assets/bg-home.BGdmCKbT.webp",
     "src": "_bg-home.BGdmCKbT.webp"
@@ -433,7 +469,7 @@
     ]
   },
   "main.js": {
-    "file": "assets/main.DxUUgnjN.js",
+    "file": "assets/main.COt9joDz.js",
     "name": "main",
     "src": "main.js",
     "isEntry": true,
@@ -456,6 +492,15 @@
       "assets/bg-home.DYWjv9kK.webp",
       "assets/bg-home.JxTdAzrM.webp",
       "assets/bg-home.MM76yy7P.webp",
+      "assets/bg-home-night.DxErCYsB.png",
+      "assets/bg-home-night.Do-san6a.webp",
+      "assets/bg-home-night.CIGOlCds.webp",
+      "assets/bg-home-night.CRr5Zs_C.webp",
+      "assets/bg-home-night.Drioxn3w.webp",
+      "assets/bg-home-night.D40DIgdn.webp",
+      "assets/bg-home-night.aO5nuqWD.webp",
+      "assets/bg-home-night.4WQe_uhQ.webp",
+      "assets/bg-home-night.D0xg5Veq.webp",
       "assets/bg-homepage-image.C_uMmFno.webp",
       "assets/bg-homepage-image.CKw9yc1F.webp",
       "assets/bg-homepage-image.Bpi1z1J-.webp",

@@ -25,6 +25,25 @@ import bgHomeLarge2x from '@images/bg-home.png?w=3840&format=webp&as=src';
 import bgHomeLarge3x from '@images/bg-home.png?w=5760&format=webp&as=src';
 import bgHomeLarge4x from '@images/bg-home.png?w=7680&format=webp&as=src';
 
+import bgHomeNight1xLq from '@images/bg-home-night.png?w=10&blur=50&as=src';
+
+import bgHomeNightMobile1x from '@images/bg-home-night.png?w=1500&format=webp&as=src';
+import bgHomeNightMobile2x from '@images/bg-home-night.png?w=1500&format=webp&as=src';
+import bgHomeNightMobile3x from '@images/bg-home-night.png?w=1500&format=webp&as=src';
+import bgHomeNightMobile4x from '@images/bg-home-night.png?w=1500&format=webp&as=src';
+import bgHomeNightTablet1x from '@images/bg-home-night.png?w=1536&format=webp&as=src';
+import bgHomeNightTablet2x from '@images/bg-home-night.png?w=1536&format=webp&as=src';
+import bgHomeNightTablet3x from '@images/bg-home-night.png?w=2304&format=webp&as=src';
+import bgHomeNightTablet4x from '@images/bg-home-night.png?w=3072&format=webp&as=src';
+import bgHomeNightDesktop1x from '@images/bg-home-night.png?w=2048&format=webp&as=src';
+import bgHomeNightDesktop2x from '@images/bg-home-night.png?w=2048&format=webp&as=src';
+import bgHomeNightDesktop3x from '@images/bg-home-night.png?w=3072&format=webp&as=src';
+import bgHomeNightDesktop4x from '@images/bg-home-night.png?w=4096&format=webp&as=src';
+import bgHomeNightLarge1x from '@images/bg-home-night.png?w=3840&format=webp&as=src';
+import bgHomeNightLarge2x from '@images/bg-home-night.png?w=3840&format=webp&as=src';
+import bgHomeNightLarge3x from '@images/bg-home-night.png?w=5760&format=webp&as=src';
+import bgHomeNightLarge4x from '@images/bg-home-night.png?w=7680&format=webp&as=src';
+
 import bgImageMobile1x from '@images/bg-homepage-image.png?w=1500&format=webp&as=src';
 import bgImageMobile2x from '@images/bg-homepage-image.png?w=1500&format=webp&as=src';
 import bgImageMobile3x from '@images/bg-homepage-image.png?w=1500&format=webp&as=src';
@@ -61,6 +80,31 @@ function getImageCategory(width) {
 function getOptimalImage(images, category, dpr) {
     return images[category][dpr] || images[category][1];
 }
+``
+function isNightTime() {
+    const currentHour = new Date().getHours();
+    return currentHour >= 20 || currentHour < 6;
+}
+
+function getHomeImages() {
+    const isNight = isNightTime();
+
+    if (isNight) {
+        return {
+            mobile: {1: bgHomeNightMobile1x, 2: bgHomeNightMobile2x, 3: bgHomeNightMobile3x, 4: bgHomeNightMobile4x},
+            tablet: {1: bgHomeNightTablet1x, 2: bgHomeNightTablet2x, 3: bgHomeNightTablet3x, 4: bgHomeNightTablet4x},
+            desktop: {1: bgHomeNightDesktop1x, 2: bgHomeNightDesktop2x, 3: bgHomeNightDesktop3x, 4: bgHomeNightDesktop4x},
+            large: {1: bgHomeNightLarge1x, 2: bgHomeNightLarge2x, 3: bgHomeNightLarge3x, 4: bgHomeNightLarge4x}
+        };
+    }
+
+    return {
+        mobile: {1: bgHomeMobile1x, 2: bgHomeMobile2x, 3: bgHomeMobile3x, 4: bgHomeMobile4x},
+        tablet: {1: bgHomeTablet1x, 2: bgHomeTablet2x, 3: bgHomeTablet3x, 4: bgHomeTablet4x},
+        desktop: {1: bgHomeDesktop1x, 2: bgHomeDesktop2x, 3: bgHomeDesktop3x, 4: bgHomeDesktop4x},
+        large: {1: bgHomeLarge1x, 2: bgHomeLarge2x, 3: bgHomeLarge3x, 4: bgHomeLarge4x}
+    };
+}
 
 function loadOptimizedImage(selector, images, cssProperty, callback) {
     const element = document.querySelector(selector);
@@ -79,7 +123,8 @@ function loadOptimizedImage(selector, images, cssProperty, callback) {
     };
 }
 
-document.documentElement.style.setProperty('--bg-hero', `url(${bgHome1xLq})`);
+const initialBgImage = isNightTime() ? bgHomeNight1xLq : bgHome1xLq;
+document.documentElement.style.setProperty('--bg-hero', `url(${initialBgImage})`);
 document.documentElement.style.setProperty('--bg-image', `url(${bgImage1xLq})`);
 document.documentElement.style.setProperty('--bg-location-marker', `url(${bgLocationMarker})`);
 document.documentElement.style.setProperty('--bg-location-1x', `url(${bgLocation1x})`);
@@ -91,12 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     headerScrollComponent('navbarMain');
     headerScrollLogoComponent();
 
-    const homeImages = {
-        mobile: {1: bgHomeMobile1x, 2: bgHomeMobile2x, 3: bgHomeMobile3x, 4: bgHomeMobile4x},
-        tablet: {1: bgHomeTablet1x, 2: bgHomeTablet2x, 3: bgHomeTablet3x, 4: bgHomeTablet4x},
-        desktop: {1: bgHomeDesktop1x, 2: bgHomeDesktop2x, 3: bgHomeDesktop3x, 4: bgHomeDesktop4x},
-        large: {1: bgHomeLarge1x, 2: bgHomeLarge2x, 3: bgHomeLarge3x, 4: bgHomeLarge4x}
-    };
+    const homeImages = getHomeImages();
 
     const imageImages = {
         mobile: {1: bgImageMobile1x, 2: bgImageMobile2x, 3: bgImageMobile3x, 4: bgImageMobile4x},
@@ -159,16 +199,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+function checkTimeAndUpdateBackground() {
+    const homeImages = getHomeImages();
+    loadOptimizedImage('.hero', homeImages, '--bg-hero');
+}
+
 let resizeTimeout;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
-        const homeImages = {
-            mobile: {1: bgHomeMobile1x, 2: bgHomeMobile2x, 3: bgHomeMobile3x, 4: bgHomeMobile4x},
-            tablet: {1: bgHomeTablet1x, 2: bgHomeTablet2x, 3: bgHomeTablet3x, 4: bgHomeTablet4x},
-            desktop: {1: bgHomeDesktop1x, 2: bgHomeDesktop2x, 3: bgHomeDesktop3x, 4: bgHomeDesktop4x},
-            large: {1: bgHomeLarge1x, 2: bgHomeLarge2x, 3: bgHomeLarge3x, 4: bgHomeLarge4x}
-        };
+        const homeImages = getHomeImages();
 
         const imageImages = {
             mobile: {1: bgImageMobile1x, 2: bgImageMobile2x, 3: bgImageMobile3x, 4: bgImageMobile4x},
@@ -181,3 +221,5 @@ window.addEventListener('resize', () => {
         loadOptimizedImage('#image .section-container', imageImages, '--bg-image');
     }, 150);
 });
+
+setInterval(checkTimeAndUpdateBackground, 10 * 60 * 1000);
