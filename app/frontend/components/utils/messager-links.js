@@ -1,5 +1,28 @@
-import {MESSENGERS} from '../../config/messengers.js';
+//import {MESSENGERS} from '../../config/messengers.js';
 import {Modal} from 'bootstrap';
+
+
+export function initMessengerLinks(selector = '[data-messenger="wechat"]') {
+    document.querySelectorAll(selector).forEach(el => {
+        el.addEventListener('click', e => {
+            e.preventDefault();
+
+            const modal = document.getElementById('mainModal');
+            const modalTitle = modal.querySelector('#mainModalTitle');
+            const modalBody = modal.querySelector('#mainModalBody');
+            const template = document.getElementById('wechat-qr');
+
+            if (modalTitle) modalTitle.textContent = 'WeChat';
+            modalBody.innerHTML = template ? template.innerHTML : '<p>QR-код не найден</p>';
+
+            const instance = Modal.getOrCreateInstance(modal);
+            setTimeout(() => instance.show(), 0);
+        });
+    });
+}
+
+
+/*
 
 export function initMessengerLinks(selector = '[data-messenger]') {
     document.querySelectorAll(selector).forEach(el => {
@@ -73,3 +96,4 @@ export function initMessengerLinks(selector = '[data-messenger]') {
         });
     });
 }
+*/
