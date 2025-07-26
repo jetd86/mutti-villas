@@ -4,6 +4,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 
 $APPLICATION->SetTitle("Контакты");
 $APPLICATION->SetPageProperty("TITLE", "Контакты");
+$APPLICATION->SetPageProperty("DESCRIPTION", "Наши контакты и интерактивная карта адреса");
 
 $APPLICATION->IncludeComponent('mutti:page.contacts', '', [
     "OFFICE_ADDRESS" => "Soi Sai Namyen, Chalong, Mueang Phuket District, Phuket 83130, Thailand",

@@ -3,6 +3,7 @@
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Mutti гид");
 $APPLICATION->SetPageProperty("TITLE", "Mutti гид");
+$APPLICATION->SetPageProperty("DESCRIPTION", "Гид по нашим виллам на Пхукете с обзором в 360");
 
 use App\Enum\IBlockCode;
 

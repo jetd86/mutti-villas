@@ -40,8 +40,9 @@ docker compose build --no-cache
 docker compose up -d
 
 #чтобы прошла проверка битрикса на права, так как пользователь www-data используется
-chown -R www-data:www-data ./app
-
+#sudo chown -R www-data:www-data ./app
+#find ./app -type d -exec chmod 755 {} \;
+#find ./app -type f -exec chmod 644 {} \;
 
 #если нет vendor, обновляем composer
 #[ -d ./app/vendor ] || composer update -d ./app/
