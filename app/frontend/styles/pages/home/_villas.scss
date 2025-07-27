@@ -203,7 +203,7 @@
             }
 
             &__title {
-                color: rgba($mutti_darken-2, .7);
+                color: rgba($mutti_darken-2, 1);
                 font-family: $font-stack;
                 font-weight: 300;
                 font-size: 10px;
@@ -216,7 +216,7 @@
             }
 
             &__value {
-                color: rgba($mutti_darken-2, .7);
+                color: rgba($mutti_darken-2, 1);
                 font-family: $font-stack;
                 font-weight: 500;
                 font-size: 13px;
