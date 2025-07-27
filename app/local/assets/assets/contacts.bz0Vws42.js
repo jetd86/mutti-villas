@@ -1,0 +1,1 @@
+import{b as n}from"./contract-section-map.DaiUoX8o.js";document.addEventListener("DOMContentLoaded",()=>{const t=document.getElementById("map");if(t){const e=document.createElement("img");e.src=n,e.alt="Map",e.style.width="100%",t.appendChild(e)}});
