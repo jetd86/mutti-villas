@@ -64,7 +64,7 @@ $arSectionResult = $arResult['ITEMS']['about']; ?>
                                 <div class="section-advantages__item--wrapper">
                                     <div class="section-advantages__item--icon">
                                         <img src="<?=$advantages['ICON']['SRC']?>"
-                                             alt="<?=$advantages['NAME']?>"
+                                             alt=""
                                              class="img-fluid" />
                                     </div>
                                     <div class="section-advantages__item--name"><?=$advantages['NAME']?></div>
