@@ -31,9 +31,7 @@ function loadViteAssets(string $entryName = 'main.js?1', array $options = []): v
     if (!empty($entry['css'])) {
         foreach ($entry['css'] as $cssFile) {
             $filePath = $publicPath . $cssFile;
-            if (!empty($options['preload'])) {
-                $asset->addString('<link href="' . $filePath . '"  rel="stylesheet">');
-            }
+            $asset->addString('<link rel="preload" href="' . $filePath . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">');
             $asset->addCss($filePath);
         }
     }
@@ -55,9 +53,11 @@ function loadViteAssets(string $entryName = 'main.js?1', array $options = []): v
             $attrs[] = 'type="module"';
         }
 
-        if (!empty($options['defer'])) {
-            $attrs[] = 'defer';
-        }
+//        if (!empty($options['defer'])) {
+//            $attrs[] = 'defer';
+//        }
+        $attrs[] = 'defer';
+
 
         $asset->addString('<script ' . implode(' ', $attrs) . '></script>');
     }

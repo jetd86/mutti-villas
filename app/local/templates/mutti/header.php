@@ -22,7 +22,15 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/vite-asse
 $request = Bitrix\Main\Context::getCurrent()->getRequest();
 routeViteAssets();
 
+
+/*
+ * OLD 2025.07.27
 Asset::getInstance()->addJs('https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js');
+Asset::getInstance()->addCss('https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css');
+*/
+
+Asset::getInstance()->addJs('https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js', true);
+Asset::getInstance()->addCss('<link rel="preload" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">');
 Asset::getInstance()->addCss('https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css');
 
 ?>
@@ -57,7 +65,6 @@ Asset::getInstance()->addCss('https://cdn.jsdelivr.net/npm/glightbox/dist/css/gl
     <meta name="theme-color" content="#ffffff"><?
     $APPLICATION->ShowHead(); ?>
 
-    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
 </head>
 <body class="page"><?
