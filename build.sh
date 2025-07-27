@@ -28,6 +28,7 @@ docker ps -a --filter "name=${PROJECT_NAME}_redis" -q | xargs -r docker rm -f
 docker ps -a --filter "name=${PROJECT_NAME}_node" -q | xargs -r docker stop
 docker ps -a --filter "name=${PROJECT_NAME}_node" -q | xargs -r docker rm -f
 
+
 # Пересоздание сети
 echo "Recreating network..."
 docker network rm docker-network 2>/dev/null || true

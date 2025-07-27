@@ -5,6 +5,7 @@ USER root
 # Установка системных зависимостей
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
+	sudo \
     zip \
     unzip \
     git \

@@ -1,7 +1,10 @@
 #!/bin/bash
 
+chown -R www-data:www-data ./app/frontend/*
+chmod 777 -R ./app/local/assets/*
+
 echo "сборка фронта"
-docker exec --user www-data bitrix_node22 npm run build
+docker exec --user www-data bitrix_node24 npm run build
 
 chown -R www-data:www-data ./app/local/assets/*
 

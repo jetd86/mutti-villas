@@ -16,16 +16,19 @@ services:
       - .env
 
   nginx:
-    image: nginx:1.27.5
+    image: nginx:1.29.0-alpine-perl
     container_name: ${PROJECT_NAME}_nginx
     restart: always
     ports:
       - "${LOCALHOST_PORT}:80"
+      - "443:443"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./app:/var/www/html  # Прямая монтировка кода Bitrix
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./app:/var/www/html
+      - ./letsencrypt:/etc/nginx/ssl:ro
     depends_on:
-      - php  # Теперь зависит только от PHP-FPM
+      - php
     networks:
       - ${DOCKER_NETWORK}
 
@@ -59,11 +62,10 @@ services:
       - ${DOCKER_NETWORK}
     
   node:
-    image: node:22-slim
-    container_name: bitrix_node22
+    image: node:24-slim
+    container_name: bitrix_node24
     restart: always
     working_dir: /var/www/html/frontend/
-    user: www-data
     volumes:
       - ./app:/var/www/html/
     ports:
