@@ -1816,3 +1816,27 @@
 [2025-07-27 12:05:45] Created WebP: /var/www/html/local/assets/assets/images/generated/home/x035z398078gbkjofmr319bbb0xxu7u4.webp
 [2025-07-27 12:05:45] Iblock 'home' (ID 6): 6 images processed.
 [2025-07-27 12:05:45] ===== Sync finished =====
+[2025-07-27 12:36:42] ===== Sync started for iblock type 'content' =====
+[2025-07-27 12:36:42] Iblock 'infrastructure' (ID 1): 0 images processed.
+[2025-07-27 12:36:42] Iblock 'location' (ID 2): 0 images processed.
+[2025-07-27 12:36:42] Iblock 'villas' (ID 3): 0 images processed.
+[2025-07-27 12:36:42] Iblock 'muttiGuide' (ID 4): 12 images processed.
+[2025-07-27 12:36:42] Iblock 'about' (ID 5): 0 images processed.
+[2025-07-27 12:36:42] Iblock 'home' (ID 6): 6 images processed.
+[2025-07-27 12:36:42] ===== Sync finished =====
+[2025-07-27 12:48:00] ===== Sync started for iblock type 'content' =====
+[2025-07-27 12:48:01] Iblock 'infrastructure' (ID 1): 0 images processed.
+[2025-07-27 12:48:01] Iblock 'location' (ID 2): 0 images processed.
+[2025-07-27 12:48:01] Iblock 'villas' (ID 3): 0 images processed.
+[2025-07-27 12:48:01] Iblock 'muttiGuide' (ID 4): 12 images processed.
+[2025-07-27 12:48:01] Iblock 'about' (ID 5): 0 images processed.
+[2025-07-27 12:48:01] Iblock 'home' (ID 6): 6 images processed.
+[2025-07-27 12:48:01] ===== Sync finished =====
+[2025-07-27 12:49:12] ===== Sync started for iblock type 'content' =====
+[2025-07-27 12:49:12] Iblock 'infrastructure' (ID 1): 0 images processed.
+[2025-07-27 12:49:12] Iblock 'location' (ID 2): 0 images processed.
+[2025-07-27 12:49:12] Iblock 'villas' (ID 3): 0 images processed.
+[2025-07-27 12:49:12] Iblock 'muttiGuide' (ID 4): 12 images processed.
+[2025-07-27 12:49:12] Iblock 'about' (ID 5): 0 images processed.
+[2025-07-27 12:49:12] Iblock 'home' (ID 6): 6 images processed.
+[2025-07-27 12:49:12] ===== Sync finished =====

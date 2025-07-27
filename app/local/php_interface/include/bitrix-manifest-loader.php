@@ -32,7 +32,8 @@ function loadViteAssets(string $entryName = 'main.js?1', array $options = []): v
         foreach ($entry['css'] as $cssFile) {
             $filePath = $publicPath . $cssFile;
             if (!empty($options['preload'])) {
-                $asset->addString('<link rel="preload" href="' . $filePath . '" as="style">');
+                //$asset->addString('<link rel="preload" href="' . $filePath . '" as="style">');
+                $asset->addString('<link href="' . $filePath . '" as="style">');
             }
             $asset->addCss($filePath);
         }
