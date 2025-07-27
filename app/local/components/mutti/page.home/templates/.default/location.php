@@ -49,14 +49,14 @@ $arSectionResult = $arResult['ITEMS'][$component->getTemplatePage()];
             <div class="section-col col-12 col-lg-6 section-map-col">
                 <div class="section-block section-map"><?
                     foreach (array_values($arSectionResult['ITEMS']) as $key => $item) { ?>
-                        <a class="section-map__link" href="javascript:void(0)" data-item="<?=$key?>">
+                        <div class="section-map__link" data-item="<?=$key?>">
                             <div class="section-map__wrapper">
                                 <span class="section-map__item--icon"
                                       data-icon="<?= $item['PICTURE'] ?>">
                                 </span>
                                 <span class="section-map__item--name"><?= $item['NAME'] ?></span>
                             </div>
-                        </a><?
+                        </div><?
                     } ?>
                 </div>
             </div>
