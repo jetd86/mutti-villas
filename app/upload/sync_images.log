@@ -1880,3 +1880,19 @@
 [2025-07-27 19:02:33] Iblock 'about' (ID 5): 0 images processed.
 [2025-07-27 19:02:33] Iblock 'home' (ID 6): 6 images processed.
 [2025-07-27 19:02:33] ===== Sync finished =====
+[2025-07-27 19:03:58] ===== Sync started for iblock type 'content' =====
+[2025-07-27 19:03:58] Iblock 'infrastructure' (ID 1): 0 images processed.
+[2025-07-27 19:03:58] Iblock 'location' (ID 2): 0 images processed.
+[2025-07-27 19:03:58] Iblock 'villas' (ID 3): 0 images processed.
+[2025-07-27 19:03:58] Iblock 'muttiGuide' (ID 4): 12 images processed.
+[2025-07-27 19:03:58] Iblock 'about' (ID 5): 0 images processed.
+[2025-07-27 19:03:58] Iblock 'home' (ID 6): 6 images processed.
+[2025-07-27 19:03:58] ===== Sync finished =====
+[2025-07-27 19:06:17] ===== Sync started for iblock type 'content' =====
+[2025-07-27 19:06:04] Iblock 'infrastructure' (ID 1): 0 images processed.
+[2025-07-27 19:06:04] Iblock 'location' (ID 2): 0 images processed.
+[2025-07-27 19:06:04] Iblock 'villas' (ID 3): 0 images processed.
+[2025-07-27 19:06:04] Iblock 'muttiGuide' (ID 4): 12 images processed.
+[2025-07-27 19:06:04] Iblock 'about' (ID 5): 0 images processed.
+[2025-07-27 19:06:04] Iblock 'home' (ID 6): 6 images processed.
+[2025-07-27 19:06:04] ===== Sync finished =====
