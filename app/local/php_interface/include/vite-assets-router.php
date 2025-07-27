@@ -22,7 +22,7 @@ function routeViteAssets(): void
         '/contacts' => 'contacts.js',
         '/infrastructure' => 'infrastructure.js',
         '/location' => 'location.js',
-        '/mutti-guide' => 'main.js',
+        '/mutti-guide' => 'guide.js',
         '/villas' => 'villas.js',
     ];
 
