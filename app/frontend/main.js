@@ -68,8 +68,6 @@ import bgLocationMd1x from '@images/bg-homepage-location-md.png?w=768&format=web
 import bgLocationMd2x from '@images/bg-homepage-location-md.png?w=1536&format=webp&as=src';
 import bgMap from '@images/contract-section-map.svg?as=src';
 
-console.log('DEBUG 1')
-
 function getImageCategory(width) {
     if (width >= 1920) return 'large';
     if (width >= 1024) return 'desktop';

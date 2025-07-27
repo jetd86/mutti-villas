@@ -42,7 +42,7 @@ export default defineConfig({
         }
     },
     esbuild: {
-        target: 'es2018',
+        target: 'es2017',
     },
     resolve: {
         alias: {
