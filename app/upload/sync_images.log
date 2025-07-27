@@ -1856,3 +1856,11 @@
 [2025-07-27 13:11:30] Iblock 'about' (ID 5): 0 images processed.
 [2025-07-27 13:11:30] Iblock 'home' (ID 6): 6 images processed.
 [2025-07-27 13:11:30] ===== Sync finished =====
+[2025-07-27 13:19:28] ===== Sync started for iblock type 'content' =====
+[2025-07-27 13:19:28] Iblock 'infrastructure' (ID 1): 0 images processed.
+[2025-07-27 13:19:28] Iblock 'location' (ID 2): 0 images processed.
+[2025-07-27 13:19:28] Iblock 'villas' (ID 3): 0 images processed.
+[2025-07-27 13:19:28] Iblock 'muttiGuide' (ID 4): 12 images processed.
+[2025-07-27 13:19:28] Iblock 'about' (ID 5): 0 images processed.
+[2025-07-27 13:19:28] Iblock 'home' (ID 6): 6 images processed.
+[2025-07-27 13:19:28] ===== Sync finished =====
