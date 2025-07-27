@@ -35,10 +35,6 @@
     "file": "assets/bg-home-night.D40DIgdn.webp",
     "src": "_bg-home-night.D40DIgdn.webp"
   },
-  "_bg-home-night.D_wWIp5A.webp": {
-    "file": "assets/bg-home-night.D_wWIp5A.webp",
-    "src": "_bg-home-night.D_wWIp5A.webp"
-  },
   "_bg-home-night.Do-san6a.webp": {
     "file": "assets/bg-home-night.Do-san6a.webp",
     "src": "_bg-home-night.Do-san6a.webp"
@@ -473,7 +469,7 @@
     ]
   },
   "main.js": {
-    "file": "assets/main.D5SC7hIv.js",
+    "file": "assets/main.CcIqEF67.js",
     "name": "main",
     "src": "main.js",
     "isEntry": true,
@@ -505,7 +501,6 @@
       "assets/bg-home-night.aO5nuqWD.webp",
       "assets/bg-home-night.4WQe_uhQ.webp",
       "assets/bg-home-night.D0xg5Veq.webp",
-      "assets/bg-home-night.D_wWIp5A.webp",
       "assets/bg-homepage-image.C_uMmFno.webp",
       "assets/bg-homepage-image.CKw9yc1F.webp",
       "assets/bg-homepage-image.Bpi1z1J-.webp",
