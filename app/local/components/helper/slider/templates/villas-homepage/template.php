@@ -50,7 +50,7 @@ $this->setFrameMode(true); ?>
                         </div>
                     </div>
                     <div class="section-block section-image" style="background-image: url(<?=$element['PICTURE']['SRC']?>)">
-                        <a href="/villas/#<?= $element['CODE'] ?>" class="section-action">
+                        <a href="/villas/#<?= $element['CODE'] ?>" class="section-action" aria-label="Ссылка">
                             <i class="bi bi-arrow-right-short"></i>
                         </a>
                     </div>

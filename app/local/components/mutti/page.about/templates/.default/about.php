@@ -44,7 +44,7 @@ $arSectionParams = $arParams + $component->getAboutParams(); ?>
                     <p class="section-banner__text"><?=$component::getModuleOption(OptionHomeEnum::HOME_INFO_BANNER_TEXT) ?></p>
                 </div>
 
-                <a class="section-banner__action" href="<?=$component::getModuleOption(OptionHomeEnum::HOME_INFO_BANNER_LINK)?>" target="_blank">
+                <a class="section-banner__action" href="<?=$component::getModuleOption(OptionHomeEnum::HOME_INFO_BANNER_LINK)?>" target="_blank" aria-label="Ссылка">
                     <i class="bi bi-arrow-right-short"></i>
                 </a>
             </div>

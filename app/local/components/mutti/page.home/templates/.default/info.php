@@ -46,7 +46,7 @@ $this->setFrameMode(true); ?>
                         <p class="section-banner__text"><?=Option::get(ModuleEnum::MODULE_NAME->value, OptionHomeEnum::HOME_INFO_BANNER_TEXT->value)?></p>
                     </div>
 
-                    <a class="section-banner__action" href="<?=Option::get(ModuleEnum::MODULE_NAME->value, OptionHomeEnum::HOME_INFO_BANNER_LINK->value)?>" target="_blank">
+                    <a class="section-banner__action" href="<?=Option::get(ModuleEnum::MODULE_NAME->value, OptionHomeEnum::HOME_INFO_BANNER_LINK->value)?>" target="_blank" aria-label="Ссылка">
                         <i class="bi bi-arrow-right-short"></i>
                     </a>
                 </div>
