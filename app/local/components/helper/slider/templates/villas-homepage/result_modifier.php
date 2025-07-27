@@ -27,6 +27,16 @@ foreach ($arResult['ITEMS'] ?: [] as $key => $item) {
         $arResult['ITEMS'][$key]['PICTURE'] = $picture;
     }
 
+
+    if ($picture = $imageService->getResizedWebpSrc($item['PICTURE'],['width' => 699, 'height' => 500])) {
+        $arResult['ITEMS'][$key]['RESIZED_SRC'] = $picture;
+    }
+
+
+    echo '<pre>';
+    print_r($arResult['ITEMS'][$key]['RESIZED_SRC']);
+    echo '</pre>';
+
     $arResult['ITEMS'][$key]['PROPERTIES'] = getProperties($item);
     $arResult['ITEMS'][$key]['PRICE'] = getPrice($item);
 }
