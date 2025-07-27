@@ -42,7 +42,7 @@ if (Application::isHomePage()) {
                 </ul>
             </div>
         </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Открыть мобильное меню">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse">
