@@ -150,7 +150,7 @@
     ]
   },
   "about.js": {
-    "file": "assets/about.BWnGmHgu.js",
+    "file": "assets/about.CgptsBuA.js",
     "name": "about",
     "src": "about.js",
     "isEntry": true,
@@ -158,7 +158,7 @@
       "_3d-video.CiBJlyzI.js"
     ],
     "css": [
-      "assets/about.CuV-FHFx.css"
+      "assets/about.JSnQc0WJ.css"
     ]
   },
   "contacts.js": {
@@ -366,7 +366,7 @@
     "src": "fonts/Unbounded-Regular.woff2"
   },
   "global.js": {
-    "file": "assets/global.BwEI1t6g.js",
+    "file": "assets/global.CYx3Ey-D.js",
     "name": "global",
     "src": "global.js",
     "isEntry": true,
@@ -374,7 +374,7 @@
       "_bootstrap.esm.BhdEQdNh.js"
     ],
     "css": [
-      "assets/global.BeShkEgP.css"
+      "assets/global.C6SMj6XN.css"
     ],
     "assets": [
       "assets/bootstrap-icons.BtvjY1KL.woff2",
@@ -469,7 +469,7 @@
     ]
   },
   "main.js": {
-    "file": "assets/main.CcIqEF67.js",
+    "file": "assets/main.vO0PUQRT.js",
     "name": "main",
     "src": "main.js",
     "isEntry": true,
@@ -480,7 +480,7 @@
       "_contract-section-map.DaiUoX8o.js"
     ],
     "css": [
-      "assets/main.DKZWgDjC.css"
+      "assets/main.Sa_zhwSD.css"
     ],
     "assets": [
       "assets/bg-home.BTKyiZuL.png",
