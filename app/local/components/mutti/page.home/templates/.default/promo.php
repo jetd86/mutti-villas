@@ -609,21 +609,21 @@ $arSectionResult = $arResult['ITEMS'][$component->getTemplatePage()]; ?>
 
 
                             // Обработка вставки
-                            phoneInput.addEventListener('paste', function(e) {
-                                e.preventDefault();
-                                const paste = (e.clipboardData || window.clipboardData).getData('text');
-                                let digits = paste.replace(/\D/g, '');
-
-                                if (digits.length > 15) {
-                                    digits = digits.substring(0, 15);
-                                }
-
-                                if (digits.length > 0) {
-                                    this.value = formatPhone(digits);
-                                    const validation = validatePhone(this.value);
-                                    updateUI(validation);
-                                }
-                            });
+                            // phoneInput.addEventListener('paste', function(e) {
+                            //     e.preventDefault();
+                            //     const paste = (e.clipboardData || window.clipboardData).getData('text');
+                            //     let digits = paste.replace(/\D/g, '');
+                            //
+                            //     if (digits.length > 15) {
+                            //         digits = digits.substring(0, 15);
+                            //     }
+                            //
+                            //     if (digits.length > 0) {
+                            //         this.value = formatPhone(digits);
+                            //         const validation = validatePhone(this.value);
+                            //         updateUI(validation);
+                            //     }
+                            // });
 
                             // Обработка потери фокуса
                             phoneInput.addEventListener('blur', function() {
