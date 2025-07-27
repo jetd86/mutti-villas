@@ -52,6 +52,67 @@ $arSectionResult = $arResult['ITEMS'][$component->getTemplatePage()]; ?>
                     </a>
                 </p>
             </div>
+
+            <div class="section-grid section-grid__social"><?
+                if ($socialIcons = $component->getSocialIcons()):?>
+                    <ul class="content-social"><?
+
+                    $socialSettings = [
+                        'whatsapp' => ['phone'    => '+66801234567'],
+                        'telegram' => ['username' => 'mutti_villas'],
+                        'line'     => ['username' => 'muttiVillas']
+                    ];
+
+                    foreach ($socialIcons as $socialIconName):
+
+                        if (!in_array($socialIconName, ['wechat', 'telegram', 'whatsapp', 'line'])) continue;
+
+                        $url = '';
+                        $target = '_blank';
+                        $rel = 'noopener noreferrer';
+                        $dataMessenger = '';
+
+                        switch ($socialIconName) {
+                            case 'whatsapp':
+                                $phone = $socialSettings['whatsapp']['phone'] ?? '';
+                                $url = $phone ? "https://wa.me/{$phone}" : '#';
+                                break;
+
+                            case 'telegram':
+                                $username = $socialSettings['telegram']['username'] ?? '';
+                                $url = $username ? "https://t.me/{$username}" : '#';
+                                break;
+
+                            case 'line':
+                                $username = $socialSettings['line']['username'] ?? '';
+                                $url = $username ? "https://line.me/R/ti/p/~{$username}" : '#';
+                                break;
+
+                            case 'wechat':
+                                $url = '#';
+                                $target = '';
+                                $rel = '';
+                                $dataMessenger = 'data-messenger="wechat"';
+                                break;
+                        }
+                        ?>
+                        <li class="social-item">
+                        <a class="social-link"
+                           href="<?=$url?>"
+                           <? if ($target): ?>target="<?=$target?>"<? endif; ?>
+                           <? if ($rel): ?>rel="<?=$rel?>"<? endif; ?>
+                            <? if ($dataMessenger): echo $dataMessenger; endif; ?>
+                           aria-label="<?=ucfirst($socialIconName)?>">
+                            <i class="bi bi-<?=$socialIconName?>"></i>
+                        </a>
+                        </li><?
+                    endforeach; ?>
+                    </ul><?
+                endif;?>
+            </div>
+
+
+            <?php /*
             <div class="section-grid section-grid__social"><?
                 if ($socialIcons = $component->getSocialIcons()):?>
                     <ul class="content-social"><?
@@ -65,6 +126,7 @@ $arSectionResult = $arResult['ITEMS'][$component->getTemplatePage()]; ?>
                     </ul><?
                 endif;?>
             </div>
+ */ ?>
         </div>
     </div>
 </section>
