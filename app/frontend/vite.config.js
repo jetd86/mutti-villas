@@ -24,6 +24,15 @@ export default defineConfig({
     base: '/local/assets/',
     assetsInclude: ['**/*.mp4'],
     build: {
+		        // Disables the preload.
+        modulePreload: false,
+
+        // Or you can specify what should be preloaded.
+        modulePreload: {
+            resolveDependencies(url, deps, context) {
+                return [] // Your list of preloaded deps.
+            },
+		
         outDir: '../local/assets',
         emptyOutDir: true,
         manifest: true,

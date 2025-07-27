@@ -65,19 +65,16 @@ services:
     image: node:24-slim
     container_name: bitrix_node24
     restart: always
-    working_dir: /var/www/html/frontend/
+    working_dir: /var/www/html/frontend
     volumes:
       - ./app:/var/www/html/
     ports:
       - "3000:3000"
-    command: [ "sh", "-c", "npm install && npm run build" ]
+    command: [ "sh", "-c", "npm install" ]
     networks:
       - ${DOCKER_NETWORK}
     env_file:
       - .env
-    depends_on:
-      - db
-      - redis
 
 networks:
   docker-network:
