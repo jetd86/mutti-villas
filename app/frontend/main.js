@@ -14,13 +14,13 @@ import bgHome1xLq from '@images/bg-home.png?w=10&blur=50&as=src';
 
 import bgImage1xLq from '@images/bg-homepage-image.png?w=10&blur=50&as=src';
 
-import bgHomeMobile1x from '@images/bg-home.png?w=1500&format=webp&as=src';
+import bgHomeMobile1x from '@images/bg-home.png?w=400&format=webp&as=src';
 
-import bgHomeMobile2x from '@images/bg-home.png?w=1500&format=webp&as=src';
+import bgHomeMobile2x from '@images/bg-home.png?w=800&format=webp&as=src';
 
-import bgHomeMobile3x from '@images/bg-home.png?w=1500&format=webp&as=src';
+import bgHomeMobile3x from '@images/bg-home.png?w=1200&format=webp&as=src';
 
-import bgHomeMobile4x from '@images/bg-home.png?w=1500&format=webp&as=src';
+import bgHomeMobile4x from '@images/bg-home.png?w=1600&format=webp&as=src';
 
 import bgHomeTablet1x from '@images/bg-home.png?w=1536&format=webp&as=src';
 

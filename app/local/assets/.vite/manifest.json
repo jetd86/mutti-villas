@@ -47,17 +47,21 @@
     "file": "assets/bg-home.BGdmCKbT.webp",
     "src": "_bg-home.BGdmCKbT.webp"
   },
+  "_bg-home.BKGnXJNx.webp": {
+    "file": "assets/bg-home.BKGnXJNx.webp",
+    "src": "_bg-home.BKGnXJNx.webp"
+  },
   "_bg-home.BTKyiZuL.png": {
     "file": "assets/bg-home.BTKyiZuL.png",
     "src": "_bg-home.BTKyiZuL.png"
   },
-  "_bg-home.BUJhi6kv.webp": {
-    "file": "assets/bg-home.BUJhi6kv.webp",
-    "src": "_bg-home.BUJhi6kv.webp"
-  },
   "_bg-home.Br6Wef0t.webp": {
     "file": "assets/bg-home.Br6Wef0t.webp",
     "src": "_bg-home.Br6Wef0t.webp"
+  },
+  "_bg-home.Cl6MsvTw.webp": {
+    "file": "assets/bg-home.Cl6MsvTw.webp",
+    "src": "_bg-home.Cl6MsvTw.webp"
   },
   "_bg-home.DYWjv9kK.webp": {
     "file": "assets/bg-home.DYWjv9kK.webp",
@@ -74,6 +78,14 @@
   "_bg-home.lQs7cVqM.webp": {
     "file": "assets/bg-home.lQs7cVqM.webp",
     "src": "_bg-home.lQs7cVqM.webp"
+  },
+  "_bg-home.qXipEXit.webp": {
+    "file": "assets/bg-home.qXipEXit.webp",
+    "src": "_bg-home.qXipEXit.webp"
+  },
+  "_bg-home.zRPpKNbb.webp": {
+    "file": "assets/bg-home.zRPpKNbb.webp",
+    "src": "_bg-home.zRPpKNbb.webp"
   },
   "_bg-homepage-image.Bpi1z1J-.webp": {
     "file": "assets/bg-homepage-image.Bpi1z1J-.webp",
@@ -487,7 +499,7 @@
     ]
   },
   "main.js": {
-    "file": "assets/main.B0R6PitE.js",
+    "file": "assets/main.BruuJMBq.js",
     "name": "main",
     "src": "main.js",
     "isEntry": true,
@@ -501,7 +513,10 @@
     "assets": [
       "assets/bg-home.BTKyiZuL.png",
       "assets/bg-homepage-image.Dz0He6S_.png",
-      "assets/bg-home.BUJhi6kv.webp",
+      "assets/bg-home.BKGnXJNx.webp",
+      "assets/bg-home.qXipEXit.webp",
+      "assets/bg-home.Cl6MsvTw.webp",
+      "assets/bg-home.zRPpKNbb.webp",
       "assets/bg-home.BGdmCKbT.webp",
       "assets/bg-home.lQs7cVqM.webp",
       "assets/bg-home.Br6Wef0t.webp",
