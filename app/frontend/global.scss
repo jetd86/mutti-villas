@@ -25,3 +25,9 @@
 @use 'styles/components/swiper';
 @use 'styles/components/modal';
 
+@font-face {
+    font-display: swap;
+    font-family: "bootstrap-icons";
+    src: url("~bootstrap-icons/font/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6") format("woff2"),
+    url("~bootstrap-icons/font/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6") format("woff");
+}
