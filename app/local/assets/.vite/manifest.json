@@ -1,12 +1,4 @@
 {
-  "_3d-video.CiBJlyzI.js": {
-    "file": "assets/3d-video.CiBJlyzI.js",
-    "name": "3d-video",
-    "assets": [
-      "assets/bg-about-banner.3yDMt4IY.webp",
-      "assets/bg-about-banner.BzM_19oc.webp"
-    ]
-  },
   "_bg-about-banner.3yDMt4IY.webp": {
     "file": "assets/bg-about-banner.3yDMt4IY.webp",
     "src": "_bg-about-banner.3yDMt4IY.webp"
@@ -115,12 +107,37 @@
       "assets/logo-color.CdM6hL16.svg"
     ]
   },
-  "_contract-section-map.DaiUoX8o.js": {
-    "file": "assets/contract-section-map.DaiUoX8o.js",
-    "name": "contract-section-map",
-    "assets": [
-      "assets/contract-section-map.C6Vxn3bd.svg"
-    ]
+  "_contract-section-map.66DvFZaN.webp": {
+    "file": "assets/contract-section-map.66DvFZaN.webp",
+    "src": "_contract-section-map.66DvFZaN.webp"
+  },
+  "_contract-section-map.BYohigkQ.webp": {
+    "file": "assets/contract-section-map.BYohigkQ.webp",
+    "src": "_contract-section-map.BYohigkQ.webp"
+  },
+  "_contract-section-map.BdGI9PE_.webp": {
+    "file": "assets/contract-section-map.BdGI9PE_.webp",
+    "src": "_contract-section-map.BdGI9PE_.webp"
+  },
+  "_contract-section-map.CYF9cz_m.webp": {
+    "file": "assets/contract-section-map.CYF9cz_m.webp",
+    "src": "_contract-section-map.CYF9cz_m.webp"
+  },
+  "_contract-section-map.CZ2Uo-lF.webp": {
+    "file": "assets/contract-section-map.CZ2Uo-lF.webp",
+    "src": "_contract-section-map.CZ2Uo-lF.webp"
+  },
+  "_contract-section-map.DHauT4le.webp": {
+    "file": "assets/contract-section-map.DHauT4le.webp",
+    "src": "_contract-section-map.DHauT4le.webp"
+  },
+  "_contract-section-map.Djzs8Bh5.webp": {
+    "file": "assets/contract-section-map.Djzs8Bh5.webp",
+    "src": "_contract-section-map.Djzs8Bh5.webp"
+  },
+  "_contract-section-map.VDjdtIwu.webp": {
+    "file": "assets/contract-section-map.VDjdtIwu.webp",
+    "src": "_contract-section-map.VDjdtIwu.webp"
   },
   "_section-villas-plan-banner.BZw_q1yy.webp": {
     "file": "assets/section-villas-plan-banner.BZw_q1yy.webp",
@@ -150,27 +167,28 @@
     ]
   },
   "about.js": {
-    "file": "assets/about.CgptsBuA.js",
+    "file": "assets/about.C0xd1FtH.js",
     "name": "about",
     "src": "about.js",
     "isEntry": true,
-    "imports": [
-      "_3d-video.CiBJlyzI.js"
-    ],
     "css": [
       "assets/about.JSnQc0WJ.css"
+    ],
+    "assets": [
+      "assets/bg-about-banner.3yDMt4IY.webp",
+      "assets/bg-about-banner.BzM_19oc.webp"
     ]
   },
   "contacts.js": {
-    "file": "assets/contacts.2LcuMvYs.js",
+    "file": "assets/contacts.r0XLhaOx.js",
     "name": "contacts",
     "src": "contacts.js",
     "isEntry": true,
-    "imports": [
-      "_contract-section-map.DaiUoX8o.js"
-    ],
     "css": [
       "assets/contacts.CY2jwdY9.css"
+    ],
+    "assets": [
+      "assets/contract-section-map.C6Vxn3bd.svg"
     ]
   },
   "fonts/Montserrat-Black.woff": {
@@ -366,7 +384,7 @@
     "src": "fonts/Unbounded-Regular.woff2"
   },
   "global.js": {
-    "file": "assets/global.CYx3Ey-D.js",
+    "file": "assets/global.BKSlngAe.js",
     "name": "global",
     "src": "global.js",
     "isEntry": true,
@@ -374,7 +392,7 @@
       "_bootstrap.esm.BhdEQdNh.js"
     ],
     "css": [
-      "assets/global.C6SMj6XN.css"
+      "assets/global.BbUyFr4J.css"
     ],
     "assets": [
       "assets/bootstrap-icons.BtvjY1KL.woff2",
@@ -469,15 +487,13 @@
     ]
   },
   "main.js": {
-    "file": "assets/main.D3vCdh0E.js",
+    "file": "assets/main.B0R6PitE.js",
     "name": "main",
     "src": "main.js",
     "isEntry": true,
     "imports": [
       "_slider.DdGS3B16.js",
-      "_bootstrap.esm.BhdEQdNh.js",
-      "_3d-video.CiBJlyzI.js",
-      "_contract-section-map.DaiUoX8o.js"
+      "_bootstrap.esm.BhdEQdNh.js"
     ],
     "css": [
       "assets/main.B81mEcNR.css"
@@ -505,7 +521,15 @@
       "assets/bg-homepage-image.CKw9yc1F.webp",
       "assets/bg-homepage-image.Bpi1z1J-.webp",
       "assets/bg-homepage-location.BjQxwC-9.webp",
-      "assets/bg-homepage-location-md.TsdttFr2.webp"
+      "assets/bg-homepage-location-md.TsdttFr2.webp",
+      "assets/contract-section-map.66DvFZaN.webp",
+      "assets/contract-section-map.VDjdtIwu.webp",
+      "assets/contract-section-map.CZ2Uo-lF.webp",
+      "assets/contract-section-map.BYohigkQ.webp",
+      "assets/contract-section-map.DHauT4le.webp",
+      "assets/contract-section-map.CYF9cz_m.webp",
+      "assets/contract-section-map.BdGI9PE_.webp",
+      "assets/contract-section-map.Djzs8Bh5.webp"
     ]
   },
   "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff": {

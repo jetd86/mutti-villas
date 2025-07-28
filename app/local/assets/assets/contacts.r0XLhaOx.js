@@ -1,0 +1,1 @@
+const n="/local/assets/assets/contract-section-map.C6Vxn3bd.svg?as=src";document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("map");if(e){const t=document.createElement("img");t.src=n,t.alt="Map",t.style.width="100%",e.appendChild(t)}});
