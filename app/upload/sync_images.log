@@ -2078,3 +2078,11 @@
 [2025-07-27 21:02:58] Created WebP: /var/www/html/local/assets/assets/images/generated/home/x035z398078gbkjofmr319bbb0xxu7u4.webp
 [2025-07-27 21:02:58] Iblock 'home' (ID 6): 6 images processed.
 [2025-07-27 21:02:58] ===== Sync finished =====
+[2025-07-27 22:16:40] ===== Sync started for iblock type 'content' =====
+[2025-07-27 22:16:40] Iblock 'infrastructure' (ID 1): 0 images processed.
+[2025-07-27 22:16:40] Iblock 'location' (ID 2): 0 images processed.
+[2025-07-27 22:16:40] Iblock 'villas' (ID 3): 0 images processed.
+[2025-07-27 22:16:40] Iblock 'muttiGuide' (ID 4): 12 images processed.
+[2025-07-27 22:16:40] Iblock 'about' (ID 5): 0 images processed.
+[2025-07-27 22:16:40] Iblock 'home' (ID 6): 6 images processed.
+[2025-07-27 22:16:40] ===== Sync finished =====

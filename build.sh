@@ -1,5 +1,5 @@
 #!/bin/bash
-# Подгружаем переменные из .env
+
 if [ -f .env ]; then
     source .env
     echo "Loaded variables from .env"
