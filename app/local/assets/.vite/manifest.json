@@ -263,14 +263,6 @@
     "file": "assets/Montserrat-ExtraLightItalic.BSfqi1V2.woff2",
     "src": "fonts/Montserrat-ExtraLightItalic.woff2"
   },
-  "fonts/Montserrat-Italic.woff": {
-    "file": "assets/Montserrat-Italic.czQP_PAR.woff",
-    "src": "fonts/Montserrat-Italic.woff"
-  },
-  "fonts/Montserrat-Italic.woff2": {
-    "file": "assets/Montserrat-Italic.BxL7KEk_.woff2",
-    "src": "fonts/Montserrat-Italic.woff2"
-  },
   "fonts/Montserrat-Light.woff": {
     "file": "assets/Montserrat-Light.C_Ci6N83.woff",
     "src": "fonts/Montserrat-Light.woff"
@@ -392,7 +384,7 @@
     "src": "fonts/Unbounded-Regular.woff2"
   },
   "global.js": {
-    "file": "assets/global.DC8MGcjG.js",
+    "file": "assets/global.Q0VTMrv4.js",
     "name": "global",
     "src": "global.js",
     "isEntry": true,
@@ -400,7 +392,7 @@
       "_bootstrap.esm.BhdEQdNh.js"
     ],
     "css": [
-      "assets/global.Bh5lKf_6.css"
+      "assets/global.BZDnFtZ5.css"
     ],
     "assets": [
       "assets/bootstrap-icons.BtvjY1KL.woff2",
@@ -419,8 +411,6 @@
       "assets/Montserrat-LightItalic.BMx60tH0.woff",
       "assets/Montserrat-Regular.tAhv13WX.woff2",
       "assets/Montserrat-Regular.BdAQjODF.woff",
-      "assets/Montserrat-Italic.BxL7KEk_.woff2",
-      "assets/Montserrat-Italic.czQP_PAR.woff",
       "assets/Montserrat-Medium.BEHhDI1r.woff2",
       "assets/Montserrat-Medium.y9Dmgk-9.woff",
       "assets/Montserrat-MediumItalic.DVpf6RFP.woff2",
