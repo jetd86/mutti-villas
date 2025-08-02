@@ -21,4 +21,5 @@ $imageService = new ImageService();
 foreach ($arResult['ITEMS'] ?: [] as $key => $item) {
     $arResult['ITEMS'][$key]['PICTURE']['SRC_1X'] = $imageService->getResizedWebpSrc($item['PICTURE'], ['height' => 240, 'width' => 410]);
     $arResult['ITEMS'][$key]['PICTURE']['SRC_2X'] = $imageService->getResizedWebpSrc($item['PICTURE'], ['height' => 322, 'width' => 1200]);
+    $arResult['ITEMS'][$key]['PICTURE']['SRC'] = $imageService->getResizedWebpSrc($item['PICTURE'], ['height' => 1076, 'width' => 389]);
 }

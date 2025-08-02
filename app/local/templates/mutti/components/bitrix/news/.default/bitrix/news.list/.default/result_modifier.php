@@ -5,6 +5,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 
 use Bitrix\Iblock\Model\Section;
 use Bitrix\Main\Data\Cache;
+use Mutti\Service\Image\ImageService;
 
 /** @var array $arParams */
 /** @var array $arResult */
@@ -20,6 +21,8 @@ use Bitrix\Main\Data\Cache;
 
 $arSection = [];
 $cache = Cache::createInstance();
+$imageService = new ImageService();
+
 foreach ($arResult["ITEMS"] as $key => $arItem):
     $iblockClass = Section::compileEntityByIblock($arItem['IBLOCK_ID']);
     $section = $iblockClass::getRowById($arItem['IBLOCK_SECTION_ID']);
@@ -27,4 +30,5 @@ foreach ($arResult["ITEMS"] as $key => $arItem):
     $arResult["ITEMS"][$key]['SECTION'] = $section;
     $arResult["ITEMS"][$key]['IBLOCK_SECTION_NAME'] = $section['NAME'];
     $arResult["ITEMS"][$key]['IBLOCK_SECTION_LINK'] = $arItem['LIST_PAGE_URL'] . $section['CODE'] . '/';
+    $arResult['ITEMS'][$key]['PREVIEW_PICTURE']['SRC'] = $imageService->getResizedWebpSrc($arItem['PREVIEW_PICTURE'],['width' => 1079, 'height' => 609]);
 endforeach;

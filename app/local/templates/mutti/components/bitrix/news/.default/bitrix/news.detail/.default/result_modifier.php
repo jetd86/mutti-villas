@@ -1,8 +1,10 @@
-<?php
+<?
 
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
     die();
 
+use Bitrix\Iblock\Model\Section;
+use Bitrix\Main\Data\Cache;
 use Mutti\Service\Image\ImageService;
 
 /** @var array $arParams */
@@ -15,11 +17,9 @@ use Mutti\Service\Image\ImageService;
 /** @var string $templateFile */
 /** @var string $templateFolder */
 /** @var string $componentPath */
-/** @var HelperSliderComponent $component */
+/** @var CBitrixComponent $component */
 
 $imageService = new ImageService();
-foreach ($arResult['ITEMS'] ?: [] as $key => $item) {
-    $arResult['ITEMS'][$key]['SRC_1X'] = $imageService->getResizedWebpSrc($item, ['height' => 280, 'width' => 410]);
-    $arResult['ITEMS'][$key]['SRC_2X'] = $imageService->getResizedWebpSrc($item, ['height' => 390, 'width' => 1200]);
-	$arResult['ITEMS'][$key]['SRC'] = $imageService->getResizedWebpSrc($item,['width' => 1076, 'height' => 605]);
-}
+
+$arResult['DETAIL_PICTURE']['SRC'] = $imageService->getResizedWebpSrc($arResult['DETAIL_PICTURE'],['width' => 1079, 'height' => 609]);
+\
