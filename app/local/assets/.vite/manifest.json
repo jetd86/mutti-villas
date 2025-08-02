@@ -1,12 +1,4 @@
 {
-  "_bg-about-banner.3yDMt4IY.webp": {
-    "file": "assets/bg-about-banner.3yDMt4IY.webp",
-    "src": "_bg-about-banner.3yDMt4IY.webp"
-  },
-  "_bg-about-banner.BzM_19oc.webp": {
-    "file": "assets/bg-about-banner.BzM_19oc.webp",
-    "src": "_bg-about-banner.BzM_19oc.webp"
-  },
   "_bg-home-night.4WQe_uhQ.webp": {
     "file": "assets/bg-home-night.4WQe_uhQ.webp",
     "src": "_bg-home-night.4WQe_uhQ.webp"
@@ -187,16 +179,12 @@
     ]
   },
   "about.js": {
-    "file": "assets/about.BOxekG_6.js",
+    "file": "assets/about.Bcv2mh6U.js",
     "name": "about",
     "src": "about.js",
     "isEntry": true,
     "css": [
       "assets/about.JSnQc0WJ.css"
-    ],
-    "assets": [
-      "assets/bg-about-banner.3yDMt4IY.webp",
-      "assets/bg-about-banner.BzM_19oc.webp"
     ]
   },
   "contacts.js": {
