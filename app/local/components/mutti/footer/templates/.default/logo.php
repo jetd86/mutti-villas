@@ -21,8 +21,8 @@ $this->setFrameMode(true); ?>
         <a class="footer-brand" href="/">
             <img id="footerLogo" alt="Mutti Villas"/>
         </a>
-        <a href="http://boonpakorn.com/" class="boon-pakorn-logo">
-            <svg width="210" height="62">
+        <a href="http://boonpakorn.com/" class="boon-pakorn-logo" aria-label="Перейти на сайт Boon Pakorn">
+            <svg width="210" height="62" role="img" aria-hidden="true">
                 <use href="#my-icon"></use>
             </svg>
         </a>
