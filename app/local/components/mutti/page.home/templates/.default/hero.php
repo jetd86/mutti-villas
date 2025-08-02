@@ -28,7 +28,40 @@ $this->setFrameMode(true); ?>
                 <h1><?=Option::get(ModuleEnum::MODULE_NAME->value, OptionHomeEnum::HOME_HERO_TITLE->value)?></h1>
                 <p><?=Option::get(ModuleEnum::MODULE_NAME->value, OptionHomeEnum::HOME_HERO_DESCRIPTION->value)?></p>
             </div>
-            <div class="section-title__image-container">
+
+            <?php
+            $host = $_SERVER['HTTP_HOST'] ?? '';
+
+            $host = strtolower($host);
+            $host = preg_replace('/:\d+$/', '', $host);
+
+            $tld = '';
+            if (preg_match('/\.([^.]+)$/', $host, $matches)) {
+                $tld = $matches[1];
+            }
+
+            if ($tld === 'com') { ?>
+                <div class="section-title__image-container">
+                <img src="/public/home-main-5-stars-en.png"
+                     srcset="/public/home-main-5-stars-en.png 1x,
+               /public/home-main-5-stars-en@2x.png 2x,
+               /public/home-main-5-stars-en@3x.png 3x"
+                     alt="5 stars" width="160" />
+
+                <img src="/public/home-main-mount-en.png"
+                     srcset="/public/home-main-mount-en.png 1x,
+               /public/home-main-mount-en@2x.png 2x,
+               /public/home-main-mount-en@3x.png 3x"
+                     alt="Mountain" width="160" />
+
+                <img src="/public/home-main-sea-en.png"
+                     srcset="/public/home-main-sea-en.png 1x,
+               /public/home-main-sea-en@2x.png 2x,
+               /public/home-main-sea-en@3x.png 3x"
+                     alt="Sea" width="160" />
+            </div>
+            <?php } else { ?>
+                <div class="section-title__image-container">
                 <img src="/public/home-main-5-stars.png"
                      srcset="/public/home-main-5-stars.png 1x,
                /public/home-main-5-stars@2x.png 2x,
@@ -47,6 +80,8 @@ $this->setFrameMode(true); ?>
                /public/home-main-sea@3x.png 3x"
                      alt="Sea" width="160" />
             </div>
+            <?php } ?>
+
         </div>
     </div>
 </section>
