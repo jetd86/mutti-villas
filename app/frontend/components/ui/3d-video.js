@@ -8,7 +8,7 @@ export function initSectionBannerVideo() {
     const source = video.querySelector('source');
     if (source) {
         source.removeAttribute('src');
-        source.setAttribute('data-src', '/public/3d-tour.mp4?1748257640');
+        source.setAttribute('data-src', '/public/3d-tour.mp4?1748257641');
     }
     const fallbackImg = video.querySelector('img');
     if (fallbackImg) {
