@@ -10,11 +10,14 @@ export function initSectionBannerVideo() {
 
     const source = video.querySelector('source');
     if (source) {
-        source.src = '/public/3d-tour.mp4?1748257640';
-        video.load();
+
         setTimeout(() => {
-            video.play().catch(() => {});
-        }, 100);
+            source.src = '/public/3d-tour.mp4?1748257640';
+            video.load();
+            setTimeout(() => {
+                video.play().catch(() => {});
+            }, 100);
+        }, 2000)
     }
 
     // Найдём fallback <img> и установим src
