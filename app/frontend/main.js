@@ -311,3 +311,38 @@ window.addEventListener('resize', () => {
 });
 
 setInterval(checkTimeAndUpdateBackground, 10 * 60 * 1000);
+
+
+function insertPreloadLinks() {
+    const head = document.head;
+
+    const links = [
+        // Daytime bg-home
+        { href: bgHomeDesktop1x, media: '(min-width: 1024px)', },
+        { href: bgHomeTablet1x, media: '(min-width: 768px) and (max-width: 1023px)', },
+        { href: bgHomeMobile1x, media: '(max-width: 767px)', },
+
+        // Daytime bg-homepage-image
+        { href: bgImageDesktop1x, media: '(min-width: 1024px)', },
+        { href: bgImageTablet1x, media: '(min-width: 768px) and (max-width: 1023px)', },
+        { href: bgImageMobile1x, media: '(max-width: 767px)', },
+
+        // Nighttime bg-home-night
+        { href: bgHomeNightDesktop1x, media: '(min-width: 1024px) and (prefers-color-scheme: dark)', },
+        { href: bgHomeNightTablet1x, media: '(min-width: 768px) and (max-width: 1023px) and (prefers-color-scheme: dark)', },
+        { href: bgHomeNightMobile1x, media: '(max-width: 767px) and (prefers-color-scheme: dark)', }
+    ];
+
+    links.forEach(({ href, media }) => {
+        const linkEl = document.createElement('link');
+        linkEl.rel = 'preload';
+        linkEl.as = 'image';
+        linkEl.fetchPriority = 'high';
+        linkEl.type = 'image/webp';
+        linkEl.href = href;
+        if (media) linkEl.media = media;
+        head.appendChild(linkEl);
+    });
+}
+
+insertPreloadLinks();
