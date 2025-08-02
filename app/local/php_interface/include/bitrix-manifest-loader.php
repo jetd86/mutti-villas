@@ -22,21 +22,17 @@ function loadViteAssets(string $entryName = 'main.js?1', array $options = []): v
 
     if (!isset($manifest[$entryName])) return;
 
-
     $publicPath = '/local/assets/';
     $entry = $manifest[$entryName];
     $asset = Asset::getInstance();
 
-    // CSS
     if (!empty($entry['css'])) {
         foreach ($entry['css'] as $cssFile) {
             $filePath = $publicPath . $cssFile;
             $asset->addString('<link rel="preload" href="' . $filePath . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">');
-            $asset->addCss($filePath);
         }
     }
 
-    // JS
     if (!empty($entry['file'])) {
         $scriptPath = $publicPath . $entry['file'];
 
@@ -46,19 +42,13 @@ function loadViteAssets(string $entryName = 'main.js?1', array $options = []): v
 
         $attrs = [];
         $attrs[] = 'src="' . $scriptPath . '"';
-
-        if (!empty($options['type']) && $options['type'] === 'nomodule') {
-            $attrs[] = 'nomodule';
-        } else {
-            $attrs[] = 'type="module"';
-        }
-
-//        if (!empty($options['defer'])) {
-//            $attrs[] = 'defer';
-//        }
+        $attrs[] = 'type="module"';
         $attrs[] = 'defer';
 
+        if (!empty($options['nomodule'])) {
+            $attrs[] = 'nomodule';
+        }
 
-        $asset->addString('<script ' . implode(' ', $attrs) . ' defer></script>');
+        $asset->addString('<script ' . implode(' ', $attrs) . '></script>');
     }
 }
