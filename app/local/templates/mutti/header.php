@@ -60,16 +60,7 @@ Asset::getInstance()->addCss('https://cdn.jsdelivr.net/npm/glightbox/dist/css/gl
     <meta name="msapplication-TileImage" content="/favicon-144x144.png">
     <meta name="msapplication-config" content="/browserconfig.xml">
     <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#ffffff"><?
-    $APPLICATION->ShowHead(); ?>
-
-    <?php
-    Asset::getInstance()->addJs('https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js', true);
-    Asset::getInstance()->addCss('<link rel="preload" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">');
-    Asset::getInstance()->addCss('https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css');
-    ?>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body class="page"><?
 if ($request->get('debug') === 'Y') { ?>

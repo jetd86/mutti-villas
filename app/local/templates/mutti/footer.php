@@ -28,6 +28,18 @@ use Bitrix\Main\Localization\Loc; ?>
     </footer>
 </div>
 
+<?php
+$APPLICATION->ShowHead(); ?>
+
+<?php
+Asset::getInstance()->addJs('https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js', true);
+Asset::getInstance()->addCss('<link rel="preload" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">');
+Asset::getInstance()->addCss('https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css');
+?>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
+
+
 <?$APPLICATION->IncludeComponent('helper:modal', '')?>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
