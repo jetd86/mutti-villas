@@ -17,12 +17,16 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 $this->setFrameMode(true); ?>
 
 <div class="footer-block footer-logo">
-    <a class="footer-brand" href="/">
-        <img id="footerLogo" alt="Mutti Villas"/>
-        <svg width="210" height="62">
-            <use href="#my-icon"></use>
-        </svg>
-    </a>
+    <div>
+        <a class="footer-brand" href="/">
+            <img id="footerLogo" alt="Mutti Villas"/>
+        </a>
+        <a href="http://boonpakorn.com/" class="boon-pakorn-logo">
+            <svg width="210" height="62">
+                <use href="#my-icon"></use>
+            </svg>
+        </a>
+    </div>
     <button class="footer-action" type="button" data-messenger="whatsapp"><?= $arParams['CALLBACK_NAME'] ?></button>
 </div>
 

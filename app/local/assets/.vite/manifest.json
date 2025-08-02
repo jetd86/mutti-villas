@@ -396,7 +396,7 @@
     "src": "fonts/Unbounded-Regular.woff2"
   },
   "global.js": {
-    "file": "assets/global.DliFlhoc.js",
+    "file": "assets/global.DC8MGcjG.js",
     "name": "global",
     "src": "global.js",
     "isEntry": true,
@@ -404,7 +404,7 @@
       "_bootstrap.esm.BhdEQdNh.js"
     ],
     "css": [
-      "assets/global.BTrxzmZd.css"
+      "assets/global.Bh5lKf_6.css"
     ],
     "assets": [
       "assets/bootstrap-icons.BtvjY1KL.woff2",
@@ -499,7 +499,7 @@
     ]
   },
   "main.js": {
-    "file": "assets/main.BruuJMBq.js",
+    "file": "assets/main.9yl51o-b.js",
     "name": "main",
     "src": "main.js",
     "isEntry": true,
@@ -508,7 +508,7 @@
       "_bootstrap.esm.BhdEQdNh.js"
     ],
     "css": [
-      "assets/main.B81mEcNR.css"
+      "assets/main.DafqeE0q.css"
     ],
     "assets": [
       "assets/bg-home.BTKyiZuL.png",
