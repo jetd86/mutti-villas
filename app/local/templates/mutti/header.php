@@ -4,7 +4,6 @@
 use App\Application;
 use App\Enum\PageEnum;
 use Bitrix\Main\Localization\Loc;
-use Bitrix\Main\Page\Asset;
 
 define("NOT_CHECK_PERMISSIONS", true);
 define("PUBLIC_AJAX_MODE", true);
@@ -61,6 +60,7 @@ Asset::getInstance()->addCss('https://cdn.jsdelivr.net/npm/glightbox/dist/css/gl
     <meta name="msapplication-config" content="/browserconfig.xml">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#ffffff">
+    <? $APPLICATION->ShowHead(); ?>
 </head>
 <body class="page"><?
 if ($request->get('debug') === 'Y') { ?>
