@@ -10,70 +10,6 @@ use Bitrix\Main\Page\Asset;
  *                            - 'nomodule' => true
  *                            - 'preload' => true
  */
-
-
-function loadViteAssets(string $entryName = 'main.js', array $options = []): void
-{
-    static $manifest;
-
-    if ($manifest === null) {
-        $manifestPath = $_SERVER['DOCUMENT_ROOT'] . '/local/assets/.vite/manifest.json';
-        if (!file_exists($manifestPath)) {
-            // Можно кинуть лог или исключение, если нужно
-            return;
-        }
-        $manifest = json_decode(file_get_contents($manifestPath), true);
-    }
-
-    if (!isset($manifest[$entryName])) {
-        return;
-    }
-
-    $publicPath = '/local/assets/';
-    $entry = $manifest[$entryName];
-    $asset = Asset::getInstance();
-
-    if (!empty($entry['css'])) {
-        foreach ($entry['css'] as $cssFile) {
-            $href = $publicPath . $cssFile;
-            $asset->addString(sprintf(
-                '<link rel="stylesheet" href="%s" media="print" onload="this.media=\'all\'">',
-                htmlspecialchars($href)
-            ));
-        }
-    }
-
-    // Обработка JS
-    if (!empty($entry['file'])) {
-        $src = $publicPath . $entry['file'];
-
-        if (!empty($options['preload'])) {
-            $asset->addString(sprintf(
-                '<link rel="modulepreload" href="%s">',
-                htmlspecialchars($src)
-            ));
-        }
-
-        $attrs = [];
-        $attrs[] = 'src="' . htmlspecialchars($src) . '"';
-
-        if (!empty($options['nomodule'])) {
-            $attrs[] = 'nomodule';
-        } else {
-            $attrs[] = 'type="module"';
-        }
-
-        if (!isset($options['defer']) || $options['defer']) {
-            $attrs[] = 'defer';
-        }
-
-        $asset->addString('<script ' . implode(' ', $attrs) . '></script>');
-    }
-}
-
-
-
-/*
 function loadViteAssets(string $entryName = 'main.js?1', array $options = []): void
 {
     static $manifest;
@@ -123,7 +59,6 @@ function loadViteAssets(string $entryName = 'main.js?1', array $options = []): v
         $attrs[] = 'defer';
 
 
-        $asset->addString('<script ' . implode(' ', $attrs) . '></script>');
+        $asset->addString('<script ' . implode(' ', $attrs) . ' defer></script>');
     }
 }
-*/
