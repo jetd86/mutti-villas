@@ -26,10 +26,10 @@ $arSectionParams = $arParams;
     <div class="section-container container">
         <h2 class="section-title"><?= $arSectionResult['NAME'] ?></h2>
         <div class="section-row row">
-            <div class="section-col section-col__description col-12 col-lg-8">
+            <div class="section-col section-col__description col-12 col-lg-8 mt-3">
                 <?=$arSectionResult['DESCRIPTION'] ?>
             </div>
-            <div class="section-col section-col__image col-12 col-lg-4">
+            <div class="section-col section-col__image col-12 col-lg-4 mt-3">
                 <div class="section-image">
                     <img src="<?=$arSectionResult['PICTURE']['SRC']?>" alt="<?=$arSectionResult['NAME']?>" />
                 </div>
