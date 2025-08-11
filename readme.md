@@ -13,7 +13,7 @@
 ### Для запуска npm node должна быть установлена локально
 
 ### Запуск генерации картинок  в /local/assets/assets/images/generated/
-   - **docker exec bitrix_php8.4.8-fpm php /var/www/html/local/tools/sync_images.php**
+   - **docker exec -u root bitrix_php8.4.8-fpm php /var/www/html/local/tools/sync_images.php**
 
 ### Node.js
   - Ставится отдельным контейнером и запускаются команды npm install и npm run watch

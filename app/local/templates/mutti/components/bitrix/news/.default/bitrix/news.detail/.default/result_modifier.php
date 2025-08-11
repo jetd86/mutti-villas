@@ -22,4 +22,3 @@ use Mutti\Service\Image\ImageService;
 $imageService = new ImageService();
 
 $arResult['DETAIL_PICTURE']['SRC'] = $imageService->getResizedWebpSrc($arResult['DETAIL_PICTURE'],['width' => 1079, 'height' => 609]);
-\

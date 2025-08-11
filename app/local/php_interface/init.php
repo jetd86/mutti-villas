@@ -1,14 +1,4 @@
 <?php
-if (isset($_SERVER['HTTP_X_FORWARDED_HOST'])) {
-    $_SERVER['HTTP_HOST'] = $_SERVER['HTTP_X_FORWARDED_HOST'];
-}
-if (isset($_SERVER['HTTP_X_FORWARDED_PORT'])) {
-    $_SERVER['SERVER_PORT'] = $_SERVER['HTTP_X_FORWARDED_PORT'];
-}
-if (isset($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
-    $_SERVER['HTTPS'] = $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ? 'on' : 'off';
-}
-
 use Bitrix\Main\Loader;
 use Bitrix\Main\Page\Asset;
 
@@ -57,14 +47,4 @@ function getPageTitle()
 
         return $pageTitle;
     }
-}
-
-if (isset($_SERVER['HTTP_X_FORWARDED_HOST'])) {
-    $_SERVER['HTTP_HOST'] = $_SERVER['HTTP_X_FORWARDED_HOST'];
-}
-if (isset($_SERVER['HTTP_X_FORWARDED_PORT'])) {
-    $_SERVER['SERVER_PORT'] = $_SERVER['HTTP_X_FORWARDED_PORT'];
-}
-if (isset($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
-    $_SERVER['HTTPS'] = $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ? 'on' : 'off';
 }
