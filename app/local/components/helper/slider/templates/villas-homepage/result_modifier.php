@@ -32,11 +32,6 @@ foreach ($arResult['ITEMS'] ?: [] as $key => $item) {
         $arResult['ITEMS'][$key]['RESIZED_SRC'] = $picture;
     }
 
-
-    echo '<pre>';
-    print_r($arResult['ITEMS'][$key]['RESIZED_SRC']);
-    echo '</pre>';
-
     $arResult['ITEMS'][$key]['PROPERTIES'] = getProperties($item);
     $arResult['ITEMS'][$key]['PRICE'] = getPrice($item);
 }

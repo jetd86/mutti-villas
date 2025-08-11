@@ -46,7 +46,11 @@ function getPageTitle()
             'HEADER_BUTTON_ICON' => $APPLICATION->GetProperty('HEADER_BUTTON_ICON'),
         ];
 
-        ob_start();
+
+        if (!ob_get_level()) {
+            ob_start();
+        }
+
         $APPLICATION->IncludeComponent('helper:header.page.title', '', $arParams);
         $pageTitle = ob_get_contents();
         ob_end_clean();
