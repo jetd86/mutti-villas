@@ -63,7 +63,7 @@ if (Application::isHomePage()) {
                     }
                 endif ?>
                 <li class="nav-item nav-callback">
-                    <a class="nav-link" data-messenger="whatsapp"><?=$arParams['CALLBACK_NAME']?></a>
+                    <button class="nav-link" data-messenger="whatsapp"><?=$arParams['CALLBACK_NAME']?></button>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
