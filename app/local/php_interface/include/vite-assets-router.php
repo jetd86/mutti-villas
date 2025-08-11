@@ -5,6 +5,48 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/include/bitrix-ma
 /**
  * Подключение Vite-ресурсов по URI
  */
+
+function routeViteAssets(): void
+{
+    loadViteAssets('global.js', [
+        'preload' => true,
+    ]);
+
+    $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?: '/';
+
+    $routes = [
+        '/' => 'main.js',
+        '/about' => 'about.js',
+        '/contacts' => 'contacts.js',
+        '/infrastructure' => 'infrastructure.js',
+        '/location' => 'location.js',
+        '/mutti-guide' => 'guide.js',
+        '/villas' => 'villas.js',
+    ];
+
+    $matched = false;
+    foreach ($routes as $path => $entry) {
+        if ($uri === $path || str_starts_with($uri, $path . '/')) {
+            $matched = true;
+            loadViteAssets($entry, [
+                'preload' => true,
+                'lowPriorityCss' => true,
+            ]);
+            break;
+        }
+    }
+
+    if (!$matched) {
+        loadViteAssets('main.js', [
+            'preload' => false,
+            'lowPriorityCss' => true,
+        ]);
+    }
+}
+
+
+
+/*
 function routeViteAssets(): void
 {
     // Подключаем глобальные ресурсы в любом случае
@@ -42,3 +84,4 @@ function routeViteAssets(): void
         'preload' => true,
     ]);
 }
+*/

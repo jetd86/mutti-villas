@@ -63,13 +63,26 @@ Asset::getInstance()->addCss('https://cdn.jsdelivr.net/npm/glightbox/dist/css/gl
     <meta name="theme-color" content="#ffffff">
     <?php $APPLICATION->ShowHead(); ?>
 
-    <?php
+    <?php /*
     Asset::getInstance()->addJs('https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js', true);
     Asset::getInstance()->addCss('<link rel="preload" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">');
     Asset::getInstance()->addCss('https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css');
+ */
+    ?>
+    <?php
+    Asset::getInstance()->addString('<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" defer></script>');
+    Asset::getInstance()->addString('
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+          as="style"
+          onload="this.onload=null;this.rel=\'stylesheet\'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"></noscript>
+    ');
     ?>
 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
+
+
 </head>
 <body class="page"><?
 if ($request->get('debug') === 'Y') { ?>
