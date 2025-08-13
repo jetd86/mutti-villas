@@ -32,6 +32,8 @@ foreach($icons as $key => $arIcon) {
     $arResult['ITEMS']['ICONS'][$key]['SRC_300'] = $imageService->getResizedWebpSrc($arIcon['ICON'], ['height' => 300, 'width' => 300]);
 }
 
+
+
 $arLocationSection = $arResult['ITEMS']['location'];
 foreach ($arLocationSection['ITEMS'] as $key => $arLocationItem) {
     $code = 'home';
