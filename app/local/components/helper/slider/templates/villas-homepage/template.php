@@ -50,7 +50,7 @@ $this->setFrameMode(true); ?>
                     </div>
                 </div>
 
-                <div class="section-block section-image" style="background-image: url(<?= $element['RESIZED_SRC'] ?>)">
+                <div class="section-block section-image" data-bg="<?= $element['RESIZED_SRC'] ?>">
                     <a
                         href="/villas/#<?= $element['CODE'] ?>"
                         class="section-action"
@@ -60,6 +60,26 @@ $this->setFrameMode(true); ?>
                         <i class="bi bi-arrow-right-short"></i>
                     </a>
                 </div>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const lazyBackgrounds = document.querySelectorAll('.section-image[data-bg]');
+
+                        const intersectionObserver = new IntersectionObserver((entries, observer) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    const div = entry.target;
+                                    div.style.backgroundImage = `url(${div.dataset.bg})`;
+                                    observer.unobserve(div);
+                                }
+                            });
+                        });
+
+                        lazyBackgrounds.forEach(div => {
+                            intersectionObserver.observe(div);
+                        });
+                    });
+                </script>
             </div>
             </div><?
         } ?>
