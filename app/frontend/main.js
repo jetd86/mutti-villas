@@ -46,11 +46,11 @@ import bgHomeLarge4x from '@images/bg-home.png?w=7680&format=webp&as=src';
 
 import bgHomeNight1xLq from '@images/bg-home-night.png?w=10&blur=50&as=src';
 
-import bgHomeNightMobile1x from '@images/bg-home-night.png?w=800&format=webp&as=src';
+import bgHomeNightMobile1x from '@images/bg-home-night.png?w=400&format=webp&as=src';
 
-import bgHomeNightMobile2x from '@images/bg-home-night.png?w=1600&format=webp&as=src';
+import bgHomeNightMobile2x from '@images/bg-home-night.png?w=800&format=webp&as=src';
 
-import bgHomeNightMobile3x from '@images/bg-home-night.png?w=2400&format=webp&as=src';
+import bgHomeNightMobile3x from '@images/bg-home-night.png?w=1600&format=webp&as=src';
 
 import bgHomeNightMobile4x from '@images/bg-home-night.png?w=2400&format=webp&as=src';
 

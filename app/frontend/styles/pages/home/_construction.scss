@@ -44,6 +44,7 @@
 
     .section-slider {
         position: relative;
+        min-width: min-content;
 
         img {
             width: 100%;
@@ -65,14 +66,18 @@
         .slider-wrapper {
             max-height: 100%;
             display: flex;
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%
         }
 
         .slider-link {
+            display: block;
+            min-width: 100%;
             overflow: hidden;
             height: 208px;
             width: 100%;
-            display: block;
-            min-width: 100%;
+
 
             @include minMedia($lg) {
                 height: 286px;
