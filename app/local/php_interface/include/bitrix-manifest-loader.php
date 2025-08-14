@@ -27,12 +27,24 @@ function loadViteAssets(string $entryName = 'main.js?1', array $options = []): v
     $entry = $manifest[$entryName];
     $asset = Asset::getInstance();
 
+//    // CSS
+//    if (!empty($entry['css'])) {
+//        foreach ($entry['css'] as $cssFile) {
+//            $filePath = $publicPath . $cssFile;
+//            $asset->addString('<link rel="preload" href="' . $filePath . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">');
+//            $asset->addCss($filePath);
+//        }
+//    }
+
     // CSS
     if (!empty($entry['css'])) {
         foreach ($entry['css'] as $cssFile) {
             $filePath = $publicPath . $cssFile;
-            $asset->addString('<link rel="preload" href="' . $filePath . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">');
-            $asset->addCss($filePath);
+
+            if (file_exists($_SERVER['DOCUMENT_ROOT'] . $filePath)) {
+                $cssContent = file_get_contents($_SERVER['DOCUMENT_ROOT'] . $filePath);
+                $asset->addString('<style>' . $cssContent . '</style>');
+            }
         }
     }
 
