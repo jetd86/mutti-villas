@@ -71,6 +71,8 @@
             overflow: hidden;
             height: 208px;
             width: 100%;
+            display: block;
+            min-width: 100%;
 
             @include minMedia($lg) {
                 height: 286px;
