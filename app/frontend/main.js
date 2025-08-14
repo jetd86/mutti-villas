@@ -151,6 +151,7 @@ import bgMapLarge2x from '@images/contract-section-map.jpg?w=3840&format=webp&as
 import bgMapLarge3x from '@images/contract-section-map.jpg?w=5760&format=webp&as=src';
 
 import bgMapLarge4x from '@images/contract-section-map.jpg?w=7680&format=webp&as=src';
+import {lazyImagesInit} from "./components/layout/lazyImages.js";
 
 function getImageCategory(width) {
     if (width >= 1920) return 'large';
@@ -283,6 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initHomeFeedbackForm();
     sliderHomeVillasInit();
     sliderHomeConstructionInit();
+    lazyImagesInit();
 });
 
 function checkTimeAndUpdateBackground() {

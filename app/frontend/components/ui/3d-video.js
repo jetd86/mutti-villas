@@ -9,11 +9,14 @@ export function initSectionBannerVideo() {
     if (source) {
         source.removeAttribute('src');
         source.setAttribute('data-src', '/public/3d-tour.mp4?1748257641');
+        // Можно добавить дополнительный source с webm как fallback для оптимизации
     }
+
     const fallbackImg = video.querySelector('img');
     if (fallbackImg) {
         fallbackImg.src = bgBanner1x;
         fallbackImg.setAttribute('srcset', `${bgBanner1x} 1x, ${bgBanner2x} 2x`);
+        fallbackImg.setAttribute('loading', 'lazy'); // lazy loading для картинки
     }
 
     const observer = new IntersectionObserver((entries) => {
@@ -27,6 +30,7 @@ export function initSectionBannerVideo() {
             }
         });
     }, { threshold: 0.25 });
+
     observer.observe(video);
 
     video.addEventListener('loadeddata', () => {
@@ -34,6 +38,7 @@ export function initSectionBannerVideo() {
         wrapper?.classList.add('video-loaded');
     });
 }
+
 
 
 /*
