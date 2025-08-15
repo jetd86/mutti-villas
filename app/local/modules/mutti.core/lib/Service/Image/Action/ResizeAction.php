@@ -49,7 +49,7 @@ class ResizeAction extends AbstractAction
         try {
             $imagick = new \Imagick($source);
 
-            $imagick->setImageCompressionQuality(80);
+            $imagick->setImageCompressionQuality(40);
 
             $imagick->setImageFormat('webp');
 

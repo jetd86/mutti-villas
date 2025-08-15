@@ -19,6 +19,7 @@ use Mutti\Enum\OptionHomeEnum;
 $this->setFrameMode(true);
 $arSectionResult = $arResult['ITEMS']['about']; ?>
 
+
 <section class="section block" id="about">
     <div class="section-container container">
         <div class="section-row grid">
@@ -49,27 +50,27 @@ $arSectionResult = $arResult['ITEMS']['about']; ?>
             </div>
             <div class="section-grid section-grid__tags">
                 <div class="section-tags">
-                    <ul class="section-tags__list"><?
+                    <ul class="section-tags__list"><?php
                         foreach ($component->getTagsElements() ?: [] as $tag) { ?>
-                            <li class="section-tags__item"><?= $tag['NAME'] ?></li><?
+                            <li class="section-tags__item"><?= $tag['NAME'] ?></li><?php
                         } ?>
                     </ul>
                 </div>
             </div>
             <div class="section-grid section-grid__advantages">
                 <div class="section-advantages offset-lg-2">
-                    <ul class="section-advantages__list"><?
-                        foreach ($component->getAdvantagesElements() ?: [] as $advantages) { ?>
+                    <ul class="section-advantages__list"><?php
+                        foreach ($arResult['ITEMS']['ICONS'] as $icon) { ?>
                             <li class="section-advantages__item">
                                 <div class="section-advantages__item--wrapper">
                                     <div class="section-advantages__item--icon">
-                                        <img src="<?=$advantages['ICON']['SRC']?>"
+                                        <img src="<?=$icon['SRC_48']?>"
                                              alt=""
                                              class="img-fluid" />
                                     </div>
-                                    <div class="section-advantages__item--name"><?=$advantages['NAME']?></div>
+                                    <div class="section-advantages__item--name"><?=$icon['NAME']?></div>
                                 </div>
-                            </li><?
+                            </li><?php
                         } ?>
                     </ul>
                 </div>

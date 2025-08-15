@@ -3,7 +3,8 @@
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     die();
 
-use Bitrix\Main\Localization\Loc; ?>
+use Bitrix\Main\Localization\Loc;
+use Bitrix\Main\Page\Asset; ?>
         </section>
     </section>
     <footer class="footer" id="footer"><?
@@ -37,7 +38,11 @@ use Bitrix\Main\Localization\Loc; ?>
     });
 </script>
 
-<? $APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/include/counters.php', false, ['MODE' => 'html']); ?>
-<!-- META -->
+
+
+
+<?php routeViteAssets();?>
+<?php Asset::getInstance()->addString('<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" defer></script>');?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
 </body>
 </html>

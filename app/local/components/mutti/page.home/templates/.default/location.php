@@ -52,7 +52,7 @@ $arSectionResult = $arResult['ITEMS'][$component->getTemplatePage()];
                         <div class="section-map__link" data-item="<?=$key?>">
                             <div class="section-map__wrapper">
                                 <span class="section-map__item--icon"
-                                      data-icon="<?= $item['PICTURE'] ?>">
+                                      data-icon="<?= $item['PICTURE_WEBP'] ?>">
                                 </span>
                                 <span class="section-map__item--name"><?= $item['NAME'] ?></span>
                             </div>

@@ -34,7 +34,7 @@ function convertToWebp($sourcePath, $webpPath): bool
     try {
         $image = new Imagick($sourcePath);
         $image->setImageFormat('webp');
-        $image->setImageCompressionQuality(85);
+        $image->setImageCompressionQuality(60);
         return $image->writeImage($webpPath);
     } catch (Throwable $e) {
         logMessage("WEBP convert error for {$sourcePath}: " . $e->getMessage());
