@@ -39,7 +39,7 @@ services:
     ports:
       - "${DB_PORT}:3306"
     volumes:
-      - ./mutti.sql:/docker-entrypoint-initdb.d/mutti.sql
+      - ./bitrix_docker_db_backup.sql:/docker-entrypoint-initdb.d/bitrix_docker_db_backup.sql
       - ${VOLUME_DB_DATA}:/var/lib/mysql
       - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     networks:
