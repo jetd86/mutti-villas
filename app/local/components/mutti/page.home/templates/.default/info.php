@@ -26,9 +26,9 @@ $this->setFrameMode(true); ?>
             <div class="section-col col-12 col-lg-6 offset-lg-1">
                 <div class="section-description">
                     <?= Option::get(ModuleEnum::MODULE_NAME->value, OptionHomeEnum::HOME_INFO_DESCRIPTION->value)?>
-                    <button class="btn btn-link">
+                    <button class="btn btn-link"
+                            data-messenger="<?= Option::get(ModuleEnum::MODULE_NAME->value, OptionHomeEnum::HOME_INFO_DESCRIPTION_BUTTON_MESSENGER->value)?>">
                         <span class="section-button__name"
-                              data-messenger="<?= Option::get(ModuleEnum::MODULE_NAME->value, OptionHomeEnum::HOME_INFO_DESCRIPTION_BUTTON_MESSENGER->value)?>"
                               data-text="<?=Option::get(ModuleEnum::MODULE_NAME->value, OptionHomeEnum::HOME_INFO_DESCRIPTION_BUTTON_MESSENGER_TEXT->value)?>">
                             <?=Option::get(ModuleEnum::MODULE_NAME->value, OptionHomeEnum::HOME_INFO_DESCRIPTION_BUTTON->value)?>
                         </span>
