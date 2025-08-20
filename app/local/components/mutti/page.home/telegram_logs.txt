@@ -7,3 +7,6 @@
 2025-07-10 02:08:45 | Name: Алексей | Phone: +7 927 176 32 22 | Message: 📝 <strong>Новая заявка с сайта dev.muttivillas.com</strong>
 👤 Имя: <strong>Алексей</strong>
 📞 Телефон: <strong>+7 927 176 32 22</strong>
+2025-08-19 11:46:38 | Name: Test_ru | Phone: +7 926 253 97 18 | Message: 📝 <strong>Новая заявка с сайта muttivillas.ru</strong>
+👤 Имя: <strong>Test_ru</strong>
+📞 Телефон: <strong>+7 926 253 97 18</strong>
