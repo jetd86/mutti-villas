@@ -32,13 +32,20 @@ $imageHeightMd: 561px;
 
     .section-row {
         &__image {
-            height: math.div($imageHeightSm, 2);
+            height: 100%;
+            margin-bottom: math.div($imageHeightSm, 2) + 40;
+
+            @include minMedia($lg) {
+                margin-bottom: math.div($imageHeightMd, 2) + 78;
+            }
+
+            /*height: math.div($imageHeightSm, 2);
             margin-bottom: math.div($imageHeightSm, 2) + 40;
 
             @include minMedia($lg) {
                 height: math.div($imageHeightMd, 2);
                 margin-bottom: math.div($imageHeightMd, 2) + 78;
-            }
+            }*/
         }
     }
 
@@ -62,18 +69,22 @@ $imageHeightMd: 561px;
                 font-weight: 300;
                 font-size: 16px;
                 line-height: 20px;
+                margin-bottom: -310px;
             }
         }
 
         &__image {
             position: relative;
             width: 100%;
-            height: $imageHeightSm;
+            /*height: $imageHeightSm;*/
+            height: auto;
             overflow: hidden;
 
+            /*
             @include minMedia($lg) {
                 height: $imageHeightMd;
             }
+            */
 
             img {
                 width: 100%;
