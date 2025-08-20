@@ -45,7 +45,16 @@ $culture = Context::getCurrent()->getCulture();
             </div>
             </div><?
         } ?>
-    </div><?
+    </div>
+    <div class="section-navigate">
+        <div class="swiper-button-prev">
+            <i class="bi bi-arrow-left-short"></i>
+        </div>
+        <div class="swiper-button-next">
+            <i class="bi bi-arrow-right-short"></i>
+        </div>
+    </div
+    <?
     // Пагинация
     if ($arParams['PROPERTIES']['PAGINATION']): ?>
         <div class="slider-pagination swiper-pagination"></div><?
