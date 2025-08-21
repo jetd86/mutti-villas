@@ -62,6 +62,8 @@ $this->setFrameMode(true); ?>
                     'line'     => ['username' => 'muttiVillas']
                 ];
 
+
+
                 foreach ($socialIcons as $socialIconName):
                     $url = '';
                     $target = '_blank';

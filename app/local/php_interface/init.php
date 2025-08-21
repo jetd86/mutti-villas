@@ -17,6 +17,8 @@ if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/event.php')) {
 
 include __DIR__ . '/mutti-core.php';
 
+
+
 if($_GET['mutti-core'] == 'show'){
     echo '<pre>';
     print_r($mutti_core);
