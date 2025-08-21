@@ -141,6 +141,13 @@
         }
     }
 
+    .article-buttons {
+        display: inline-flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
     .article-back {
         margin-top: 1rem;
 
