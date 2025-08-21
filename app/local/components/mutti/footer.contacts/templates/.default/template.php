@@ -57,9 +57,9 @@ $this->setFrameMode(true); ?>
             <ul class="footer-social"><?php
 
                 $socialSettings = [
-                    'whatsapp' => ['phone'    => '+66801234567'],
-                    'telegram' => ['username' => 'mutti_villas'],
-                    'line'     => ['username' => 'muttiVillas']
+                    'whatsapp' => ['phone'    => $mutti_core['global_social_whatsapp']],
+                    'telegram' => ['username' => $mutti_core['global_social_telegram']],
+                    'line'     => ['username' => $mutti_core['global_social_line']]
                 ];
 
 
