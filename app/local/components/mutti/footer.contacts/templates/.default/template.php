@@ -57,9 +57,9 @@ $this->setFrameMode(true); ?>
             <ul class="footer-social"><?php
 
                 $socialSettings = [
-                    'whatsapp' => ['phone'    => $mutti_core['global_social_whatsapp']],
-                    'telegram' => ['username' => $mutti_core['global_social_telegram']],
-                    'line'     => ['username' => $mutti_core['global_social_line']]
+                    'whatsapp' => ['phone'    => $arResult['MUTTI_CORE']['global_social_whatsapp']['VALUE']],
+                    'telegram' => ['username' => $arResult['MUTTI_CORE']['global_social_telegram']['VALUE']],
+                    'line'     => ['username' => $arResult['MUTTI_CORE']['global_social_line']['VALUE']]
                 ];
 
 
@@ -73,17 +73,17 @@ $this->setFrameMode(true); ?>
                     switch ($socialIconName) {
                         case 'whatsapp':
                             $phone = $socialSettings['whatsapp']['phone'] ?? '';
-                            $url = $phone ? "https://wa.me/{$phone}" : '#';
+                            $url = $socialSettings['whatsapp']['phone'] ?? '#';
                             break;
 
                         case 'telegram':
                             $username = $socialSettings['telegram']['username'] ?? '';
-                            $url = $username ? "https://t.me/{$username}" : '#';
+                            $url = $username ? $socialSettings['telegram']['username'] : '#';
                             break;
 
                         case 'line':
                             $username = $socialSettings['line']['username'] ?? '';
-                            $url = $username ? "https://line.me/R/ti/p/~{$username}" : '#';
+                            $url =$socialSettings['line']['username'] ?? '#';
                             break;
 
                         case 'youtube':
