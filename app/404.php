@@ -17,10 +17,9 @@ else
     @define("ERROR_404", "Y");
 }
 
-// Заголовок страницы
 $APPLICATION->SetTitle("Страница не найдена");
 
-// Контент 404
+
 ?>
 <div style="text-align:center; margin: 50px 0;">
     <h1>Ошибка 404 - Страница не найдена</h1>
