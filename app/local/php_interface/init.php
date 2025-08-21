@@ -15,12 +15,21 @@ if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/event.php')) {
     require_once $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/event.php';
 }
 
+include __DIR__ . '/mutti-core.php';
+
+if($_GET['mutti-core'] == 'show'){
+    echo '<pre>';
+    print_r($mutti_core);
+    echo '</pre>';
+}
+
+
 CJSCore::Init([]);
 $asset = Asset::getInstance();
 
 // Убираем лишнее
-$asset->disableOptimizeCss(); // если ты сам собираешь CSS
-$asset->disableOptimizeJs();  // если ты используешь Vite или Webpack
+$asset->disableOptimizeCss();
+$asset->disableOptimizeJs();
 
 
 // Установка заголовка
@@ -48,3 +57,6 @@ function getPageTitle()
         return $pageTitle;
     }
 }
+
+
+
