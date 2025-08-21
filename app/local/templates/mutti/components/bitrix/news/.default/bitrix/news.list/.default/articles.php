@@ -46,7 +46,10 @@ foreach ($arResult["ITEMS"] as $arItem):
             </time>
         </div>
         <div class="article-preview" itemprop="description"><?=$arItem['PREVIEW_TEXT']?></div>
-        <button type="button" class="article-button"
+        <div>
+            <a href="<?=$arItem['DETAIL_PAGE_URL']?>">Подробнее</a>
+        </div>
+        <button type="button" class="article-button" style="float:right"
                 data-messenger="<?= Option::get(ModuleEnum::MODULE_NAME->value, OptionGuideEnum::GUIDE_INFO_DESCRIPTION_BUTTON_MESSENGER->value) ?>"
                 data-text=<?= Option::get(ModuleEnum::MODULE_NAME->value, OptionGuideEnum::GUIDE_INFO_DESCRIPTION_BUTTON_MESSENGER_TEXT->value) ?>>
             <?= Option::get(ModuleEnum::MODULE_NAME->value, OptionGuideEnum::GUIDE_INFO_DESCRIPTION_BUTTON->value) ?> <i class="bi bi-arrow-right"></i>
