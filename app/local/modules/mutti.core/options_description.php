@@ -94,6 +94,14 @@ return [
                 'DEFAULT' => '',
                 'REQUIRED' => true,
             ],
+
+            OptionBaseEnum::BASE_SOCIAL_WECHAT->value => [
+                'TITLE' => 'WeChatQR',
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+			
             'BASE_HEADER_MAPS' => [
                 'HEADER' => Loc::getMessage('BASE_HEADER_MAPS'),
             ],

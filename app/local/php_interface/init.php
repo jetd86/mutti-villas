@@ -25,6 +25,7 @@ if($_GET['mutti-core'] == 'show'){
     echo '</pre>';
 }
 
+global $mutti_core;
 
 CJSCore::Init([]);
 $asset = Asset::getInstance();
