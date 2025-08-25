@@ -58,6 +58,11 @@ if (substr(strtolower($host), -4) === ".com") { ?>
             box-shadow: 0 0 15px #00000040;
         }
 
+        .cookie-notification.hidden {
+            display: none;
+        }
+
+
         .cookie-content {
             display: flex        ;
             align-items: center;
@@ -148,6 +153,10 @@ if (substr(strtolower($host), -4) === ".com") { ?>
             border: 1px solid #dee2e6;
             z-index: 999999;
             box-shadow: 0 0 15px #00000040;
+        }
+
+        .cookie-notification.hidden {
+            display: none;
         }
 
         .cookie-content {
