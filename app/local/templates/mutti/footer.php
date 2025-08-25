@@ -45,57 +45,6 @@ if (substr(strtolower($host), -4) === ".com") { ?>
         </div>
     </div>
 
-    <style>
-        .cookie-notification {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 631px;
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            z-index: 999999;
-            box-shadow: 0 0 15px #00000040;
-        }
-
-        .cookie-notification.hidden {
-            display: none;
-        }
-
-
-        .cookie-content {
-            display: flex        ;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px 20px;
-            gap: 20px;
-        }
-
-        .cookie-text {
-            margin: 0;
-            font-size: 14px;
-            line-height: 150%;
-            color: #1e1e1e;
-            flex: 1;
-        }
-        .cookie-link {
-            color: #008798;
-            text-decoration: underline;
-        }
-        .cookie-accept-btn {
-            width: 150px;
-            height: 40px;
-            background-color: #4b0081;
-            color: #fff;
-            border: none;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            flex-shrink: 0;
-        }
-    </style>
-
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             function cookieNotificationModal() {
@@ -142,56 +91,6 @@ if (substr(strtolower($host), -4) === ".com") { ?>
         </div>
     </div>
 
-    <style>
-        .cookie-notification {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 631px;
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            z-index: 999999;
-            box-shadow: 0 0 15px #00000040;
-        }
-
-        .cookie-notification.hidden {
-            display: none;
-        }
-
-        .cookie-content {
-            display: flex        ;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px 20px;
-            gap: 20px;
-        }
-
-        .cookie-text {
-            margin: 0;
-            font-size: 14px;
-            line-height: 150%;
-            color: #1e1e1e;
-            flex: 1;
-        }
-        .cookie-link {
-            color: #008798;
-            text-decoration: underline;
-        }
-        .cookie-accept-btn {
-            width: 150px;
-            height: 40px;
-            background-color: #4b0081;
-            color: #fff;
-            border: none;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            flex-shrink: 0;
-        }
-    </style>
-
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             function cookieNotificationModal() {
@@ -231,6 +130,60 @@ if (substr(strtolower($host), -4) === ".com") { ?>
 
 
 <?php } ?>
+
+
+
+
+<style>
+    .cookie-notification {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 631px;
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        z-index: 999999;
+        box-shadow: 0 0 15px #00000040;
+    }
+
+    .cookie-notification.hidden {
+        display: none;
+    }
+
+
+    .cookie-content {
+        display: flex        ;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+        gap: 20px;
+    }
+
+    .cookie-text {
+        margin: 0;
+        font-size: 14px;
+        line-height: 150%;
+        color: #1e1e1e;
+        flex: 1;
+    }
+    .cookie-link {
+        color: #008798;
+        text-decoration: underline;
+    }
+    .cookie-accept-btn {
+        width: 150px;
+        height: 40px;
+        background-color: #4b0081;
+        color: #fff;
+        border: none;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+</style>
+
 
 
 
