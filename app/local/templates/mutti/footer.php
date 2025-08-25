@@ -29,6 +29,202 @@ use Bitrix\Main\Page\Asset; ?>
     </footer>
 </div>
 
+
+
+<?php
+$url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$parsed_url = parse_url($url);
+$host = $parsed_url['host'] ?? '';
+if (substr(strtolower($host), -4) === ".com") { ?>
+    <div id="cookie-notification" class="cookie-notification">
+        <div class="cookie-content">
+            <p class="cookie-text">
+                We use cookies. By continuing to use the website, you agree to the use of <a href="/policy/" title="Политика обработки персональных данных">cookies and the privacy policy.</a>
+            </p>
+            <button id="accept-cookies" class="cookie-accept-btn">Принять</button>
+        </div>
+    </div>
+
+    <style>
+        .cookie-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 631px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            z-index: 999999;
+            box-shadow: 0 0 15px #00000040;
+        }
+
+        .cookie-content {
+            display: flex        ;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            gap: 20px;
+        }
+
+        .cookie-text {
+            margin: 0;
+            font-size: 14px;
+            line-height: 150%;
+            color: #1e1e1e;
+            flex: 1;
+        }
+        .cookie-link {
+            color: #008798;
+            text-decoration: underline;
+        }
+        .cookie-accept-btn {
+            width: 150px;
+            height: 40px;
+            background-color: #4b0081;
+            color: #fff;
+            border: none;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+    </style>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            function cookieNotificationModal() {
+                const cookieNotification = document.getElementById('cookie-notification');
+                const acceptButton = document.getElementById('accept-cookies');
+
+                function checkCookieConsent() {
+                    const consent = localStorage.getItem('cookiesAccepted');
+                    if (consent === 'true') {
+                        hideCookieNotification();
+                    } else {
+                        showCookieNotification();
+                    }
+                }
+
+                function hideCookieNotification() {
+                    cookieNotification.classList.add('hidden');
+                }
+
+                function showCookieNotification() {
+                    cookieNotification.classList.remove('hidden');
+                }
+
+                function acceptCookies() {
+                    localStorage.setItem('cookiesAccepted', 'true');
+                    localStorage.setItem('cookieConsentDate', new Date().toISOString());
+                    hideCookieNotification();
+                }
+
+                acceptButton.addEventListener('click', acceptCookies);
+                checkCookieConsent();
+            }
+
+            cookieNotificationModal();
+        })
+    </script>
+<?php } else { ?>
+    <div id="cookie-notification" class="cookie-notification">
+        <div class="cookie-content">
+            <p class="cookie-text">
+                Мы используем cookie-файлы. Продолжая использование сайта, вы соглашаетесь с <a href="/policy/" title="Политика обработки персональных данных">использованием cookies-файлов и политикой конфиденциальности.</a>
+            </p>
+            <button id="accept-cookies" class="cookie-accept-btn">Принять</button>
+        </div>
+    </div>
+
+    <style>
+        .cookie-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 631px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            z-index: 999999;
+            box-shadow: 0 0 15px #00000040;
+        }
+
+        .cookie-content {
+            display: flex        ;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            gap: 20px;
+        }
+
+        .cookie-text {
+            margin: 0;
+            font-size: 14px;
+            line-height: 150%;
+            color: #1e1e1e;
+            flex: 1;
+        }
+        .cookie-link {
+            color: #008798;
+            text-decoration: underline;
+        }
+        .cookie-accept-btn {
+            width: 150px;
+            height: 40px;
+            background-color: #4b0081;
+            color: #fff;
+            border: none;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+    </style>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            function cookieNotificationModal() {
+                const cookieNotification = document.getElementById('cookie-notification');
+                const acceptButton = document.getElementById('accept-cookies');
+
+                function checkCookieConsent() {
+                    const consent = localStorage.getItem('cookiesAcceptedEn');
+                    if (consent === 'true') {
+                        hideCookieNotification();
+                    } else {
+                        showCookieNotification();
+                    }
+                }
+
+                function hideCookieNotification() {
+                    cookieNotification.classList.add('hidden');
+                }
+
+                function showCookieNotification() {
+                    cookieNotification.classList.remove('hidden');
+                }
+
+                function acceptCookies() {
+                    localStorage.setItem('cookiesAcceptedEn', 'true');
+                    localStorage.setItem('cookieConsentDate', new Date().toISOString());
+                    hideCookieNotification();
+                }
+
+                acceptButton.addEventListener('click', acceptCookies);
+                checkCookieConsent();
+            }
+
+            cookieNotificationModal();
+        })
+    </script>
+
+
+<?php } ?>
+
+
+
 <?$APPLICATION->IncludeComponent('helper:modal', '')?>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
