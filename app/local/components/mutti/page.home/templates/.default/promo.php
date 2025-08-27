@@ -77,18 +77,77 @@ $arSectionResult = $arResult['ITEMS'][$component->getTemplatePage()]; ?>
                                     <div class="phone-hint">Введите номер с кодом страны: +7 999 999 99 99</div>
                                     <div class="country-indicator"></div>
                                 </div>
+
                             </div>
 
                             <div class="section-feedback__form--row button">
                                 <button class="btn btn-link" type="submit"><?=$component->getModuleOption(OptionHomeEnum::HOME_PROMO_CALLBACK_BUTTON)?></button>
-                                <span><?=$component->getModuleOption(OptionHomeEnum::HOME_PROMO_CALLBACK_NOTIFICATION)?></span>
+                                <?php /*
+ <span><?=$component->getModuleOption(OptionHomeEnum::HOME_PROMO_CALLBACK_NOTIFICATION)?></span>
+                                */ ?>
+
+
+
+                                <div class="section-feedback__agreement">
+
+                                    <label>
+                                        <input type="checkbox" name="agreement" required>
+                                    <?php
+                                    $host = $_SERVER['HTTP_HOST'] ?? '';
+
+                                    $host = strtolower($host);
+                                    $host = preg_replace('/:\d+$/', '', $host);
+
+                                    $tld = '';
+                                    if (preg_match('/\.([^.]+)$/', $host, $matches)) {
+                                        $tld = $matches[1];
+                                    }
+
+                                    if ($tld === 'com') { ?>
+                                        I agree to the <a href="/policy" target="_blank">Privacy Policy</a> and consent to the processing of my personal data.
+                                    <?php } else { ?>
+                                        Я соглашаюсь с <a href="/policy" target="_blank">политикой конфиденциальности</a>
+                                        и даю согласие на обработку персональных данных.
+                                    <?php } ?>
+                                    </label>
+                                </div>
                             </div>
+
                         </div>
                     </form>
 
 
 
+
                     <style>
+                        .section-feedback__agreement {
+                            color: #fff;
+                            font-family: Montserrat, sans-serif;
+                            font-weight: 400;
+                            font-size: 12px;
+                            vertical-align: middle;
+                            line-height: 1;
+                            opacity: .8;
+                        }
+
+                        .section-feedback__agreement a {
+                            color: #ffffff;
+                        }
+                        .section-feedback__agreement label.is-invalid {
+                            border: 1px solid #dc3545;
+                            padding: 5px;
+                            border-radius: 4px;
+                            display: inline-block;
+                        }
+
+                        .section-feedback__agreement label.is-invalid::after {
+                            content: "Нужно согласиться";
+                            color: #dc3545;
+                            font-size: 0.9em;
+                            margin-left: 8px;
+                        }
+
+
                         .phone-input-container {
                             position: relative;
                         }
@@ -650,6 +709,34 @@ $arSectionResult = $arResult['ITEMS'][$component->getTemplatePage()]; ?>
                                     phoneInput.classList.add('is-invalid');
                                     invalidFeedback.textContent = validation.message;
                                     phoneInput.reportValidity();
+                                }
+
+
+                                const form = phoneInput.closest('form');
+                                const agreementInput = form.querySelector('input[name="agreement"]');
+                                const agreementLabel = agreementInput.closest('label');
+                                const invalidAgreementMessage = document.createElement('div');
+                                invalidAgreementMessage.className = 'invalid-feedback';
+                                invalidAgreementMessage.textContent = 'Нужно согласиться с условиями';
+                                agreementLabel.appendChild(invalidAgreementMessage);
+
+
+                                if (!agreementInput.checked) {
+                                    e.preventDefault();
+                                    hasError = true;
+                                    agreementInput.classList.add('is-invalid');
+                                    invalidAgreementMessage.style.display = 'block';
+                                } else {
+                                    agreementInput.classList.remove('is-invalid');
+                                    invalidAgreementMessage.style.display = 'none';
+                                }
+
+                                if (hasError) {
+                                    if (phoneInput.classList.contains('is-invalid')) {
+                                        phoneInput.focus();
+                                    } else if (agreementInput.classList.contains('is-invalid')) {
+                                        agreementInput.focus();
+                                    }
                                 }
                             });
                         });
