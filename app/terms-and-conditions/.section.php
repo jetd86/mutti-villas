@@ -1,0 +1,3 @@
+<?
+$sSectionName="Terms and conditions";
+?>

@@ -44,12 +44,21 @@ $this->setFrameMode(true); ?>
                 </li>
             </ul><?
         endif; ?>
-		
-		  <ul class="footer-email">
-                <li class="email-item">
-                    <a href="/policy/">Политика конфиденциальности</a>
-                </li>
-            </ul>
+	<ul class="footer-email">
+       <li>
+           <a href="/policy/">Политика конфиденциальности</a>
+      </li>
+    </ul>
+	<ul class="footer-email">
+       <li>
+           <a href="/cookies-policy/">Политика обработки cookies</a>
+      </li>
+    </ul>
+	<ul class="footer-email">
+       <li>
+           <a href="/terms-and-conditions/">Условия использования</a>
+      </li>
+    </ul>
     </div>
 
     <?php
