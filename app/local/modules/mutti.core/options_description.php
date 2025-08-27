@@ -94,14 +94,13 @@ return [
                 'DEFAULT' => '',
                 'REQUIRED' => true,
             ],
-
             OptionBaseEnum::BASE_SOCIAL_WECHAT->value => [
                 'TITLE' => 'WeChatQR',
                 'TYPE' => 'STRING',
                 'DEFAULT' => '',
                 'REQUIRED' => false,
             ],
-			
+
             'BASE_HEADER_MAPS' => [
                 'HEADER' => Loc::getMessage('BASE_HEADER_MAPS'),
             ],
@@ -183,6 +182,19 @@ return [
                 'DEFAULT' => '',
                 'REQUIRED' => true,
             ],
+
+            'BASE_HEADER_TRADEMARK_SIGN' => [
+                'HEADER' => Loc::getMessage('BASE_HEADER_TRADEMARK_SIGN'),
+            ],
+
+
+            OptionBaseEnum::BASE_HEADER_TRADEMARK_SIGN_FIELD->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_TRADEMARK_SIGN_FIELD'),
+                'TYPE' => 'HTML',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+
         ],
     ],
     OptionTabEnum::home->name => [

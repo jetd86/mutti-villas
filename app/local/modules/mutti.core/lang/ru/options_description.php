@@ -27,10 +27,13 @@ $MESS['BASE_FIELD_TELEGRAM_TOKEN'] = 'Токен бота';
 $MESS['BASE_FIELD_TELEGRAM_CHAT_ID'] = 'ID чата';
 $MESS['BASE_FIELD_TELEGRAM_MESSAGE'] = 'Сообщение (HTML)';
 $MESS['BASE_HEADER_TELEGRAM_ADMIN'] = 'Telegram (Нотификация о системных сообщениях)';
+
 $MESS['BASE_FIELD_TELEGRAM_TOKEN_ADMIN'] = 'Токен бота';
 $MESS['BASE_FIELD_TELEGRAM_TOKEN_ADMIN_HINT'] = 'Если не заполнен, то будет использоваться токен бота из нотификации с формы обратной связи';
 $MESS['BASE_FIELD_TELEGRAM_CHAT_ID_ADMIN'] = 'ID чата';
 $MESS['BASE_FIELD_TELEGRAM_MESSAGE_ADMIN'] = 'Сообщение (HTML)';
+$MESS['BASE_HEADER_TRADEMARK_SIGN_FIELD'] = 'Сообщение (HTML)';
+$MESS['BASE_HEADER_TRADEMARK_SIGN'] = 'Товарный знак';
 
 // Вкладка "Главная страница"
 $MESS['HOME_TAB_TITLE'] = 'Главная страница';

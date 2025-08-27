@@ -18,4 +18,5 @@ $this->setFrameMode(true); ?>
 
 <div class="footer-block footer-copyright">
     <p>© <?=sprintf('%s %s', date("Y"), $arParams['COPYRIGHT'])?></p>
+    <p><?php echo $arResult['MUTTI_CORE']['global_field_trademark_message_field']['VALUE']; ?></p>
 </div>
