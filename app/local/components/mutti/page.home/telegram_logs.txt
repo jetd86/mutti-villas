@@ -10,3 +10,6 @@
 2025-08-19 11:46:38 | Name: Test_ru | Phone: +7 926 253 97 18 | Message: 📝 <strong>Новая заявка с сайта muttivillas.ru</strong>
 👤 Имя: <strong>Test_ru</strong>
 📞 Телефон: <strong>+7 926 253 97 18</strong>
+2025-08-27 09:29:20 | Name: Тест | Phone: +7 901 999 99 99 | Message: 📝 <strong>Новая заявка с сайта muttivillas.ru</strong>
+👤 Имя: <strong>Тест</strong>
+📞 Телефон: <strong>+7 901 999 99 99</strong>

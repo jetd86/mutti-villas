@@ -32,6 +32,9 @@ $MESS['BASE_FIELD_TELEGRAM_TOKEN_ADMIN_HINT'] = 'If not filled, then the bot tok
 $MESS['BASE_FIELD_TELEGRAM_CHAT_ID_ADMIN'] = 'Chat ID';
 $MESS['BASE_FIELD_TELEGRAM_MESSAGE_ADMIN'] = 'Message (HTML)';
 
+$MESS['BASE_HEADER_TRADEMARK_SIGN_FIELD'] = 'Message (HTML)';
+$MESS['BASE_HEADER_TRADEMARK_SIGN'] = 'Trademark';
+
 // Вкладка "Главная страница"
 $MESS['HOME_TAB_TITLE'] = 'Main Page';
 $MESS['HOME_HEADER_HERO'] = 'First Screen';
