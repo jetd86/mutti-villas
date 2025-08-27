@@ -35,7 +35,7 @@ use Bitrix\Main\Page\Asset; ?>
 $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $parsed_url = parse_url($url);
 $host = $parsed_url['host'] ?? '';
-if (substr(strtolower($host), -4) !== ".com") { ?>
+if (substr(strtolower($host), -4) === ".com") { ?>
     <div id="cookie-notification" class="cookie-notification hidden">
         <div class="cookie-content">
             <p class="cookie-text">
