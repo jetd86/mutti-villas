@@ -135,6 +135,7 @@ if (substr(strtolower($host), -4) === ".com") { ?>
 
 
 <style>
+
     .cookie-notification {
         position: fixed;
         bottom: 20px;
@@ -181,6 +182,17 @@ if (substr(strtolower($host), -4) === ".com") { ?>
         font-weight: 500;
         cursor: pointer;
         flex-shrink: 0;
+    }
+
+
+
+    @media (max-width: 700px) {
+        .cookie-notification {
+            width: 100%;
+        }
+        .cookie-content {
+            flex-direction: column;
+        }
     }
 </style>
 
