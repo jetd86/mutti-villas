@@ -22,6 +22,19 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 $this->setFrameMode(true);
 $arSectionResult = $arResult['ITEMS'][$component->getTemplatePage()]; ?>
 
+<?php
+$host = $_SERVER['HTTP_HOST'] ?? '';
+
+$host = strtolower($host);
+$host = preg_replace('/:\d+$/', '', $host);
+
+$tld = '';
+if (preg_match('/\.([^.]+)$/', $host, $matches)) {
+    $tld = $matches[1];
+}
+
+?>
+
 <section class="section block" id="promo">
     <div class="section-container container">
         <div class="section-row grid">
@@ -93,16 +106,6 @@ $arSectionResult = $arResult['ITEMS'][$component->getTemplatePage()]; ?>
                                     <label>
                                         <input type="checkbox" name="agreement" required>
                                     <?php
-                                    $host = $_SERVER['HTTP_HOST'] ?? '';
-
-                                    $host = strtolower($host);
-                                    $host = preg_replace('/:\d+$/', '', $host);
-
-                                    $tld = '';
-                                    if (preg_match('/\.([^.]+)$/', $host, $matches)) {
-                                        $tld = $matches[1];
-                                    }
-
                                     if ($tld === 'com') { ?>
                                         I agree to the <a href="/policy" target="_blank">Privacy Policy</a> and consent to the processing of my personal data.
                                     <?php } else { ?>
@@ -200,254 +203,464 @@ $arSectionResult = $arResult['ITEMS'][$component->getTemplatePage()]; ?>
                             const phoneHint = phoneInput.parentElement.querySelector('.phone-hint');
                             const countryIndicator = phoneInput.parentElement.querySelector('.country-indicator');
 
-                            // Расширенная база кодов стран для определения региона
+
+                            <?php if ($tld === 'com') { ?>
                             const countryCodes = {
-                                // Северная Америка
-                                '1': { name: 'США/Канада', format: '+1 (###) ###-####', length: [10] },
+                                // Western Europe
+                                '33': { name: 'France', format: '+33 # ## ## ## ##', length: [9] },
+                                '49': { name: 'Germany', format: '+49 #### #######', length: [10, 11] },
+                                '44': { name: 'United Kingdom', format: '+44 #### ######', length: [10] },
+                                '39': { name: 'Italy', format: '+39 ### ### ####', length: [9, 10] },
+                                '34': { name: 'Spain', format: '+34 ### ### ###', length: [9] },
+                                '31': { name: 'Netherlands', format: '+31 # #### ####', length: [9] },
+                                '32': { name: 'Belgium', format: '+32 ### ## ## ##', length: [9] },
+                                '41': { name: 'Switzerland', format: '+41 ## ### ## ##', length: [9] },
+                                '43': { name: 'Austria', format: '+43 #### ######', length: [10, 11] },
+                                '351': { name: 'Portugal', format: '+351 ### ### ###', length: [9] },
+                                '353': { name: 'Ireland', format: '+353 ## ### ####', length: [9] },
+                                '352': { name: 'Luxembourg', format: '+352 ### ### ###', length: [9] },
+                                '377': { name: 'Monaco', format: '+377 ## ## ## ##', length: [8] },
+                                '376': { name: 'Andorra', format: '+376 ### ###', length: [6] },
+                                '378': { name: 'San Marino', format: '+378 #### ######', length: [10] },
+                                '379': { name: 'Vatican City', format: '+379 ## ## ## ##', length: [8] },
+                                '423': { name: 'Liechtenstein', format: '+423 ### ## ##', length: [7] },
 
-                                // Россия и СНГ
-                                '7': { name: 'Россия/Казахстан', format: '+7 (###) ###-##-##', length: [10] },
-                                '375': { name: 'Беларусь', format: '+375 ## ###-##-##', length: [9] },
-                                '380': { name: 'Украина', format: '+380 ## ###-##-##', length: [9] },
-                                '994': { name: 'Азербайджан', format: '+994 ## ###-##-##', length: [9] },
-                                '374': { name: 'Армения', format: '+374 ## ###-###', length: [8] },
-                                '995': { name: 'Грузия', format: '+995 ### ##-##-##', length: [9] },
-                                '996': { name: 'Киргизия', format: '+996 ### ###-###', length: [9] },
-                                '373': { name: 'Молдова', format: '+373 #### #-##-##', length: [8] },
-                                '992': { name: 'Таджикистан', format: '+992 ## ###-##-##', length: [9] },
-                                '993': { name: 'Туркменистан', format: '+993 # ###-##-##', length: [8] },
-                                '998': { name: 'Узбекистан', format: '+998 ## ###-##-##', length: [9] },
+                                // Northern Europe
+                                '46': { name: 'Sweden', format: '+46 ##-### ## ##', length: [9] },
+                                '47': { name: 'Norway', format: '+47 ### ## ###', length: [8] },
+                                '45': { name: 'Denmark', format: '+45 ## ## ## ##', length: [8] },
+                                '358': { name: 'Finland', format: '+358 ## ### ####', length: [9] },
+                                '354': { name: 'Iceland', format: '+354 ### ####', length: [7] },
+                                '298': { name: 'Faroe Islands', format: '+298 ######', length: [6] },
+                                '299': { name: 'Greenland', format: '+299 ## ## ##', length: [6] },
 
-                                // Западная Европа
-                                '33': { name: 'Франция', format: '+33 # ## ## ## ##', length: [9] },
-                                '49': { name: 'Германия', format: '+49 #### #######', length: [10, 11] },
-                                '44': { name: 'Великобритания', format: '+44 #### ######', length: [10] },
-                                '39': { name: 'Италия', format: '+39 ### ### ####', length: [9, 10] },
-                                '34': { name: 'Испания', format: '+34 ### ### ###', length: [9] },
-                                '31': { name: 'Нидерланды', format: '+31 # #### ####', length: [9] },
-                                '32': { name: 'Бельгия', format: '+32 ### ## ## ##', length: [9] },
-                                '41': { name: 'Швейцария', format: '+41 ## ### ## ##', length: [9] },
-                                '43': { name: 'Австрия', format: '+43 #### ######', length: [10, 11] },
-                                '351': { name: 'Португалия', format: '+351 ### ### ###', length: [9] },
-                                '353': { name: 'Ирландия', format: '+353 ## ### ####', length: [9] },
-                                '352': { name: 'Люксембург', format: '+352 ### ### ###', length: [9] },
-                                '377': { name: 'Монако', format: '+377 ## ## ## ##', length: [8] },
-                                '376': { name: 'Андорра', format: '+376 ### ###', length: [6] },
-                                '378': { name: 'Сан-Марино', format: '+378 #### ######', length: [10] },
-                                '379': { name: 'Ватикан', format: '+379 ## ## ## ##', length: [8] },
-                                '423': { name: 'Лихтенштейн', format: '+423 ### ## ##', length: [7] },
+                                // Eastern Europe
+                                '48': { name: 'Poland', format: '+48 ### ### ###', length: [9] },
+                                '420': { name: 'Czechia', format: '+420 ### ### ###', length: [9] },
+                                '421': { name: 'Slovakia', format: '+421 ### ### ###', length: [9] },
+                                '36': { name: 'Hungary', format: '+36 ## ### ####', length: [9] },
+                                '40': { name: 'Romania', format: '+40 ### ### ###', length: [9] },
+                                '359': { name: 'Bulgaria', format: '+359 ## ### ####', length: [9] },
+                                '385': { name: 'Croatia', format: '+385 ## ### ####', length: [9] },
+                                '386': { name: 'Slovenia', format: '+386 ## ### ###', length: [8] },
+                                '387': { name: 'Bosnia and Herzegovina', format: '+387 ## ### ###', length: [8] },
+                                '381': { name: 'Serbia', format: '+381 ## ### ####', length: [9] },
+                                '382': { name: 'Montenegro', format: '+382 ## ### ###', length: [8] },
+                                '383': { name: 'Kosovo', format: '+383 ## ### ###', length: [8] },
+                                '389': { name: 'North Macedonia', format: '+389 ## ### ###', length: [8] },
+                                '355': { name: 'Albania', format: '+355 ## ### ####', length: [9] },
+                                '370': { name: 'Lithuania', format: '+370 ### ## ###', length: [8] },
+                                '371': { name: 'Latvia', format: '+371 ## ### ###', length: [8] },
+                                '372': { name: 'Estonia', format: '+372 #### ####', length: [7, 8] }
 
-                                // Северная Европа
-                                '46': { name: 'Швеция', format: '+46 ##-### ## ##', length: [9] },
-                                '47': { name: 'Норвегия', format: '+47 ### ## ###', length: [8] },
-                                '45': { name: 'Дания', format: '+45 ## ## ## ##', length: [8] },
-                                '358': { name: 'Финляндия', format: '+358 ## ### ####', length: [9] },
-                                '354': { name: 'Исландия', format: '+354 ### ####', length: [7] },
-                                '298': { name: 'Фарерские острова', format: '+298 ######', length: [6] },
-                                '299': { name: 'Гренландия', format: '+299 ## ## ##', length: [6] },
+                                // East Asia
+                                '86': { name: 'China', format: '+86 ### #### ####', length: [11] },
+                                '81': { name: 'Japan', format: '+81 ##-####-####', length: [10] },
+                                '82': { name: 'South Korea', format: '+82 ##-####-####', length: [10, 11] },
+                                '850': { name: 'North Korea', format: '+850 ### ### ####', length: [10] },
+                                '886': { name: 'Taiwan', format: '+886 ### ### ###', length: [9] },
+                                '852': { name: 'Hong Kong', format: '+852 #### ####', length: [8] },
+                                '853': { name: 'Macau', format: '+853 #### ####', length: [8] },
+                                '976': { name: 'Mongolia', format: '+976 ## ## ####', length: [8] },
 
-                                // Восточная Европа
-                                '48': { name: 'Польша', format: '+48 ### ### ###', length: [9] },
-                                '420': { name: 'Чехия', format: '+420 ### ### ###', length: [9] },
-                                '421': { name: 'Словакия', format: '+421 ### ### ###', length: [9] },
-                                '36': { name: 'Венгрия', format: '+36 ## ### ####', length: [9] },
-                                '40': { name: 'Румыния', format: '+40 ### ### ###', length: [9] },
-                                '359': { name: 'Болгария', format: '+359 ## ### ####', length: [9] },
-                                '385': { name: 'Хорватия', format: '+385 ## ### ####', length: [9] },
-                                '386': { name: 'Словения', format: '+386 ## ### ###', length: [8] },
-                                '387': { name: 'Босния и Герцеговина', format: '+387 ## ### ###', length: [8] },
-                                '381': { name: 'Сербия', format: '+381 ## ### ####', length: [9] },
-                                '382': { name: 'Черногория', format: '+382 ## ### ###', length: [8] },
-                                '383': { name: 'Косово', format: '+383 ## ### ###', length: [8] },
-                                '389': { name: 'Северная Македония', format: '+389 ## ### ###', length: [8] },
-                                '355': { name: 'Албания', format: '+355 ## ### ####', length: [9] },
-                                '370': { name: 'Литва', format: '+370 ### ## ###', length: [8] },
-                                '371': { name: 'Латвия', format: '+371 ## ### ###', length: [8] },
-                                '372': { name: 'Эстония', format: '+372 #### ####', length: [7, 8] },
+                                // South Asia
+                                '91': { name: 'India', format: '+91 ##### #####', length: [10] },
+                                '92': { name: 'Pakistan', format: '+92 ### #######', length: [10] },
+                                '880': { name: 'Bangladesh', format: '+880 ####-######', length: [10] },
+                                '94': { name: 'Sri Lanka', format: '+94 ## ### ####', length: [9] },
+                                '977': { name: 'Nepal', format: '+977 ##-###-####', length: [10] },
+                                '975': { name: 'Bhutan', format: '+975 # ### ###', length: [7] },
+                                '960': { name: 'Maldives', format: '+960 ###-####', length: [7] },
+                                '93': { name: 'Afghanistan', format: '+93 ## ### ####', length: [9] },
 
-                                // Азия - Восточная
-                                '86': { name: 'Китай', format: '+86 ### #### ####', length: [11] },
-                                '81': { name: 'Япония', format: '+81 ##-####-####', length: [10] },
-                                '82': { name: 'Южная Корея', format: '+82 ##-####-####', length: [10, 11] },
-                                '850': { name: 'Северная Корея', format: '+850 ### ### ####', length: [10] },
-                                '886': { name: 'Тайвань', format: '+886 ### ### ###', length: [9] },
-                                '852': { name: 'Гонконг', format: '+852 #### ####', length: [8] },
-                                '853': { name: 'Макао', format: '+853 #### ####', length: [8] },
-                                '976': { name: 'Монголия', format: '+976 ## ## ####', length: [8] },
+                                // Southeast Asia
+                                '66': { name: 'Thailand', format: '+66 ## ### ####', length: [9] },
+                                '84': { name: 'Vietnam', format: '+84 ## #### ####', length: [9] },
+                                '60': { name: 'Malaysia', format: '+60 ##-### ####', length: [9, 10] },
+                                '65': { name: 'Singapore', format: '+65 #### ####', length: [8] },
+                                '62': { name: 'Indonesia', format: '+62 ###-###-####', length: [9, 10, 11] },
+                                '63': { name: 'Philippines', format: '+63 ### ### ####', length: [10] },
+                                '673': { name: 'Brunei', format: '+673 ### ####', length: [7] },
+                                '855': { name: 'Cambodia', format: '+855 ## ### ###', length: [8] },
+                                '856': { name: 'Laos', format: '+856 ## ### ###', length: [8] },
+                                '95': { name: 'Myanmar', format: '+95 # ### ####', length: [8, 9] },
+                                '670': { name: 'East Timor', format: '+670 ### ####', length: [7] },
 
-                                // Азия - Южная
-                                '91': { name: 'Индия', format: '+91 ##### #####', length: [10] },
-                                '92': { name: 'Пакистан', format: '+92 ### #######', length: [10] },
-                                '880': { name: 'Бангладеш', format: '+880 ####-######', length: [10] },
-                                '94': { name: 'Шри-Ланка', format: '+94 ## ### ####', length: [9] },
-                                '977': { name: 'Непал', format: '+977 ##-###-####', length: [10] },
-                                '975': { name: 'Бутан', format: '+975 # ### ###', length: [7] },
-                                '960': { name: 'Мальдивы', format: '+960 ###-####', length: [7] },
-                                '93': { name: 'Афганистан', format: '+93 ## ### ####', length: [9] },
+                                // Middle East
+                                '90': { name: 'Turkey', format: '+90 ### ### ## ##', length: [10] },
+                                '98': { name: 'Iran', format: '+98 ### ### ####', length: [10] },
+                                '964': { name: 'Iraq', format: '+964 ### ### ####', length: [10] },
+                                '972': { name: 'Israel', format: '+972 ##-###-####', length: [9] },
+                                '970': { name: 'Palestine', format: '+970 ## ### ####', length: [9] },
+                                '962': { name: 'Jordan', format: '+962 # #### ####', length: [9] },
+                                '961': { name: 'Lebanon', format: '+961 ## ### ###', length: [8] },
+                                '963': { name: 'Syria', format: '+963 ## #### ###', length: [9] },
+                                '966': { name: 'Saudi Arabia', format: '+966 ## ### ####', length: [9] },
+                                '971': { name: 'UAE', format: '+971 ## ### ####', length: [9] },
+                                '965': { name: 'Kuwait', format: '+965 #### ####', length: [8] },
+                                '974': { name: 'Qatar', format: '+974 #### ####', length: [8] },
+                                '973': { name: 'Bahrain', format: '+973 #### ####', length: [8] },
+                                '968': { name: 'Oman', format: '+968 #### ####', length: [8] },
+                                '967': { name: 'Yemen', format: '+967 # ### ###', length: [7, 8] }
 
-                                // Азия - Юго-Восточная
-                                '66': { name: 'Таиланд', format: '+66 ## ### ####', length: [9] },
-                                '84': { name: 'Вьетнам', format: '+84 ## #### ####', length: [9] },
-                                '60': { name: 'Малайзия', format: '+60 ##-### ####', length: [9, 10] },
-                                '65': { name: 'Сингапур', format: '+65 #### ####', length: [8] },
-                                '62': { name: 'Индонезия', format: '+62 ###-###-####', length: [9, 10, 11] },
-                                '63': { name: 'Филиппины', format: '+63 ### ### ####', length: [10] },
-                                '673': { name: 'Бруней', format: '+673 ### ####', length: [7] },
-                                '855': { name: 'Камбоджа', format: '+855 ## ### ###', length: [8] },
-                                '856': { name: 'Лаос', format: '+856 ## ### ###', length: [8] },
-                                '95': { name: 'Мьянма', format: '+95 # ### ####', length: [8, 9] },
-                                '670': { name: 'Восточный Тимор', format: '+670 ### ####', length: [7] },
+                                // North Africa
+                                '20': { name: 'Egypt', format: '+20 ## #### ####', length: [10] },
+                                '218': { name: 'Libya', format: '+218 ##-#######', length: [9] },
+                                '216': { name: 'Tunisia', format: '+216 ## ### ###', length: [8] },
+                                '213': { name: 'Algeria', format: '+213 ### ## ## ##', length: [9] },
+                                '212': { name: 'Morocco', format: '+212 ###-######', length: [9] },
+                                '249': { name: 'Sudan', format: '+249 ## ### ####', length: [9] },
+                                '211': { name: 'South Sudan', format: '+211 ## ### ####', length: [9] },
 
-                                // Ближний Восток
-                                '90': { name: 'Турция', format: '+90 ### ### ## ##', length: [10] },
-                                '98': { name: 'Иран', format: '+98 ### ### ####', length: [10] },
-                                '964': { name: 'Ирак', format: '+964 ### ### ####', length: [10] },
-                                '972': { name: 'Израиль', format: '+972 ##-###-####', length: [9] },
-                                '970': { name: 'Палестина', format: '+970 ## ### ####', length: [9] },
-                                '962': { name: 'Иордания', format: '+962 # #### ####', length: [9] },
-                                '961': { name: 'Ливан', format: '+961 ## ### ###', length: [8] },
-                                '963': { name: 'Сирия', format: '+963 ## #### ###', length: [9] },
-                                '966': { name: 'Саудовская Аравия', format: '+966 ## ### ####', length: [9] },
-                                '971': { name: 'ОАЭ', format: '+971 ## ### ####', length: [9] },
-                                '965': { name: 'Кувейт', format: '+965 #### ####', length: [8] },
-                                '974': { name: 'Катар', format: '+974 #### ####', length: [8] },
-                                '973': { name: 'Бахрейн', format: '+973 #### ####', length: [8] },
-                                '968': { name: 'Оман', format: '+968 #### ####', length: [8] },
-                                '967': { name: 'Йемен', format: '+967 # ### ###', length: [7, 8] },
-                                '995': { name: 'Грузия', format: '+995 ### ##-##-##', length: [9] },
+                                // West Africa
+                                '234': { name: 'Nigeria', format: '+234 ### ### ####', length: [10] },
+                                '233': { name: 'Ghana', format: '+233 ## ### ####', length: [9] },
+                                '225': { name: "Côte d'Ivoire", format: '+225 ## ## ## ##', length: [8] },
+                                '221': { name: 'Senegal', format: '+221 ## ### ## ##', length: [9] },
+                                '223': { name: 'Mali', format: '+223 ## ## ## ##', length: [8] },
+                                '226': { name: 'Burkina Faso', format: '+226 ## ## ## ##', length: [8] },
+                                '227': { name: 'Niger', format: '+227 ## ## ## ##', length: [8] },
+                                '228': { name: 'Togo', format: '+228 ## ## ## ##', length: [8] },
+                                '229': { name: 'Benin', format: '+229 ## ## ## ##', length: [8] },
+                                '220': { name: 'Gambia', format: '+220 ### ####', length: [7] },
+                                '224': { name: 'Guinea', format: '+224 ## ## ## ##', length: [8] },
+                                '245': { name: 'Guinea-Bissau', format: '+245 # ######', length: [7] },
+                                '238': { name: 'Cape Verde', format: '+238 ### ## ##', length: [7] },
+                                '232': { name: 'Sierra Leone', format: '+232 ## ######', length: [8] },
+                                '231': { name: 'Liberia', format: '+231 ## ### ####', length: [8] },
+                                '230': { name: 'Mauritius', format: '+230 #### ####', length: [8] },
 
-                                // Африка - Северная
-                                '20': { name: 'Египет', format: '+20 ## #### ####', length: [10] },
-                                '218': { name: 'Ливия', format: '+218 ##-#######', length: [9] },
-                                '216': { name: 'Тунис', format: '+216 ## ### ###', length: [8] },
-                                '213': { name: 'Алжир', format: '+213 ### ## ## ##', length: [9] },
-                                '212': { name: 'Марокко', format: '+212 ###-######', length: [9] },
-                                '249': { name: 'Судан', format: '+249 ## ### ####', length: [9] },
-                                '211': { name: 'Южный Судан', format: '+211 ## ### ####', length: [9] },
+                                // East Africa
+                                '254': { name: 'Kenya', format: '+254 ### ######', length: [9] },
+                                '255': { name: 'Tanzania', format: '+255 ## ### ####', length: [9] },
+                                '256': { name: 'Uganda', format: '+256 ### ######', length: [9] },
+                                '250': { name: 'Rwanda', format: '+250 ### ### ###', length: [9] },
+                                '257': { name: 'Burundi', format: '+257 ## ## ## ##', length: [8] },
+                                '251': { name: 'Ethiopia', format: '+251 ## ### ####', length: [9] },
+                                '252': { name: 'Somalia', format: '+252 ## ### ####', length: [8] },
+                                '253': { name: 'Djibouti', format: '+253 ## ## ## ##', length: [8] },
+                                '291': { name: 'Eritrea', format: '+291 # ### ###', length: [7] },
+                                '248': { name: 'Seychelles', format: '+248 # ### ###', length: [7] },
+                                '261': { name: 'Madagascar', format: '+261 ## ## ### ##', length: [9] },
+                                '269': { name: 'Comoros', format: '+269 ### ## ##', length: [7] },
+                                '262': { name: 'Réunion/Mayotte', format: '+262 ##### ####', length: [9] },
 
-                                // Африка - Западная
-                                '234': { name: 'Нигерия', format: '+234 ### ### ####', length: [10] },
-                                '233': { name: 'Гана', format: '+233 ## ### ####', length: [9] },
-                                '225': { name: 'Кот-д\'Ивуар', format: '+225 ## ## ## ##', length: [8] },
-                                '221': { name: 'Сенегал', format: '+221 ## ### ## ##', length: [9] },
-                                '223': { name: 'Мали', format: '+223 ## ## ## ##', length: [8] },
-                                '226': { name: 'Буркина-Фасо', format: '+226 ## ## ## ##', length: [8] },
-                                '227': { name: 'Нигер', format: '+227 ## ## ## ##', length: [8] },
-                                '228': { name: 'Того', format: '+228 ## ## ## ##', length: [8] },
-                                '229': { name: 'Бенин', format: '+229 ## ## ## ##', length: [8] },
-                                '220': { name: 'Гамбия', format: '+220 ### ####', length: [7] },
-                                '224': { name: 'Гвинея', format: '+224 ## ## ## ##', length: [8] },
-                                '245': { name: 'Гвинея-Бисау', format: '+245 # ######', length: [7] },
-                                '238': { name: 'Кабо-Верде', format: '+238 ### ## ##', length: [7] },
-                                '232': { name: 'Сьерра-Леоне', format: '+232 ## ######', length: [8] },
-                                '231': { name: 'Либерия', format: '+231 ## ### ####', length: [8] },
-                                '230': { name: 'Маврикий', format: '+230 #### ####', length: [8] },
+                                // Central Africa
+                                '237': { name: 'Cameroon', format: '+237 #### ####', length: [8] },
+                                '236': { name: 'Central African Republic', format: '+236 ## ## ## ##', length: [8] },
+                                '235': { name: 'Chad', format: '+235 ## ## ## ##', length: [8] },
+                                '242': { name: 'Republic of the Congo', format: '+242 ## ### ####', length: [9] },
+                                '243': { name: 'DR Congo', format: '+243 ### ### ###', length: [9] },
+                                '240': { name: 'Equatorial Guinea', format: '+240 ### ### ###', length: [9] },
+                                '241': { name: 'Gabon', format: '+241 ## ## ## ##', length: [8] },
+                                '239': { name: 'São Tomé and Príncipe', format: '+239 ### ####', length: [7] },
 
-                                // Африка - Восточная
-                                '254': { name: 'Кения', format: '+254 ### ######', length: [9] },
-                                '255': { name: 'Танзания', format: '+255 ## ### ####', length: [9] },
-                                '256': { name: 'Уганда', format: '+256 ### ######', length: [9] },
-                                '250': { name: 'Руанда', format: '+250 ### ### ###', length: [9] },
-                                '257': { name: 'Бурунди', format: '+257 ## ## ## ##', length: [8] },
-                                '251': { name: 'Эфиопия', format: '+251 ## ### ####', length: [9] },
-                                '252': { name: 'Сомали', format: '+252 ## ### ####', length: [8] },
-                                '253': { name: 'Джибути', format: '+253 ## ## ## ##', length: [8] },
-                                '291': { name: 'Эритрея', format: '+291 # ### ###', length: [7] },
-                                '248': { name: 'Сейшелы', format: '+248 # ### ###', length: [7] },
-                                '261': { name: 'Мадагаскар', format: '+261 ## ## ### ##', length: [9] },
-                                '269': { name: 'Коморы', format: '+269 ### ## ##', length: [7] },
-                                '262': { name: 'Реюньон/Майотта', format: '+262 ##### ####', length: [9] },
+                                // Southern Africa
+                                '27': { name: 'South Africa', format: '+27 ## ### ####', length: [9] },
+                                '264': { name: 'Namibia', format: '+264 ## ### ####', length: [9] },
+                                '267': { name: 'Botswana', format: '+267 ## ### ###', length: [8] },
+                                '268': { name: 'Eswatini', format: '+268 ## ## ## ##', length: [8] },
+                                '266': { name: 'Lesotho', format: '+266 #### ####', length: [8] },
+                                '258': { name: 'Mozambique', format: '+258 ## ### ####', length: [9] },
+                                '260': { name: 'Zambia', format: '+260 ## ### ####', length: [9] },
+                                '263': { name: 'Zimbabwe', format: '+263 # ### ###', length: [7] },
+                                '265': { name: 'Malawi', format: '+265 # ### ###', length: [7] },
+                                '244': { name: 'Angola', format: '+244 ### ### ###', length: [9] }
 
-                                // Африка - Центральная
-                                '237': { name: 'Камерун', format: '+237 #### ####', length: [8] },
-                                '236': { name: 'ЦАР', format: '+236 ## ## ## ##', length: [8] },
-                                '235': { name: 'Чад', format: '+235 ## ## ## ##', length: [8] },
-                                '242': { name: 'Республика Конго', format: '+242 ## ### ####', length: [9] },
-                                '243': { name: 'ДР Конго', format: '+243 ### ### ###', length: [9] },
-                                '240': { name: 'Экваториальная Гвинея', format: '+240 ### ### ###', length: [9] },
-                                '241': { name: 'Габон', format: '+241 ## ## ## ##', length: [8] },
-                                '239': { name: 'Сан-Томе и Принсипи', format: '+239 ### ####', length: [7] },
+                                // North America
+                                '1': { name: 'USA/Canada', format: '+1 (###) ###-####', length: [10] },
 
-                                // Африка - Южная
-                                '27': { name: 'ЮАР', format: '+27 ## ### ####', length: [9] },
-                                '264': { name: 'Намибия', format: '+264 ## ### ####', length: [9] },
-                                '267': { name: 'Ботсвана', format: '+267 ## ### ###', length: [8] },
-                                '268': { name: 'Эсватини', format: '+268 ## ## ## ##', length: [8] },
-                                '266': { name: 'Лесото', format: '+266 #### ####', length: [8] },
-                                '258': { name: 'Мозамбик', format: '+258 ## ### ####', length: [9] },
-                                '260': { name: 'Замбия', format: '+260 ## ### ####', length: [9] },
-                                '263': { name: 'Зимбабве', format: '+263 # ### ###', length: [7] },
-                                '265': { name: 'Малави', format: '+265 # ### ###', length: [7] },
-                                '244': { name: 'Ангола', format: '+244 ### ### ###', length: [9] },
+                                // Central America
+                                '52': { name: 'Mexico', format: '+52 ## #### ####', length: [10] },
+                                '502': { name: 'Guatemala', format: '+502 #### ####', length: [8] },
+                                '503': { name: 'El Salvador', format: '+503 #### ####', length: [8] },
+                                '504': { name: 'Honduras', format: '+504 #### ####', length: [8] },
+                                '505': { name: 'Nicaragua', format: '+505 #### ####', length: [8] },
+                                '506': { name: 'Costa Rica', format: '+506 #### ####', length: [8] },
+                                '507': { name: 'Panama', format: '+507 ####-####', length: [8] },
+                                '501': { name: 'Belize', format: '+501 ###-####', length: [7] },
 
-                                // Латинская Америка - Южная
-                                '55': { name: 'Бразилия', format: '+55 ## #####-####', length: [10, 11] },
-                                '54': { name: 'Аргентина', format: '+54 ## ####-####', length: [10] },
-                                '56': { name: 'Чили', format: '+56 # #### ####', length: [9] },
-                                '57': { name: 'Колумбия', format: '+57 ### ### ####', length: [10] },
-                                '58': { name: 'Венесуэла', format: '+58 ###-#######', length: [10] },
-                                '51': { name: 'Перу', format: '+51 ### ### ###', length: [9] },
-                                '593': { name: 'Эквадор', format: '+593 ## ### ####', length: [9] },
-                                '591': { name: 'Боливия', format: '+591 # ### ####', length: [8] },
-                                '595': { name: 'Парагвай', format: '+595 ### ######', length: [9] },
-                                '598': { name: 'Уругвай', format: '+598 #### ####', length: [8] },
-                                '594': { name: 'Французская Гвиана', format: '+594 ##### ####', length: [9] },
-                                '597': { name: 'Суринам', format: '+597 ###-####', length: [7] },
-                                '592': { name: 'Гайана', format: '+592 ### ####', length: [7] },
-                                '500': { name: 'Фолклендские острова', format: '+500 #####', length: [5] },
+                                // Caribbean
+                                '53': { name: 'Cuba', format: '+53 # ### ####', length: [8] },
+                                '509': { name: 'Haiti', format: '+509 ## ## ####', length: [8] },
+                                '1809': { name: 'Dominican Republic', format: '+1 (809) ###-####', length: [10] },
+                                '1876': { name: 'Jamaica', format: '+1 (876) ###-####', length: [10] },
+                                '1868': { name: 'Trinidad and Tobago', format: '+1 (868) ###-####', length: [10] },
+                                '1246': { name: 'Barbados', format: '+1 (246) ###-####', length: [10] },
+                                '1784': { name: 'Saint Vincent and the Grenadines', format: '+1 (784) ###-####', length: [10] },
+                                '1787': { name: 'Puerto Rico', format: '+1 (787) ###-####', length: [10] },
+                                '590': { name: 'Guadeloupe', format: '+590 ### ## ## ##', length: [9] },
+                                '596': { name: 'Martinique', format: '+596 ### ## ## ##', length: [9] },
+                                '599': { name: 'Netherlands Antilles', format: '+599 ### ####', length: [7] },
 
-                                // Латинская Америка - Центральная и Карибы
-                                '52': { name: 'Мексика', format: '+52 ## #### ####', length: [10] },
-                                '502': { name: 'Гватемала', format: '+502 #### ####', length: [8] },
-                                '503': { name: 'Сальвадор', format: '+503 #### ####', length: [8] },
-                                '504': { name: 'Гондурас', format: '+504 #### ####', length: [8] },
-                                '505': { name: 'Никарагуа', format: '+505 #### ####', length: [8] },
-                                '506': { name: 'Коста-Рика', format: '+506 #### ####', length: [8] },
-                                '507': { name: 'Панама', format: '+507 ####-####', length: [8] },
-                                '501': { name: 'Белиз', format: '+501 ###-####', length: [7] },
-                                '53': { name: 'Куба', format: '+53 # ### ####', length: [8] },
-                                '509': { name: 'Гаити', format: '+509 ## ## ####', length: [8] },
-                                '1809': { name: 'Доминиканская Республика', format: '+1 (809) ###-####', length: [10] },
-                                '1876': { name: 'Ямайка', format: '+1 (876) ###-####', length: [10] },
-                                '1868': { name: 'Тринидад и Тобаго', format: '+1 (868) ###-####', length: [10] },
-                                '1246': { name: 'Барбадос', format: '+1 (246) ###-####', length: [10] },
-                                '1784': { name: 'Сент-Винсент и Гренадины', format: '+1 (784) ###-####', length: [10] },
-                                '1787': { name: 'Пуэрто-Рико', format: '+1 (787) ###-####', length: [10] },
-                                '590': { name: 'Гваделупа', format: '+590 ### ## ## ##', length: [9] },
-                                '596': { name: 'Мартиника', format: '+596 ### ## ## ##', length: [9] },
-                                '599': { name: 'Нидерландские Антилы', format: '+599 ### ####', length: [7] },
-
-                                // Океания
-                                '61': { name: 'Австралия', format: '+61 # #### ####', length: [9] },
-                                '64': { name: 'Новая Зеландия', format: '+64 ## ### ####', length: [9] },
-                                '679': { name: 'Фиджи', format: '+679 ### ####', length: [7] },
-                                '675': { name: 'Папуа-Новая Гвинея', format: '+675 ### ####', length: [7] },
-                                '687': { name: 'Новая Каледония', format: '+687 ##.##.##', length: [6] },
-                                '689': { name: 'Французская Полинезия', format: '+689 ## ## ## ##', length: [8] },
-                                '685': { name: 'Самоа', format: '+685 ## ####', length: [6] },
-                                '684': { name: 'Американское Самоа', format: '+684 ###-####', length: [7] },
-                                '676': { name: 'Тонга', format: '+676 #####', length: [5] },
-                                '677': { name: 'Соломоновы Острова', format: '+677 #####', length: [5] },
-                                '678': { name: 'Вануату', format: '+678 #####', length: [5] },
-                                '682': { name: 'Острова Кука', format: '+682 ## ###', length: [5] },
-                                '683': { name: 'Ниуэ', format: '+683 ####', length: [4] },
-                                '686': { name: 'Кирибати', format: '+686 ## ###', length: [5] },
-                                '688': { name: 'Тувалу', format: '+688 #####', length: [5] },
-                                '691': { name: 'Микронезия', format: '+691 ### ####', length: [7] },
-                                '692': { name: 'Маршалловы Острова', format: '+692 ###-####', length: [7] },
-                                '680': { name: 'Палау', format: '+680 ### ####', length: [7] },
-                                '670': { name: 'Северные Марианские острова', format: '+670 ###-####', length: [7] },
-                                '681': { name: 'Уоллис и Футуна', format: '+681 ## ## ##', length: [6] },
-
-                                // Антарктида и отдаленные территории
-                                '672': { name: 'Антарктида/Норфолк', format: '+672 ### ###', length: [6] },
-                                '290': { name: 'Святой Елены остров', format: '+290 ####', length: [4] },
-                                '247': { name: 'Остров Вознесения', format: '+247 ####', length: [4] },
-                                '508': { name: 'Сен-Пьер и Микелон', format: '+508 ## ## ##', length: [6] },
-
-                                // Универсальная маска для остальных стран
-                                'default': { name: 'Международный', format: '+### ### ### ####', length: [7, 8, 9, 10, 11, 12, 13, 14, 15] }
+                                // South America
+                                '55': { name: 'Brazil', format: '+55 ## #####-####', length: [10, 11] },
+                                '54': { name: 'Argentina', format: '+54 ## ####-####', length: [10] },
+                                '56': { name: 'Chile', format: '+56 # #### ####', length: [9] },
+                                '57': { name: 'Colombia', format: '+57 ### ### ####', length: [10] },
+                                '58': { name: 'Venezuela', format: '+58 ###-#######', length: [10] },
+                                '51': { name: 'Peru', format: '+51 ### ### ###', length: [9] },
+                                '593': { name: 'Ecuador', format: '+593 ## ### ####', length: [9] },
+                                '591': { name: 'Bolivia', format: '+591 # ### ####', length: [8] },
+                                '595': { name: 'Paraguay', format: '+595 ### ######', length: [9] },
+                                '598': { name: 'Uruguay', format: '+598 #### ####', length: [8] },
+                                '594': { name: 'French Guiana', format: '+594 ##### ####', length: [9] },
+                                '597': { name: 'Suriname', format: '+597 ###-####', length: [7] },
+                                '592': { name: 'Guyana', format: '+592 ### ####', length: [7] },
+                                '500': { name: 'Falkland Islands', format: '+500 #####', length: [5] }
                             };
+
+
+                        <?php } else { ?>
+                                // Расширенная база кодов стран для определения региона
+                                const countryCodes = {
+                                    // Северная Америка
+                                    '1': { name: 'США/Канада', format: '+1 (###) ###-####', length: [10] },
+
+                                    // Россия и СНГ
+                                    '7': { name: 'Россия/Казахстан', format: '+7 (###) ###-##-##', length: [10] },
+                                    '375': { name: 'Беларусь', format: '+375 ## ###-##-##', length: [9] },
+                                    '380': { name: 'Украина', format: '+380 ## ###-##-##', length: [9] },
+                                    '994': { name: 'Азербайджан', format: '+994 ## ###-##-##', length: [9] },
+                                    '374': { name: 'Армения', format: '+374 ## ###-###', length: [8] },
+                                    '995': { name: 'Грузия', format: '+995 ### ##-##-##', length: [9] },
+                                    '996': { name: 'Киргизия', format: '+996 ### ###-###', length: [9] },
+                                    '373': { name: 'Молдова', format: '+373 #### #-##-##', length: [8] },
+                                    '992': { name: 'Таджикистан', format: '+992 ## ###-##-##', length: [9] },
+                                    '993': { name: 'Туркменистан', format: '+993 # ###-##-##', length: [8] },
+                                    '998': { name: 'Узбекистан', format: '+998 ## ###-##-##', length: [9] },
+
+                                    // Западная Европа
+                                    '33': { name: 'Франция', format: '+33 # ## ## ## ##', length: [9] },
+                                    '49': { name: 'Германия', format: '+49 #### #######', length: [10, 11] },
+                                    '44': { name: 'Великобритания', format: '+44 #### ######', length: [10] },
+                                    '39': { name: 'Италия', format: '+39 ### ### ####', length: [9, 10] },
+                                    '34': { name: 'Испания', format: '+34 ### ### ###', length: [9] },
+                                    '31': { name: 'Нидерланды', format: '+31 # #### ####', length: [9] },
+                                    '32': { name: 'Бельгия', format: '+32 ### ## ## ##', length: [9] },
+                                    '41': { name: 'Швейцария', format: '+41 ## ### ## ##', length: [9] },
+                                    '43': { name: 'Австрия', format: '+43 #### ######', length: [10, 11] },
+                                    '351': { name: 'Португалия', format: '+351 ### ### ###', length: [9] },
+                                    '353': { name: 'Ирландия', format: '+353 ## ### ####', length: [9] },
+                                    '352': { name: 'Люксембург', format: '+352 ### ### ###', length: [9] },
+                                    '377': { name: 'Монако', format: '+377 ## ## ## ##', length: [8] },
+                                    '376': { name: 'Андорра', format: '+376 ### ###', length: [6] },
+                                    '378': { name: 'Сан-Марино', format: '+378 #### ######', length: [10] },
+                                    '379': { name: 'Ватикан', format: '+379 ## ## ## ##', length: [8] },
+                                    '423': { name: 'Лихтенштейн', format: '+423 ### ## ##', length: [7] },
+
+                                    // Северная Европа
+                                    '46': { name: 'Швеция', format: '+46 ##-### ## ##', length: [9] },
+                                    '47': { name: 'Норвегия', format: '+47 ### ## ###', length: [8] },
+                                    '45': { name: 'Дания', format: '+45 ## ## ## ##', length: [8] },
+                                    '358': { name: 'Финляндия', format: '+358 ## ### ####', length: [9] },
+                                    '354': { name: 'Исландия', format: '+354 ### ####', length: [7] },
+                                    '298': { name: 'Фарерские острова', format: '+298 ######', length: [6] },
+                                    '299': { name: 'Гренландия', format: '+299 ## ## ##', length: [6] },
+
+                                    // Восточная Европа
+                                    '48': { name: 'Польша', format: '+48 ### ### ###', length: [9] },
+                                    '420': { name: 'Чехия', format: '+420 ### ### ###', length: [9] },
+                                    '421': { name: 'Словакия', format: '+421 ### ### ###', length: [9] },
+                                    '36': { name: 'Венгрия', format: '+36 ## ### ####', length: [9] },
+                                    '40': { name: 'Румыния', format: '+40 ### ### ###', length: [9] },
+                                    '359': { name: 'Болгария', format: '+359 ## ### ####', length: [9] },
+                                    '385': { name: 'Хорватия', format: '+385 ## ### ####', length: [9] },
+                                    '386': { name: 'Словения', format: '+386 ## ### ###', length: [8] },
+                                    '387': { name: 'Босния и Герцеговина', format: '+387 ## ### ###', length: [8] },
+                                    '381': { name: 'Сербия', format: '+381 ## ### ####', length: [9] },
+                                    '382': { name: 'Черногория', format: '+382 ## ### ###', length: [8] },
+                                    '383': { name: 'Косово', format: '+383 ## ### ###', length: [8] },
+                                    '389': { name: 'Северная Македония', format: '+389 ## ### ###', length: [8] },
+                                    '355': { name: 'Албания', format: '+355 ## ### ####', length: [9] },
+                                    '370': { name: 'Литва', format: '+370 ### ## ###', length: [8] },
+                                    '371': { name: 'Латвия', format: '+371 ## ### ###', length: [8] },
+                                    '372': { name: 'Эстония', format: '+372 #### ####', length: [7, 8] },
+
+                                    // Азия - Восточная
+                                    '86': { name: 'Китай', format: '+86 ### #### ####', length: [11] },
+                                    '81': { name: 'Япония', format: '+81 ##-####-####', length: [10] },
+                                    '82': { name: 'Южная Корея', format: '+82 ##-####-####', length: [10, 11] },
+                                    '850': { name: 'Северная Корея', format: '+850 ### ### ####', length: [10] },
+                                    '886': { name: 'Тайвань', format: '+886 ### ### ###', length: [9] },
+                                    '852': { name: 'Гонконг', format: '+852 #### ####', length: [8] },
+                                    '853': { name: 'Макао', format: '+853 #### ####', length: [8] },
+                                    '976': { name: 'Монголия', format: '+976 ## ## ####', length: [8] },
+
+                                    // Азия - Южная
+                                    '91': { name: 'Индия', format: '+91 ##### #####', length: [10] },
+                                    '92': { name: 'Пакистан', format: '+92 ### #######', length: [10] },
+                                    '880': { name: 'Бангладеш', format: '+880 ####-######', length: [10] },
+                                    '94': { name: 'Шри-Ланка', format: '+94 ## ### ####', length: [9] },
+                                    '977': { name: 'Непал', format: '+977 ##-###-####', length: [10] },
+                                    '975': { name: 'Бутан', format: '+975 # ### ###', length: [7] },
+                                    '960': { name: 'Мальдивы', format: '+960 ###-####', length: [7] },
+                                    '93': { name: 'Афганистан', format: '+93 ## ### ####', length: [9] },
+
+                                    // Азия - Юго-Восточная
+                                    '66': { name: 'Таиланд', format: '+66 ## ### ####', length: [9] },
+                                    '84': { name: 'Вьетнам', format: '+84 ## #### ####', length: [9] },
+                                    '60': { name: 'Малайзия', format: '+60 ##-### ####', length: [9, 10] },
+                                    '65': { name: 'Сингапур', format: '+65 #### ####', length: [8] },
+                                    '62': { name: 'Индонезия', format: '+62 ###-###-####', length: [9, 10, 11] },
+                                    '63': { name: 'Филиппины', format: '+63 ### ### ####', length: [10] },
+                                    '673': { name: 'Бруней', format: '+673 ### ####', length: [7] },
+                                    '855': { name: 'Камбоджа', format: '+855 ## ### ###', length: [8] },
+                                    '856': { name: 'Лаос', format: '+856 ## ### ###', length: [8] },
+                                    '95': { name: 'Мьянма', format: '+95 # ### ####', length: [8, 9] },
+                                    '670': { name: 'Восточный Тимор', format: '+670 ### ####', length: [7] },
+
+                                    // Ближний Восток
+                                    '90': { name: 'Турция', format: '+90 ### ### ## ##', length: [10] },
+                                    '98': { name: 'Иран', format: '+98 ### ### ####', length: [10] },
+                                    '964': { name: 'Ирак', format: '+964 ### ### ####', length: [10] },
+                                    '972': { name: 'Израиль', format: '+972 ##-###-####', length: [9] },
+                                    '970': { name: 'Палестина', format: '+970 ## ### ####', length: [9] },
+                                    '962': { name: 'Иордания', format: '+962 # #### ####', length: [9] },
+                                    '961': { name: 'Ливан', format: '+961 ## ### ###', length: [8] },
+                                    '963': { name: 'Сирия', format: '+963 ## #### ###', length: [9] },
+                                    '966': { name: 'Саудовская Аравия', format: '+966 ## ### ####', length: [9] },
+                                    '971': { name: 'ОАЭ', format: '+971 ## ### ####', length: [9] },
+                                    '965': { name: 'Кувейт', format: '+965 #### ####', length: [8] },
+                                    '974': { name: 'Катар', format: '+974 #### ####', length: [8] },
+                                    '973': { name: 'Бахрейн', format: '+973 #### ####', length: [8] },
+                                    '968': { name: 'Оман', format: '+968 #### ####', length: [8] },
+                                    '967': { name: 'Йемен', format: '+967 # ### ###', length: [7, 8] },
+                                    '995': { name: 'Грузия', format: '+995 ### ##-##-##', length: [9] },
+
+                                    // Африка - Северная
+                                    '20': { name: 'Египет', format: '+20 ## #### ####', length: [10] },
+                                    '218': { name: 'Ливия', format: '+218 ##-#######', length: [9] },
+                                    '216': { name: 'Тунис', format: '+216 ## ### ###', length: [8] },
+                                    '213': { name: 'Алжир', format: '+213 ### ## ## ##', length: [9] },
+                                    '212': { name: 'Марокко', format: '+212 ###-######', length: [9] },
+                                    '249': { name: 'Судан', format: '+249 ## ### ####', length: [9] },
+                                    '211': { name: 'Южный Судан', format: '+211 ## ### ####', length: [9] },
+
+                                    // Африка - Западная
+                                    '234': { name: 'Нигерия', format: '+234 ### ### ####', length: [10] },
+                                    '233': { name: 'Гана', format: '+233 ## ### ####', length: [9] },
+                                    '225': { name: 'Кот-д\'Ивуар', format: '+225 ## ## ## ##', length: [8] },
+                                    '221': { name: 'Сенегал', format: '+221 ## ### ## ##', length: [9] },
+                                    '223': { name: 'Мали', format: '+223 ## ## ## ##', length: [8] },
+                                    '226': { name: 'Буркина-Фасо', format: '+226 ## ## ## ##', length: [8] },
+                                    '227': { name: 'Нигер', format: '+227 ## ## ## ##', length: [8] },
+                                    '228': { name: 'Того', format: '+228 ## ## ## ##', length: [8] },
+                                    '229': { name: 'Бенин', format: '+229 ## ## ## ##', length: [8] },
+                                    '220': { name: 'Гамбия', format: '+220 ### ####', length: [7] },
+                                    '224': { name: 'Гвинея', format: '+224 ## ## ## ##', length: [8] },
+                                    '245': { name: 'Гвинея-Бисау', format: '+245 # ######', length: [7] },
+                                    '238': { name: 'Кабо-Верде', format: '+238 ### ## ##', length: [7] },
+                                    '232': { name: 'Сьерра-Леоне', format: '+232 ## ######', length: [8] },
+                                    '231': { name: 'Либерия', format: '+231 ## ### ####', length: [8] },
+                                    '230': { name: 'Маврикий', format: '+230 #### ####', length: [8] },
+
+                                    // Африка - Восточная
+                                    '254': { name: 'Кения', format: '+254 ### ######', length: [9] },
+                                    '255': { name: 'Танзания', format: '+255 ## ### ####', length: [9] },
+                                    '256': { name: 'Уганда', format: '+256 ### ######', length: [9] },
+                                    '250': { name: 'Руанда', format: '+250 ### ### ###', length: [9] },
+                                    '257': { name: 'Бурунди', format: '+257 ## ## ## ##', length: [8] },
+                                    '251': { name: 'Эфиопия', format: '+251 ## ### ####', length: [9] },
+                                    '252': { name: 'Сомали', format: '+252 ## ### ####', length: [8] },
+                                    '253': { name: 'Джибути', format: '+253 ## ## ## ##', length: [8] },
+                                    '291': { name: 'Эритрея', format: '+291 # ### ###', length: [7] },
+                                    '248': { name: 'Сейшелы', format: '+248 # ### ###', length: [7] },
+                                    '261': { name: 'Мадагаскар', format: '+261 ## ## ### ##', length: [9] },
+                                    '269': { name: 'Коморы', format: '+269 ### ## ##', length: [7] },
+                                    '262': { name: 'Реюньон/Майотта', format: '+262 ##### ####', length: [9] },
+
+                                    // Африка - Центральная
+                                    '237': { name: 'Камерун', format: '+237 #### ####', length: [8] },
+                                    '236': { name: 'ЦАР', format: '+236 ## ## ## ##', length: [8] },
+                                    '235': { name: 'Чад', format: '+235 ## ## ## ##', length: [8] },
+                                    '242': { name: 'Республика Конго', format: '+242 ## ### ####', length: [9] },
+                                    '243': { name: 'ДР Конго', format: '+243 ### ### ###', length: [9] },
+                                    '240': { name: 'Экваториальная Гвинея', format: '+240 ### ### ###', length: [9] },
+                                    '241': { name: 'Габон', format: '+241 ## ## ## ##', length: [8] },
+                                    '239': { name: 'Сан-Томе и Принсипи', format: '+239 ### ####', length: [7] },
+
+                                    // Африка - Южная
+                                    '27': { name: 'ЮАР', format: '+27 ## ### ####', length: [9] },
+                                    '264': { name: 'Намибия', format: '+264 ## ### ####', length: [9] },
+                                    '267': { name: 'Ботсвана', format: '+267 ## ### ###', length: [8] },
+                                    '268': { name: 'Эсватини', format: '+268 ## ## ## ##', length: [8] },
+                                    '266': { name: 'Лесото', format: '+266 #### ####', length: [8] },
+                                    '258': { name: 'Мозамбик', format: '+258 ## ### ####', length: [9] },
+                                    '260': { name: 'Замбия', format: '+260 ## ### ####', length: [9] },
+                                    '263': { name: 'Зимбабве', format: '+263 # ### ###', length: [7] },
+                                    '265': { name: 'Малави', format: '+265 # ### ###', length: [7] },
+                                    '244': { name: 'Ангола', format: '+244 ### ### ###', length: [9] },
+
+                                    // Латинская Америка - Южная
+                                    '55': { name: 'Бразилия', format: '+55 ## #####-####', length: [10, 11] },
+                                    '54': { name: 'Аргентина', format: '+54 ## ####-####', length: [10] },
+                                    '56': { name: 'Чили', format: '+56 # #### ####', length: [9] },
+                                    '57': { name: 'Колумбия', format: '+57 ### ### ####', length: [10] },
+                                    '58': { name: 'Венесуэла', format: '+58 ###-#######', length: [10] },
+                                    '51': { name: 'Перу', format: '+51 ### ### ###', length: [9] },
+                                    '593': { name: 'Эквадор', format: '+593 ## ### ####', length: [9] },
+                                    '591': { name: 'Боливия', format: '+591 # ### ####', length: [8] },
+                                    '595': { name: 'Парагвай', format: '+595 ### ######', length: [9] },
+                                    '598': { name: 'Уругвай', format: '+598 #### ####', length: [8] },
+                                    '594': { name: 'Французская Гвиана', format: '+594 ##### ####', length: [9] },
+                                    '597': { name: 'Суринам', format: '+597 ###-####', length: [7] },
+                                    '592': { name: 'Гайана', format: '+592 ### ####', length: [7] },
+                                    '500': { name: 'Фолклендские острова', format: '+500 #####', length: [5] },
+
+                                    // Латинская Америка - Центральная и Карибы
+                                    '52': { name: 'Мексика', format: '+52 ## #### ####', length: [10] },
+                                    '502': { name: 'Гватемала', format: '+502 #### ####', length: [8] },
+                                    '503': { name: 'Сальвадор', format: '+503 #### ####', length: [8] },
+                                    '504': { name: 'Гондурас', format: '+504 #### ####', length: [8] },
+                                    '505': { name: 'Никарагуа', format: '+505 #### ####', length: [8] },
+                                    '506': { name: 'Коста-Рика', format: '+506 #### ####', length: [8] },
+                                    '507': { name: 'Панама', format: '+507 ####-####', length: [8] },
+                                    '501': { name: 'Белиз', format: '+501 ###-####', length: [7] },
+                                    '53': { name: 'Куба', format: '+53 # ### ####', length: [8] },
+                                    '509': { name: 'Гаити', format: '+509 ## ## ####', length: [8] },
+                                    '1809': { name: 'Доминиканская Республика', format: '+1 (809) ###-####', length: [10] },
+                                    '1876': { name: 'Ямайка', format: '+1 (876) ###-####', length: [10] },
+                                    '1868': { name: 'Тринидад и Тобаго', format: '+1 (868) ###-####', length: [10] },
+                                    '1246': { name: 'Барбадос', format: '+1 (246) ###-####', length: [10] },
+                                    '1784': { name: 'Сент-Винсент и Гренадины', format: '+1 (784) ###-####', length: [10] },
+                                    '1787': { name: 'Пуэрто-Рико', format: '+1 (787) ###-####', length: [10] },
+                                    '590': { name: 'Гваделупа', format: '+590 ### ## ## ##', length: [9] },
+                                    '596': { name: 'Мартиника', format: '+596 ### ## ## ##', length: [9] },
+                                    '599': { name: 'Нидерландские Антилы', format: '+599 ### ####', length: [7] },
+
+                                    // Океания
+                                    '61': { name: 'Австралия', format: '+61 # #### ####', length: [9] },
+                                    '64': { name: 'Новая Зеландия', format: '+64 ## ### ####', length: [9] },
+                                    '679': { name: 'Фиджи', format: '+679 ### ####', length: [7] },
+                                    '675': { name: 'Папуа-Новая Гвинея', format: '+675 ### ####', length: [7] },
+                                    '687': { name: 'Новая Каледония', format: '+687 ##.##.##', length: [6] },
+                                    '689': { name: 'Французская Полинезия', format: '+689 ## ## ## ##', length: [8] },
+                                    '685': { name: 'Самоа', format: '+685 ## ####', length: [6] },
+                                    '684': { name: 'Американское Самоа', format: '+684 ###-####', length: [7] },
+                                    '676': { name: 'Тонга', format: '+676 #####', length: [5] },
+                                    '677': { name: 'Соломоновы Острова', format: '+677 #####', length: [5] },
+                                    '678': { name: 'Вануату', format: '+678 #####', length: [5] },
+                                    '682': { name: 'Острова Кука', format: '+682 ## ###', length: [5] },
+                                    '683': { name: 'Ниуэ', format: '+683 ####', length: [4] },
+                                    '686': { name: 'Кирибати', format: '+686 ## ###', length: [5] },
+                                    '688': { name: 'Тувалу', format: '+688 #####', length: [5] },
+                                    '691': { name: 'Микронезия', format: '+691 ### ####', length: [7] },
+                                    '692': { name: 'Маршалловы Острова', format: '+692 ###-####', length: [7] },
+                                    '680': { name: 'Палау', format: '+680 ### ####', length: [7] },
+                                    '670': { name: 'Северные Марианские острова', format: '+670 ###-####', length: [7] },
+                                    '681': { name: 'Уоллис и Футуна', format: '+681 ## ## ##', length: [6] },
+
+                                    // Антарктида и отдаленные территории
+                                    '672': { name: 'Антарктида/Норфолк', format: '+672 ### ###', length: [6] },
+                                    '290': { name: 'Святой Елены остров', format: '+290 ####', length: [4] },
+                                    '247': { name: 'Остров Вознесения', format: '+247 ####', length: [4] },
+                                    '508': { name: 'Сен-Пьер и Микелон', format: '+508 ## ## ##', length: [6] },
+
+                                    // Универсальная маска для остальных стран
+                                    'default': { name: 'Международный', format: '+### ### ### ####', length: [7, 8, 9, 10, 11, 12, 13, 14, 15] }
+                                };
+                                <?php } ?>
 
 
                             let isFormatting = false;

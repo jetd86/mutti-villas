@@ -35,51 +35,88 @@ use Bitrix\Main\Page\Asset; ?>
 $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $parsed_url = parse_url($url);
 $host = $parsed_url['host'] ?? '';
-if (substr(strtolower($host), -4) === ".com") { ?>
-    <div id="cookie-notification" class="cookie-notification">
+if (substr(strtolower($host), -4) !== ".com") { ?>
+    <div id="cookie-notification" class="cookie-notification hidden">
         <div class="cookie-content">
             <p class="cookie-text">
-                We use cookies. By continuing to use the website, you agree to the use of <a href="/policy/" title="Политика обработки персональных данных">cookies and the privacy policy.</a>
+                We use cookies to improve your experience. You can manage preferences in <a href="/policy/" class="cookie-link" target="_blank">our policy</a>.
             </p>
-            <button id="accept-cookies" class="cookie-accept-btn">Принять</button>
+            <div class="cookie-actions">
+                <button id="accept-cookies" class="cookie-btn cookie-accept">Accept</button>
+                <button id="reject-cookies" class="cookie-btn cookie-reject">Reject</button>
+                <button id="settings-cookies" class="cookie-btn cookie-settings">Settings</button>
+            </div>
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            function cookieNotificationModal() {
-                const cookieNotification = document.getElementById('cookie-notification');
-                const acceptButton = document.getElementById('accept-cookies');
+    <div id="cookie-settings-modal" class="cookie-settings-modal hidden">
+        <div class="cookie-settings-content">
+            <h3>Cookie preferences</h3>
+            <label><input type="checkbox" checked disabled> Necessary (always active)</label>
+            <label><input type="checkbox" id="analytics-cookies"> Analytics</label>
+            <label><input type="checkbox" id="marketing-cookies"> Marketing</label>
+            <div class="actions">
+                <button id="save-cookies" class="cookie-btn cookie-accept">Save</button>
+                <button id="close-settings" class="cookie-btn cookie-reject">Cancel</button>
+            </div>
+        </div>
+    </div>
 
-                function checkCookieConsent() {
-                    const consent = localStorage.getItem('cookiesAccepted');
-                    if (consent === 'true') {
-                        hideCookieNotification();
-                    } else {
-                        showCookieNotification();
-                    }
-                }
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+            const bar = document.getElementById('cookie-notification');
+            const settingsModal = document.getElementById('cookie-settings-modal');
+            const acceptBtn = document.getElementById('accept-cookies');
+            const rejectBtn = document.getElementById('reject-cookies');
+            const settingsBtn = document.getElementById('settings-cookies');
+            const saveBtn = document.getElementById('save-cookies');
+            const closeSettings = document.getElementById('close-settings');
 
-                function hideCookieNotification() {
-                    cookieNotification.classList.add('hidden');
-                }
+            const analyticsCheckbox = document.getElementById('analytics-cookies');
+            const marketingCheckbox = document.getElementById('marketing-cookies');
 
-                function showCookieNotification() {
-                    cookieNotification.classList.remove('hidden');
-                }
+            function showBar() { bar.classList.remove('hidden'); }
+            function hideBar() { bar.classList.add('hidden'); }
+            function showSettings() { settingsModal.classList.remove('hidden'); }
+            function hideSettings() { settingsModal.classList.add('hidden'); }
 
-                function acceptCookies() {
-                    localStorage.setItem('cookiesAccepted', 'true');
-                    localStorage.setItem('cookieConsentDate', new Date().toISOString());
-                    hideCookieNotification();
-                }
+            function saveConsent(consent) {
+            localStorage.setItem('cookieConsent', JSON.stringify(consent));
+            localStorage.setItem('cookieConsentDate', new Date().toISOString());
+        }
 
-                acceptButton.addEventListener('click', acceptCookies);
-                checkCookieConsent();
-            }
+            function loadConsent() {
+            return JSON.parse(localStorage.getItem('cookieConsent') || 'null');
+        }
 
-            cookieNotificationModal();
-        })
+            acceptBtn.addEventListener('click', () => {
+            saveConsent({ necessary: true, analytics: true, marketing: true });
+            hideBar();
+        });
+
+            rejectBtn.addEventListener('click', () => {
+            saveConsent({ necessary: true, analytics: false, marketing: false });
+            hideBar();
+        });
+
+            settingsBtn.addEventListener('click', showSettings);
+            closeSettings.addEventListener('click', hideSettings);
+
+            saveBtn.addEventListener('click', () => {
+            saveConsent({
+            necessary: true,
+            analytics: analyticsCheckbox.checked,
+            marketing: marketingCheckbox.checked
+        });
+            hideSettings();
+            hideBar();
+        });
+
+            const existing = loadConsent();
+            if (!existing) {
+            showBar();
+        }
+        });
     </script>
 <?php } else { ?>
     <div id="cookie-notification" class="cookie-notification">
@@ -135,64 +172,62 @@ if (substr(strtolower($host), -4) === ".com") { ?>
 
 
 <style>
-
     .cookie-notification {
         position: fixed;
-        bottom: 20px;
+        bottom: 15px;
         left: 50%;
         transform: translateX(-50%);
-        width: 631px;
-        background-color: #f8f9fa;
-        border: 1px solid #dee2e6;
-        z-index: 999999;
-        box-shadow: 0 0 15px #00000040;
+        width: 640px;
+        background: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 15px #0003;
+        z-index: 99999;
     }
-
-    .cookie-notification.hidden {
-        display: none;
-    }
-
-
+    .cookie-notification.hidden { display: none; }
     .cookie-content {
-        display: flex        ;
+        display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 15px 20px;
         gap: 20px;
     }
-
-    .cookie-text {
-        margin: 0;
-        font-size: 14px;
-        line-height: 150%;
-        color: #1e1e1e;
-        flex: 1;
+    .cookie-text { font-size: 14px; flex: 1; margin: 0; }
+    .cookie-link { color: #0077cc; text-decoration: underline; }
+    .cookie-actions { display: flex; gap: 10px; }
+    .cookie-btn {
+        min-width: 100px; height: 36px; border: none;
+        cursor: pointer; font-size: 13px; font-weight: 500;
     }
-    .cookie-link {
-        color: #008798;
-        text-decoration: underline;
+    .cookie-accept { background: #4b0081; color: #fff; }
+    .cookie-reject { background: #ddd; color: #333; }
+    .cookie-settings { background: #eee; color: #333; }
+
+    .cookie-settings-modal {
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,.5);
+        display: flex; align-items: center; justify-content: center;
+        z-index: 100000;
     }
-    .cookie-accept-btn {
-        width: 150px;
-        height: 40px;
-        background-color: #4b0081;
-        color: #fff;
-        border: none;
-        font-size: 14px;
-        font-weight: 500;
-        cursor: pointer;
-        flex-shrink: 0;
+    .cookie-settings-modal.hidden { display: none; }
+    .cookie-settings-content {
+        background: #fff; padding: 20px; border-radius: 6px;
+        width: 400px; max-width: 90%;
+        display: flex; flex-direction: column; gap: 15px;
+    }
+    .cookie-settings-content h3 {
+        margin: 0; font-size: 18px;
+    }
+    .cookie-settings-content label {
+        font-size: 14px; display: flex; gap: 8px; align-items: center;
+    }
+    .cookie-settings-content .actions {
+        display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px;
     }
 
-
-
-    @media (max-width: 700px) {
-        .cookie-notification {
-            width: 100%;
-        }
-        .cookie-content {
-            flex-direction: column;
-        }
+    @media (max-width: 700px){
+        .cookie-notification{ width:95%; }
+        .cookie-content{ flex-direction:column; align-items:flex-start; }
+        .cookie-actions{ width:100%; justify-content:flex-end; flex-wrap:wrap; }
     }
 </style>
 
