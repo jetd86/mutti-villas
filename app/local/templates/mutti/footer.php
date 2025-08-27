@@ -224,6 +224,18 @@ if (substr(strtolower($host), -4) === ".com") { ?>
         display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px;
     }
 
+    .cookie-accept-btn {
+        width: 150px;
+        height: 40px;
+        background-color: #4b0081;
+        color: #fff;
+        border: none;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
     @media (max-width: 700px){
         .cookie-notification{ width:95%; }
         .cookie-content{ flex-direction:column; align-items:flex-start; }
