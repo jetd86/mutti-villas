@@ -203,9 +203,11 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
                             const phoneHint = phoneInput.parentElement.querySelector('.phone-hint');
                             const countryIndicator = phoneInput.parentElement.querySelector('.country-indicator');
 
+                            let countryCodes = {};
+
 
                             <?php if ($tld === 'com') { ?>
-                            const countryCodes = {
+                            countryCodes = {
                                 // Western Europe
                                 '33': { name: 'France', format: '+33 # ## ## ## ##', length: [9] },
                                 '49': { name: 'Germany', format: '+49 #### #######', length: [10, 11] },
@@ -413,7 +415,7 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
 
                         <?php } else { ?>
                                 // Расширенная база кодов стран для определения региона
-                                const countryCodes = {
+                                countryCodes = {
                                     // Северная Америка
                                     '1': { name: 'США/Канада', format: '+1 (###) ###-####', length: [10] },
 
@@ -838,9 +840,18 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
                                 // Обновление подсказки
                                 const country = detectCountry(digits);
                                 if (country) {
+                                    <?php if ($tld === 'com') { ?>
+                                    phoneHint.textContent = `Format ${country.info.name}: ${country.info.format}`;
+                                    <?php } else { ?>
                                     phoneHint.textContent = `Формат ${country.info.name}: ${country.info.format}`;
+                                    <?php } ?>
+
                                 } else {
+                                    <?php if ($tld === 'com') { ?>
+                                    phoneHint.textContent = "Enter phone number with country code: +7 999 999 99 99";
+                                    <?php } else { ?>
                                     phoneHint.textContent = 'Введите номер с кодом страны: +7 999 999 99 99';
+                                    <?php } ?>
                                 }
 
                                 // Восстановление позиции курсора
