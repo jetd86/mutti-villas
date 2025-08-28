@@ -30,10 +30,24 @@ Asset::getInstance()->addCss('https://cdn.jsdelivr.net/npm/glightbox/dist/css/gl
 */
 
 
+$host = $_SERVER['HTTP_HOST'] ?? '';
+
+$host = strtolower($host);
+$host = preg_replace('/:\d+$/', '', $host);
+
+$tld = '';
+if (preg_match('/\.([^.]+)$/', $host, $matches)) {
+    $tld = $matches[1];
+}
 
 ?>
 <!DOCTYPE html>
+<?php
+if ($tld === 'com') { ?>
+<html lang="en">
+<?php } else { ?>
 <html lang="ru">
+<?php } ?>
 <head>
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
