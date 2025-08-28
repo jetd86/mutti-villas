@@ -39,7 +39,7 @@ if (substr(strtolower($host), -4) === ".com") { ?>
     <div id="cookie-notification" class="cookie-notification hidden">
         <div class="cookie-content">
             <p class="cookie-text">
-                We use cookies to improve your experience. You can manage preferences in <a href="/policy/" class="cookie-link" target="_blank">our policy</a>.
+                We use cookies. By continuing to use this website, you agree to our <a href="/cookies-policy/" title="Cookies Policy">cookies policy</a> and our <a href="/policy/" title="Privacy Policy">privacy policy</a>.
             </p>
             <div class="cookie-actions">
                 <button id="accept-cookies" class="cookie-btn cookie-accept">Accept</button>
@@ -122,7 +122,7 @@ if (substr(strtolower($host), -4) === ".com") { ?>
     <div id="cookie-notification" class="cookie-notification">
         <div class="cookie-content">
             <p class="cookie-text">
-                Мы используем cookie-файлы. Продолжая использование сайта, вы соглашаетесь с <a href="/policy/" title="Политика обработки персональных данных">использованием cookies-файлов и политикой конфиденциальности.</a>
+                Мы используем cookie-файлы. Продолжая использование сайта, вы соглашаетесь с использованием <a href="/cookies-policy/" title="Cookie-политика">cookies-файлов</a> и <a href="/policy/" title="Политика обработки персональных данных">политикой конфиденциальности.</a>
             </p>
             <button id="accept-cookies" class="cookie-accept-btn">Принять</button>
         </div>
