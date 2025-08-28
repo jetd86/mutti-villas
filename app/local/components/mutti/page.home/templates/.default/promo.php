@@ -930,6 +930,17 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
 
                             // Валидация при отправке формы
                             phoneInput.closest('form').addEventListener('submit', function(e) {
+                                let hasError = false;
+                                const form = this;
+                                const agreementInput = form.querySelector('input[name="agreement"]');
+                                let invalidAgreementMessage = agreementInput.parentElement.querySelector('.invalid-feedback');
+
+                                if (!invalidAgreementMessage) {
+                                    invalidAgreementMessage = document.createElement('div');
+                                    invalidAgreementMessage.className = 'invalid-feedback';
+                                    agreementInput.parentElement.appendChild(invalidAgreementMessage);
+                                }
+
                                 const validation = validatePhone(phoneInput.value);
                                 if (phoneInput.value.length > 0 && !validation.isValid) {
                                     e.preventDefault();
@@ -937,31 +948,22 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
                                     phoneInput.classList.add('is-invalid');
                                     invalidFeedback.textContent = validation.message;
                                     phoneInput.reportValidity();
+                                    hasError = true;
+                                } else {
+                                    phoneInput.classList.remove('is-invalid');
+                                    invalidFeedback.textContent = '';
                                 }
-
-
-                                const form = phoneInput.closest('form');
-                                const agreementInput = form.querySelector('input[name="agreement"]');
-                                const agreementLabel = agreementInput.closest('label');
-                                const invalidAgreementMessage = document.createElement('div');
-                                invalidAgreementMessage.className = 'invalid-feedback';
-                                invalidAgreementMessage.textContent = lang === 'en' ? 'You need to agree to the terms.' : 'Нужно согласиться с условиями';
-                                agreementLabel.appendChild(invalidAgreementMessage);
 
                                 if (!agreementInput.checked) {
                                     e.preventDefault();
                                     hasError = true;
                                     agreementInput.classList.add('is-invalid');
-
-                                    if (lang === 'en') {
-                                        invalidAgreementMessage.textContent = 'You must agree to the terms';
-                                    } else if (lang === 'ru') {
-                                        invalidAgreementMessage.textContent = 'Вы должны согласиться с условиями';
-                                    }
+                                    invalidAgreementMessage.textContent = lang === 'en' ? 'You need to agree to the terms.' : 'Нужно согласиться с условиями';
                                     invalidAgreementMessage.style.display = 'block';
                                 } else {
                                     agreementInput.classList.remove('is-invalid');
                                     invalidAgreementMessage.style.display = 'none';
+                                    invalidAgreementMessage.textContent = '';
                                 }
 
                                 if (hasError) {
@@ -972,6 +974,7 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
                                     }
                                 }
                             });
+
                         });
                     </script>
 
