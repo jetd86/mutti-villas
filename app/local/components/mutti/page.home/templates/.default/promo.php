@@ -87,7 +87,12 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
                                            maxlength="20" autocomplete="tel" required>
                                     <label for="floatingInputPhone"><?=$component->getModuleOption(OptionHomeEnum::HOME_PROMO_CALLBACK_INPUT_PHONE)?></label>
                                     <div class="invalid-feedback"></div>
-                                    <div class="phone-hint">Введите номер с кодом страны: +7 999 999 99 99</div>
+                                    <?php if ($tld === 'com') { ?>
+                                        <div class="phone-hint">Введите номер с кодом страны: +7 999 999 99 99</div>
+                                    <?php } else { ?>
+                                        <div class="phone-hint">Введите номер с кодом страны: +7 999 999 99 99</div>
+                                    <?php } ?>
+
                                     <div class="country-indicator"></div>
                                 </div>
 
@@ -204,6 +209,13 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
                             const countryIndicator = phoneInput.parentElement.querySelector('.country-indicator');
 
                             let countryCodes = {};
+                            let lang = 'en';
+
+                            <?php if ($tld === 'com') { ?>
+                                 lang = 'en';
+                            <?php } else { ?>
+                                lang = 'ru';
+                            <?php }  ?>
 
 
                             <?php if ($tld === 'com') { ?>
@@ -749,11 +761,11 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
                                 }
 
                                 if (digits.length < 7) {
-                                    return { isValid: false, message: 'Слишком короткий номер' };
+                                    return { isValid: false, message: lang === 'en' ? 'Number is too short' : 'Слишком короткий номер' };
                                 }
 
                                 if (digits.length > 15) {
-                                    return { isValid: false, message: 'Слишком длинный номер' };
+                                    return { isValid: false, message: lang === 'en' ? `Number is too long` : 'Слишком длинный номер' };
                                 }
 
                                 const country = detectCountry(digits);
@@ -765,13 +777,13 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
                                     if (!validLengths.includes(nationalNumber.length)) {
                                         return {
                                             isValid: false,
-                                            message: `Неверная длина для ${country.info.name}`
+                                            message: lang === 'en' ? `Invalid length for ${country.info.name}` : `Неверная длина для ${country.info.name}`
                                         };
                                     }
 
                                     return {
                                         isValid: true,
-                                        message: `Корректный номер ${country.info.name}`,
+                                        message: lang === 'en' ? `Valid number ${country.info.name}` : `Корректный номер ${country.info.name}`,
                                         country: country.info.name
                                     };
                                 } else {
@@ -779,11 +791,11 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
                                     if (digits.length >= 7 && digits.length <= 15) {
                                         return {
                                             isValid: true,
-                                            message: 'Корректный международный номер',
-                                            country: 'Международный'
+                                            message: lang === 'en' ? 'Valid international number' : 'Корректный международный номер',
+                                            country: lang === 'en' ? 'international number' : 'Международный'
                                         };
                                     } else {
-                                        return { isValid: false, message: 'Некорректный номер' };
+                                        return { isValid: false, message: lang === 'en' ? 'Invalid number' : 'Некорректный номер' };
                                     }
                                 }
                             }
@@ -840,18 +852,10 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
                                 // Обновление подсказки
                                 const country = detectCountry(digits);
                                 if (country) {
-                                    <?php if ($tld === 'com') { ?>
-                                    phoneHint.textContent = `Format ${country.info.name}: ${country.info.format}`;
-                                    <?php } else { ?>
-                                    phoneHint.textContent = `Формат ${country.info.name}: ${country.info.format}`;
-                                    <?php } ?>
+                                    phoneHint.textContent = lang === 'en' ? `Format ${country.info.name}: ${country.info.format}` : `Формат ${country.info.name}: ${country.info.format}`;
 
                                 } else {
-                                    <?php if ($tld === 'com') { ?>
-                                    phoneHint.textContent = "Enter phone number with country code: +7 999 999 99 99";
-                                    <?php } else { ?>
-                                    phoneHint.textContent = 'Введите номер с кодом страны: +7 999 999 99 99';
-                                    <?php } ?>
+                                    phoneHint.textContent = lang === 'en' ? "Enter phone number with country code: +7 999 999 99 99" : 'Введите номер с кодом страны: +7 999 999 99 99';
                                 }
 
                                 // Восстановление позиции курсора
@@ -920,7 +924,7 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
                             phoneInput.addEventListener('focus', function() {
                                 this.classList.remove('is-invalid');
                                 if (this.value.length === 0) {
-                                    phoneHint.textContent = 'Начните с + и кода страны';
+                                    phoneHint.textContent = lang === 'en' ? "Start with + and the country code." : 'Начните с + и кода страны';
                                 }
                             });
 
@@ -941,7 +945,7 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
                                 const agreementLabel = agreementInput.closest('label');
                                 const invalidAgreementMessage = document.createElement('div');
                                 invalidAgreementMessage.className = 'invalid-feedback';
-                                invalidAgreementMessage.textContent = 'Нужно согласиться с условиями';
+                                invalidAgreementMessage.textContent = lang === 'en' ? 'You need to agree to the terms.' : 'Нужно согласиться с условиями';
                                 agreementLabel.appendChild(invalidAgreementMessage);
 
 
