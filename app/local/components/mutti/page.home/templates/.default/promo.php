@@ -948,11 +948,16 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
                                 invalidAgreementMessage.textContent = lang === 'en' ? 'You need to agree to the terms.' : 'Нужно согласиться с условиями';
                                 agreementLabel.appendChild(invalidAgreementMessage);
 
-
                                 if (!agreementInput.checked) {
                                     e.preventDefault();
                                     hasError = true;
                                     agreementInput.classList.add('is-invalid');
+
+                                    if (lang === 'en') {
+                                        invalidAgreementMessage.textContent = 'You must agree to the terms';
+                                    } else if (lang === 'ru') {
+                                        invalidAgreementMessage.textContent = 'Вы должны согласиться с условиями';
+                                    }
                                     invalidAgreementMessage.style.display = 'block';
                                 } else {
                                     agreementInput.classList.remove('is-invalid');
