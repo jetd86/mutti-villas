@@ -88,7 +88,7 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
                                     <label for="floatingInputPhone"><?=$component->getModuleOption(OptionHomeEnum::HOME_PROMO_CALLBACK_INPUT_PHONE)?></label>
                                     <div class="invalid-feedback"></div>
                                     <?php if ($tld === 'com') { ?>
-                                        <div class="phone-hint">Введите номер с кодом страны: +7 999 999 99 99</div>
+                                        <div class="phone-hint">Enter the number with country code: +7 999 999 99 99</div>
                                     <?php } else { ?>
                                         <div class="phone-hint">Введите номер с кодом страны: +7 999 999 99 99</div>
                                     <?php } ?>
