@@ -421,7 +421,58 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
                                 '594': { name: 'French Guiana', format: '+594 ##### ####', length: [9] },
                                 '597': { name: 'Suriname', format: '+597 ###-####', length: [7] },
                                 '592': { name: 'Guyana', format: '+592 ### ####', length: [7] },
-                                '500': { name: 'Falkland Islands', format: '+500 #####', length: [5] }
+                                '500': { name: 'Falkland Islands', format: '+500 #####', length: [5] },
+                                // Latin America – Central and Caribbean
+                                '52': { name: 'Mexico', format: '+52 ## #### ####', length:  },
+                                '502': { name: 'Guatemala', format: '+502 #### ####', length:  },
+                                '503': { name: 'El Salvador', format: '+503 #### ####', length:  },
+                                '504': { name: 'Honduras', format: '+504 #### ####', length:  },
+                                '505': { name: 'Nicaragua', format: '+505 #### ####', length:  },
+                                '506': { name: 'Costa Rica', format: '+506 #### ####', length:  },
+                                '507': { name: 'Panama', format: '+507 ####-####', length:  },
+                                '501': { name: 'Belize', format: '+501 ###-####', length:  },
+                                '53': { name: 'Cuba', format: '+53 # ### ####', length:  },
+                                '509': { name: 'Haiti', format: '+509 ## ## ####', length:  },
+                                '1809': { name: 'Dominican Republic', format: '+1 (809) ###-####', length:  },
+                                '1876': { name: 'Jamaica', format: '+1 (876) ###-####', length:  },
+                                '1868': { name: 'Trinidad and Tobago', format: '+1 (868) ###-####', length:  },
+                                '1246': { name: 'Barbados', format: '+1 (246) ###-####', length:  },
+                                '1784': { name: 'Saint Vincent and the Grenadines', format: '+1 (784) ###-####', length:  },
+                                '1787': { name: 'Puerto Rico', format: '+1 (787) ###-####', length:  },
+                                '590': { name: 'Guadeloupe', format: '+590 ### ## ## ##', length:  },
+                                '596': { name: 'Martinique', format: '+596 ### ## ## ##', length:  },
+                                '599': { name: 'Netherlands Antilles', format: '+599 ### ####', length:  },
+
+                                // Oceania
+                                '61': { name: 'Australia', format: '+61 # #### ####', length:  },
+                                '64': { name: 'New Zealand', format: '+64 ## ### ####', length:  },
+                                '679': { name: 'Fiji', format: '+679 ### ####', length:  },
+                                '675': { name: 'Papua New Guinea', format: '+675 ### ####', length:  },
+                                '687': { name: 'New Caledonia', format: '+687 ##.##.##', length:  },
+                                '689': { name: 'French Polynesia', format: '+689 ## ## ## ##', length:  },
+                                '685': { name: 'Samoa', format: '+685 ## ####', length:  },
+                                '684': { name: 'American Samoa', format: '+684 ###-####', length:  },
+                                '676': { name: 'Tonga', format: '+676 #####', length:  },
+                                '677': { name: 'Solomon Islands', format: '+677 #####', length:  },
+                                '678': { name: 'Vanuatu', format: '+678 #####', length:  },
+                                '682': { name: 'Cook Islands', format: '+682 ## ###', length:  },
+                                '683': { name: 'Niue', format: '+683 ####', length:  },
+                                '686': { name: 'Kiribati', format: '+686 ## ###', length:  },
+                                '688': { name: 'Tuvalu', format: '+688 #####', length:  },
+                                '691': { name: 'Micronesia', format: '+691 ### ####', length:  },
+                                '692': { name: 'Marshall Islands', format: '+692 ###-####', length:  },
+                                '680': { name: 'Palau', format: '+680 ### ####', length:  },
+                                '670': { name: 'Northern Mariana Islands', format: '+670 ###-####', length:  },
+                                '681': { name: 'Wallis and Futuna', format: '+681 ## ## ##', length:  },
+
+                                // Antarctica and Remote Territories
+                                '672': { name: 'Antarctica/Norfolk Island', format: '+672 ### ###', length:  },
+                                '290': { name: 'Saint Helena', format: '+290 ####', length:  },
+                                '247': { name: 'Ascension Island', format: '+247 ####', length:  },
+                                '508': { name: 'Saint Pierre and Miquelon', format: '+508 ## ## ##', length:  },
+
+                                // Universal mask
+                                'default': { name: 'International', format: '+### ### ### ####', length: [7, 8, 9, 10, 11, 12, 13, 14, 15] }
                             };
 
 
