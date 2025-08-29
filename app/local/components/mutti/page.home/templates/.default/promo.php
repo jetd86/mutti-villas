@@ -220,6 +220,21 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
 
                             <?php if ($tld === 'com') { ?>
                             countryCodes = {
+                                '1': { name: 'USA/Canada', format: '+1 (###) ###-####', length: [10] },
+
+                                // Russia and CIS
+                                '7': { name: 'Russia/Kazakhstan', format: '+7 (###) ###-##-##', length: [10] },
+                                '375': { name: 'Belarus', format: '+375 ## ###-##-##', length: [9] },
+                                '380': { name: 'Ukraine', format: '+380 ## ###-##-##', length: [9] },
+                                '994': { name: 'Azerbaijan', format: '+994 ## ###-##-##', length: [9] },
+                                '374': { name: 'Armenia', format: '+374 ## ###-###', length: [8] },
+                                '995': { name: 'Georgia', format: '+995 ### ##-##-##', length: [9] },
+                                '996': { name: 'Kyrgyzstan', format: '+996 ### ###-###', length: [9] },
+                                '373': { name: 'Moldova', format: '+373 #### #-##-##', length: [8] },
+                                '992': { name: 'Tajikistan', format: '+992 ## ###-##-##', length: [9] },
+                                '993': { name: 'Turkmenistan', format: '+993 # ###-##-##', length: [8] },
+                                '998': { name: 'Uzbekistan', format: '+998 ## ###-##-##', length: [9] },
+
                                 // Western Europe
                                 '33': { name: 'France', format: '+33 # ## ## ## ##', length: [9] },
                                 '49': { name: 'Germany', format: '+49 #### #######', length: [10, 11] },
