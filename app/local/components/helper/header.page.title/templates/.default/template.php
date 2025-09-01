@@ -19,7 +19,7 @@ $this->setFrameMode(true); ?>
 <header class="section title" id="title">
     <div class="container">
         <div class="section-header<?=$component->viewButton() ? ' button' : ''?>">
-            <h1 class="section-header__title"><?= htmlspecialchars($arResult['TITLE']) ?></h1><?
+            <h1 class="section-header__title"><?= $APPLICATION->GetTitle();?></h1><?
             if (!empty($arResult['SUBTITLE'])): ?>
                 <p class="section-header__subtitle"><?= htmlspecialchars($arResult['SUBTITLE']) ?></p><?
             endif;

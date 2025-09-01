@@ -39,7 +39,7 @@ $this->setFrameMode(true); ?>
             <div class="section-col col-12 col-lg-4 offset-lg-1">
                 <div class="section-banner">
                     <div class="section-banner__inner">
-                        <video class="section-banner__video" autoplay muted loop playsinline preload="auto">
+                        <video class="section-banner__video" autoplay muted loop playsinline preload="auto" title="Mutti Family Villas видео 3D тур">
                             <source type="video/mp4" src="<?=Option::get(ModuleEnum::MODULE_NAME->value, OptionHomeEnum::HOME_INFO_BANNER_VIDEO->value)?>" />
                             <?php /* <img alt="3D тур" src="<?=Option::get(ModuleEnum::MODULE_NAME->value, OptionHomeEnum::HOME_INFO_BANNER_IMAGE->value)?>" /> */ ?>
                         </video>
