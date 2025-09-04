@@ -299,9 +299,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let mapImages;
 
     if(lang === 'en') {
-        mapImages = getMapImages();
-    } else if(lang === 'ru') {
         mapImages = getMapImagesEn();
+    } else if(lang === 'ru') {
+        mapImages = getMapImages();
     }
 
 

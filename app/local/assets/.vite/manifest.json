@@ -1,4 +1,12 @@
 {
+  "_bg-about-banner.3yDMt4IY.webp": {
+    "file": "assets/bg-about-banner.3yDMt4IY.webp",
+    "src": "_bg-about-banner.3yDMt4IY.webp"
+  },
+  "_bg-about-banner.BzM_19oc.webp": {
+    "file": "assets/bg-about-banner.BzM_19oc.webp",
+    "src": "_bg-about-banner.BzM_19oc.webp"
+  },
   "_bg-home-night.BE5eF7yx.webp": {
     "file": "assets/bg-home-night.BE5eF7yx.webp",
     "src": "_bg-home-night.BE5eF7yx.webp"
@@ -111,6 +119,30 @@
       "assets/logo-color.CdM6hL16.svg"
     ]
   },
+  "_contract-section-map-en.CBAaiEn9.webp": {
+    "file": "assets/contract-section-map-en.CBAaiEn9.webp",
+    "src": "_contract-section-map-en.CBAaiEn9.webp"
+  },
+  "_contract-section-map-en.CmedbrMY.webp": {
+    "file": "assets/contract-section-map-en.CmedbrMY.webp",
+    "src": "_contract-section-map-en.CmedbrMY.webp"
+  },
+  "_contract-section-map-en.Cwf84SYG.webp": {
+    "file": "assets/contract-section-map-en.Cwf84SYG.webp",
+    "src": "_contract-section-map-en.Cwf84SYG.webp"
+  },
+  "_contract-section-map-en.D1pxfJz8.webp": {
+    "file": "assets/contract-section-map-en.D1pxfJz8.webp",
+    "src": "_contract-section-map-en.D1pxfJz8.webp"
+  },
+  "_contract-section-map-en.D3dvLrA2.webp": {
+    "file": "assets/contract-section-map-en.D3dvLrA2.webp",
+    "src": "_contract-section-map-en.D3dvLrA2.webp"
+  },
+  "_contract-section-map-en.SAkCsKjk.webp": {
+    "file": "assets/contract-section-map-en.SAkCsKjk.webp",
+    "src": "_contract-section-map-en.SAkCsKjk.webp"
+  },
   "_contract-section-map.66DvFZaN.webp": {
     "file": "assets/contract-section-map.66DvFZaN.webp",
     "src": "_contract-section-map.66DvFZaN.webp"
@@ -171,12 +203,16 @@
     ]
   },
   "about.js": {
-    "file": "assets/about.CIojGrQb.js",
+    "file": "assets/about.BcJ6dHU_.js",
     "name": "about",
     "src": "about.js",
     "isEntry": true,
     "css": [
       "assets/about.C5FF3n3c.css"
+    ],
+    "assets": [
+      "assets/bg-about-banner.3yDMt4IY.webp",
+      "assets/bg-about-banner.BzM_19oc.webp"
     ]
   },
   "contacts.js": {
@@ -397,7 +433,7 @@
     ]
   },
   "main.js": {
-    "file": "assets/main.CoVxRIS5.js",
+    "file": "assets/main.ouIRz4RA.js",
     "name": "main",
     "src": "main.js",
     "isEntry": true,
@@ -442,7 +478,13 @@
       "assets/contract-section-map.DHauT4le.webp",
       "assets/contract-section-map.CYF9cz_m.webp",
       "assets/contract-section-map.BdGI9PE_.webp",
-      "assets/contract-section-map.Djzs8Bh5.webp"
+      "assets/contract-section-map.Djzs8Bh5.webp",
+      "assets/contract-section-map-en.CBAaiEn9.webp",
+      "assets/contract-section-map-en.D3dvLrA2.webp",
+      "assets/contract-section-map-en.SAkCsKjk.webp",
+      "assets/contract-section-map-en.Cwf84SYG.webp",
+      "assets/contract-section-map-en.CmedbrMY.webp",
+      "assets/contract-section-map-en.D1pxfJz8.webp"
     ]
   },
   "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff": {
