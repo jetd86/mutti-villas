@@ -1,3 +1,6 @@
+import bgBanner1x from '@images/bg-about-banner.png?w=768&format=webp&as=src';
+import bgBanner2x from '@images/bg-about-banner.png?w=1536&format=webp&as=src';
+
 export function initSectionBannerVideo() {
     const video = document.querySelector('.section-banner__video');
     if (!video) return;

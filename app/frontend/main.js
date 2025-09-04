@@ -151,7 +151,43 @@ import bgMapLarge2x from '@images/contract-section-map.jpg?w=3840&format=webp&as
 import bgMapLarge3x from '@images/contract-section-map.jpg?w=5760&format=webp&as=src';
 
 import bgMapLarge4x from '@images/contract-section-map.jpg?w=7680&format=webp&as=src';
+
+
+import bgMapMobileEn1x from '@images/contract-section-map-en.jpg?w=1500&format=webp&as=src';
+
+import bgMapMobileEn2x from '@images/contract-section-map-en.jpg?w=1500&format=webp&as=src';
+
+import bgMapMobileEn3x from '@images/contract-section-map-en.jpg?w=1500&format=webp&as=src';
+
+import bgMapMobileEn4x from '@images/contract-section-map-en.jpg?w=1500&format=webp&as=src';
+
+import bgMapTabletEn1x from '@images/contract-section-map-en.jpg?w=1536&format=webp&as=src';
+
+import bgMapTabletEn2x from '@images/contract-section-map-en.jpg?w=1536&format=webp&as=src';
+
+import bgMapTabletEn3x from '@images/contract-section-map-en.jpg?w=2304&format=webp&as=src';
+
+import bgMapTabletEn4x from '@images/contract-section-map-en.jpg?w=3072&format=webp&as=src';
+
+import bgMapDesktopEn1x from '@images/contract-section-map-en.jpg?w=2048&format=webp&as=src';
+
+import bgMapDesktopEn2x from '@images/contract-section-map-en.jpg?w=2048&format=webp&as=src';
+
+import bgMapDesktopEn3x from '@images/contract-section-map-en.jpg?w=3072&format=webp&as=src';
+
+import bgMapDesktopEn4x from '@images/contract-section-map-en.jpg?w=4096&format=webp&as=src';
+
+import bgMapLargeEn1x from '@images/contract-section-map-en.jpg?w=3840&format=webp&as=src';
+
+import bgMapLargeEn2x from '@images/contract-section-map-en.jpg?w=3840&format=webp&as=src';
+
+import bgMapLargeEn3x from '@images/contract-section-map-en.jpg?w=5760&format=webp&as=src';
+
+import bgMapLargeEn4x from '@images/contract-section-map-en.jpg?w=7680&format=webp&as=src';
+
 import {lazyImagesInit} from "./components/layout/lazyImages.js";
+
+const lang = document.documentElement.lang;
 
 function getImageCategory(width) {
     if (width >= 1920) return 'large';
@@ -193,6 +229,15 @@ function getMapImages() {
         tablet: {1: bgMapTablet1x, 2: bgMapTablet2x, 3: bgMapTablet3x, 4: bgMapTablet4x},
         desktop: {1: bgMapDesktop1x, 2: bgMapDesktop2x, 3: bgMapDesktop3x, 4: bgMapDesktop4x},
         large: {1: bgMapLarge1x, 2: bgMapLarge2x, 3: bgMapLarge3x, 4: bgMapLarge4x}
+    };
+}
+
+function getMapImagesEn() {
+    return {
+        mobile: {1: bgMapMobileEn1x, 2: bgMapMobileEn2x, 3: bgMapMobileEn3x, 4: bgMapMobileEn4x},
+        tablet: {1: bgMapTabletEn1x, 2: bgMapTabletEn2x, 3: bgMapTabletEn3x, 4: bgMapTabletEn4x},
+        desktop: {1: bgMapDesktopEn1x, 2: bgMapDesktopEn2x, 3: bgMapDesktopEn3x, 4: bgMapDesktopEn4x},
+        large: {1: bgMapLargeEn1x, 2: bgMapLargeEn2x, 3: bgMapLargeEn3x, 4: bgMapLargeEn4x}
     };
 }
 
@@ -250,7 +295,17 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     loadOptimizedImage('.hero', homeImages, '--bg-hero', (el) => el.classList.add('hero-loaded'));
     loadOptimizedImage('#image .section-container', imageImages, '--bg-image', (el) => el.classList.add('image-loaded'));
-    const mapImages = getMapImages();
+
+    let mapImages;
+
+    if(lang === 'en') {
+        mapImages = getMapImages();
+    } else if(lang === 'ru') {
+        mapImages = getMapImagesEn();
+    }
+
+
+
     loadOptimizedMap('#map', mapImages);
     const listItems = document.querySelectorAll('.section-list__item');
     const mapLinks = document.querySelectorAll('.section-map__link');
