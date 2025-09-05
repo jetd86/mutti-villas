@@ -52,7 +52,7 @@ foreach ($arResult["ITEMS"] as $arItem):
                     data-text=<?= Option::get(ModuleEnum::MODULE_NAME->value, OptionGuideEnum::GUIDE_INFO_DESCRIPTION_BUTTON_MESSENGER_TEXT->value) ?>>
                 <?= Option::get(ModuleEnum::MODULE_NAME->value, OptionGuideEnum::GUIDE_INFO_DESCRIPTION_BUTTON->value) ?> <i class="bi bi-arrow-right"></i>
             </button>
-            <a href="<?=$arItem['DETAIL_PAGE_URL']?>">Подробнее</a>
+            <a href="<?=$arItem['DETAIL_PAGE_URL']?>"><?php echo GetMessage('ADDITION'); ?></a>
         </div>
     </article>
 <?
