@@ -98,12 +98,9 @@ if ($tld === 'com') { ?>
 
 
 </head>
-<body class="page"><?
-if ($request->get('debug') === 'Y') { ?>
-    <div id="panel"><?
+<body class="page">
+<?
         $APPLICATION->ShowPanel(); ?>
-    </div><?
-} ?>
 <div id="app" class="<?=(Application::isHomePage() ? PageEnum::PAGE_HOME->value : Application::getPageName() . '-page') ?>">
     <header class="header sticky-top<?=(!Application::isHomePage() ? ' header-inner shadow-sm' : ' header-main')?>"
             id="<?= Application::isHomePage() ? 'mainHeader' : 'innerHeader' ?>"><?
