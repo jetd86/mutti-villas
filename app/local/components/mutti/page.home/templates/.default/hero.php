@@ -47,6 +47,7 @@ $this->setFrameMode(true); ?>
                              srcset="/public/home-main-5-stars-en.webp 160w,
                /public/home-main-5-stars-en@2x.webp 320w,
                /public/home-main-5-stars-en@3x.webp 480w"
+                             sizes="160px"
                              alt="5 stars" width="160"/>
                     </div>
 
@@ -55,6 +56,7 @@ $this->setFrameMode(true); ?>
                              srcset="/public/home-main-mount-en.webp 160w,
                /public/home-main-mount-en@2x.webp 320w,
                /public/home-main-mount-en@3x.webp 480w"
+                             sizes="160px"
                              alt="Mountain" width="160"/>
                     </div>
 
@@ -63,6 +65,7 @@ $this->setFrameMode(true); ?>
                              srcset="/public/home-main-sea-en.webp 160w,
                /public/home-main-sea-en@2x.webp 320w,
                /public/home-main-sea-en@3x.webp 480w"
+                             sizes="160px"
                              alt="Sea" width="160"/>
                     </div>
                 </div>
@@ -73,6 +76,7 @@ $this->setFrameMode(true); ?>
                              srcset="/public/home-main-5-stars.webp 160w,
                /public/home-main-5-stars@2x.webp 320w,
                /public/home-main-5-stars@3x.webp 480w"
+                             sizes="160px"
                              alt="5 stars" width="160"/>
                     </div>
 
@@ -81,6 +85,7 @@ $this->setFrameMode(true); ?>
                             srcset="/public/home-main-mount.webp 160w,
                /public/home-main-mount@2x.webp 320w,
                /public/home-main-mount@3x.webp 480w"
+                            sizes="160px"
                             alt="Mountain" width="160"/>
                    </div>
 
@@ -89,6 +94,7 @@ $this->setFrameMode(true); ?>
                              srcset="/public/home-main-sea.webp 160w,
                /public/home-main-sea@2x.webp 320w,
                /public/home-main-sea@3x.webp 480w"
+                             sizes="160px"
                              alt="Sea" width="160"/>
                     </div>
                 </div>

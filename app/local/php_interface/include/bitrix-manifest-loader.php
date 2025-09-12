@@ -65,7 +65,7 @@ function loadViteAssets(string $entryName = 'main.js?1', array $options = []): v
             $attrs[] = 'type="module"';
         }
 
-        $attrs[] = 'defer';
+        //$attrs[] = 'defer';
 
         $asset->addString('<script ' . implode(' ', $attrs) . ' ></script>');
     }

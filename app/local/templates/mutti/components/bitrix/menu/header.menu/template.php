@@ -24,7 +24,7 @@ if (Application::isHomePage()) {
 <nav class='navbar navbar-expand-lg px-3 header-<?= ComponentHelper::getComponentName($component->__name)?>' id="<?=$navbarId?>">
     <div class="container p-0">
         <a class="navbar-brand" href="/">
-            <img id="navbarLogo" alt="Mutti Villas" src="" loading="eager" fetchpriority="high" decoding="async" aria-label="Mutti Villas"/>
+            <img id="navbarLogo" alt="Mutti Villas" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" loading="eager" fetchpriority="high" decoding="async" aria-label="Mutti Villas"/>
         </a>
         <div class="navbar-action d-lg-none">
             <a class="navbar-link" href="<?=Option::get(ModuleEnum::MODULE_NAME->value, OptionHomeEnum::HOME_INFO_BANNER_LINK->value)?>" target="_blank">3D</a>
