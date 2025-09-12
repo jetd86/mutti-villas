@@ -54,7 +54,7 @@ $culture = Context::getCurrent()->getCulture();
         <div class="swiper-button-next">
             <i class="bi bi-arrow-right-short"></i>
         </div>
-    </div
+    </div>
     <?
     // Пагинация
     if ($arParams['PROPERTIES']['PAGINATION']): ?>
