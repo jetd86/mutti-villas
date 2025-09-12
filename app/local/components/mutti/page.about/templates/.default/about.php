@@ -38,7 +38,7 @@ $arSectionParams = $arParams + $component->getAboutParams(); ?>
             <div class="section-banner col-12 offset-lg-1 col-lg-4">
                 <div class="section-banner__inner">
                     <video class="section-banner__video" autoplay muted loop playsinline preload="auto">
-                        <source type="video/mp4" src="<?=$component::getModuleOption(OptionHomeEnum::HOME_INFO_BANNER_VIDEO) ?>" />
+                        <source type="video/mp4" src="<?=$component::getModuleOption(OptionHomeEnum::HOME_INFO_BANNER_VIDEO) ?>" >
                         <?php /* <img alt="3D тур" src="<?=$component::getModuleOption(OptionHomeEnum::HOME_INFO_BANNER_IMAGE) ?>" /> */ ?>
                     </video>
                     <p class="section-banner__text"><?=$component::getModuleOption(OptionHomeEnum::HOME_INFO_BANNER_TEXT) ?></p>

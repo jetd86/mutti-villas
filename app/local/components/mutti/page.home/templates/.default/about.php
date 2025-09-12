@@ -30,12 +30,12 @@ $arSectionResult = $arResult['ITEMS']['about']; ?>
                 <div class="section-row grid description">
                     <div class="section-grid section-grid__description--left">
                         <div class="section-description">
-                            <p><?= $component::getModuleOption(OptionHomeEnum::HOME_ABOUT_DESCRIPTION_LEFT) ?></p>
+                            <?= $component::getModuleOption(OptionHomeEnum::HOME_ABOUT_DESCRIPTION_LEFT) ?>
                         </div>
                     </div>
                     <div class="section-grid section-grid__description--right">
                         <div class="section-description">
-                            <p><?= $component::getModuleOption(OptionHomeEnum::HOME_ABOUT_DESCRIPTION_RIGHT) ?></p>
+                            <?= $component::getModuleOption(OptionHomeEnum::HOME_ABOUT_DESCRIPTION_RIGHT) ?>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@ $arSectionResult = $arResult['ITEMS']['about']; ?>
                                     <div class="section-advantages__item--icon">
                                         <img src="<?=$icon['SRC_48']?>"
                                              alt=""
-                                             class="img-fluid" />
+                                             class="img-fluid">
                                     </div>
                                     <div class="section-advantages__item--name"><?=$icon['NAME']?></div>
                                 </div>

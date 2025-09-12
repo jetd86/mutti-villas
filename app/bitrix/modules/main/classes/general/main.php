@@ -729,7 +729,7 @@ abstract class CAllMain
 		return false;
 	}
 
-	public function GetMeta($id, $meta_name = false, $bXhtmlStyle = true)
+	public function GetMeta($id, $meta_name = false, $bXhtmlStyle = false)
 	{
 		if (!$meta_name)
 		{
@@ -743,7 +743,7 @@ abstract class CAllMain
 		return '';
 	}
 
-	public function GetLink($id, $rel = null, $bXhtmlStyle = true)
+	public function GetLink($id, $rel = null, $bXhtmlStyle = false)
 	{
 		if ($rel === null)
 		{
@@ -769,12 +769,12 @@ abstract class CAllMain
 		$APPLICATION->AddBufferContent(["CAdvBanner", "Show"], $type, $html_before, $html_after);
 	}
 
-	public function ShowMeta($id, $meta_name = false, $bXhtmlStyle = true)
+	public function ShowMeta($id, $meta_name = false, $bXhtmlStyle = false)
 	{
 		$this->AddBufferContent([&$this, "GetMeta"], $id, $meta_name, $bXhtmlStyle);
 	}
 
-	public function ShowLink($id, $rel = null, $bXhtmlStyle = true)
+	public function ShowLink($id, $rel = null, $bXhtmlStyle = false)
 	{
 		$this->AddBufferContent([&$this, "GetLink"], $id, $rel, $bXhtmlStyle);
 	}
@@ -810,7 +810,7 @@ abstract class CAllMain
 	}
 
 	/** @deprecated use Asset::getInstance()->getCss() */
-	public function GetCSS($cMaxStylesCnt = true, $bXhtmlStyle = true, $assetTargetType = Main\Page\AssetShowTargetType::ALL)
+	public function GetCSS($cMaxStylesCnt = true, $bXhtmlStyle = false, $assetTargetType = Main\Page\AssetShowTargetType::ALL)
 	{
 		if ($cMaxStylesCnt === true)
 		{
@@ -822,7 +822,7 @@ abstract class CAllMain
 		return $res;
 	}
 
-	public function ShowCSS($cMaxStylesCnt = true, $bXhtmlStyle = true)
+	public function ShowCSS($cMaxStylesCnt = true, $bXhtmlStyle = false)
 	{
 		$this->AddBufferContent([&$this, "GetHeadStrings"], 'BEFORE_CSS');
 		$this->AddBufferContent([&$this, "GetCSS"], $cMaxStylesCnt, $bXhtmlStyle);
@@ -956,9 +956,9 @@ abstract class CAllMain
 		$this->AddBufferContent([&$this, "GetHeadScripts"], 3);
 	}
 
-	public function ShowHead($bXhtmlStyle = true)
+	public function ShowHead($bXhtmlStyle = false)
 	{
-		echo '<meta http-equiv="Content-Type" content="text/html; charset=' . LANG_CHARSET . '"' . ($bXhtmlStyle ? ' /' : '') . '>' . "\n";
+		//echo '<meta http-equiv="Content-Type" content="text/html; charset=' . LANG_CHARSET . '"' . ($bXhtmlStyle ? ' /' : '') . '>' . "\n";
 		$this->ShowMeta("robots", false, $bXhtmlStyle);
 		$this->ShowMeta("keywords", false, $bXhtmlStyle);
 		$this->ShowMeta("description", false, $bXhtmlStyle);
@@ -968,7 +968,7 @@ abstract class CAllMain
 		$this->ShowHeadScripts();
 	}
 
-	public function ShowAjaxHead($bXhtmlStyle = true, $showCSS = true, $showStrings = true, $showScripts = true)
+	public function ShowAjaxHead($bXhtmlStyle = false, $showCSS = true, $showStrings = true, $showScripts = true)
 	{
 		$this->RestartBuffer();
 		$this->sPath2css = [];
@@ -3225,7 +3225,7 @@ abstract class CAllMain
 		static $index = null;
 		static $view = null;
 
-		
+
 
 		if ($start)
 		{
@@ -3321,7 +3321,7 @@ abstract class CAllMain
 
 	public function &EndBufferContentMan()
 	{
-		
+
 
 		$res = null;
 
@@ -3664,7 +3664,7 @@ abstract class CAllMain
 			}
 		}
 
-		
+
 
 		//user auto time zone via js cookies
 		if (CTimeZone::Enabled() && (!defined("BX_SKIP_TIMEZONE_COOKIE") || BX_SKIP_TIMEZONE_COOKIE === false))

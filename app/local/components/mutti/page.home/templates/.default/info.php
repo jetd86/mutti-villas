@@ -20,7 +20,7 @@ use Mutti\Enum\ModuleEnum;
 /** @var MuttiPageHomeComponent $component */
 $this->setFrameMode(true); ?>
 
-<section class="section block" id="info">
+<div class="section block" id="info">
     <div class="section-container container">
         <div class="section-row row">
             <div class="section-col col-12 col-lg-6 offset-lg-1">
@@ -40,7 +40,7 @@ $this->setFrameMode(true); ?>
                 <div class="section-banner">
                     <div class="section-banner__inner">
                         <video class="section-banner__video" autoplay muted loop playsinline preload="auto" title="Mutti Family Villas видео 3D тур">
-                            <source type="video/mp4" src="<?=Option::get(ModuleEnum::MODULE_NAME->value, OptionHomeEnum::HOME_INFO_BANNER_VIDEO->value)?>" />
+                            <source type="video/mp4" src="<?=Option::get(ModuleEnum::MODULE_NAME->value, OptionHomeEnum::HOME_INFO_BANNER_VIDEO->value)?>" >
                             <?php /* <img alt="3D тур" src="<?=Option::get(ModuleEnum::MODULE_NAME->value, OptionHomeEnum::HOME_INFO_BANNER_IMAGE->value)?>" /> */ ?>
                         </video>
                         <p class="section-banner__text"><?=Option::get(ModuleEnum::MODULE_NAME->value, OptionHomeEnum::HOME_INFO_BANNER_TEXT->value)?></p>
@@ -69,4 +69,4 @@ $this->setFrameMode(true); ?>
             </div>
         </div>
     </div>
-</section>
+</div>

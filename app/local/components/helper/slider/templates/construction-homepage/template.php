@@ -32,8 +32,8 @@ $culture = Context::getCurrent()->getCulture();
                     data-gallery="construction"
                     data-title="<?= $element['GROUP'] ?>">
                     <picture>
-                        <source data-srcset="<?= $element['SRC_2X'] ?>" media="(min-width: 768px)" type="image/webp">
-                        <source data-srcset="<?= $element['SRC_1X'] ?>" type="image/webp">
+                        <source srcset="" data-srcset="<?= $element['SRC_2X'] ?>" media="(min-width: 768px)" type="image/webp">
+                        <source srcset="" data-srcset="<?= $element['SRC_1X'] ?>" type="image/webp">
                         <img
                             class="lazyload"
                             data-src="<?= $element['SRC'] ?>"

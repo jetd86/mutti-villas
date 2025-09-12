@@ -16,6 +16,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 /** @var MuttiPageHomeComponent $component */
 $this->setFrameMode(true); ?>
 
-<section class="section block" id="image">
+<div class="section block" id="image">
     <div class="section-container"></div>
-</section>
+</div>

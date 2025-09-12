@@ -22,7 +22,6 @@ $this->setFrameMode(true); ?>
     <div class="section-wrapper swiper-wrapper"><?
         foreach ($arResult['ITEMS'] ?: [] as $element) { ?>
             <div class="swiper-slide">
-            <meta name="format-detection" content="telephone=no">
             <div class="section-container">
                 <div class="section-block section-info">
                     <div class="section-title">

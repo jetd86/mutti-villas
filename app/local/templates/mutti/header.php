@@ -50,7 +50,7 @@ if ($tld === 'com') { ?>
 <?php } ?>
 <head>
     <meta charset="utf-8">
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title><? $APPLICATION->ShowTitle(); ?></title>
@@ -97,6 +97,79 @@ if ($tld === 'com') { ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
 
 
+    <style>
+        .section-feedback__agreement {
+            color: #fff;
+            font-family: Montserrat, sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            vertical-align: middle;
+            line-height: 1;
+            opacity: .8;
+        }
+
+        .section-feedback__agreement a {
+            color: #ffffff;
+        }
+        .section-feedback__agreement label.is-invalid {
+            border: 1px solid #dc3545;
+            padding: 5px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .section-feedback__agreement label.is-invalid::after {
+            content: "Нужно согласиться";
+            color: #dc3545;
+            font-size: 0.9em;
+            margin-left: 8px;
+        }
+
+
+        .phone-input-container {
+            position: relative;
+        }
+
+        .phone-hint {
+            font-size: 0.875rem;
+            color: #6c757d;
+            margin-top: 0.25rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .phone-input-container:focus-within .phone-hint {
+            opacity: 1;
+        }
+
+        .country-indicator {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.75rem;
+            color: #28a745;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .country-indicator.show {
+            opacity: 1;
+        }
+
+        .form-control.phone-valid {
+            border-color: #28a745;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='m2.3 6.73.8-.77-.8-.77-.8.77.8.77zm1.54-4.02L5.3 1.25 4.5.48 2.84 2.14l-.83-.83-.8.77 1.63 1.63z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right calc(0.375em + 0.1875rem) center;
+            background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+        }
+
+        .form-control.phone-invalid {
+            border-color: #dc3545;
+        }
+    </style>
 </head>
 <body class="page">
 <?
