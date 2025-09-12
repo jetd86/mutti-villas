@@ -17,6 +17,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 $this->setFrameMode(true);
 $arSectionResult = $arResult['ITEMS'][$component->getTemplatePage()]; ?>
 
-<section class="section block" id="maps">
+<div class="section block" id="maps">
     <div id="map"></div>
-</section>
+</div>

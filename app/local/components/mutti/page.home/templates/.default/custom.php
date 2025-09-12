@@ -20,8 +20,8 @@ use Mutti\Enum\ModuleEnum;
 /** @var MuttiPageHomeComponent $component */
 $this->setFrameMode(true);?>
 
-<section class="section block" id="custom">
+<div class="section block" id="custom">
     <div class="section-container container">
         <?=Option::get(ModuleEnum::MODULE_NAME->value, OptionHomeEnum::HOME_DESCRIPTION_CONTENT->value)?>
     </div>
-</section>
+</div>

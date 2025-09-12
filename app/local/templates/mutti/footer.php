@@ -5,8 +5,8 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 use Bitrix\Main\Localization\Loc;
 use Bitrix\Main\Page\Asset; ?>
-        </section>
-    </section>
+        </div>
+    </div>
     <footer class="footer" id="footer"><?
         $APPLICATION->IncludeComponent('mutti:footer', '', [
             "CALLBACK_NAME" => Loc::getMessage('FOOTER_CALLBACK'),

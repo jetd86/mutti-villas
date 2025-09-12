@@ -190,7 +190,7 @@ if ($tld === 'com') { ?>
             ],
         ]);?>
     </header>
-    <section class="section wrapper" id="wrapper"><?
+    <div class="section wrapper" id="wrapper"><?
         // breadcrumb
         if (!Application::isHomePage()):
             $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", [
@@ -201,6 +201,6 @@ if ($tld === 'com') { ?>
             // pageTitle
             $APPLICATION->AddBufferContent('getPageTitle');
         endif; ?>
-        <section class="section content" id="content">
+        <div class="section content" id="content">
 
 
