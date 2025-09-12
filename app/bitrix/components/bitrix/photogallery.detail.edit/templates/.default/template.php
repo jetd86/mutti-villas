@@ -32,7 +32,7 @@ endif;
 <div class="photo-window-edit" id="photo_photo_edit">
 <form method="post" action="<?=POST_FORM_ACTION_URI?>" name="form_photo" id="form_photo" onsubmit="return CheckForm(this);" class="photo-form">
 	<input type="hidden" name="edit" value="Y" />
-	<input type="hidden" name="sessid" value="<?=bitrix_sessid()?>" />
+	<input type="hidden" name="sessid" value="<?=bitrix_sessid()?>" >
 	<input type="hidden" name="SECTION_ID" value="<?=$arResult["ELEMENT"]["~IBLOCK_SECTION_ID"]?>" />
 	<input type="hidden" name="ELEMENT_ID" value="<?=$arResult["ELEMENT"]["~ID"]?>" />
 

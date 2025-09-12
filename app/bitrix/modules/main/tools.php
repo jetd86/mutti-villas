@@ -4689,7 +4689,7 @@ function bitrix_sessid_post($varname = 'sessid', $returnInvocations = false)
 	$id = $invocations ? $varname . '_' . $invocations : $varname;
 	$invocations++;
 
-	return '<input type="hidden" name="' . $varname . '" id="' . $id . '" value="' . bitrix_sessid() . '" />';
+	return '<input type="hidden" name="' . $varname . '" id="' . $id . '" value="' . bitrix_sessid() . '" >';
 }
 
 function print_url($strUrl, $strText, $sParams = "")
