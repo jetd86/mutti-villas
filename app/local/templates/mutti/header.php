@@ -170,6 +170,84 @@ if ($tld === 'com') { ?>
             border-color: #dc3545;
         }
     </style>
+
+
+
+
+
+    <style>
+        .cookie-notification {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 640px;
+            background: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 15px #0003;
+            z-index: 99999;
+        }
+        .cookie-notification.hidden { display: none; }
+        .cookie-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            gap: 20px;
+        }
+        .cookie-text { font-size: 14px; flex: 1; margin: 0; }
+        .cookie-link { color: #0077cc; text-decoration: underline; }
+        .cookie-actions { display: flex; gap: 10px; }
+        .cookie-btn {
+            min-width: 100px; height: 36px; border: none;
+            cursor: pointer; font-size: 13px; font-weight: 500;
+        }
+        .cookie-accept { background: #4b0081; color: #fff; }
+        .cookie-reject { background: #ddd; color: #333; }
+        .cookie-settings { background: #eee; color: #333; }
+
+        .cookie-settings-modal {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,.5);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 100000;
+        }
+        .cookie-settings-modal.hidden { display: none; }
+        .cookie-settings-content {
+            background: #fff; padding: 20px; border-radius: 6px;
+            width: 400px; max-width: 90%;
+            display: flex; flex-direction: column; gap: 15px;
+        }
+        .cookie-settings-content h3 {
+            margin: 0; font-size: 18px;
+        }
+        .cookie-settings-content label {
+            font-size: 14px; display: flex; gap: 8px; align-items: center;
+        }
+        .cookie-settings-content .actions {
+            display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px;
+        }
+
+        .cookie-accept-btn {
+            width: 150px;
+            height: 40px;
+            background-color: #4b0081;
+            color: #fff;
+            border: none;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 700px){
+            .cookie-notification{ width:95%; }
+            .cookie-content{ flex-direction:column; align-items:flex-start; }
+            .cookie-actions{ width:100%; justify-content:flex-end; flex-wrap:wrap; }
+        }
+    </style>
+
+
 </head>
 <body class="page">
 <?

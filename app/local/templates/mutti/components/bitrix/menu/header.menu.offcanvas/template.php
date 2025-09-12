@@ -15,7 +15,7 @@ use App\Helper\ComponentHelper;
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="mobileMenuLabel">
             <a class="offcanvas-brand" href="/">
-                <img id="offcanvasLogo" alt="Logo">
+                <img id="offcanvasLogo" alt="Logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==">
             </a>
         </h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>

@@ -19,7 +19,7 @@ $this->setFrameMode(true); ?>
 <div class="footer-block footer-logo">
     <div>
         <a class="footer-brand" href="/">
-            <img id="footerLogo" alt="Mutti Villas"/>
+            <img id="footerLogo" alt="Mutti Villas" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==">
         </a>
         <a href="http://boonpakorn.com/" class="boon-pakorn-logo" aria-label="Перейти на сайт Boon Pakorn">
             <svg width="210" height="62" role="img" aria-hidden="true">
