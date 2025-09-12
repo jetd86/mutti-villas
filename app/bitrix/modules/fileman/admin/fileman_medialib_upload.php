@@ -409,7 +409,7 @@ $options["template"] ??= null;
 <div class="upl-main-wrap">
 <form id="<?=$uploaderID?>_form" name="<?=$uploaderID?>_form" action="<?=$APPLICATION->GetCurPageParam("type_ml=".urlencode($_GET["type"])."&".bitrix_sessid_get(), array("type_ml", "sessid"))?>" method="POST" enctype="multipart/form-data" class="bxiu-photo-form">
 	<input type="hidden" name="action" id="id" value="uploadhtml5" />
-	<input type="hidden" name="sessid" id="sessid" value="<?= bitrix_sessid()?>" />
+	<input type="hidden" name="sessid" id="sessid" value="<?= bitrix_sessid()?>" >
 <div class="bxu-thumbnails bxu-thumbnails-start<?=($options["template"]=="full" ? "" : " bxu-main-block-reduced-size")?>" id="bxuMain<?=$uploaderID?>"> <!-- bxu-thumbnails-loading bxu-thumbnails-start-->
 	<div class="bxu-top-block">
 		<label class="upl-top-bar-text" for="collection_id<?=$uploaderID?>"><?=GetMessage("MEDIALIB_UPLOADER_INTO")?>:</label><?

@@ -281,7 +281,7 @@ $params = array_merge($arParams["bxu"]->params, array(
 <div class="pg-main-wrap">
 <form id="<?= $arParams["UPLOADER_ID"]?>_form" name="<?= $arParams["UPLOADER_ID"]?>_form" action="<?=  htmlspecialcharsbx($arParams["ACTION_URL"])?>" method="POST" enctype="multipart/form-data" class="bxiu-photo-form">
 	<input type="hidden" name="save_upload" id="save_upload" value="Y" />
-	<input type="hidden" name="sessid" id="sessid" value="<?= bitrix_sessid()?>" />
+	<input type="hidden" name="sessid" id="sessid" value="<?= bitrix_sessid()?>" >
 	<input type="hidden" name="SECTION_ID" value="<?=$arParams["SECTION_ID"]?>" />
 	<input type="hidden" name="photo_resize_size" value="" />
 	<input type="hidden" name="photo_public" value="" />
