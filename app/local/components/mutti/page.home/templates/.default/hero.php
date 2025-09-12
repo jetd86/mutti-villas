@@ -48,7 +48,7 @@ $this->setFrameMode(true); ?>
                /public/home-main-5-stars-en@2x.webp 320w,
                /public/home-main-5-stars-en@3x.webp 480w"
                              sizes="160px"
-                             alt="5 stars" width="160"/>
+                             alt="5 stars" width="160">
                     </div>
 
                     <div>
@@ -57,7 +57,7 @@ $this->setFrameMode(true); ?>
                /public/home-main-mount-en@2x.webp 320w,
                /public/home-main-mount-en@3x.webp 480w"
                              sizes="160px"
-                             alt="Mountain" width="160"/>
+                             alt="Mountain" width="160">
                     </div>
 
                     <div>
@@ -66,7 +66,7 @@ $this->setFrameMode(true); ?>
                /public/home-main-sea-en@2x.webp 320w,
                /public/home-main-sea-en@3x.webp 480w"
                              sizes="160px"
-                             alt="Sea" width="160"/>
+                             alt="Sea" width="160">
                     </div>
                 </div>
             <?php } else { ?>
@@ -77,7 +77,7 @@ $this->setFrameMode(true); ?>
                /public/home-main-5-stars@2x.webp 320w,
                /public/home-main-5-stars@3x.webp 480w"
                              sizes="160px"
-                             alt="5 stars" width="160"/>
+                             alt="5 stars" width="160">
                     </div>
 
                    <div>
@@ -86,7 +86,7 @@ $this->setFrameMode(true); ?>
                /public/home-main-mount@2x.webp 320w,
                /public/home-main-mount@3x.webp 480w"
                             sizes="160px"
-                            alt="Mountain" width="160"/>
+                            alt="Mountain" width="160">
                    </div>
 
                     <div>
@@ -95,7 +95,7 @@ $this->setFrameMode(true); ?>
                /public/home-main-sea@2x.webp 320w,
                /public/home-main-sea@3x.webp 480w"
                              sizes="160px"
-                             alt="Sea" width="160"/>
+                             alt="Sea" width="160">
                     </div>
                 </div>
             <?php } ?>
