@@ -37,7 +37,7 @@ $culture = Context::getCurrent()->getCulture();
                         <img
                             class="lazyload"
                             data-src="<?= $element['SRC'] ?>"
-                            src=""
+                            src="<?= $element['SRC'] ?>"
                             alt="<?= htmlspecialchars($element['GROUP']) ?>"
                             loading="lazy"
                         >
