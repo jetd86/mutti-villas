@@ -17,6 +17,9 @@ use Mutti\Enum\OptionHomeEnum;
 /** @var string $componentPath */
 /** @var MuttiPageHomeComponent $component */
 
+include $_SERVER['DOCUMENT_ROOT']. '/local/php_interface/mutti-core.php';
+$arResult['MUTTI_CORE'] = $mutti_core;
+
 $this->setFrameMode(true);
 $imageService = new ImageService();
 $component = new MuttiPageHomeComponent();
