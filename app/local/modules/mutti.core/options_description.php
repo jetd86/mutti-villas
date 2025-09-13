@@ -206,6 +206,37 @@ return [
                 'REQUIRED' => false,
             ],
 
+            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_FIELD->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_LINK_1'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_FIELD->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_LINK_2'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_FIELD->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_LINK_3'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_FIELD->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_LINK_4'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_FIELD->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_LINK_5'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+
         ],
     ],
     OptionTabEnum::home->name => [

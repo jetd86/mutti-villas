@@ -28,6 +28,16 @@ $MESS['BASE_FIELD_TELEGRAM_CHAT_ID'] = 'ID чата';
 $MESS['BASE_FIELD_TELEGRAM_MESSAGE'] = 'Сообщение (HTML)';
 $MESS['BASE_HEADER_TELEGRAM_ADMIN'] = 'Telegram (Нотификация о системных сообщениях)';
 $MESS['BASE_HEADER_LINKS'] = 'Ссылки на главной, фиолетовый блок';
+$MESS['BASE_HEADER_LINK_1'] = 'Ссылка 1';
+$MESS['BASE_HEADER_LINK_2'] = 'Ссылка 2';
+$MESS['BASE_HEADER_LINK_3'] = 'Ссылка 3';
+$MESS['BASE_HEADER_LINK_4'] = 'Ссылка 4';
+$MESS['BASE_HEADER_LINK_6'] = 'Ссылка 5';
+$MESS['BASE_HEADER_LINK_6'] = 'Ссылка 6';
+$MESS['BASE_HEADER_LINK_7'] = 'Ссылка 7';
+$MESS['BASE_HEADER_LINK_8'] = 'Ссылка 8';
+$MESS['BASE_HEADER_LINK_9'] = 'Ссылка 9';
+$MESS['BASE_HEADER_LINK_10'] = 'Ссылка 10';
 
 $MESS['BASE_FIELD_TELEGRAM_TOKEN_ADMIN'] = 'Токен бота';
 $MESS['BASE_FIELD_TELEGRAM_TOKEN_ADMIN_HINT'] = 'Если не заполнен, то будет использоваться токен бота из нотификации с формы обратной связи';
