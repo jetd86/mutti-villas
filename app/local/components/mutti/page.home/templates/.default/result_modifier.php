@@ -36,7 +36,6 @@ foreach($icons as $key => $arIcon) {
     $arResult['ITEMS']['ICONS'][$key]['SRC_300'] = $imageService->getResizedWebpSrc($arIcon['ICON'], ['height' => 300, 'width' => 300]);
 }
 
-print_r($mutti_core);
 
 $arLocationSection = $arResult['ITEMS']['location'];
 
