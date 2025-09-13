@@ -212,26 +212,56 @@ return [
                 'DEFAULT' => '',
                 'REQUIRED' => false,
             ],
-            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_FIELD->value => [
+            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_2_FIELD->value => [
                 'TITLE' => Loc::getMessage('BASE_HEADER_LINK_2'),
                 'TYPE' => 'STRING',
                 'DEFAULT' => '',
                 'REQUIRED' => false,
             ],
-            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_FIELD->value => [
+            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_3_FIELD->value => [
                 'TITLE' => Loc::getMessage('BASE_HEADER_LINK_3'),
                 'TYPE' => 'STRING',
                 'DEFAULT' => '',
                 'REQUIRED' => false,
             ],
-            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_FIELD->value => [
+            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_4_FIELD->value => [
                 'TITLE' => Loc::getMessage('BASE_HEADER_LINK_4'),
                 'TYPE' => 'STRING',
                 'DEFAULT' => '',
                 'REQUIRED' => false,
             ],
-            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_FIELD->value => [
+            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_5_FIELD->value => [
                 'TITLE' => Loc::getMessage('BASE_HEADER_LINK_5'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_6_FIELD->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_LINK_6'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_7_FIELD->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_LINK_7'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_8_FIELD->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_LINK_8'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_9_FIELD->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_LINK_9'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_10_FIELD->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_LINK_10'),
                 'TYPE' => 'STRING',
                 'DEFAULT' => '',
                 'REQUIRED' => false,

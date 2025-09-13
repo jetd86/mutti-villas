@@ -45,6 +45,15 @@ enum OptionBaseEnum: string
     case BASE_HEADER_TRADEMARK_SIGN_FIELD = 'global_field_trademark_message_field';
     case BASE_HEADER_MAINPAGE_LINKS_FIELD = 'global_field_mainpage_links_field';
     case BASE_HEADER_MAINPAGE_LINKS_1_FIELD = 'global_field_mainpage_links_1_field';
+    case BASE_HEADER_MAINPAGE_LINKS_2_FIELD = 'global_field_mainpage_links_2_field';
+    case BASE_HEADER_MAINPAGE_LINKS_3_FIELD = 'global_field_mainpage_links_3_field';
+    case BASE_HEADER_MAINPAGE_LINKS_4_FIELD = 'global_field_mainpage_links_4_field';
+    case BASE_HEADER_MAINPAGE_LINKS_5_FIELD = 'global_field_mainpage_links_5_field';
+    case BASE_HEADER_MAINPAGE_LINKS_6_FIELD = 'global_field_mainpage_links_6_field';
+    case BASE_HEADER_MAINPAGE_LINKS_7_FIELD = 'global_field_mainpage_links_7_field';
+    case BASE_HEADER_MAINPAGE_LINKS_8_FIELD = 'global_field_mainpage_links_8_field';
+    case BASE_HEADER_MAINPAGE_LINKS_9_FIELD = 'global_field_mainpage_links_9_field';
+    case BASE_HEADER_MAINPAGE_LINKS_10_FIELD = 'global_field_mainpage_links_10_field';
 
 
 }
