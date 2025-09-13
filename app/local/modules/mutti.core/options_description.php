@@ -195,6 +195,17 @@ return [
                 'REQUIRED' => false,
             ],
 
+            'BASE_HEADER_MAIN_PAGE_LINKS' => [
+                'HEADER' => Loc::getMessage('BASE_HEADER_LINKS'),
+            ],
+
+            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_FIELD->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_LINKS'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+
         ],
     ],
     OptionTabEnum::home->name => [
