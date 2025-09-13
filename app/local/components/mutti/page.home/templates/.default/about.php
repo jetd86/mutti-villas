@@ -17,7 +17,9 @@ use Mutti\Enum\OptionHomeEnum;
 /** @var string $componentPath */
 /** @var MuttiPageHomeComponent $component */
 $this->setFrameMode(true);
-$arSectionResult = $arResult['ITEMS']['about']; ?>
+$arSectionResult = $arResult['ITEMS']['about'];
+include $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/mutti-core.php';
+?>
 
 
 <section class="section block" id="about">
@@ -50,10 +52,12 @@ $arSectionResult = $arResult['ITEMS']['about']; ?>
             </div>
             <div class="section-grid section-grid__tags">
                 <div class="section-tags">
-                    <ul class="section-tags__list"><?php
-                        foreach ($component->getTagsElements() ?: [] as $tag) { ?>
-                            <li class="section-tags__item"><?= $tag['NAME'] ?></li><?php
-                        } ?>
+                    <ul class="section-tags__list">
+                        <?php
+                            for ($i= 1; $i <=10; $i++){ ?>
+                                <?php if(empty($mutti_core['global_field_mainpage_links_' . $i . '_field']['VALUE'])) continue; ?>
+                                <li class="section-tags__item"><a target="_blank" href='<?php echo $mutti_core['global_field_mainpage_links_' . $i . '_field']['VALUE'];?>'><?php echo $mutti_core['global_field_mainpage_link_' . $i . '_field_text']['VALUE'];?></a></li>
+                          <?php  }?>
                     </ul>
                 </div>
             </div>

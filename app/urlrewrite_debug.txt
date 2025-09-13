@@ -1,0 +1,12 @@
+Array
+(
+    [0] => Array
+        (
+            [CONDITION] => #^/mutti-guide/#
+            [RULE] => 
+            [ID] => bitrix:news
+            [PATH] => /mutti-guide/index.php
+            [SORT] => 100
+        )
+
+)

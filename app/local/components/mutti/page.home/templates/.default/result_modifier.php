@@ -28,6 +28,8 @@ $icons = $component->getAdvantagesElements();
 $arResult['ITEMS']['ICONS'] = $icons;
 
 
+
+
 foreach($icons as $key => $arIcon) {
     $arResult['ITEMS']['ICONS'][$key]['ICON']['SRC'] = $imageService->getResizedWebpSrc($arIcon['ICON'], ['height' => 48, 'width' => 48]);
     $arResult['ITEMS']['ICONS'][$key]['SRC_48'] = $imageService->getResizedWebpSrc($arIcon['ICON'], ['height' => 48, 'width' => 48]);
