@@ -199,13 +199,6 @@ return [
                 'HEADER' => Loc::getMessage('BASE_HEADER_LINKS'),
             ],
 
-            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_FIELD->value => [
-                'TITLE' => Loc::getMessage('BASE_HEADER_LINKS'),
-                'TYPE' => 'STRING',
-                'DEFAULT' => '',
-                'REQUIRED' => false,
-            ],
-
             OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_1_FIELD->value => [
                 'TITLE' => Loc::getMessage('BASE_HEADER_LINK_1'),
                 'TYPE' => 'STRING',
