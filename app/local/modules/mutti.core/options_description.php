@@ -206,7 +206,7 @@ return [
                 'REQUIRED' => false,
             ],
 
-            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINK_1_FIELD->value => [
+            OptionBaseEnum::BASE_HEADER_MAINPAGE_LINKS_1_FIELD->value => [
                 'TITLE' => Loc::getMessage('BASE_HEADER_LINK_1'),
                 'TYPE' => 'STRING',
                 'DEFAULT' => '',
