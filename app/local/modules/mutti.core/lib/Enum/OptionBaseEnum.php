@@ -44,4 +44,7 @@ enum OptionBaseEnum: string
     case BASE_FIELD_TRADEMARK_SIGN = 'global_field_trademark_message_sign';
     case BASE_HEADER_TRADEMARK_SIGN_FIELD = 'global_field_trademark_message_field';
     case BASE_HEADER_MAINPAGE_LINKS_FIELD = 'global_field_mainpage_links_field';
+    case BASE_HEADER_MAINPAGE_LINKS_1_FIELD = 'global_field_mainpage_links_1_field';
+
+
 }
