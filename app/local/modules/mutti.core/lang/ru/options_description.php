@@ -39,6 +39,20 @@ $MESS['BASE_HEADER_LINK_8'] = 'Ссылка 8';
 $MESS['BASE_HEADER_LINK_9'] = 'Ссылка 9';
 $MESS['BASE_HEADER_LINK_10'] = 'Ссылка 10';
 
+$MESS['BASE_HEADER_LINK_1_TEXT'] = 'Текст ссылки 1';
+$MESS['BASE_HEADER_LINK_2_TEXT'] = 'Текст ссылки 2';
+$MESS['BASE_HEADER_LINK_3_TEXT'] = 'Текст ссылки 3';
+$MESS['BASE_HEADER_LINK_4_TEXT'] = 'Текст ссылки 4';
+$MESS['BASE_HEADER_LINK_5_TEXT'] = 'Текст ссылки 5';
+$MESS['BASE_HEADER_LINK_6_TEXT'] = 'Текст ссылки 6';
+$MESS['BASE_HEADER_LINK_7_TEXT'] = 'Текст ссылки 7';
+$MESS['BASE_HEADER_LINK_8_TEXT'] = 'Текст ссылки 8';
+$MESS['BASE_HEADER_LINK_9_TEXT'] = 'Текст ссылки 9';
+$MESS['BASE_HEADER_LINK_10_TEXT'] = 'Текст ссылки 10';
+
+
+
+
 $MESS['BASE_FIELD_TELEGRAM_TOKEN_ADMIN'] = 'Токен бота';
 $MESS['BASE_FIELD_TELEGRAM_TOKEN_ADMIN_HINT'] = 'Если не заполнен, то будет использоваться токен бота из нотификации с формы обратной связи';
 $MESS['BASE_FIELD_TELEGRAM_CHAT_ID_ADMIN'] = 'ID чата';
