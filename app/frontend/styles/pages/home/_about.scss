@@ -176,6 +176,20 @@ $bannerHeightMd: 516px;
                 text-wrap: nowrap;
             }
 
+            &__item:has(a) {
+                padding: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+                padding: 8px 16px;
+            }
+
+            &:hover {
+                background: rgba(255,255,255, .2)
+            }
+
             & + .section-advantages__item {
                 margin-top: 14px;
 
