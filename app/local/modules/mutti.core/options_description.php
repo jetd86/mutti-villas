@@ -333,6 +333,64 @@ return [
             ],
 
 
+            'BASE_HEADER_MAIN_PAGE_ICONS_COMPLEX' => [
+                'HEADER' => Loc::getMessage('BASE_HEADER_MAIN_PAGE_ICONS_ABOUT'),
+            ],
+
+            OptionBaseEnum::BASE_HEADER_MAIN_PAGE_ICON_37_VILLAS->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_ICON_37_VILLAS'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+
+            OptionBaseEnum::BASE_HEADER_MAIN_PAGE_ICON_3_5_BEDROOMS->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_ICON_3_5_BEDROOMS'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+
+           OptionBaseEnum::BASE_HEADER_MAIN_PAGE_ICON_POOL_AND_SPA->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_ICON_POOL_AND_SPA'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+            OptionBaseEnum::BASE_HEADER_MAIN_PAGE_ICON_PARKING->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_ICON_PARKING'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+            OptionBaseEnum::BASE_HEADER_MAIN_PAGE_ICON_GUARD_24_7->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_ICON_GUARD_24_7'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+
+            OptionBaseEnum::BASE_HEADER_MAIN_PAGE_ICON_CONCIERGE->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_ICON_CONCIERGE'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+            OptionBaseEnum::BASE_HEADER_MAIN_PAGE_ICON_FOR_SPORT->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_ICON_FOR_SPORT'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+
+            OptionBaseEnum::BASE_HEADER_MAIN_PAGE_TWO_PLAYGROUND->value => [
+                'TITLE' => Loc::getMessage('BASE_HEADER_ICON_TWO_PLAYGROUND'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'REQUIRED' => false,
+            ],
+
+
         ],
     ],
     OptionTabEnum::home->name => [

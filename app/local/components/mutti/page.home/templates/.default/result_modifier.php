@@ -50,3 +50,18 @@ foreach ($arLocationSection['ITEMS'] as $key => $arLocationItem) {
 
     $arResult['ITEMS']['location']['ITEMS'][$key] = $arLocationItem;
 }
+
+
+foreach ($arResult['ITEMS']['ICONS'] as $key => $arIcon) {
+    switch ($arIcon['ICON']['ID']) {
+        case 48: $arResult['ITEMS']['ICONS'][$key]['ICON']['LINK'] = $mutti_core['global_field_mainpage_icons_37_villas']['VALUE']; break;
+        case 49: $arResult['ITEMS']['ICONS'][$key]['ICON']['LINK'] = $mutti_core['global_field_mainpage_icons_3_5_bedrooms']['VALUE']; break;
+        case 50: $arResult['ITEMS']['ICONS'][$key]['ICON']['LINK'] = $mutti_core['global_field_mainpage_icon_pool_and_spa']['VALUE']; break;
+        case 51: $arResult['ITEMS']['ICONS'][$key]['ICON']['LINK'] = $mutti_core['global_field_mainpage_icon_parking']['VALUE']; break;
+        case 52: $arResult['ITEMS']['ICONS'][$key]['ICON']['LINK'] = $mutti_core['global_field_mainpage_icon_guard_24_7']['VALUE']; break;
+        case 53: $arResult['ITEMS']['ICONS'][$key]['ICON']['LINK'] = $mutti_core['global_field_mainpage_icon_concierge']['VALUE']; break;
+        case 54: $arResult['ITEMS']['ICONS'][$key]['ICON']['LINK'] = $mutti_core['global_field_mainpage_icon_for_sport']['VALUE']; break;
+        case 55: $arResult['ITEMS']['ICONS'][$key]['ICON']['LINK'] = $mutti_core['global_field_mainpage_icon_two_playground']['VALUE']; break;
+    }
+
+}

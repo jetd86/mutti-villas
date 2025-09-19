@@ -50,6 +50,16 @@ $MESS['BASE_HEADER_LINK_8_TEXT'] = 'Текст ссылки 8';
 $MESS['BASE_HEADER_LINK_9_TEXT'] = 'Текст ссылки 9';
 $MESS['BASE_HEADER_LINK_10_TEXT'] = 'Текст ссылки 10';
 
+$MESS['BASE_HEADER_MAIN_PAGE_ICONS_ABOUT'] = 'Ссылки на 8 иконок на главной странице';
+$MESS['BASE_HEADER_ICON_37_VILLAS'] = '37 вилл всего';
+$MESS['BASE_HEADER_ICON_3_5_BEDROOMS'] = '3-5+ спален';
+$MESS['BASE_HEADER_ICON_POOL_AND_SPA'] = 'Бассейн + SPA';
+$MESS['BASE_HEADER_ICON_PARKING'] = 'Крытый паркинг';
+$MESS['BASE_HEADER_ICON_GUARD_24_7'] = 'Охрана 24/7';
+$MESS['BASE_HEADER_ICON_CONCIERGE'] = 'Консьерж сервис';
+$MESS['BASE_HEADER_ICON_FOR_SPORT'] = 'Все для спорта';
+$MESS['BASE_HEADER_ICON_TWO_PLAYGROUND'] = '2 детские площадки';
+
 
 
 

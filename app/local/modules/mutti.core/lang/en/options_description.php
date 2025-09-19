@@ -55,6 +55,19 @@ $MESS['BASE_HEADER_LINK_8_TEXT'] = 'Link text 8';
 $MESS['BASE_HEADER_LINK_9_TEXT'] = 'Link text 9';
 $MESS['BASE_HEADER_LINK_10_TEXT'] = 'Link text 10';
 
+$MESS['BASE_HEADER_MAIN_PAGE_ICONS_ABOUT'] = 'Icons 8 links on main page';
+
+$MESS['BASE_HEADER_MAIN_PAGE_ICONS_ABOUT'] = 'Links to 8 icons on the main page';
+$MESS['BASE_HEADER_ICON_37_VILLAS'] = '37 villas in total';
+$MESS['BASE_HEADER_ICON_3_5_BEDROOMS'] = '3-5+ bedrooms';
+$MESS['BASE_HEADER_ICON_POOL_AND_SPA'] = 'Pool + SPA';
+$MESS['BASE_HEADER_ICON_PARKING'] = 'Covered parking';
+$MESS['BASE_HEADER_ICON_GUARD_24_7'] = '24/7 security';
+$MESS['BASE_HEADER_ICON_CONCIERGE'] = 'Concierge service';
+$MESS['BASE_HEADER_ICON_FOR_SPORT'] = 'All for sports';
+$MESS['BASE_HEADER_ICON_TWO_PLAYGROUND'] = '2 playgrounds';
+
+
 $MESS['BASE_HEADER_TRADEMARK_SIGN_FIELD'] = 'Message (HTML)';
 $MESS['BASE_HEADER_TRADEMARK_SIGN'] = 'Trademark';
 

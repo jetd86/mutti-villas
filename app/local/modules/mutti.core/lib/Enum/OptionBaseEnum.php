@@ -66,6 +66,17 @@ enum OptionBaseEnum: string
     case BASE_HEADER_MAINPAGE_LINK_8_FIELD_TEXT = 'global_field_mainpage_link_8_field_text';
     case BASE_HEADER_MAINPAGE_LINK_9_FIELD_TEXT = 'global_field_mainpage_link_9_field_text';
     case BASE_HEADER_MAINPAGE_LINK_10_FIELD_TEXT = 'global_field_mainpage_link_10_field_text';
+    case BASE_HEADER_MAIN_PAGE_ICONS_COMPLEX = 'global_field_mainpage_icons_complex';
+
+    case BASE_HEADER_MAIN_PAGE_ICON_37_VILLAS = 'global_field_mainpage_icons_37_villas';
+    case BASE_HEADER_MAIN_PAGE_ICON_3_5_BEDROOMS = 'global_field_mainpage_icons_3_5_bedrooms';
+    case BASE_HEADER_MAIN_PAGE_ICON_POOL_AND_SPA = 'global_field_mainpage_icon_pool_and_spa';
+    case BASE_HEADER_MAIN_PAGE_ICON_PARKING = 'global_field_mainpage_icon_parking';
+
+    case BASE_HEADER_MAIN_PAGE_ICON_GUARD_24_7= 'global_field_mainpage_icon_guard_24_7';
+    case BASE_HEADER_MAIN_PAGE_ICON_CONCIERGE = 'global_field_mainpage_icon_concierge';
+    case BASE_HEADER_MAIN_PAGE_ICON_FOR_SPORT = 'global_field_mainpage_icon_for_sport';
+    case BASE_HEADER_MAIN_PAGE_TWO_PLAYGROUND = 'global_field_mainpage_icon_two_playground';
 
 
 }

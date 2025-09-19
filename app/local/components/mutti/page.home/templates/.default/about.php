@@ -66,14 +66,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/mutti-core.php';
                     <ul class="section-advantages__list"><?php
                         foreach ($arResult['ITEMS']['ICONS'] as $icon) { ?>
                             <li class="section-advantages__item">
-                                <div class="section-advantages__item--wrapper">
+                              <a href="<?php echo $icon['ICON']['LINK']; ?>" target="_blank" style="text-decoration: none;"> <div class="section-advantages__item--wrapper">
                                     <div class="section-advantages__item--icon">
                                         <img src="<?=$icon['SRC_48']?>"
                                              alt=""
                                              class="img-fluid">
                                     </div>
                                     <div class="section-advantages__item--name"><?=$icon['NAME']?></div>
-                                </div>
+                                </div></a>
                             </li><?php
                         } ?>
                     </ul>
