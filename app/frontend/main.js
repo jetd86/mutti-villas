@@ -360,7 +360,12 @@ window.addEventListener('resize', () => {
         };
         loadOptimizedImage('.hero', homeImages, '--bg-hero');
         loadOptimizedImage('#image .section-container', imageImages, '--bg-image');
-        const mapImages = getMapImages();
+        let mapImages;
+        if(lang === 'en') {
+            mapImages = getMapImagesEn();
+        } else if(lang === 'ru') {
+            mapImages = getMapImages();
+        }
         loadOptimizedMap('#map', mapImages);
     }, 150);
 });
