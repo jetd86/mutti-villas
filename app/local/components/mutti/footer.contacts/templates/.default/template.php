@@ -46,17 +46,17 @@ $this->setFrameMode(true); ?>
         endif; ?>
 	<ul class="footer-email">
        <li>
-           <a href="/policy/">Политика конфиденциальности</a>
+           <a href="/policy/"><?=Loc::getMessage('POLICY')?></a>
       </li>
     </ul>
 	<ul class="footer-email">
        <li>
-           <a href="/cookies-policy/">Политика обработки cookies</a>
+           <a href="/cookies-policy/"><?=Loc::getMessage('COOKIES')?></a>
       </li>
     </ul>
 	<ul class="footer-email">
        <li>
-           <a href="/terms-and-conditions/">Условия использования</a>
+           <a href="/terms-and-conditions/"><?=Loc::getMessage('TERMS_AND_SERVICE')?></a>
       </li>
     </ul>
     </div>
