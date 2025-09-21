@@ -1,5 +1,5 @@
 <?php
 $MESS['POLICY'] = 'Confidential policy';
 $MESS['COOKIES'] = 'Cookies policy';
-$MESS['TERMS_AND_SERVICE'] = 'Условия использования';
+$MESS['TERMS_AND_SERVICE'] = 'Terms of Use';
 

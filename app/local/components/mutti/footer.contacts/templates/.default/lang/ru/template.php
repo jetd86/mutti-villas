@@ -1,5 +1,5 @@
 <?php
-$MESS['POLICY'] = 'Privacy Policy';
-$MESS['COOKIES'] = 'Cookies Policy';
-$MESS['TERMS_AND_SERVICE'] = 'Terms of Use';
+$MESS['POLICY'] = 'Политика конфиденциальности';
+$MESS['COOKIES'] = 'Политика обработки cookies';
+$MESS['TERMS_AND_SERVICE'] = 'Условия использования';
 
