@@ -43,7 +43,7 @@ $this->setFrameMode(true); ?>
             if ($tld === 'com') { ?>
                 <div class="section-title__image-container">
                     <div>
-                        <img src="/public/home-main-5-stars-en.webpg"
+                        <img src="/public/home-main-5-stars-en.webp"
                              srcset="/public/home-main-5-stars-en.webp 160w,
                /public/home-main-5-stars-en@2x.webp 320w,
                /public/home-main-5-stars-en@3x.webp 480w"
