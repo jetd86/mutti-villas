@@ -31,7 +31,7 @@ $arSectionParams = $arParams;
             </div>
             <div class="section-col section-col__image col-12 col-lg-4 mt-3">
                 <div class="section-image">
-                    <img src="<?=$arSectionResult['PICTURE']['SRC']?>" alt="<?=$arSectionResult['NAME']?>" />
+                    <img src="<?=$arSectionResult['PICTURE']['SRC']?>" alt="<?php echo $arResult['ITEMS']['profile']['SEO']['SECTION_PICTURE_FILE_ALT'];?>" />
                 </div>
             </div>
         </div>

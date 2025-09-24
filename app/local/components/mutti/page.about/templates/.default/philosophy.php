@@ -41,10 +41,9 @@ $arSectionParams = $arParams;
         <div class="section-row section-row__image row">
             <div class="section-col section-col__image col">
                 <div class="section-image">
-                    <img src="<?=$arSectionResult['PICTURE']['SRC']?>" alt="<?=$arSectionResult['NAME']?>" />
+                    <img src="<?=$arSectionResult['PICTURE']['SRC']?>" alt="<?php echo $arResult['ITEMS']['philosophy']['SEO']['SECTION_PICTURE_FILE_ALT'];?>" />
                 </div>
             </div>
         </div>
     </div>
 </section>
-

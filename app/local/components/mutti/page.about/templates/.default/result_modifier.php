@@ -3,6 +3,7 @@
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
     die();
 
+use Bitrix\Iblock\InheritedProperty\SectionValues;
 use Bitrix\Iblock\Model\Section;
 use Bitrix\Main\Data\Cache;
 use Mutti\Service\Image\ImageService;
@@ -25,3 +26,8 @@ $arResult['ITEMS']['about']['PICTURE']['SRC'] = $imageService->getResizedWebpSrc
 $arResult['ITEMS']['philosophy']['PICTURE']['SRC'] = $imageService->getResizedWebpSrc($arResult['ITEMS']['philosophy']['PICTURE'],['width' => 1296, 'height' => 729]);
 $arResult['ITEMS']['profile']['PICTURE']['SRC'] = $imageService->getResizedWebpSrc($arResult['ITEMS']['profile']['PICTURE'],['width' => 416, 'height' => 388]);
 
+
+foreach($arResult['ITEMS'] as $key => $item){
+    $sections= new SectionValues($arParams['IBLOCK_ID'], $item['ID']);
+    $arResult['ITEMS'][$key]['SEO'] = $sections->getValues();
+}
