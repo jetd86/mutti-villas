@@ -4,6 +4,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
     die();
 
 use Bitrix\Main\Context;
+use Bitrix\Main\Localization\Loc;
 
 /** @var array $arParams */
 /** @var array $arResult */
@@ -22,7 +23,7 @@ $culture = Context::getCurrent()->getCulture();
 
 <div class="section section-slider swiper swiper-homepage-construction" id="slider-homepage-construction">
     <div class="section-wrapper swiper-wrapper"><?
-        foreach ($arResult['ITEMS'] ?: [] as $element) {?>
+        foreach ($arResult['ITEMS'] ?: [] as $key => $element) {?>
         <div class="slider-slide swiper-slide" data-group="<?= $element['GROUP'] ?>">
             <div class="slider-wrapper">
                 <a
@@ -38,7 +39,7 @@ $culture = Context::getCurrent()->getCulture();
                             class="lazyload"
                             data-src="<?= $element['SRC'] ?>"
                             src="<?= $element['SRC'] ?>"
-                            alt="<?= htmlspecialchars($element['GROUP']) ?>"
+                            alt="<?php echo Loc::getMessage('PROGRESS') . ' Mutti Family Villas image_' . $key . ' ' . $arResult['NAME'];?>"
                             loading="lazy"
                         >
                     </picture>
@@ -62,3 +63,4 @@ $culture = Context::getCurrent()->getCulture();
     endif; ?>
 </div>
 <div class="slider-heading" id="slider-heading" data-lang="<?=$culture->getCode()?>"><?=$arResult['FIRST_GROUP_NAME']?></div>
+

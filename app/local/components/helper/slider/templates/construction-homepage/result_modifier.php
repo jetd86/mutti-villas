@@ -22,6 +22,7 @@ $imageService = new ImageService();
 foreach ($arResult['ITEMS'] ?: [] as $key => $item) {
     if (is_null($slider['GROUP_NAME'])) {
         $slider['GROUP_NAME'] = $item['GROUP'];
+        $slider['NAME'] = $item['NAME'];
     }
     if (is_null($slider['ITEMS'])) {
         $slider['ITEMS'] = [];
@@ -37,3 +38,7 @@ foreach ($arResult['ITEMS'] ?: [] as $key => $item) {
 }
 
 $arResult = $slider;
+
+
+
+

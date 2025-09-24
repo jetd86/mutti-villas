@@ -28,7 +28,7 @@ class GetStorageProperties extends AbstractAction
         $entity = IBlockHelper::getIBlockIdByCode(IBlockCode::STORAGE_CONSTRUCTION->value);
         $entity = Section::compileEntityByIblock($entity);
         $sections = $entity::query()
-            ->setSelect(['ID', 'UF_*'])
+            ->setSelect(['ID', 'NAME', 'UF_*'])
             ->addFilter('ACTIVE', 'Y')
             ->addOrder('UF_DATE', 'DESC')
             ->exec();
