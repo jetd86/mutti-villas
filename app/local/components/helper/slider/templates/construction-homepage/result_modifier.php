@@ -22,16 +22,19 @@ $imageService = new ImageService();
 foreach ($arResult['ITEMS'] ?: [] as $key => $item) {
     if (is_null($slider['GROUP_NAME'])) {
         $slider['GROUP_NAME'] = $item['GROUP'];
-        $slider['NAME'] = $item['NAME'];
+
     }
     if (is_null($slider['ITEMS'])) {
         $slider['ITEMS'] = [];
     }
 
+
+
     $slider['ITEMS'] = array_merge($slider['ITEMS'], array_map(function ($galleryItem) use ($item, $imageService) {
         $galleryItem['SRC_1X'] = $imageService->getResizedWebpSrc($galleryItem, ['height' => 210, 'width' => 500]);
         $galleryItem['SRC_2X'] = $imageService->getResizedWebpSrc($galleryItem, ['height' => 286, 'width' => 500]);
         $galleryItem['GROUP'] = $item['GROUP'];
+        $galleryItem['SECTION_NAME'] = $item['NAME'];
 
         return $galleryItem;
     }, $item['GALLERY']));
@@ -42,7 +45,11 @@ foreach($slider['ITEMS'] ?: [] as $key => $item) {
 }
 
 $arResult = $slider;
-
+if ($_GET['main'] == 5){
+    echo '<pre>';
+    print_r($slider);
+    echo '</pre>';
+}
 
 
 
