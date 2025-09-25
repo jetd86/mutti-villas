@@ -38,11 +38,8 @@ foreach ($arResult['ITEMS'] ?: [] as $key => $item) {
 }
 
 foreach($slider['ITEMS'] ?: [] as $key => $item) {
-    $slider['ITEMS'][$key]['BIG_IMAGE'] = $imageService->getResizedWebpSrc($item, ['height' => 1200, 'width' => 3000]);;
+    $slider['ITEMS'][$key]['SRC'] = $imageService->getResizedWebpSrc($item, ['height' => 1000, 'width' => 2800]);;
 }
-
-
-
 
 $arResult = $slider;
 

@@ -31,18 +31,19 @@ $culture = Context::getCurrent()->getCulture();
                     href="<?= $element['SRC'] ?>"
                     data-glightbox="construction"
                     data-gallery="construction"
-                    data-title="<?= $element['GROUP'] ?>">
+                    data-alt="<?php echo Loc::getMessage('PROGRESS') . ' Mutti Family Villas image_' . $key . ' ' . $arResult['NAME'];?>"
+                    data-title="<?= $element['GROUP'] ?>
                     <picture>
                         <source srcset="<?= $element['SRC_2X'] ?>" data-srcset="<?= $element['SRC_2X'] ?>" media="(min-width: 768px)" type="image/webp">
-                        <source srcset="<?= $element['SRC_1X'] ?>" data-srcset="<?= $element['SRC_1X'] ?>" type="image/webp">
-                        <img
-                            class="lazyload"
-                            data-src="<?= $element['BIG_IMAGE'] ?>"
-                            src="<?= $element['SRC_2X'] ?>"
-                            alt="<?php echo Loc::getMessage('PROGRESS') . ' Mutti Family Villas image_' . $key . ' ' . $arResult['NAME'];?>"
-                            loading="lazy"
-                        >
-                    </picture>
+                <source srcset="<?= $element['SRC_1X'] ?>" data-srcset="<?= $element['SRC_1X'] ?>" type="image/webp">
+                <img
+                    class="lazyload"
+                    data-src="<?= $element['BIG_IMAGE'] ?>"
+                    src="<?= $element['SRC_2X'] ?>"
+                    alt="<?php echo Loc::getMessage('PROGRESS') . ' Mutti Family Villas image_' . $key . ' ' . $arResult['NAME'];?>"
+                    loading="lazy"
+                >
+                </picture>
                 </a>
             </div>
             </div><?
