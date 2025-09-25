@@ -23,7 +23,7 @@ $this->setFrameMode(true); ?>
                 <picture itemprop="image" itemscope itemtype="https://schema.org/ImageObject" >
                     <source srcset="<?= $element['SRC_2X'] ?>" media="(min-width: 768px)" type="image/webp" class="img-fluid">
                     <source srcset="<?= $element['SRC_1X'] ?>" type="image/webp" class="img-fluid">
-                    <img src="<?= $element['SRC'] ?>" alt="Изображение: <?=$arParams['NAME'] . ' ' .  $key + 1 ?>" class="img-fluid">
+                    <img src="<?= $element['SRC'] ?>" alt="Mutti <?=$arParams['NAME'] . ' ' .  $key + 1 ?>" class="img-fluid">
                 </picture>
             </div><?
         } ?>

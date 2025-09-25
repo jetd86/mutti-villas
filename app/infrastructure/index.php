@@ -9,6 +9,7 @@ $APPLICATION->SetPageProperty("DESCRIPTION", "Клубный дом в Mutti Vil
 use App\Enum\IBlockCode;
 
 $APPLICATION->IncludeComponent('mutti:page.infrastructure', '', [
+    'IBLOCK_ID' => 1,
     'ASIDE_VIEW' => true,
     'CACHE_TYPE' => 'A',
     'IBLOCK_CODE' => IBlockCode::PAGE_INFRASTRUCTURE->value,

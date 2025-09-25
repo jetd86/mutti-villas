@@ -26,7 +26,7 @@ $this->setFrameMode(true); ?>
                 <picture itemprop="image" itemscope itemtype="https://schema.org/ImageObject" >
                     <source srcset="<?= $section['PICTURE']['SRC_2X'] ?>" media="(min-width: 768px)" type="image/webp" class="img-fluid">
                     <source srcset="<?= $section['PICTURE']['SRC_1X'] ?>" type="image/webp" class="img-fluid">
-                    <img src="<?=$section['PICTURE']['SRC']?>" alt="<?=$section['NAME']?>" itemprop="contentUrl" class="img-fluid">
+                    <img src="<?=$section['PICTURE']['SRC']?>" alt="<?php echo $arResult['ITEMS'][$sectionCode]['SEO']['SECTION_PICTURE_FILE_ALT'];?>" itemprop="contentUrl" class="img-fluid">
                 </picture>
                 <meta itemprop="width" content="<?=$section['PICTURE']['WIDTH']?>" />
                 <meta itemprop="height" content="<?=$section['PICTURE']['HEIGHT']?>" />

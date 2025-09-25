@@ -20,7 +20,7 @@ $this->setFrameMode(true); ?>
     <div class="section-wrapper swiper-wrapper"><?
         foreach (array_values($arParams['SLIDER']) as $key => $item): ?>
             <div class="section-slide swiper-slide">
-                <img src="<?= $item['SRC'] ?>" class="img-fluid" alt="Изображение: <?=$arParams['NAME'] . ' ' .  $key + 1 ?>"
+                <img src="<?= $item['SRC'] ?>" class="img-fluid" alt="Mutti <?=$arParams['NAME'] . ' ' .  $key + 1 ?>"
                      itemprop="image" itemscope itemtype="https://schema.org/ImageObject" />
             </div><?
         endforeach; ?>

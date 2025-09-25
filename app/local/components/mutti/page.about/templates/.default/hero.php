@@ -22,7 +22,7 @@ $arSectionParams = $arParams + $component->getAboutParams(); ?>
 
 <section class="section hero" id="hero">
     <div class="section-container container">
-        <img class="section-image img-fluid" src="<?=$arSectionResult['PICTURE']['SRC']?>" alt="<?=$arSectionResult['NAME']?>">
+        <img class="section-image img-fluid" src="<?=$arSectionResult['PICTURE']['SRC']?>" alt="<?php echo $arResult['ITEMS']['about']['SEO']['SECTION_PICTURE_FILE_ALT'];?>">
         <ul class="section-stats">
             <li class="section-stats__item">
                 <span class="section-stats__block section-stats__value"><?=$component::getModuleOption(OptionAboutEnum::ABOUT_STAT_PROPERTY_1_VALUE) ?></span>

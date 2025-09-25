@@ -15,6 +15,7 @@ $APPLICATION->IncludeComponent('mutti:page.villas', '', [
     'ASIDE_VIEW' => true,
     'CACHE_TYPE' => 'A',
     'IBLOCK_CODE' => IBlockCode::PAGE_VILLAS->value,
+    'IBLOCK_ID' => IBlockCode::PAGE_VILLAS->value,
     'SUBTITLE_BLOCK_LOCATION' => 'Расположение на генплане',
 ]);
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

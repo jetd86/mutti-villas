@@ -37,8 +37,8 @@ $culture = Context::getCurrent()->getCulture();
                         <source srcset="<?= $element['SRC_1X'] ?>" data-srcset="<?= $element['SRC_1X'] ?>" type="image/webp">
                         <img
                             class="lazyload"
-                            data-src="<?= $element['SRC'] ?>"
-                            src="<?= $element['SRC'] ?>"
+                            data-src="<?= $element['BIG_IMAGE'] ?>"
+                            src="<?= $element['SRC_2X'] ?>"
                             alt="<?php echo Loc::getMessage('PROGRESS') . ' Mutti Family Villas image_' . $key . ' ' . $arResult['NAME'];?>"
                             loading="lazy"
                         >

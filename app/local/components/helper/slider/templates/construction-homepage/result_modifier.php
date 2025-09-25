@@ -37,6 +37,13 @@ foreach ($arResult['ITEMS'] ?: [] as $key => $item) {
     }, $item['GALLERY']));
 }
 
+foreach($slider['ITEMS'] ?: [] as $key => $item) {
+    $slider['ITEMS'][$key]['BIG_IMAGE'] = $imageService->getResizedWebpSrc($item, ['height' => 1200, 'width' => 3000]);;
+}
+
+
+
+
 $arResult = $slider;
 
 
