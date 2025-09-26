@@ -1,8 +1,8 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetTitle('О нас');
-$APPLICATION->SetPageProperty('title', 'О компании');
-$APPLICATION->SetPageProperty('description', 'Компания Mutti Development была создана для вывода на рынок новых продуктов с высоким уровнем качества строительства и технологий, а также для предоставления услуг по управлению и аренде объектов недвижимости и инфраструктуры.');
+$APPLICATION->SetTitle("О нас");
+$APPLICATION->SetPageProperty('title', 'О компании Mutti Family Villas');
+$APPLICATION->SetPageProperty('description', 'Mutti Development – девелопер элитных вилл на Пхукете. Строим современные дома и предоставляем услуги управления.');
 
 $APPLICATION->IncludeComponent('mutti:page.about', '', [
     'IBLOCK_ID' => 5,

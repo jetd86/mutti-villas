@@ -1,11 +1,9 @@
 <?
 
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-
-$APPLICATION->SetTitle("Инфраструктура");
-$APPLICATION->SetPageProperty("TITLE", "Инфраструктура");
 $APPLICATION->SetPageProperty("DESCRIPTION", "Клубный дом в Mutti Villas: современная инфраструктура для отдыха. Бассейн, фитнес-зал, зона барбекю и детские площадки. Идеальное место для семейного комфорта в экологичном районе. Узнайте больше о наших удобствах!");
-
+$APPLICATION->SetTitle("Инфраструктура Mutti Family Villas");
+$APPLICATION->SetPageProperty("TITLE", "Инфраструктура Mutti Family Villas — комфорт, досуг и безопасность на Пхукете");
 use App\Enum\IBlockCode;
 
 $APPLICATION->IncludeComponent('mutti:page.infrastructure', '', [

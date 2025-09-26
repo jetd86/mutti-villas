@@ -1,9 +1,9 @@
 <?php
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("description", "Условия использования регулируют отношения между пользователем и владельцем сайта Mutti Villas");
 $APPLICATION->SetTitle("Пользовательское соглашение");
-$APPLICATION->SetPageProperty("TITLE", "Пользовательское соглашение");
-?>
-<div class="content-container container">
+$APPLICATION->SetPageProperty("TITLE", "Пользовательское соглашение Mutti Family Villas");
+?><div class="content-container container">
     <h3>1. Общие положения</h3>
     <p>
     Настоящие Условия использования регулируют отношения между пользователем сайта https://muttivillas.ru и владельцем сайта — <strong>MUTTI DEVELOPING CO., LTD.</strong>, действующей под брендом <strong>MUTTI VILLAS</strong>.

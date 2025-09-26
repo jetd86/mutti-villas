@@ -1,10 +1,10 @@
 <?php
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
+$APPLICATION->SetPageProperty("description", "Настоящая Cookie-политика описывает, какие файлы cookie и аналогичные технологии (далее — «cookies») используются на сайте  Mutti Family Villas, с какой целью и как вы можете управлять ими.");
 
 $APPLICATION->SetTitle("Политика использования Cookie");
-$APPLICATION->SetPageProperty("TITLE", "Политика использования Cookie");
-?>
-<div class="content-container container">
+$APPLICATION->SetPageProperty("TITLE", "Политика использования Cookie Mutti Family Villas");
+?><div class="content-container container">
     <h3>1. Общие положения</h3>
     <p>
     Настоящая Cookie-политика описывает, какие файлы cookie и аналогичные технологии (далее — «cookies») используются на сайте https://muttivillas.ru, с какой целью и как вы можете управлять ими.  

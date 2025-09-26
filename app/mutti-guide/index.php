@@ -1,9 +1,8 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
-$APPLICATION->SetTitle("Mutti гид");
-$APPLICATION->SetPageProperty("TITLE", "Mutti Гид");
 $APPLICATION->SetPageProperty("DESCRIPTION", "Mutti Гид — ваш проводник по жизни и инвестициям на Пхукете.");
-
+$APPLICATION->SetTitle("Mutti гид");
+$APPLICATION->SetPageProperty("TITLE", "Mutti Гид – как купить виллу на Пхукете");
 use App\Enum\IBlockCode;
 
 

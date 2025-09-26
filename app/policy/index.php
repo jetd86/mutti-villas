@@ -1,8 +1,9 @@
 <?php
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
+$APPLICATION->SetPageProperty("description", "Политика конфиденциальности описывает, каким образом компания MUTTI VILLAS собирает, использует, хранит и защищает персональные данные пользователей сайта");
 
 $APPLICATION->SetTitle("Политика конфиденциальности");
-$APPLICATION->SetPageProperty("TITLE", "Политика конфиденциальности (Privacy & Confidentiality Policy)");
+$APPLICATION->SetPageProperty("TITLE", "Политика конфиденциальности Mutti Family Villas (Privacy & Confidentiality Policy)");
 ?><div class="content-container container">
 	<h3>1. Общие положения</h3>
 	<p>

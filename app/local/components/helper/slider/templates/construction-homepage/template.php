@@ -31,7 +31,8 @@ $culture = Context::getCurrent()->getCulture();
                     href="<?= $element['SRC'] ?>"
                     data-glightbox="construction"
                     data-gallery="construction"
-                    data-title="<?= $element['GROUP'] ?>">
+                    data-alt="<?php echo Loc::getMessage('PROGRESS') . ' Mutti Family Villas image_' . $key . ' ' . $element['SECTION_NAME'];?>"
+                    data-title="<?php echo Loc::getMessage('PROGRESS') . ' Mutti Family Villas image_' . $key . ' ' . $element['SECTION_NAME'];?>">
                     <picture>
                         <source srcset="<?= $element['SRC_2X'] ?>" data-srcset="<?= $element['SRC_2X'] ?>" media="(min-width: 768px)" type="image/webp">
                         <source srcset="<?= $element['SRC_1X'] ?>" data-srcset="<?= $element['SRC_1X'] ?>" type="image/webp">

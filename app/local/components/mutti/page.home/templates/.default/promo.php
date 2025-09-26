@@ -112,9 +112,9 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
                                         <input type="checkbox" name="agreement" required>
                                     <?php
                                     if ($tld === 'com') { ?>
-                                        I agree to the <a href="/policy" target="_blank">Privacy Policy</a> and consent to the processing of my personal data.
+                                        I agree to the <a href="/policy/" target="_blank">Privacy Policy</a> and consent to the processing of my personal data.
                                     <?php } else { ?>
-                                        Я соглашаюсь с <a href="/policy" target="_blank">политикой конфиденциальности</a>
+                                        Я соглашаюсь с <a href="/policy/" target="_blank">политикой конфиденциальности</a>
                                         и даю согласие на обработку персональных данных.
                                     <?php } ?>
                                     </label>
