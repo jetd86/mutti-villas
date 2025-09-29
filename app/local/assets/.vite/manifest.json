@@ -216,15 +216,12 @@
     ]
   },
   "contacts.js": {
-    "file": "assets/contacts.r0XLhaOx.js",
+    "file": "assets/contacts.BDaTYwOI.js",
     "name": "contacts",
     "src": "contacts.js",
     "isEntry": true,
     "css": [
       "assets/contacts.CY2jwdY9.css"
-    ],
-    "assets": [
-      "assets/contract-section-map.C6Vxn3bd.svg"
     ]
   },
   "fonts/Montserrat-Black.woff": {
@@ -401,10 +398,6 @@
     "css": [
       "assets/guide.CYoX7WNL.css"
     ]
-  },
-  "images/contract-section-map.svg": {
-    "file": "assets/contract-section-map.C6Vxn3bd.svg",
-    "src": "images/contract-section-map.svg"
   },
   "images/logo-color.svg": {
     "file": "assets/logo-color.CdM6hL16.svg",

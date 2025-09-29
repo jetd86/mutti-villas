@@ -28,6 +28,13 @@ function routeViteAssets(): void
     foreach ($routes as $path => $entry) {
         if ($uri === $path || str_starts_with($uri, $path . '/')) {
             $matched = true;
+            if ($path === '/contacts') {
+                loadViteAssets('main.js', [
+                    'preload' => false,
+                    'lowPriorityCss' => true,
+                ]);
+            }
+
             loadViteAssets($entry, [
                 'preload' => true,
                 'lowPriorityCss' => true,
