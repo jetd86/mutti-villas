@@ -4,7 +4,6 @@ import logoColor from '@images/logo-color.svg';
 export function headerScrollComponent(containerId) {
     const navbar = document.getElementById(containerId);
 
-    console.log('navbar: ', navbar)
     if(!navbar) {
         return;
     }
