@@ -32,9 +32,6 @@ foreach ($arResult["ITEMS"] as $arItem):
                  alt="<?=htmlspecialcharsbx($arItem['PREVIEW_PICTURE']['ALT'])?>" itemprop="image" />
             </a><?
         endif; ?>
-        <h2 class="article-title" itemprop="headline">
-            <a class="title-link" href="<?=$arItem['DETAIL_PAGE_URL']?>" itemprop="url"><?=$arItem['NAME']?></a>
-        </h2>
         <div class="article-meta" itemprop="articleSection">
             <? if ($arItem['IBLOCK_SECTION_NAME']): ?>
                 <a class="meta-link" href="<?=$arItem['IBLOCK_SECTION_LINK']?>">

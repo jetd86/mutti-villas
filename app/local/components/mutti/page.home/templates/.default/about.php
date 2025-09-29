@@ -69,7 +69,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/local/php_interface/mutti-core.php';
                               <a href="<?php echo $icon['ICON']['LINK']; ?>" target="_blank" style="text-decoration: none;"> <div class="section-advantages__item--wrapper">
                                     <div class="section-advantages__item--icon">
                                         <img src="<?=$icon['SRC_48']?>"
-                                             alt=""
+                                             alt="<?= 'Mutti Villas ' . $icon['NAME']?>"
                                              class="img-fluid">
                                     </div>
                                     <div class="section-advantages__item--name"><?=$icon['NAME']?></div>

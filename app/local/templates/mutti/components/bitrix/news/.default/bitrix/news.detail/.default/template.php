@@ -28,9 +28,6 @@ if ($arResult['DETAIL_PICTURE']): ?>
              alt="<?=htmlspecialcharsbx($arResult['DETAIL_PICTURE']['ALT'])?>" itemprop="image" />
     </div><?
 endif; ?>
-<h2 class="article-title" itemprop="headline">
-    <span class="title-link" itemprop="url"><?=$arResult['NAME']?></span>
-</h2>
 <div class="article-meta" itemprop="articleSection">
     <? if ($arResult['IBLOCK_SECTION_NAME']): ?>
         <a class="meta-link" href="<?=$arResult['IBLOCK_SECTION_LINK']?>">
