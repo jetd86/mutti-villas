@@ -16,4 +16,4 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 /** @var MuttiPageContactsComponent $component */
 $this->setFrameMode(true); ?>
 
-<section class="section maps" id="map"></section>
+<section class="section maps map-loaded" id="map"></section>
