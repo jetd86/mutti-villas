@@ -33,6 +33,7 @@ Allow: /*.avif$
 Allow: /*.woff2$
 Allow: /*.woff$
 Allow: /upload/resize_cache/
+Allow: /local/assets/*
 # ================== SITEMAP =====================
 Sitemap: https://muttivillas.ru/sitemap.xml
 # ================ YANDEX RULES ==================
