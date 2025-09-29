@@ -4,22 +4,22 @@ import logoColor from '@images/logo-color.svg';
 export function headerScrollComponent(containerId) {
     const navbar = document.getElementById(containerId);
 
+    console.log('navbar: ', navbar)
     if(!navbar) {
         return;
     }
 
-    navbar?.classList.add('navbar-transparent');
+    navbar.classList.add('navbar-transparent');
 
-    if(navbar?.classList.add('navbar-transparent')) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.remove('navbar-transparent');
-            } else {
-                navbar.classList.add('navbar-transparent');
-            }
-        });
-    }
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.remove('navbar-transparent');
+        } else {
+            navbar.classList.add('navbar-transparent');
+        }
+    });
 }
+
 
 export function headerScrollLogoComponent(containerId = 'navbarMain', logoId = 'navbarLogo') {
     const navbar = document.getElementById(containerId);
