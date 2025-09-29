@@ -43,7 +43,7 @@ if (preg_match('/\.([^.]+)$/', $host, $matches)) {
 ?>
 <!DOCTYPE html>
 <?php
-if ($tld === 'com' || true) { ?>
+if ($tld === 'com') { ?>
 <html lang="en">
 <?php } else { ?>
 <html lang="ru">
