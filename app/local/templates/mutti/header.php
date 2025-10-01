@@ -53,6 +53,14 @@ if ($tld === 'com') { ?>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <?php
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+    $currentUrl = $protocol . $_SERVER['HTTP_HOST'] . $APPLICATION->GetCurPage();
+    $canonicalUrl = strtok($currentUrl, '?');
+
+    ?>
+
+    <link rel="canonical" href="<?=htmlspecialchars($canonicalUrl)?>" />
     <title><? $APPLICATION->ShowTitle(); ?></title>
     <link rel="apple-touch-icon" sizes="57x57" href="/favicon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/favicon-60x60.png">

@@ -23,6 +23,7 @@ $this->setFrameMode(true); ?>
     <div class="container">
         <h2 class="section-header" itemprop="name"><?= $arParams['OBJECTS_DISTANCE_TITLE'] ?></h2>
         <table class="section-table" itemscope itemtype="http://schema.org/ItemList">
+            <caption><?=Loc::getMessage('TABLE_CAPTION')?></caption>
             <thead class="section-table__header">
             <tr>
                 <th class="section-table__title" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><?= Loc::getMessage('DISTANCE_OBJECT')?></th>

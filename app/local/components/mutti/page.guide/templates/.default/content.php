@@ -39,7 +39,7 @@ $this->setFrameMode(true); ?>
             'DETAIL_PAGER_TEMPLATE' => '',
             'DETAIL_PAGER_TITLE' => 'Страница',
             'DETAIL_PROPERTY_CODE' => ['', ''],
-            'DETAIL_SET_CANONICAL_URL' => 'Y',
+            'DETAIL_SET_CANONICAL_URL' => 'N',
             'DISPLAY_BOTTOM_PAGER' => 'Y',
             'DISPLAY_DATE' => 'Y',
             'DISPLAY_NAME' => 'Y',
