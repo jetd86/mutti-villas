@@ -13,11 +13,11 @@ use App\Helper\ComponentHelper;
 ?>
 <div class="offcanvas offcanvas-end header-<?= ComponentHelper::getComponentName($component->__name) ?>" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="mobileMenuLabel">
+        <span class="offcanvas-title" id="mobileMenuLabel">
             <a class="offcanvas-brand" href="/">
                 <img id="offcanvasLogo" alt="Logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==">
             </a>
-        </h5>
+        </span>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
     </div>
     <div class="offcanvas-body">
