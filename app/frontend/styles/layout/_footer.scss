@@ -81,9 +81,10 @@
         }
     }
 
-    .boon-pakorn-logo {
+    .boon-pakorn-logo, .oak-logo {
         margin-left: -10px;
     }
+
 
     .footer-brand {
         display: block;
@@ -165,6 +166,7 @@
 
         display: flex;
         justify-content: space-between;
+        flex-direction: column;
 
         .phone-item {
             font-size: 13px;

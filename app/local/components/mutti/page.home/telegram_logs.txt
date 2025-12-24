@@ -13,3 +13,39 @@
 2025-08-27 09:29:20 | Name: Тест | Phone: +7 901 999 99 99 | Message: 📝 <strong>Новая заявка с сайта muttivillas.ru</strong>
 👤 Имя: <strong>Тест</strong>
 📞 Телефон: <strong>+7 901 999 99 99</strong>
+2025-11-19 13:46:25 | Name: vdst | Phone: +7 921 123 94 12 | Message: 📝 <strong>Новая заявка с сайта muttivillas.ru</strong>
+👤 Имя: <strong>vdst</strong>
+📞 Телефон: <strong>+7 921 123 94 12</strong>
+2025-11-19 13:46:47 | Name: Владислав | Phone: +7 922 151 47 05 | Message: 📝 <strong>Новая заявка с сайта muttivillas.ru</strong>
+👤 Имя: <strong>Владислав</strong>
+📞 Телефон: <strong>+7 922 151 47 05</strong>
+2025-11-23 15:39:42 | Name: Анастасия | Phone: +7 968 924 90 84 | Message: 📝 <strong>Новая заявка с сайта muttivillas.ru</strong>
+👤 Имя: <strong>Анастасия</strong>
+📞 Телефон: <strong>+7 968 924 90 84</strong>
+2025-11-23 17:10:35 | Name: Дарья | Phone: +7 968 924 90 83 | Message: 📝 <strong>Новая заявка с сайта muttivillas.ru</strong>
+👤 Имя: <strong>Дарья</strong>
+📞 Телефон: <strong>+7 968 924 90 83</strong>
+2025-11-25 18:06:09 | Name: Артем | Phone: +7 968 924 93 89 | Message: 📝 <strong>Новая заявка с сайта muttivillas.ru</strong>
+👤 Имя: <strong>Артем</strong>
+📞 Телефон: <strong>+7 968 924 93 89</strong>
+2025-11-28 18:59:03 | Name: Евгений | Phone: +7 968 924 97 48 | Message: 📝 <strong>Новая заявка с сайта muttivillas.ru</strong>
+👤 Имя: <strong>Евгений</strong>
+📞 Телефон: <strong>+7 968 924 97 48</strong>
+2025-11-28 22:58:48 | Name: Даня | Phone: +7 968 924 97 49 | Message: 📝 <strong>Новая заявка с сайта muttivillas.ru</strong>
+👤 Имя: <strong>Даня</strong>
+📞 Телефон: <strong>+7 968 924 97 49</strong>
+2025-12-01 23:17:37 | Name: Роман | Phone: +7 927 850 47 90 | Message: 📝 <strong>Новая заявка с сайта muttivillas.ru</strong>
+👤 Имя: <strong>Роман</strong>
+📞 Телефон: <strong>+7 927 850 47 90</strong>
+2025-12-04 14:14:38 | Name: Артем | Phone: +7 968 924 99 60 | Message: 📝 <strong>Новая заявка с сайта muttivillas.ru</strong>
+👤 Имя: <strong>Артем</strong>
+📞 Телефон: <strong>+7 968 924 99 60</strong>
+2025-12-04 18:15:43 | Name: Ольга | Phone: +7 968 925 40 23 | Message: 📝 <strong>Новая заявка с сайта muttivillas.ru</strong>
+👤 Имя: <strong>Ольга</strong>
+📞 Телефон: <strong>+7 968 925 40 23</strong>
+2025-12-06 16:31:08 | Name: Евгений | Phone: +7 968 925 02 80 | Message: 📝 <strong>Новая заявка с сайта muttivillas.ru</strong>
+👤 Имя: <strong>Евгений</strong>
+📞 Телефон: <strong>+7 968 925 02 80</strong>
+2025-12-10 22:53:26 | Name: Александр | Phone: +7 968 925 43 77 | Message: 📝 <strong>Новая заявка с сайта muttivillas.ru</strong>
+👤 Имя: <strong>Александр</strong>
+📞 Телефон: <strong>+7 968 925 43 77</strong>

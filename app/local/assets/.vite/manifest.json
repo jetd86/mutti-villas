@@ -345,7 +345,7 @@
     "src": "fonts/Unbounded-Regular.woff2"
   },
   "global.js": {
-    "file": "assets/global.BbH3f8f_.js",
+    "file": "assets/global.gW1psM1G.js",
     "name": "global",
     "src": "global.js",
     "isEntry": true,
@@ -353,7 +353,7 @@
       "_bootstrap.esm.BPJ8_vQ-.js"
     ],
     "css": [
-      "assets/global.DimjSw0j.css"
+      "assets/global.CAkm_rHs.css"
     ],
     "assets": [
       "assets/bootstrap-icons.BtvjY1KL.woff2",

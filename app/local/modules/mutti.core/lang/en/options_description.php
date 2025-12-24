@@ -6,6 +6,7 @@ $MESS['BASE_FIELD_ADDRESS_HINT'] = 'The main address of the company';
 $MESS['BASE_FIELD_EMAIL'] = 'Email';
 $MESS['BASE_FIELD_EMAIL_HINT'] = 'The main email address of the company';
 $MESS['BASE_HEADER_PHONES'] = 'Phones';
+$MESS['GLOBAL_PHONE_FOR_SELLERS'] = 'Phone for sellers';
 $MESS['BASE_FIELD_PHONE_RU'] = 'Phone number (RU)';
 $MESS['BASE_FIELD_PHONE_RU_HINT'] = 'The link will be in the format: tel:+79999999999';
 $MESS['BASE_FIELD_PHONE_EN'] = 'Phone number (EN)';

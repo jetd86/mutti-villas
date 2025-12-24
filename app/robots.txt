@@ -1,4 +1,5 @@
 User-Agent: *
+Clean-param: ybaip etext
 Allow: /
 # ================= SYSTEM BLOCK =================
 Disallow: /bitrix/

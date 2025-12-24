@@ -37,6 +37,14 @@ $this->setFrameMode(true); ?>
                             <?= $component->getPhone('OFFICE_PHONE_EN') ?> (EN)</a>
                     </li><?
                 endif; ?>
+
+            <?php  if ($arResult['MUTTI_CORE']['global_phone_for_sellers']['VALUE']): ?>
+                <li class="phone-item">
+                <a class="phone-link" href="tel:<?=$arResult['MUTTI_CORE']['global_phone_for_sellers']['VALUE']?>">
+                    <?= $arResult['MUTTI_CORE']['global_phone_for_sellers']['VALUE'] ?>
+                </a>
+                </li><?
+            endif; ?>
             </ul><?
         endif;
         if ($email = $component->getEmail()): ?>

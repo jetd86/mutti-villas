@@ -7,6 +7,7 @@ $MESS['BASE_FIELD_EMAIL'] = 'Email';
 $MESS['BASE_FIELD_EMAIL_HINT'] = 'Основной email компании';
 $MESS['BASE_HEADER_PHONES'] = 'Телефоны';
 $MESS['BASE_FIELD_PHONE_RU'] = 'Номер телефона (RU)';
+$MESS['GLOBAL_PHONE_FOR_SELLERS'] = 'Номер телефона для продаж';
 $MESS['BASE_FIELD_PHONE_RU_HINT'] = 'Ссылка будет в формате: tel:+79999999999';
 $MESS['BASE_FIELD_PHONE_EN'] = 'Номер телефона (EN)';
 $MESS['BASE_FIELD_PHONE_EN_HINT'] = 'Ссылка будет в формате: tel:+79999999999';

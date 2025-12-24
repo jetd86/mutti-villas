@@ -10,6 +10,7 @@ enum OptionBaseEnum: string
     case BASE_EMAIL = 'global_email';
     /** Номер телефона (RU) */
     case BASE_PHONE_RU = 'global_phone_ru';
+    case GLOBAL_PHONE_FOR_SELLERS = 'global_phone_for_sellers';
     /** Номер телефона (EN) */
     case BASE_PHONE_EN = 'global_phone_en';
     /** Номер телефона (CRM) */

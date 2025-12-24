@@ -26,6 +26,10 @@ $this->setFrameMode(true); ?>
                 <use href="#my-icon"></use>
             </svg>
         </a>
+
+        <a href="https://www.oakmeadow-phuket.com/" class="oak-logo" aria-label="Перейти на сайт Oak Meadow">
+            <img width="210" height="62" src="/local/assets/assets/images/OAK MEADOW logo hor.webp" alt="Oak Meadow">
+        </a>
     </div>
     <button class="footer-action" type="button" data-messenger="whatsapp"><?= $arParams['CALLBACK_NAME'] ?></button>
 </div>

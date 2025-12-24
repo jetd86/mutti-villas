@@ -48,6 +48,15 @@ return [
                 'HINT' => Loc::getMessage('BASE_FIELD_PHONE_EN_HINT'),
                 'REQUIRED' => true,
             ],
+
+            OptionBaseEnum::GLOBAL_PHONE_FOR_SELLERS->value => [
+                'TITLE' => Loc::getMessage('GLOBAL_PHONE_FOR_SELLERS'),
+                'TYPE' => 'STRING',
+                'DEFAULT' => '',
+                'HINT' => Loc::getMessage('GLOBAL_PHONE_FOR_SELLERS_HINT'),
+                'REQUIRED' => true,
+            ],
+
             OptionBaseEnum::BASE_PHONE_CRM->value => [
                 'TITLE' => Loc::getMessage('BASE_FIELD_PHONE_CRM'),
                 'TYPE' => 'STRING',
